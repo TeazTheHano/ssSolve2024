@@ -30,6 +30,10 @@ const styles = StyleSheet.create({
         width: vw(90),
     },
 
+    w84vw: {
+        width: vw(84),
+    },
+
     w80: {
         width: '80%',
     },

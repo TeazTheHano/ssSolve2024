@@ -1,6 +1,6 @@
-import { View, Text, SafeAreaView, TouchableOpacity, Alert } from 'react-native'
+import { View, Text, SafeAreaView, TouchableOpacity, Alert, ImageStyle, Image, StatusBar } from 'react-native'
 import React, { useEffect } from 'react'
-import { InputCardVer1, Lex16MedAuto, Lex16RegAuto, Pay20BlackLine122, Pay28BlackLine122, SaveViewWithColorStatusBar, SSBar, TopNav1 } from '../assets/Class'
+import { InputCardVer1, Nu18Reg, Nu24Black, Nu24Bold, RoundBtn, ViewColCenter, ViewColEvenlyCenter, ViewRowBetweenCenter, ViewRowCenter, WorkSan10Reg, WorkSan12Bold, WorkSan12Reg, WorkSan14Reg, WorkSan16Bold } from '../assets/Class'
 import styles, { vw } from '../assets/stylesheet'
 import clrStyle from '../assets/componentStyleSheet'
 import { SvgXml } from 'react-native-svg'
@@ -8,6 +8,8 @@ import { getUser, saveUser } from '../data/storageFunc'
 import { useNavigation } from '@react-navigation/native'
 
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile, User } from "firebase/auth";
+import { appleIcon, googleColorIcon } from '../assets/svgXml'
+import { showInDeverlopFnc } from '../assets/component'
 
 export default function Login() {
     const navigation = useNavigation()
@@ -15,13 +17,15 @@ export default function Login() {
 
     const [email, setEmail] = React.useState('')
     const [password, setPassword] = React.useState('')
+    const [emailType, setEmailType] = React.useState('email')
     const [confirmPassword, setConfirmPassword] = React.useState('')
     const [userName, setUserName] = React.useState('')
     // TODO: change and make fnc to upload image
     const [avtURL, setAvtURL] = React.useState("https://cdn.oneesports.gg/cdn-data/2024/07/ZenlessZoneZero_Agent_EllenJoe.jpg")
 
-    const [isShowSignUp, setIsShowSignUp] = React.useState(true)
+    const [isShowSignUp, setIsShowSignUp] = React.useState(false)
     const [isHidePassword, setIsHidePassword] = React.useState(true)
+    const [isRememberLogin, setIsRememberLogin] = React.useState(false)
 
     function showPass() {
         setIsHidePassword(!isHidePassword)
@@ -35,16 +39,16 @@ export default function Login() {
         userName = userName.trim()
 
         if (password !== confirmPassword) {
-            return Alert.alert('Password and Confirm Password not match')
+            return Alert.alert('Mật khẩu không khớp')
         }
         if (email === '' || password === '' || confirmPassword === '' || userName === '') {
-            return Alert.alert('Please fill all the form')
+            return Alert.alert('Vui lòng điền đủ thông tin')
         }
         if (password.length < 8) {
-            return Alert.alert('Password must be at least 8 characters')
+            return Alert.alert('Mật khẩu phải có ít nhất 8 ký tự')
         }
         if (!email.includes('@')) {
-            return Alert.alert('Email must contain "@"')
+            return Alert.alert('Email không hợp lệ')
         }
         try {
             // TODO: firebase auth
@@ -87,7 +91,9 @@ export default function Login() {
     async function signInHandle(email: string, password: string) {
         email = email.trim()
         password = password.trim()
-
+        if (email === '' || password === '') {
+            return Alert.alert('Vui lòng điền đủ thông tin')
+        }
         try {
             await signInWithEmailAndPassword(auth, email, password)
                 .then((userCredential) => {
@@ -105,93 +111,132 @@ export default function Login() {
                             imgAddress: user.user.photoURL ? user.user.photoURL : ''
                         })
                     } else {
-                        return Alert.alert('Email or Password is incorrect')
+                        return Alert.alert('Email hoặc mật khẩu bạn nhập chưa đúng')
                     }
                 }).then(() => {
                     return navigation.navigate('BottomTab' as never)
                 })
         } catch (error) {
             console.log(error)
-            return Alert.alert('Email or Password is incorrect')
+            return Alert.alert('Email hoặc mật khẩu bạn nhập chưa đúng')
         }
     }
 
     return (
-        <SaveViewWithColorStatusBar StatusBarColor={clrStyle.pur2} >
-            <TopNav1 title={isShowSignUp ? 'Sign-up' : 'Sign-in'} />
-            <View style={[styles.w80vw, styles.alignSelfCenter, styles.flex1, styles.paddingTop8vw]}>
-                {
-                    isShowSignUp ?
-                        <>
-                            <InputCardVer1
-                                title='Username'
-                                placeholder='Let us know your name'
-                                value={userName}
-                                onChangeText={setUserName}
-                                autoCapitalize='words'
-                            />
-                            <InputCardVer1
-                                title='Email'
-                                placeholder='Enter your email'
-                                value={email}
-                                onChangeText={setEmail}
-                                textContentType='emailAddress'
-                            />
-                            <InputCardVer1
-                                title='Password'
-                                placeholder='Need 8-10 characters'
-                                value={password}
-                                onChangeText={setPassword}
-                                textContentType='password'
-                                hideContentFnc={showPass}
-                                hideContent={isHidePassword}
-                            />
-                            <InputCardVer1
-                                title='Confirm'
-                                placeholder='Re-enter your password'
-                                value={confirmPassword}
-                                onChangeText={setConfirmPassword}
-                                textContentType='password'
-                                hideContent={isHidePassword}
-                            />
-                        </> :
-                        <>
-                            <InputCardVer1
-                                title='Email'
-                                placeholder='Enter your email'
-                                value={email}
-                                onChangeText={setEmail}
-                                textContentType='emailAddress'
-                            />
-                            <InputCardVer1
-                                title='Password'
-                                placeholder='Enter your password'
-                                value={password}
-                                onChangeText={setPassword}
-                                textContentType='password'
-                                hideContentFnc={showPass}
-                                hideContent={isHidePassword}
-                            />
-                        </>
-                }
-                <TouchableOpacity style={[styles.padding1vw]}
-                    onPress={() => { setIsShowSignUp(!isShowSignUp) }}>
-                    <Lex16MedAuto style={[styles.textCenter, styles.paddingV4vw, { color: clrStyle.neu4 }]}>Switch to Sign-in</Lex16MedAuto>
-                </TouchableOpacity>
-                <TouchableOpacity
-                    onPress={() => {
-                        isShowSignUp ? signUpHandle(email, password, confirmPassword, userName, avtURL) : signInHandle(email, password)
-                    }}
-                    style={[styles.flexRowCenter, styles.gap1vw, styles.paddingV4vw, styles.paddingH8vw, styles.borderRadius40, { backgroundColor: 'rgba(134, 223, 208, 1)' }]}>
-                    <Lex16RegAuto>Next</Lex16RegAuto>
-                    <SvgXml xml={`<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M10.8228 4.44727L15.3753 8.99977L10.8228 13.5523" stroke="#0A0A0A" style="stroke:#0A0A0A;stroke:color(display-p3 0.0392 0.0392 0.0392);stroke-opacity:1;" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M2.625 9H15.2475" stroke="#0A0A0A" style="stroke:#0A0A0A;stroke:color(display-p3 0.0392 0.0392 0.0392);stroke-opacity:1;" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            `} />
-                </TouchableOpacity>
-            </View>
+        <SafeAreaView style={[styles.flex1]}>
+            <StatusBar barStyle='dark-content' backgroundColor={clrStyle.white} />
+            <ViewColEvenlyCenter customStyle={[styles.flex1, styles.marginHorizontal8vw, styles.paddingV4vw]}>
+                <Image source={require('../assets/image/Horizon-logo.png')} resizeMethod='resize' resizeMode='contain' style={[styles.w80, styles.alignSelfCenter, styles.h10vw] as ImageStyle} />
+                <ViewColCenter customStyle={[styles.w100, styles.gap2vw]}>
+                    {
+                        isShowSignUp ?
+                            <>
+                                <Nu24Black style={[styles.padding10]}>Đăng ký</Nu24Black>
+                                <View>
+                                    <WorkSan14Reg style={{ color: clrStyle.grey30 }}>Tên của bạn</WorkSan14Reg>
+                                    <InputCardVer1
+                                        placeholder='Nguyễn Văn A'
+                                        value={userName}
+                                        onChangeText={setUserName}
+                                        autoCapitalize='words'
+                                        textClass2={WorkSan14Reg}
+                                        customStyle={[styles.marginVertical1vw, styles.padding3vw, styles.borderRadius20, { borderColor: clrStyle.grey70, backgroundColor: clrStyle.green100, }]}
+                                    />
+                                </View>
+                                <View>
+                                    <WorkSan14Reg style={{ color: clrStyle.grey30 }}>Địa chỉ email hoặc số điện thoại</WorkSan14Reg>
+                                    <InputCardVer1
+                                        placeholder='example@gmail.com'
+                                        value={email}
+                                        onChangeText={setEmail}
+                                        textContentType={emailType === 'phone' ? 'telephoneNumber' : 'emailAddress'}
+                                        textClass2={WorkSan14Reg}
+                                        customStyle={[styles.marginVertical1vw, styles.padding3vw, styles.borderRadius20, { borderColor: clrStyle.grey70, backgroundColor: clrStyle.green100, }]}
+                                    />
+                                </View>
+                                <View>
+                                    <WorkSan14Reg style={{ color: clrStyle.grey30 }}>Đặt mật khẩu</WorkSan14Reg>
+                                    <InputCardVer1
+                                        placeholder='Tối thiểu 8 ký tự'
+                                        value={password}
+                                        onChangeText={setPassword}
+                                        textContentType='password'
+                                        hideContentFnc={showPass}
+                                        hideContent={isHidePassword}
+                                        textClass2={WorkSan14Reg}
+                                        customStyle={[styles.marginVertical1vw, styles.padding3vw, styles.borderRadius20, { borderColor: clrStyle.grey70, backgroundColor: clrStyle.green100, }]}
+                                    />
+                                </View>
+                                <View>
+                                    <WorkSan14Reg style={{ color: clrStyle.grey30 }}>Xác nhận mật khẩu</WorkSan14Reg>
+                                    <InputCardVer1
+                                        placeholder='Nhập lại mật khẩu'
+                                        value={confirmPassword}
+                                        onChangeText={setConfirmPassword}
+                                        textContentType='password'
+                                        hideContent={isHidePassword}
+                                        textClass2={WorkSan14Reg}
+                                        customStyle={[styles.marginVertical1vw, styles.padding3vw, styles.borderRadius20, { borderColor: clrStyle.grey70, backgroundColor: clrStyle.green100, }]}
+                                    />
+                                </View>
+                            </> :
+                            <>
+                                <Nu24Black style={[styles.padding10]}>Đăng nhập</Nu24Black>
+                                <View>
+                                    <WorkSan14Reg style={{ color: clrStyle.grey30 }}>Địa chỉ email hoặc số điện thoại</WorkSan14Reg>
+                                    <InputCardVer1
+                                        textClass2={WorkSan14Reg}
+                                        placeholder='example@gmail.com'
+                                        value={email}
+                                        onChangeText={setEmail}
+                                        textContentType={emailType === 'phone' ? 'telephoneNumber' : 'emailAddress'}
+                                        customStyle={[styles.marginVertical1vw, styles.padding3vw, styles.borderRadius20, { borderColor: clrStyle.grey70, backgroundColor: clrStyle.green100, }]}
+                                    />
+                                </View>
+                                <View>
+                                    <WorkSan14Reg style={{ color: clrStyle.grey30 }}>Mật khẩu</WorkSan14Reg>
+                                    <InputCardVer1
+                                        textClass2={WorkSan14Reg}
+                                        placeholder='Tối thiểu 8 ký tự'
+                                        value={password}
+                                        onChangeText={setPassword}
+                                        textContentType='password'
+                                        hideContentFnc={showPass}
+                                        hideContent={isHidePassword}
+                                        customStyle={[styles.marginVertical1vw, styles.padding3vw, styles.borderRadius20, { borderColor: clrStyle.grey70, backgroundColor: clrStyle.green100, }]}
+                                    />
+                                </View>
+                                <ViewRowBetweenCenter customStyle={[styles.w100]}>
+                                    <TouchableOpacity onPress={() => { setIsRememberLogin(!isRememberLogin) }}>
+                                        <ViewRowCenter customStyle={[styles.gap1vw]}>
+                                            <SvgXml xml={isRememberLogin ? `<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="9" stroke="#7D8792" style="stroke:#7D8792;stroke:color(display-p3 0.4902 0.5294 0.5725);stroke-opacity:1;" stroke-width="2"/><path d="M5.49994 9.5L8.99994 13L14.4999 7.5" stroke="#7D8792" style="stroke:#7D8792;stroke:color(display-p3 0.4902 0.5294 0.5725);stroke-opacity:1;" stroke-width="1.5" stroke-linecap="round"/></svg>` : `<svg width="20" height="20" viewBox="0 0 20 20" fill="#7D8792" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="9" stroke="#7D8792" style="stroke:#7D8792;stroke:color(display-p3 0.4902 0.5294 0.5725);stroke-opacity:1;" stroke-width="2"/><path d="M5.49994 9.5L8.99994 13L14.4999 7.5" stroke="white" style="stroke:#7D8792;stroke:color(display-p3 0.4902 0.5294 0.5725);stroke-opacity:1;" stroke-width="1.5" stroke-linecap="round"/></svg>`} width={vw(5)} height={vw(5)} />
+                                            <WorkSan14Reg style={{ color: clrStyle.grey30 }}>Ghi nhớ</WorkSan14Reg>
+                                        </ViewRowCenter>
+                                    </TouchableOpacity>
+                                    <TouchableOpacity onPress={() => { Alert.alert(`Vui lòng liên hệ kỹ thuật viên được hỗ trợ`) }}>
+                                        <WorkSan14Reg style={{ color: clrStyle.grey30 }}>Quên mật khẩu?</WorkSan14Reg>
+                                    </TouchableOpacity>
+                                </ViewRowBetweenCenter>
+                            </>
+                    }
+                </ViewColCenter>
+                <RoundBtn title={isShowSignUp ? 'Đăng ký' : 'Đăng nhập'} textColor={clrStyle.white} textClass={WorkSan16Bold} onPress={() => isShowSignUp ? signUpHandle(email, password, confirmPassword, userName, avtURL) : signInHandle(email, password)} customStyle={[styles.w84vw, styles.padding5vw, styles.borderRadius20, styles.justifyContentCenter, { backgroundColor: clrStyle.blue100 }]} />
 
-        </SaveViewWithColorStatusBar>
+                <ViewColCenter customStyle={[styles.w100, styles.gap6vw]}>
+                    <ViewColCenter customStyle={[styles.positionRelative]}>
+                        <View style={[styles.paddingH2vw, { backgroundColor: clrStyle.white }]}><WorkSan14Reg style={{ color: clrStyle.grey50 }}>Hoặc đăng nhập với </WorkSan14Reg></View>
+                        <View style={[styles.w100, styles.positionAbsolute, { zIndex: -1, borderColor: clrStyle.grey50, borderBottomWidth: 1 }]}></View>
+                    </ViewColCenter>
+                    <ViewRowBetweenCenter customStyle={[styles.w100, styles.gap4vw]}>
+                        <RoundBtn title='Google' icon={googleColorIcon(vw(6), vw(6))} onPress={showInDeverlopFnc} textColor='white' bgColor={clrStyle.blue100} textClass={Nu18Reg} border customStyle={[styles.flex1, styles.justifyContentCenter]} />
+                        <RoundBtn title='Apple' icon={appleIcon(vw(6), vw(6))} onPress={showInDeverlopFnc} textColor='white' bgColor={clrStyle.blue100} textClass={Nu18Reg} border customStyle={[styles.flex1, styles.justifyContentCenter]} />
+                    </ViewRowBetweenCenter>
+                    <TouchableOpacity onPress={() => setIsShowSignUp(!isShowSignUp)}>
+                        <WorkSan12Reg>{isShowSignUp ? `Đã có tài khoản?` : `Chưa có tài khoản?`} <WorkSan12Bold>{isShowSignUp ? `Đăng nhập` : `Đăng ký`}</WorkSan12Bold></WorkSan12Reg>
+                    </TouchableOpacity>
+                </ViewColCenter>
+            </ViewColEvenlyCenter>
+            <Image source={require('../assets/image/loginObject.png')} resizeMethod='resize' resizeMode='contain' style={[styles.w40vw, styles.h40vw, styles.positionAbsolute, { right: -vw(15), bottom: -vw(15) }] as ImageStyle} />
+        </SafeAreaView >
     )
 }

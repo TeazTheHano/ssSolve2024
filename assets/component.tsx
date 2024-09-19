@@ -12,7 +12,6 @@ import Svg, { SvgXml } from 'react-native-svg';
 // SVG import
 import { goldStar, lockIcon, noStar, peopleIcon, savedIcon, searchIcon, shareIcon, unSavedIcon, } from "./svgXml";
 import clrStyle, { componentStyle } from "./componentStyleSheet";
-import { Lex10RegAuto, Lex12BoldAuto, Lex12RegAuto, Lex16RegAuto } from "./Class";
 
 // other import
 import { Card, Desk, SetFormat } from "../data/data";
@@ -261,27 +260,6 @@ export const openGallery = async (saveImgFnc: any, options = defaultCameraOption
     });
 }
 
-// END OF UNIVERSE FUNCTION________________________________________
-
-export function showRateStar(rate: number) {
-    rate = Math.round(rate)
-    let rateStar = []
-    for (let index = 0; index < rate; index++) {
-        rateStar.push(goldStar(vw(3), vw(3)))
-    }
-    for (let index = 0; index < 5 - rate; index++) {
-        rateStar.push(noStar(vw(3), vw(3)))
-    }
-    return rateStar.map((item, index) => {
-        return (
-            <View key={index}>
-                {item}
-            </View>
-        )
-    }
-    )
-}
-
 export async function searchEngine(keyword: string, dataBank: SetFormat[] | Desk[] | Card[], type: 'set' | 'desk' | 'card') {
     keyword = keyword.trim();
     let result: SetFormat[] | Desk[] | Card[] = [];
@@ -318,3 +296,9 @@ export const onRefresh = React.useCallback(() => {
     //     });
     // }, 1000);
 }, []);
+
+export const showInDeverlopFnc = () => {
+    return Alert.alert('This function is in development')
+}
+
+// END OF UNIVERSE FUNCTION________________________________________

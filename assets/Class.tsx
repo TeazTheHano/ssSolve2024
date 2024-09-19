@@ -194,12 +194,276 @@ export class ViewColStartCenter extends Component<{ children?: React.ReactNode, 
 // ____________________END OF UNIVERSAL CLASS_______________________
 
 // ____________________START OF FONT_______________________
-export class Pay32BlackLine40 extends Component<{ children: React.ReactNode, style?: any }> {
+export class Nu28Black extends Component<{ children: React.ReactNode, style?: any, numberOfLines?: number }> {
     render() {
-        const { children, style } = this.props;
+        const { children, style, numberOfLines } = this.props;
 
         return (
-            <Text style={[{ fontFamily: 'PaytoneOne-Regular', fontSize: vw(8), lineHeight: vw(10), }, style]}>
+            <Text style={[{ color: 'black', fontFamily: 'Nunito-Black', fontSize: vw(7), lineHeight: vw(9), }, style]} numberOfLines={numberOfLines}>
+                {children}
+            </Text>
+        );
+    }
+}
+
+export class Nu24Black extends Component<{ children: React.ReactNode, style?: any, numberOfLines?: number }> {
+    render() {
+        const { children, style, numberOfLines } = this.props;
+
+        return (
+            <Text style={[{ color: 'black', fontFamily: 'Nunito-Black', fontSize: vw(6), lineHeight: vw(8), }, style]} numberOfLines={numberOfLines}>
+                {children}
+            </Text>
+        );
+    }
+}
+
+export class Nu20Black extends Component<{ children: React.ReactNode, style?: any, numberOfLines?: number }> {
+    render() {
+        const { children, style, numberOfLines } = this.props;
+
+        return (
+            <Text style={[{ color: 'black', fontFamily: 'Nunito-Black', fontSize: vw(5), lineHeight: vw(7), }, style]} numberOfLines={numberOfLines}>
+                {children}
+            </Text>
+        );
+    }
+}
+
+export class Nu18Black extends Component<{ children: React.ReactNode, style?: any, numberOfLines?: number }> {
+    render() {
+        const { children, style, numberOfLines } = this.props;
+
+        return (
+            <Text style={[{ color: 'black', fontFamily: 'Nunito-Black', fontSize: vw(4.5), lineHeight: vw(6), }, style]} numberOfLines={numberOfLines}>
+                {children}
+            </Text>
+        );
+    }
+}
+
+export class Nu24Bold extends Component<{ children: React.ReactNode, style?: any, numberOfLines?: number }> {
+    render() {
+        const { children, style, numberOfLines } = this.props;
+
+        return (
+            <Text style={[{ color: 'black', fontFamily: 'Nunito-Bold', fontSize: vw(6), lineHeight: vw(8), }, style]} numberOfLines={numberOfLines}>
+                {children}
+            </Text>
+        );
+    }
+}
+
+export class Nu20Bold extends Component<{ children: React.ReactNode, style?: any, numberOfLines?: number }> {
+    render() {
+        const { children, style, numberOfLines } = this.props;
+
+        return (
+            <Text style={[{ color: 'black', fontFamily: 'Nunito-Bold', fontSize: vw(5), lineHeight: vw(7), }, style]} numberOfLines={numberOfLines}>
+                {children}
+            </Text>
+        );
+    }
+}
+
+export class Nu18Bold extends Component<{ children: React.ReactNode, style?: any, numberOfLines?: number }> {
+    render() {
+        const { children, style, numberOfLines } = this.props;
+
+        return (
+            <Text style={[{ color: 'black', fontFamily: 'Nunito-Bold', fontSize: vw(4.5), lineHeight: vw(6), }, style]} numberOfLines={numberOfLines}>
+                {children}
+            </Text>
+        );
+    }
+}
+
+export class Nu16Bold extends Component<{ children: React.ReactNode, style?: any, numberOfLines?: number }> {
+    render() {
+        const { children, style, numberOfLines } = this.props;
+
+        return (
+            <Text style={[{ color: 'black', fontFamily: 'Nunito-Bold', fontSize: vw(4), lineHeight: vw(5.5), }, style]} numberOfLines={numberOfLines}>
+                {children}
+            </Text>
+        );
+    }
+}
+
+export class Nu14Bold extends Component<{ children: React.ReactNode, style?: any, numberOfLines?: number }> {
+    render() {
+        const { children, style, numberOfLines } = this.props;
+
+        return (
+            <Text style={[{ color: 'black', fontFamily: 'Nunito-Bold', fontSize: vw(3.5), lineHeight: vw(5), }, style]} numberOfLines={numberOfLines}>
+                {children}
+            </Text>
+        );
+    }
+}
+
+export class Nu20Reg extends Component<{ children: React.ReactNode, style?: any, numberOfLines?: number }> {
+    render() {
+        const { children, style, numberOfLines } = this.props;
+
+        return (
+            <Text style={[{ color: 'black', fontFamily: 'Nunito-Regular', fontSize: vw(5), lineHeight: vw(7), }, style]} numberOfLines={numberOfLines}>
+                {children}
+            </Text>
+        );
+    }
+}
+
+export class Nu18Reg extends Component<{ children: React.ReactNode, style?: any, numberOfLines?: number }> {
+    render() {
+        const { children, style, numberOfLines } = this.props;
+
+        return (
+            <Text style={[{ color: 'black', fontFamily: 'Nunito-Regular', fontSize: vw(4.5), lineHeight: vw(6), }, style]} numberOfLines={numberOfLines}>
+                {children}
+            </Text>
+        );
+    }
+}
+
+export class Nu16Reg extends Component<{ children: React.ReactNode, style?: any, numberOfLines?: number }> {
+    render() {
+        const { children, style, numberOfLines } = this.props;
+
+        return (
+            <Text style={[{ color: 'black', fontFamily: 'Nunito-Regular', fontSize: vw(4), lineHeight: vw(5.5), }, style]} numberOfLines={numberOfLines}>
+                {children}
+            </Text>
+        );
+    }
+}
+
+export class Nu14Reg extends Component<{ children: React.ReactNode, style?: any, numberOfLines?: number }> {
+    render() {
+        const { children, style, numberOfLines } = this.props;
+
+        return (
+            <Text style={[{ color: 'black', fontFamily: 'Nunito-Regular', fontSize: vw(3.5), lineHeight: vw(5), }, style]} numberOfLines={numberOfLines}>
+                {children}
+            </Text>
+        );
+    }
+}
+
+export class Nu12Reg extends Component<{ children: React.ReactNode, style?: any, numberOfLines?: number }> {
+    render() {
+        const { children, style, numberOfLines } = this.props;
+
+        return (
+            <Text style={[{ color: 'black', fontFamily: 'Nunito-Regular', fontSize: vw(3), lineHeight: vw(4), }, style]} numberOfLines={numberOfLines}>
+                {children}
+            </Text>
+        );
+    }
+}
+
+export class WorkSan20Reg extends Component<{ children: React.ReactNode, style?: any, numberOfLines?: number }> {
+    render() {
+        const { children, style, numberOfLines } = this.props;
+
+        return (
+            <Text style={[{ color: 'black', fontFamily: 'WorkSans-Regular', fontSize: vw(5), lineHeight: vw(7), }, style]} numberOfLines={numberOfLines}>
+                {children}
+            </Text>
+        );
+    }
+}
+
+export class WorkSan18Reg extends Component<{ children: React.ReactNode, style?: any, numberOfLines?: number }> {
+    render() {
+        const { children, style, numberOfLines } = this.props;
+
+        return (
+            <Text style={[{ color: 'black', fontFamily: 'WorkSans-Regular', fontSize: vw(4.5), lineHeight: vw(6), }, style]} numberOfLines={numberOfLines}>
+                {children}
+            </Text>
+        );
+    }
+}
+
+export class WorkSan16Reg extends Component<{ children: React.ReactNode, style?: any, numberOfLines?: number }> {
+    render() {
+        const { children, style, numberOfLines } = this.props;
+
+        return (
+            <Text style={[{ color: 'black', fontFamily: 'WorkSans-Regular', fontSize: vw(4), lineHeight: vw(5.5), }, style]} numberOfLines={numberOfLines}>
+                {children}
+            </Text>
+        );
+    }
+}
+
+export class WorkSan14Reg extends Component<{ children: React.ReactNode, style?: any, numberOfLines?: number }> {
+    render() {
+        const { children, style, numberOfLines } = this.props;
+
+        return (
+            <Text style={[{ color: 'black', fontFamily: 'WorkSans-Regular', fontSize: vw(3.5), lineHeight: vw(5), }, style]} numberOfLines={numberOfLines}>
+                {children}
+            </Text>
+        );
+    }
+}
+
+export class WorkSan12Reg extends Component<{ children: React.ReactNode, style?: any, numberOfLines?: number }> {
+    render() {
+        const { children, style, numberOfLines } = this.props;
+
+        return (
+            <Text style={[{ color: 'black', fontFamily: 'WorkSans-Regular', fontSize: vw(3), lineHeight: vw(4), }, style]} numberOfLines={numberOfLines}>
+                {children}
+            </Text>
+        );
+    }
+}
+
+export class WorkSan10Reg extends Component<{ children: React.ReactNode, style?: any, numberOfLines?: number }> {
+    render() {
+        const { children, style, numberOfLines } = this.props;
+
+        return (
+            <Text style={[{ color: 'black', fontFamily: 'WorkSans-Regular', fontSize: vw(2.5), lineHeight: vw(3.5), }, style]} numberOfLines={numberOfLines}>
+                {children}
+            </Text>
+        );
+    }
+}
+
+export class WorkSan16Bold extends Component<{ children: React.ReactNode, style?: any, numberOfLines?: number }> {
+    render() {
+        const { children, style, numberOfLines } = this.props;
+
+        return (
+            <Text style={[{ color: 'black', fontFamily: 'WorkSans-Bold', fontSize: vw(4), lineHeight: vw(5.5), }, style]} numberOfLines={numberOfLines}>
+                {children}
+            </Text>
+        );
+    }
+}
+
+export class WorkSan14Bold extends Component<{ children: React.ReactNode, style?: any, numberOfLines?: number }> {
+    render() {
+        const { children, style, numberOfLines } = this.props;
+
+        return (
+            <Text style={[{ color: 'black', fontFamily: 'WorkSans-Bold', fontSize: vw(3.5), lineHeight: vw(5), }, style]} numberOfLines={numberOfLines}>
+                {children}
+            </Text>
+        );
+    }
+}
+
+export class WorkSan12Bold extends Component<{ children: React.ReactNode, style?: any, numberOfLines?: number }> {
+    render() {
+        const { children, style, numberOfLines } = this.props;
+
+        return (
+            <Text style={[{ color: 'black', fontFamily: 'WorkSans-Bold', fontSize: vw(3), lineHeight: vw(4), }, style]} numberOfLines={numberOfLines}>
                 {children}
             </Text>
         );
@@ -251,6 +515,8 @@ export class InputCardVer1 extends Component<{
     hideContentFnc?: (value: boolean) => void,
     textContentType?: string | undefined
     title?: string
+    textClass1?: React.ComponentType<any>
+    textClass2?: React.ComponentType<any>
     placeholder?: string
     titleColor?: string
     placeholderColor?: string
@@ -258,14 +524,15 @@ export class InputCardVer1 extends Component<{
     autoCapitalize?: 'none' | 'sentences' | 'words' | 'characters' | undefined
 }> {
     render() {
-        const { customStyle, onChangeText, value, hideContent, hideContentFnc, textContentType, title, placeholder, titleColor, placeholderColor, valueColor, autoCapitalize } = this.props;
+        const { customStyle, onChangeText, value, textClass1, textClass2, hideContent, hideContentFnc, textContentType, title, placeholder, titleColor, placeholderColor, valueColor, autoCapitalize } = this.props;
         let type: string = textContentType ? textContentType : "none"
-
+        let TextClass1 = textClass1 ? textClass1 : Text
+        let TextClass2 = textClass2 ? textClass2 : Text
         return (
             <View
                 style={[styles.w100, styles.padding2vw, styles.flexRow, styles.alignItemsCenter, styles.borderRadius2vw, styles.marginBottom4vw, { borderWidth: 1, borderColor: 'rgba(0,0,0,1)' }, customStyle]} >
                 {title ?
-                    <Lex16MedAuto style={[styles.paddingH4vw, { color: titleColor ? titleColor : clrStyle.black }]}>{title}:</Lex16MedAuto>
+                    <TextClass1 style={[styles.paddingH4vw, { color: titleColor ? titleColor : clrStyle.black }]}>{title}:</TextClass1>
                     : null}
                 <TextInput
                     onChangeText={onChangeText}
@@ -273,11 +540,11 @@ export class InputCardVer1 extends Component<{
                     placeholder={placeholder ? placeholder : ''}
                     placeholderTextColor={placeholderColor ? placeholderColor : clrStyle.grey2}
                     secureTextEntry={hideContent ? hideContent : false}
-                    passwordRules={type === 'password' ? "minlength: 6; maxlength: 10" : ''}
+                    passwordRules={type === 'password' ? "minlength: 8; maxlength: 100" : ''}
                     textContentType={type as "none"}
-                    maxLength={type === 'password' ? 10 : 100}
+                    maxLength={type === 'password' ? 100 : 100}
                     style={[styles.flex1, styles.padding1vw,]}
-                ><Lex16RegAuto style={[styles.flex1]}>{value}</Lex16RegAuto></TextInput>
+                ><TextClass2 style={[styles.flex1]}>{value}</TextClass2></TextInput>
                 {hideContentFnc ?
                     <TouchableOpacity
                         onPress={() => { hideContentFnc && hideContentFnc(!hideContent) }}
@@ -335,13 +602,13 @@ export class RoundBtn extends Component<{
 }> {
     render() {
         const { icon, title, onPress, bgColor, textClass, textColor, iconColor, border, borderColor, customStyle } = this.props;
-        let TextClass = textClass ? textClass : Lex16RegAuto
+        let TextClass = textClass ? textClass : Text
         return (
             <TouchableOpacity
                 onPress={onPress}
-                style={[styles.flex1, styles.flexRowCenter, styles.paddingV3vw, styles.paddingH4vw, styles.borderRadius10, styles.overflowHidden, { backgroundColor: bgColor ? bgColor : undefined, borderWidth: border ? 1 : 0, }, customStyle]}>
+                style={[styles.flexRow, styles.w100, styles.alignItemsCenter, styles.padding4vw, styles.gap3vw, styles.borderRadius10, styles.overflowHidden, { backgroundColor: bgColor ? bgColor : undefined, borderWidth: border ? 1 : 0, }, customStyle]}>
                 {icon ? icon : null}
-                <TextClass style={[styles.padding2vw, { color: textColor ? textColor : clrStyle.black }]}>{title}</TextClass>
+                <TextClass style={[{ color: textColor ? textColor : clrStyle.black }]}>{title}</TextClass>
             </TouchableOpacity>
         );
     }

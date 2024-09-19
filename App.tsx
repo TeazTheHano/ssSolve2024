@@ -10,6 +10,7 @@ import OnBoarding from './screens/OnBoarding';
 import Login from './screens/Login';
 import Home from './screens/Home';
 import BottomTab from './assets/BottomTab';
+import clrStyle from './assets/componentStyleSheet';
 
 // ____________________END OF IMPORT_______________________
 
@@ -18,7 +19,7 @@ function App(): React.JSX.Element {
   return (
     <ProviderTotal>
       <NavigationContainer>
-        <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Navigator screenOptions={{ headerShown: false, contentStyle: { backgroundColor: clrStyle.white } }}>
           <Stack.Screen name="BottomTab" component={BottomTab} />
           <Stack.Screen name="OnBoarding" component={OnBoarding} />
           <Stack.Screen name="Login" component={Login} />
