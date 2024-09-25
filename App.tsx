@@ -11,6 +11,9 @@ import Login from './screens/Login';
 import Home from './screens/Home';
 import BottomTab from './assets/BottomTab';
 import clrStyle from './assets/componentStyleSheet';
+import Cart from './screens/Cart';
+import DrugList from './screens/DrugList';
+import Pillport from './screens/Pillport';
 
 // ____________________END OF IMPORT_______________________
 
@@ -24,7 +27,9 @@ function App(): React.JSX.Element {
           <Stack.Screen name="OnBoarding" component={OnBoarding} />
           <Stack.Screen name="Login" component={Login} />
           <Stack.Screen name="Home" component={Home} />
-
+          <Stack.Screen name="Cart" component={Cart} />
+          <Stack.Screen name="DrugList" component={DrugList} />
+          <Stack.Screen name="Pillport" component={Pillport} />
         </Stack.Navigator>
       </NavigationContainer>
     </ProviderTotal>

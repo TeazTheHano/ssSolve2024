@@ -498,11 +498,27 @@ export class SSBar extends Component<{ barColor?: any, trans?: boolean, children
                     <StatusBar
                         barStyle={this.props.barContentStyle ? this.props.barContentStyle : 'dark-content'}
                         translucent={this.props.trans ? true : false}
-                        backgroundColor={this.props.barColor ? this.props.barColor : 'black'} />
+                        backgroundColor={this.props.barColor ? this.props.barColor : 'white'} />
                     {Platform.OS === 'android' && !this.props.notMargin ? <View style={{ height: statusBarHeight * 1.5 }}></View> : null}
                 </>
                 {this.props.children}
             </View>
+        )
+    }
+}
+
+export class SSBarWithSaveArea extends Component<{ barColor?: any, trans?: boolean, children?: React.ReactNode, bgColor?: any, barContentStyle?: StatusBarStyle, margin?: boolean }> {
+    render(): React.ReactNode {
+        let statusBarHeight = StatusBar.currentHeight ? StatusBar.currentHeight : 0
+        return (
+            <SafeAreaView style={[styles.flex1, { backgroundColor: this.props.bgColor ? this.props.bgColor : clrStyle.white }]}>
+                <StatusBar
+                    barStyle={this.props.barContentStyle ? this.props.barContentStyle : 'dark-content'}
+                    translucent={this.props.trans ? true : false}
+                    backgroundColor={this.props.barColor ? this.props.barColor : 'white'} />
+                {Platform.OS === 'android' && this.props.margin ? <View style={{ height: statusBarHeight }}></View> : null}
+                {this.props.children}
+            </SafeAreaView>
         )
     }
 }
@@ -622,15 +638,16 @@ export class SearchBox extends Component<{
     onChangeText?: (input: any) => void
     onClear?: () => void
     showSearchIcon?: boolean
+    fontFam?: string
 }> {
     render() {
-        const { customStyle, placeholder, placeholderTextColor, value, onChangeText, onClear, showSearchIcon } = this.props;
+        const { customStyle, placeholder, placeholderTextColor, value, onChangeText, onClear, showSearchIcon, fontFam } = this.props;
         return (
             <ViewRowBetweenCenter
-                customStyle={[styles.flex1, styles.gap3vw, styles.borderRadius10, styles.h100, styles.shadowW0H0Black, styles.paddingH4vw, { backgroundColor: clrStyle.white, borderColor: clrStyle.neu3 }, customStyle]}>
+                customStyle={[styles.gap3vw, styles.borderRadius10, styles.paddingH4vw, { backgroundColor: clrStyle.white, borderColor: clrStyle.neu3 }, customStyle]}>
                 {showSearchIcon ? searchIcon(vw(5), vw(5), clrStyle.black) : null}
                 <TextInput
-                    style={[styles.flex1, { color: clrStyle.black, fontSize: vw(3.5) }]}
+                    style={[styles.flex1, styles.paddingV2vw, { color: clrStyle.black, fontSize: vw(3.5), fontFamily: fontFam ? fontFam : undefined }]}
                     value={value}
                     onChangeText={onChangeText}
                     placeholder={placeholder ? placeholder : 'Search'}
@@ -643,5 +660,33 @@ export class SearchBox extends Component<{
                 </TouchableOpacity>
             </ViewRowBetweenCenter>
         );
+    }
+}
+
+export class TopBarSS extends Component<{
+    title?: string
+    wellcome?: boolean
+    subTitle?: string
+    showBack?: boolean
+}> {
+    constructor(props: any) {
+        super(props);
+        this.state = {
+            showSearch: false,
+        };
+    }
+    render() {
+        return (
+            <ViewCol customStyle={[styles.gap2vw, styles.paddingH6vw]}>
+                {this.props.wellcome ? <Nu18Reg style={{ color: clrStyle.blue100 }}>Xin chào <Nu18Black>{this.props.title}</Nu18Black></Nu18Reg> : <Nu18Black style={{ color: clrStyle.blue100 }}>{this.props.title}</Nu18Black>}
+                {this.props.subTitle ? <Nu12Reg style={{ color: clrStyle.grey30 }}>{this.props.subTitle}</Nu12Reg> : null}
+                <SearchBox
+                    showSearchIcon
+                    placeholder='Tìm kiếm thuốc, triệu chứng, ...'
+                    customStyle={[styles.border1, styles.paddingV1vw, { borderColor: clrStyle.grey30 }]}
+                />
+
+            </ViewCol>
+        )
     }
 }

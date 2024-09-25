@@ -3,54 +3,29 @@ export interface UserFormat {
     name: string;
     email: string;
     password: string;
-    savedSet: SetFormat[];
-    doneSet: SetFormat[];
-    createdSet: SetFormat[];
     imgAddress: string;
 }
 
-export interface Card {
-    front: string;
-    back: string;
-    imgAddress: string | null;
-    memorized: boolean,
-    repeatToday: boolean,
+export interface PillFormat {
+    pill_id: string;
+    pill_name: string;
+    pill_brand?: string;
+    pill_tags: string[]; // e.g. (thuốc giảm đau, thuốc hạ sốt)
+    pill_quantity: number;
+    pill_sellPrice: number;
+    pill_buyPrice?: number;
+    pill_packKind?: string; // e.g. (1 vỉ x 10 viên)
+    pill_imgAddress?: string[];
+    pill_definition?: string[];
+    pill_discription?: string[];
+    pill_ingredient?: string[];
+    pill_use?: string[];
+    pill_dosage?: number[];
+    pill_pharmacology?: string[]; // e.g. (cơ chế tác dụng)
+    pill_pharmacokinetics?: string[]; // e.g. (dược động học)
+    pill_sideEffects?: string[];
+    pill_interactions?: string[];
+    pill_precautions?: string[];
+    pill_overdose?: string[];
+    pill_overdose_handling?: string[];
 }
-
-export interface Desk {
-    title: string;
-    isDone: boolean;
-    repeatSchedule: Array<'M' | 'T' | 'W' | 'TH' | 'F' | 'S' | 'SU' | 'all' | null>
-    cardList: Card[];
-}
-
-export interface SetFormat {
-    id: string;
-    name: string;
-    author: UserFormat;
-    description: string;
-    category?: string;
-    rate: {
-        star: number;
-        total: number;
-    },
-    private: boolean;
-    isSaved: boolean;
-    numberOfSaved: number;
-    isDone: boolean;
-    deskList: Desk[];
-    // desk.length
-    // card need memorize progress
-    // inner set view: card need today / card all time / desk completed
-}
-
-export const setList: SetFormat[] = [
-]
-
-function getDayOfWeek() {
-    let today = new Date();
-    let day = today.getDay();
-    let days = ['SU', 'M', 'T', 'W', 'TH', 'F', 'S'];
-    return days[day] as 'SU' | 'M' | 'T' | 'W' | 'TH' | 'F' | 'S';
-}
-export const currentDay: 'SU' | 'M' | 'T' | 'W' | 'TH' | 'F' | 'S' = getDayOfWeek();

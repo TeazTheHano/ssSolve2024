@@ -13,10 +13,6 @@ import Svg, { SvgXml } from 'react-native-svg';
 import { goldStar, lockIcon, noStar, peopleIcon, savedIcon, searchIcon, shareIcon, unSavedIcon, } from "./svgXml";
 import clrStyle, { componentStyle } from "./componentStyleSheet";
 
-// other import
-import { Card, Desk, SetFormat } from "../data/data";
-import { RootContext, setAsCurrent } from "../data/store";
-
 // font import 
 
 // ____________________END OF IMPORT_______________________
@@ -194,7 +190,6 @@ export function imgSourceHandle(address: string) {
 // img picker and camera.
 // require >>>> react-native-image-picker <<<< package
 import { CameraOptions, launchCamera, launchImageLibrary } from 'react-native-image-picker';
-import { editSetFnc, saveSetWithID } from "../data/storageFunc";
 
 const defaultCameraOptions: CameraOptions = {
     mediaType: 'photo',
@@ -260,31 +255,31 @@ export const openGallery = async (saveImgFnc: any, options = defaultCameraOption
     });
 }
 
-export async function searchEngine(keyword: string, dataBank: SetFormat[] | Desk[] | Card[], type: 'set' | 'desk' | 'card') {
-    keyword = keyword.trim();
-    let result: SetFormat[] | Desk[] | Card[] = [];
-    const regex = new RegExp(`\\b${keyword}`, 'i');
+// export async function searchEngine(keyword: string, dataBank: SetFormat[] | Desk[] | Card[], type: 'set' | 'desk' | 'card') {
+//     keyword = keyword.trim();
+//     let result: SetFormat[] | Desk[] | Card[] = [];
+//     const regex = new RegExp(`\\b${keyword}`, 'i');
 
-    if (type === 'set' && dataBank as SetFormat[]) {
-        result = dataBank.filter((item): item is SetFormat =>
-            (item as SetFormat).name !== undefined && regex.test((item as SetFormat).name)
-        );
-    } else if (type === 'desk' && dataBank as Desk[]) {
-        result = dataBank.filter((item): item is Desk =>
-            (item as Desk).title !== undefined && regex.test((item as Desk).title)
-        );
-    } else if (type === 'card' && dataBank as Card[]) {
-        result = dataBank.filter((item): item is Card =>
-            (item as Card).front !== undefined && regex.test((item as Card).front)
-        );
-    }
+//     if (type === 'set' && dataBank as SetFormat[]) {
+//         result = dataBank.filter((item): item is SetFormat =>
+//             (item as SetFormat).name !== undefined && regex.test((item as SetFormat).name)
+//         );
+//     } else if (type === 'desk' && dataBank as Desk[]) {
+//         result = dataBank.filter((item): item is Desk =>
+//             (item as Desk).title !== undefined && regex.test((item as Desk).title)
+//         );
+//     } else if (type === 'card' && dataBank as Card[]) {
+//         result = dataBank.filter((item): item is Card =>
+//             (item as Card).front !== undefined && regex.test((item as Card).front)
+//         );
+//     }
 
-    if (keyword === '') {
-        return [];
-    }
+//     if (keyword === '') {
+//         return [];
+//     }
 
-    return result;
-}
+//     return result;
+// }
 
 export const onRefresh = React.useCallback(() => {
     // setRefreshing(true);

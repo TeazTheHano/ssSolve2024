@@ -1,51 +1,42 @@
 //FIXME: NEED CHANGE IN NEW PJ: Add action types and action creators here
+// export interface ExampleInitInter {
+//     example: string;
+// }
+// export interface Action {
+//     type: string;
+//     payload?: any;
+// }
+// export const initialState: ExampleInit = {
+//     example: 'example'
+// };
 
-import User from "../../screens/User";
-import { Desk, SetFormat, UserFormat } from "../data";
+import { User } from "firebase/auth";
+import { PillFormat, UserFormat } from "../data";
 
-export interface CurrentSets {
-    all: SetFormat[];
-    public: SetFormat[];
-    rePublic: SetFormat[];
-    private: SetFormat[];
-    rePrivate: SetFormat[];
-    saved: SetFormat[];
-    reSaved: SetFormat[];
-    done: SetFormat[];
-    current: SetFormat | null;
-    userInfo: UserFormat | null;
-    currentDesk: Desk | null;
-    cardsNeedToReviewToday: number;
-    cardsNeedToMemorize: number;
-    cardsReviewedToday: number;
-    cardsMemorized: number;
-    addType?: string;
-    addSetID?: string;
-    addDeskTitle?: string;
+export interface CurrentCache {
+    user: UserFormat;
+    currentPill: PillFormat;
+    cart: PillFormat[];
 }
 
 export interface Action {
     type: string;
-    payload?: SetFormat | SetFormat[] | UserFormat | Desk | number | string | null;
+    payload?: UserFormat | PillFormat | PillFormat[];
 }
 
-export const initialState: CurrentSets = {
-    all: [],
-    public: [],
-    rePublic: [],
-    private: [],
-    rePrivate: [],
-    saved: [],
-    reSaved: [],
-    done: [],
-    current: null,
-    userInfo: null,
-    currentDesk: null,
-    cardsNeedToReviewToday: 0,
-    cardsNeedToMemorize: 0,
-    cardsReviewedToday: 0,
-    cardsMemorized: 0,
-    addType: '',
-    addSetID: '',
-    addDeskTitle: '',
+export const initialState: CurrentCache = {
+    user: {
+        name: '',
+        email: '',
+        password: '',
+        imgAddress: ''
+    },
+    currentPill: {
+        pill_id: '',
+        pill_name: '',
+        pill_tags: [],
+        pill_quantity: 0,
+        pill_sellPrice: 0,
+    },
+    cart: []
 };

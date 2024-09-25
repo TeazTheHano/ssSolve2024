@@ -73,9 +73,6 @@ export default function Login() {
                         email: email,
                         name: userName,
                         password: password,
-                        savedSet: [],
-                        doneSet: [],
-                        createdSet: [],
                         imgAddress: avtURL
                     })
                 })
@@ -105,9 +102,6 @@ export default function Login() {
                             email: user.user.email,
                             name: user.user.displayName ? user.user.displayName : user.user.email,
                             password: password,
-                            savedSet: [],
-                            doneSet: [],
-                            createdSet: [],
                             imgAddress: user.user.photoURL ? user.user.photoURL : ''
                         })
                     } else {
