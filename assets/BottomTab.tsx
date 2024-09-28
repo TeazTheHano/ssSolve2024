@@ -77,16 +77,21 @@ const BottomTab = () => {
     const [CurrentCache, dispatch] = React.useContext(RootContext);
 
     useEffect(() => {
-
-        getUser().then((user) => {
+        const fetchUser = async () => {
+            let user = await getUser();
             console.log(user);
 
-            if (user && user.name) {
+            if (user) {
                 dispatch(setUser(user));
             } else {
-                return navigation.navigate('OnBoarding' as never);
+                navigation.navigate('OnBoarding' as never);
             }
-        });
+            if (!user) {
+                navigation.navigate('OnBoarding' as never);
+
+            }
+        };
+        fetchUser();
     }, []);
 
     return (

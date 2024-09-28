@@ -475,6 +475,10 @@ const styles = StyleSheet.create({
         marginVertical: vw(4),
     },
 
+    marginVertical3vw: {
+        marginVertical: vw(3),
+    },
+
     marginVertical2vw: {
         marginVertical: vw(2),
     },

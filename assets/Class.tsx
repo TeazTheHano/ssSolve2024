@@ -1,6 +1,6 @@
 // system import
-import React, { Component } from 'react';
-import { ImageBackground, Platform, SafeAreaView, StatusBar, Text, TextInput, TouchableOpacity, View, Image, ImageStyle, StatusBarStyle } from 'react-native';
+import React, { Component, useState } from 'react';
+import { ImageBackground, Platform, SafeAreaView, StatusBar, Text, TextInput, TouchableOpacity, View, Image, ImageStyle, StatusBarStyle, ReturnKeyType, KeyboardType } from 'react-native';
 
 // style import
 import styles from './stylesheet';
@@ -10,8 +10,9 @@ import { vw, vh } from './stylesheet';
 import { imgSourceHandle, marginBottomForScrollView } from './component';
 
 // svg import
-import { cameraIcon, goldStar, imgPickerIcon, inVisibilityIcon, leftArrow, lockIcon, noStar, peopleIcon, savedIcon, searchIcon, unSavedIcon, visibilityIcon, xIcon } from './svgXml';
+import { cameraIcon, goldStar, heartIcon, imgPickerIcon, inVisibilityIcon, leftArrow, lockIcon, navBellIcon, noStar, peopleIcon, savedIcon, searchIcon, sharpLeftArrow, unSavedIcon, visibilityIcon, xIcon } from './svgXml';
 import clrStyle from './componentStyleSheet';
+import { useNavigation } from '@react-navigation/native';
 
 // other import
 
@@ -538,6 +539,12 @@ export class InputCardVer1 extends Component<{
     placeholderColor?: string
     valueColor?: string
     autoCapitalize?: 'none' | 'sentences' | 'words' | 'characters' | undefined
+    autoFocus?: boolean
+    returnKeyType?: ReturnKeyType
+    keyboardType?: KeyboardType
+    onSubmitEditing?: () => void
+    blurOnSubmit?: boolean
+    inputRef?: any
 }> {
     render() {
         const { customStyle, onChangeText, value, textClass1, textClass2, hideContent, hideContentFnc, textContentType, title, placeholder, titleColor, placeholderColor, valueColor, autoCapitalize } = this.props;
@@ -560,6 +567,12 @@ export class InputCardVer1 extends Component<{
                     textContentType={type as "none"}
                     maxLength={type === 'password' ? 100 : 100}
                     style={[styles.flex1, styles.padding1vw,]}
+                    autoFocus={this.props.autoFocus}
+                    returnKeyType={this.props.returnKeyType ? this.props.returnKeyType : 'done'}
+                    keyboardType={this.props.keyboardType ? this.props.keyboardType : 'default'}
+                    onSubmitEditing={this.props.onSubmitEditing ? this.props.onSubmitEditing : () => { }}
+                    blurOnSubmit={this.props.blurOnSubmit ? this.props.blurOnSubmit : false}
+                    ref={this.props.inputRef ? this.props.inputRef : null}
                 ><TextClass2 style={[styles.flex1]}>{value}</TextClass2></TextInput>
                 {hideContentFnc ?
                     <TouchableOpacity
@@ -634,13 +647,24 @@ export class SearchBox extends Component<{
     customStyle?: any
     placeholder?: string
     placeholderTextColor?: any
-    value?: string
+    value: string
     onChangeText?: (input: any) => void
     onClear?: () => void
     showSearchIcon?: boolean
     fontFam?: string
+    inputFocus?: boolean
 }> {
     render() {
+        async function searchEngine(keyword: string, dataBank: any, type: 'set' | 'desk' | 'card') {
+            keyword = value.trim();
+            // keyword = keyword.trim();
+            let result: any = [];
+            const regex = new RegExp(`\\b${keyword}`, 'i');
+
+            if (keyword === '') {
+                return [];
+            }
+        }
         const { customStyle, placeholder, placeholderTextColor, value, onChangeText, onClear, showSearchIcon, fontFam } = this.props;
         return (
             <ViewRowBetweenCenter
@@ -651,10 +675,12 @@ export class SearchBox extends Component<{
                     value={value}
                     onChangeText={onChangeText}
                     placeholder={placeholder ? placeholder : 'Search'}
+                    autoFocus={this.props.inputFocus}
                     placeholderTextColor={placeholderTextColor ? placeholderTextColor : ''}
                 />
                 <TouchableOpacity
                     onPress={onClear}
+                    style={{ display: value ? 'flex' : 'none' }}
                 >
                     {xIcon(vw(5), vw(5), clrStyle.black)}
                 </TouchableOpacity>
@@ -663,27 +689,61 @@ export class SearchBox extends Component<{
     }
 }
 
+interface SearchBoxState {
+    showSearch: boolean;
+    searchInput: string;
+
+}
+
 export class TopBarSS extends Component<{
     title?: string
     wellcome?: boolean
     subTitle?: string
-    showBack?: boolean
-}> {
+    navigation?: any
+    inputFocus?: boolean
+}, SearchBoxState> {
     constructor(props: any) {
         super(props);
         this.state = {
             showSearch: false,
+            searchInput: '',
         };
     }
     render() {
+        const setSearchInput = (input: string) => {
+            this.setState({ searchInput: input });
+        };
+
         return (
-            <ViewCol customStyle={[styles.gap2vw, styles.paddingH6vw]}>
-                {this.props.wellcome ? <Nu18Reg style={{ color: clrStyle.blue100 }}>Xin chào <Nu18Black>{this.props.title}</Nu18Black></Nu18Reg> : <Nu18Black style={{ color: clrStyle.blue100 }}>{this.props.title}</Nu18Black>}
-                {this.props.subTitle ? <Nu12Reg style={{ color: clrStyle.grey30 }}>{this.props.subTitle}</Nu12Reg> : null}
+            <ViewCol customStyle={[styles.paddingH6vw]}>
+                <ViewRowBetweenCenter>
+                    <ViewRowCenter customStyle={[styles.gap4vw]}>
+                        {this.props.navigation ?
+                            <TouchableOpacity
+                                onPress={() => { this.props.navigation ? this.props.navigation.goBack() : null }}
+                                style={[styles.borderRadius100, styles.flexColCenter, { width: vw(8.5), height: vw(8.5), backgroundColor: clrStyle.grey10 }]}>{sharpLeftArrow(vw(6), vw(6), clrStyle.grey100)}
+                            </TouchableOpacity> : null}
+                        <View>
+                            {this.props.wellcome ? <Nu18Reg style={{ color: clrStyle.blue100 }}>Xin chào <Nu18Black>{this.props.title}</Nu18Black></Nu18Reg> : <Nu18Black style={{ color: clrStyle.blue100 }}>{this.props.title}</Nu18Black>}
+                            {this.props.subTitle ? <Nu12Reg style={{ color: clrStyle.grey30 }}>{this.props.subTitle}</Nu12Reg> : null}
+                        </View>
+                    </ViewRowCenter>
+                    <ViewRowCenter customStyle={[styles.gap1vw]}>
+                        <TouchableOpacity style={[styles.borderRadius100, styles.flexColCenter, { width: vw(8.5), height: vw(8.5), backgroundColor: clrStyle.grey10 }]}>
+                            {heartIcon(vw(6), vw(6))}
+                        </TouchableOpacity>
+                        <TouchableOpacity style={[styles.borderRadius100, styles.flexColCenter, { width: vw(8.5), height: vw(8.5), }]}>
+                            {navBellIcon(vw(6), vw(6))}
+                        </TouchableOpacity>
+                    </ViewRowCenter>
+                </ViewRowBetweenCenter>
                 <SearchBox
                     showSearchIcon
                     placeholder='Tìm kiếm thuốc, triệu chứng, ...'
-                    customStyle={[styles.border1, styles.paddingV1vw, { borderColor: clrStyle.grey30 }]}
+                    customStyle={[styles.border1, styles.paddingV1vw, styles.marginVertical3vw, { borderColor: clrStyle.grey30, borderRadius: vw(4) }]}
+                    value={this.state.searchInput}
+                    onChangeText={setSearchInput}
+                    inputFocus={this.props.inputFocus}
                 />
 
             </ViewCol>

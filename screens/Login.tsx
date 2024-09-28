@@ -1,5 +1,5 @@
 import { View, Text, SafeAreaView, TouchableOpacity, Alert, ImageStyle, Image, StatusBar } from 'react-native'
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { InputCardVer1, Nu18Reg, Nu24Black, Nu24Bold, RoundBtn, ViewColCenter, ViewColEvenlyCenter, ViewRowBetweenCenter, ViewRowCenter, WorkSan10Reg, WorkSan12Bold, WorkSan12Reg, WorkSan14Reg, WorkSan16Bold } from '../assets/Class'
 import styles, { vw } from '../assets/stylesheet'
 import clrStyle from '../assets/componentStyleSheet'
@@ -10,10 +10,12 @@ import { useNavigation } from '@react-navigation/native'
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile, User } from "firebase/auth";
 import { appleIcon, googleColorIcon } from '../assets/svgXml'
 import { showInDeverlopFnc } from '../assets/component'
+import { RootContext, setUser } from '../data/store'
 
 export default function Login() {
     const navigation = useNavigation()
     const auth = getAuth()
+    const [CurrentCache, dispatch] = React.useContext(RootContext);
 
     const [email, setEmail] = React.useState('')
     const [password, setPassword] = React.useState('')
@@ -30,7 +32,6 @@ export default function Login() {
     function showPass() {
         setIsHidePassword(!isHidePassword)
     }
-
 
     async function signUpHandle(email: string, password: string, confirmPassword: string, userName: string, avtURL: string) {
         email = email.trim()
@@ -69,12 +70,14 @@ export default function Login() {
                     }
                 })
                 .then(() => {
-                    saveUser({
+                    let user = {
                         email: email,
                         name: userName,
                         password: password,
                         imgAddress: avtURL
-                    })
+                    }
+                    saveUser(user)
+                    dispatch(setUser(user));
                 })
                 .then(() => {
                     return navigation.navigate('BottomTab' as never)
@@ -98,12 +101,14 @@ export default function Login() {
                     const user = userCredential;
 
                     if (user.user.email) {
-                        saveUser({
+                        let userObj = {
                             email: user.user.email,
                             name: user.user.displayName ? user.user.displayName : user.user.email,
                             password: password,
                             imgAddress: user.user.photoURL ? user.user.photoURL : ''
-                        })
+                        }
+                        saveUser(userObj)
+                        dispatch(setUser(userObj));
                     } else {
                         return Alert.alert('Email hoặc mật khẩu bạn nhập chưa đúng')
                     }
@@ -115,6 +120,10 @@ export default function Login() {
             return Alert.alert('Email hoặc mật khẩu bạn nhập chưa đúng')
         }
     }
+    const ref_input2 = useRef();
+    const ref_input3 = useRef();
+    const ref_input4 = useRef();
+    const ref_input5 = useRef();
 
     return (
         <SafeAreaView style={[styles.flex1]}>
@@ -135,6 +144,8 @@ export default function Login() {
                                         autoCapitalize='words'
                                         textClass2={WorkSan14Reg}
                                         customStyle={[styles.marginVertical1vw, styles.padding3vw, styles.borderRadius20, { borderColor: clrStyle.grey70, backgroundColor: clrStyle.green100, }]}
+                                        returnKeyType='next'
+                                        onSubmitEditing={() => { if (ref_input2.current) (ref_input2.current as any).focus() }}
                                     />
                                 </View>
                                 <View>
@@ -146,6 +157,9 @@ export default function Login() {
                                         textContentType={emailType === 'phone' ? 'telephoneNumber' : 'emailAddress'}
                                         textClass2={WorkSan14Reg}
                                         customStyle={[styles.marginVertical1vw, styles.padding3vw, styles.borderRadius20, { borderColor: clrStyle.grey70, backgroundColor: clrStyle.green100, }]}
+                                        inputRef={ref_input2}
+                                        returnKeyType='next'
+                                        onSubmitEditing={() => { if (ref_input3.current) (ref_input3.current as any).focus() }}
                                     />
                                 </View>
                                 <View>
@@ -159,6 +173,9 @@ export default function Login() {
                                         hideContent={isHidePassword}
                                         textClass2={WorkSan14Reg}
                                         customStyle={[styles.marginVertical1vw, styles.padding3vw, styles.borderRadius20, { borderColor: clrStyle.grey70, backgroundColor: clrStyle.green100, }]}
+                                        inputRef={ref_input3}
+                                        returnKeyType='next'
+                                        onSubmitEditing={() => { if (ref_input4.current) (ref_input4.current as any).focus() }}
                                     />
                                 </View>
                                 <View>
@@ -171,6 +188,9 @@ export default function Login() {
                                         hideContent={isHidePassword}
                                         textClass2={WorkSan14Reg}
                                         customStyle={[styles.marginVertical1vw, styles.padding3vw, styles.borderRadius20, { borderColor: clrStyle.grey70, backgroundColor: clrStyle.green100, }]}
+                                        inputRef={ref_input4}
+                                        returnKeyType='done'
+                                        onSubmitEditing={() => { signUpHandle(email, password, confirmPassword, userName, avtURL) }}
                                     />
                                 </View>
                             </> :
@@ -185,6 +205,8 @@ export default function Login() {
                                         onChangeText={setEmail}
                                         textContentType={emailType === 'phone' ? 'telephoneNumber' : 'emailAddress'}
                                         customStyle={[styles.marginVertical1vw, styles.padding3vw, styles.borderRadius20, { borderColor: clrStyle.grey70, backgroundColor: clrStyle.green100, }]}
+                                        returnKeyType='next'
+                                        onSubmitEditing={() => { if (ref_input5.current) (ref_input5.current as any).focus() }}
                                     />
                                 </View>
                                 <View>
@@ -198,6 +220,9 @@ export default function Login() {
                                         hideContentFnc={showPass}
                                         hideContent={isHidePassword}
                                         customStyle={[styles.marginVertical1vw, styles.padding3vw, styles.borderRadius20, { borderColor: clrStyle.grey70, backgroundColor: clrStyle.green100, }]}
+                                        returnKeyType='done'
+                                        onSubmitEditing={() => { signInHandle(email, password) }}
+                                        inputRef={ref_input5}
                                     />
                                 </View>
                                 <ViewRowBetweenCenter customStyle={[styles.w100]}>

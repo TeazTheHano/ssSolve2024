@@ -10,7 +10,6 @@
 //     example: 'example'
 // };
 
-import { User } from "firebase/auth";
 import { PillFormat, UserFormat } from "../data";
 
 export interface CurrentCache {

@@ -4,4 +4,4 @@ import { initialState } from "./initial";
 
 const RootContext = createContext<[CurrentCache, React.Dispatch<Action>]>([initialState, () => null]);
 
-export default RootContext;
+export default RootContext; 

@@ -449,3 +449,25 @@ export const SettingIconInactive = (w?: any, h?: any) => {
     );
 }
 // end of tab icon
+
+
+// nav icon
+export const heartIcon = (w?: any, h?: any, color?: any) => {
+    const xml = `<svg width="24" height="24" viewBox="0 0 24 24" fill=${color ? color : "none"} xmlns="http://www.w3.org/2000/svg">
+<path d="M9.66173 18.7271C11.105 19.621 12.895 19.621 14.3383 18.7271C17.0049 17.0754 21 13.9021 21 9.71405C21 6 18.9648 4 16.4543 4C15.2487 4 14.0925 4.49666 13.24 5.38071L12.7198 5.92016C12.3266 6.32798 11.6734 6.32798 11.2802 5.92016L10.76 5.38071C9.90749 4.49666 8.75128 4 7.54569 4C5 4 3 6 3 9.71405C3 13.9021 6.99506 17.0754 9.66173 18.7271Z" stroke=${color ? color : "#7D8792"} style="stroke:${color ? color : "#7D8792"};stroke:color(display-p3 0.4902 0.5294 0.5725);stroke-opacity:1;" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+`
+    return (
+        <SvgXml xml={xml} width={w} height={h} />
+    );
+}
+
+export const navBellIcon = (w?: any, h?: any, color?: any) => {
+    const xml = `<svg width="34" height="34" viewBox="0 0 34 34" fill=${color ? color : "none"} xmlns="http://www.w3.org/2000/svg">
+<path d="M12.75 24.7917V26.2083C12.75 28.5555 14.6528 29.75 17 29.75C19.3472 29.75 21.25 28.5555 21.25 26.2083V24.7917M8.49997 12.0417C8.49997 7.34724 12.3055 4.95833 17 4.95833C21.6944 4.95833 25.5 7.34724 25.5 12.0417C25.5 14.7888 26.4988 17.8689 27.528 20.3135C28.3826 22.3432 26.9481 24.7917 24.7458 24.7917H9.25417C7.05184 24.7917 5.61733 22.3432 6.47191 20.3135C7.50113 17.8689 8.49997 14.7888 8.49997 12.0417Z" stroke=${color ? color : "#7D8792"} style="stroke:${color ? color : "#7D8792"};stroke:color(display-p3 0.4902 0.5294 0.5725);stroke-opacity:1;" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+`
+    return (
+        <SvgXml xml={xml} width={w} height={h} />
+    );
+}
