@@ -22,8 +22,12 @@ export default function DrugList() {
   function sortPillWithCategory() {
     let result: { name: string, data: PillFormat[] }[] = []
     categoryList.forEach((category) => {
-      let temp: PillFormat[] = CurrentCache.DATA.pillList.filter((pill) => pill.pill_tags.includes(category))
-      result.push({ name: category, data: temp })
+      if (category === 'Tất cả thuốc') {
+        result.push({ name: category, data: CurrentCache.DATA.pillList })
+      } else {
+        let temp: PillFormat[] = CurrentCache.DATA.pillList.filter((pill) => pill.pill_tags.includes(category))
+        result.push({ name: category, data: temp })
+      }
     })
     return result
   }
@@ -41,10 +45,10 @@ export default function DrugList() {
     render() {
       return (
         <View style={[styles.w100, styles.paddingH3vw, styles.gap3vw, { flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-between' }]}>
-          {pillInCategory.map((item) => (
+          {pillInCategory.map((item, index) => (
             <TouchableOpacity
-              key={item.name}
-              style={[styles.w48, styles.padding10, styles.borderRadius16, styles.gap3vw, styles.flexColBetweenCenter, styles.h50vw, { backgroundColor: clrStyle.blue30 }]}
+              key={index}
+              style={[styles.padding10, styles.borderRadius16, styles.gap3vw, styles.flexColBetweenCenter, styles.h50vw, { backgroundColor: clrStyle.blue30, width: index == 0 ? '100%' : '48%' }]}
             >
               <View style={[styles.flex1, styles.w100]}>{pillOrderIcon()}</View>
               <Nu16Bold numberOfLines={2} style={[styles.textCenter, { color: clrStyle.blue100 }]}>{item.name}</Nu16Bold>

@@ -16,18 +16,19 @@ export interface PillFormat {
     pill_buyPrice?: number;
     pill_packKind?: string; // e.g. (1 vỉ x 10 viên)
     pill_imgAddress?: string[];
-    pill_definition?: string[];
-    pill_discription?: string[];
+    pill_indication?: (string | string[])[];
+    pill_contraindication?: (string | string[])[];
+    pill_discription?: (string | string[])[];
     pill_ingredient?: string[];
-    pill_use?: string[];
-    pill_dosage?: number[];
+    pill_use?: (string | string[])[];
+    pill_dosage?: (string | string[])[];
     pill_pharmacology?: string[]; // e.g. (cơ chế tác dụng)
     pill_pharmacokinetics?: string[]; // e.g. (dược động học)
-    pill_sideEffects?: string[];
-    pill_interactions?: string[];
-    pill_precautions?: string[];
-    pill_overdose?: string[];
-    pill_overdose_handling?: string[];
+    pill_sideEffects?: (string | string[])[];
+    pill_interactions?: (string | string[])[];
+    pill_precautions?: (string | string[])[];
+    pill_overdose?: (string | string[])[];
+    pill_overdose_handling?: (string | string[])[];
     pill_viewed?: number;
 }
 
