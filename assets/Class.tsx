@@ -13,6 +13,7 @@ import { imgSourceHandle, marginBottomForScrollView } from './component';
 import { cameraIcon, goldStar, heartIcon, imgPickerIcon, inVisibilityIcon, leftArrow, lockIcon, navBellIcon, noStar, peopleIcon, savedIcon, searchIcon, sharpLeftArrow, unSavedIcon, visibilityIcon, xIcon } from './svgXml';
 import clrStyle from './componentStyleSheet';
 import { useNavigation } from '@react-navigation/native';
+import { CurrentCache } from '../data/store';
 
 // other import
 
@@ -71,122 +72,111 @@ export class SaveViewWithColorStatusBar extends Component<{ children?: React.Rea
     }
 }
 
-export class ViewRow extends Component<{ children?: React.ReactNode, customStyle?: any }> {
+export class ViewRow extends Component<{ children?: React.ReactNode, style?: any }> {
     render() {
-        const { children, customStyle } = this.props;
         return (
-            <View style={[styles.flexRow, customStyle]}>
-                {children}
+            <View style={[styles.flexRow, this.props.style]}>
+                {this.props.children}
             </View>
         )
     }
 }
 
-export class ViewCol extends Component<{ children?: React.ReactNode, customStyle?: any }> {
+export class ViewCol extends Component<{ children?: React.ReactNode, style?: any }> {
     render() {
-        const { children, customStyle } = this.props;
         return (
-            <View style={[styles.flexCol, customStyle]}>
-                {children}
+            <View style={[styles.flexCol, this.props.style]}>
+                {this.props.children}
             </View>
         )
     }
 }
 
-export class ViewRowCenter extends Component<{ children?: React.ReactNode, customStyle?: any }> {
+export class ViewRowCenter extends Component<{ children?: React.ReactNode, style?: any }> {
     render() {
-        const { children, customStyle } = this.props;
         return (
-            <View style={[styles.flexRowCenter, customStyle]}>
-                {children}
+            <View style={[styles.flexRowCenter, this.props.style]}>
+                {this.props.children}
             </View>
         )
     }
 }
 
-export class ViewColCenter extends Component<{ children?: React.ReactNode, customStyle?: any }> {
+export class ViewColCenter extends Component<{ children?: React.ReactNode, style?: any }> {
     render() {
-        const { children, customStyle } = this.props;
         return (
-            <View style={[styles.flexColCenter, customStyle]}>
-                {children}
+            <View style={[styles.flexColCenter, this.props.style]}>
+                {this.props.children}
             </View>
         )
     }
 }
 
-export class ViewRowBetweenCenter extends Component<{ children?: React.ReactNode, customStyle?: any }> {
+export class ViewRowBetweenCenter extends Component<{ children?: React.ReactNode, style?: any }> {
     render() {
-        const { children, customStyle } = this.props;
         return (
-            <View style={[styles.flexRowBetweenCenter, customStyle]}>
-                {children}
+            <View style={[styles.flexRowBetweenCenter, this.props.style]}>
+                {this.props.children}
             </View>
         )
     }
 }
 
-export class ViewColBetweenCenter extends Component<{ children?: React.ReactNode, customStyle?: any }> {
+export class ViewColBetweenCenter extends Component<{ children?: React.ReactNode, style?: any }> {
     render() {
-        const { children, customStyle } = this.props;
         return (
-            <View style={[styles.flexColBetweenCenter, customStyle]}>
-                {children}
+            <View style={[styles.flexColBetweenCenter, this.props.style]}>
+                {this.props.children}
             </View>
         )
     }
 }
 
-export class ViewRowEvenlyCenter extends Component<{ children?: React.ReactNode, customStyle?: any }> {
+export class ViewRowEvenlyCenter extends Component<{ children?: React.ReactNode, style?: any }> {
     render() {
-        const { children, customStyle } = this.props;
         return (
-            <View style={[styles.flexRowEvenlyCenter, customStyle]}>
-                {children}
+            <View style={[styles.flexRowEvenlyCenter, this.props.style]}>
+                {this.props.children}
             </View>
         )
     }
 }
 
-export class ViewColEvenlyCenter extends Component<{ children?: React.ReactNode, customStyle?: any }> {
+export class ViewColEvenlyCenter extends Component<{ children?: React.ReactNode, style?: any }> {
     render() {
-        const { children, customStyle } = this.props;
         return (
-            <View style={[styles.flexColEvenlyCenter, customStyle]}>
-                {children}
+            <View style={[styles.flexColEvenlyCenter, this.props.style]}>
+                {this.props.children}
             </View>
         )
     }
 }
 
-export class ViewColEndCenter extends Component<{ children?: React.ReactNode, customStyle?: any }> {
+export class ViewColEndCenter extends Component<{ children?: React.ReactNode, style?: any }> {
     render() {
-        const { children, customStyle } = this.props;
         return (
-            <View style={[styles.flexColEndCenter, customStyle]}>
-                {children}
+            <View style={[styles.flexColEndCenter, this.props.style]}>
+                {this.props.children}
             </View>
         )
     }
 }
 
-export class ViewRowStartCenter extends Component<{ children?: React.ReactNode, customStyle?: any }> {
+export class ViewRowStartCenter extends Component<{ children?: React.ReactNode, style?: any }> {
     render() {
-        const { children, customStyle } = this.props;
         return (
-            <View style={[styles.flexRowStartCenter, customStyle]}>
-                {children}
+            <View style={[styles.flexRowStartCenter, this.props.style]}>
+                {this.props.children}
             </View>
         )
     }
 }
 
-export class ViewColStartCenter extends Component<{ children?: React.ReactNode, customStyle?: any }> {
+export class ViewColStartCenter extends Component<{ children?: React.ReactNode, style?: any }> {
     render() {
-        const { children, customStyle } = this.props;
         return (
-            <View style={[styles.flexColStartCenter, customStyle]}>
-                {children}
+            <View style={[styles.flexColStartCenter, this.props.style]}>
+                {this.props.children}
             </View>
         )
     }
@@ -652,7 +642,7 @@ export class SearchBox extends Component<{
     onClear?: () => void
     showSearchIcon?: boolean
     fontFam?: string
-    inputFocus?: boolean
+    currentCache?: CurrentCache
 }> {
     render() {
         async function searchEngine(keyword: string, dataBank: any, type: 'set' | 'desk' | 'card') {
@@ -665,17 +655,19 @@ export class SearchBox extends Component<{
                 return [];
             }
         }
+        console.log('searchFocus', this.props.currentCache?.searchFocus);
+
         const { customStyle, placeholder, placeholderTextColor, value, onChangeText, onClear, showSearchIcon, fontFam } = this.props;
         return (
             <ViewRowBetweenCenter
-                customStyle={[styles.gap3vw, styles.borderRadius10, styles.paddingH4vw, { backgroundColor: clrStyle.white, borderColor: clrStyle.neu3 }, customStyle]}>
+                style={[styles.gap3vw, styles.borderRadius10, styles.paddingH4vw, { backgroundColor: clrStyle.white, borderColor: clrStyle.neu3 }, customStyle]}>
                 {showSearchIcon ? searchIcon(vw(5), vw(5), clrStyle.black) : null}
                 <TextInput
                     style={[styles.flex1, styles.paddingV2vw, { color: clrStyle.black, fontSize: vw(3.5), fontFamily: fontFam ? fontFam : undefined }]}
                     value={value}
                     onChangeText={onChangeText}
                     placeholder={placeholder ? placeholder : 'Search'}
-                    autoFocus={this.props.inputFocus}
+                    autoFocus={this.props.currentCache?.searchFocus}
                     placeholderTextColor={placeholderTextColor ? placeholderTextColor : ''}
                 />
                 <TouchableOpacity
@@ -700,7 +692,7 @@ export class TopBarSS extends Component<{
     wellcome?: boolean
     subTitle?: string
     navigation?: any
-    inputFocus?: boolean
+    currentCache?: CurrentCache
 }, SearchBoxState> {
     constructor(props: any) {
         super(props);
@@ -715,9 +707,9 @@ export class TopBarSS extends Component<{
         };
 
         return (
-            <ViewCol customStyle={[styles.paddingH6vw]}>
+            <ViewCol style={[styles.paddingH6vw]}>
                 <ViewRowBetweenCenter>
-                    <ViewRowCenter customStyle={[styles.gap4vw]}>
+                    <ViewRowCenter style={[styles.gap4vw]}>
                         {this.props.navigation ?
                             <TouchableOpacity
                                 onPress={() => { this.props.navigation ? this.props.navigation.goBack() : null }}
@@ -728,7 +720,7 @@ export class TopBarSS extends Component<{
                             {this.props.subTitle ? <Nu12Reg style={{ color: clrStyle.grey30 }}>{this.props.subTitle}</Nu12Reg> : null}
                         </View>
                     </ViewRowCenter>
-                    <ViewRowCenter customStyle={[styles.gap1vw]}>
+                    <ViewRowCenter style={[styles.gap1vw]}>
                         <TouchableOpacity style={[styles.borderRadius100, styles.flexColCenter, { width: vw(8.5), height: vw(8.5), backgroundColor: clrStyle.grey10 }]}>
                             {heartIcon(vw(6), vw(6))}
                         </TouchableOpacity>
@@ -743,10 +735,50 @@ export class TopBarSS extends Component<{
                     customStyle={[styles.border1, styles.paddingV1vw, styles.marginVertical3vw, { borderColor: clrStyle.grey30, borderRadius: vw(4) }]}
                     value={this.state.searchInput}
                     onChangeText={setSearchInput}
-                    inputFocus={this.props.inputFocus}
+                    currentCache={this.props.currentCache}
                 />
 
             </ViewCol>
         )
+    }
+}
+
+export class QuickBtn extends Component<{
+    fnc1?: () => void
+    fnc2?: () => void
+    fnc3?: () => void
+    title?: string
+    style?: any
+}> {
+    render() {
+        return (
+            <ViewCol style={[styles.gap4vw, styles.marginTop4vw, styles.padding5vw, styles.marginHorizontal6vw, styles.borderRadius40, { backgroundColor: clrStyle.green100 }, this.props.style]}>
+                {this.props.title ? <Nu20Black style={[styles.marginVertical2vw]}>{this.props.title}</Nu20Black> : null}
+                <RoundBtn
+                    textClass={Nu18Reg}
+                    title='Nhập triệu chứng'
+                    onPress={() => { this.props.fnc1 ? this.props.fnc1() : null }}
+                    bgColor={clrStyle.blue100}
+                    textColor={clrStyle.white}
+                    customStyle={[styles.justifyContentCenter, styles.borderRadius4vw, { display: this.props.fnc1 ? 'flex' : 'none' }]}
+                />
+                <RoundBtn
+                    textClass={Nu18Reg}
+                    title='Tìm máy bán thuốc'
+                    onPress={() => { this.props.fnc2 ? this.props.fnc2() : null }}
+                    bgColor={clrStyle.blue50}
+                    textColor={clrStyle.blue100}
+                    customStyle={[styles.justifyContentCenter, styles.borderRadius4vw, { display: this.props.fnc2 ? 'flex' : 'none' }]}
+                />
+                <RoundBtn
+                    textClass={Nu18Reg}
+                    title='Mua thuốc'
+                    onPress={() => { this.props.fnc3 ? this.props.fnc3() : null }}
+                    bgColor={clrStyle.red}
+                    textColor={clrStyle.white}
+                    customStyle={[styles.justifyContentCenter, styles.borderRadius4vw, { display: this.props.fnc3 ? 'flex' : 'none' }]}
+                />
+            </ViewCol>
+        );
     }
 }

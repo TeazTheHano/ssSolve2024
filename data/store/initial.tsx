@@ -10,17 +10,21 @@
 //     example: 'example'
 // };
 
-import { PillFormat, UserFormat } from "../data";
+import { DataStorageFormat, OrderFormat, PillFormat, PillPortFormat, SearchResults, UserFormat } from "../interfaceFormat";
 
 export interface CurrentCache {
     user: UserFormat;
     currentPill: PillFormat;
     cart: PillFormat[];
+    searchFocus: boolean;
+    searchContent: string;
+    searchResult: SearchResults;
+    DATA: DataStorageFormat;
 }
 
 export interface Action {
     type: string;
-    payload?: UserFormat | PillFormat | PillFormat[];
+    payload?: UserFormat | boolean | PillFormat | PillFormat[] | string | string[] | OrderFormat | OrderFormat[] | SearchResults | DataStorageFormat | PillPortFormat | PillPortFormat[];
 }
 
 export const initialState: CurrentCache = {
@@ -37,5 +41,18 @@ export const initialState: CurrentCache = {
         pill_quantity: 0,
         pill_sellPrice: 0,
     },
-    cart: []
+    cart: [],
+    searchFocus: false,
+    searchContent: '',
+    searchResult: {
+        pills: [],
+        symptoms: [],
+        orders: []
+    },
+    DATA: {
+        pillList: [],
+        pillPortList: [],
+        orderList: [],
+        lastChange: new Date(),
+    },
 };

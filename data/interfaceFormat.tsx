@@ -28,4 +28,34 @@ export interface PillFormat {
     pill_precautions?: string[];
     pill_overdose?: string[];
     pill_overdose_handling?: string[];
+    pill_viewed?: number;
+}
+
+export interface PillPortFormat {
+    pillport_id: string;
+    pillport_name: string;
+    pillport_address: string;
+}
+
+export interface OrderFormat {
+    order_id: string;
+    order_user_id: string;
+    order_date: Date;
+    order_status: string;
+    order_total: number;
+    order_item_ids: string[];
+    order_pillPort_id: string;
+}
+
+export interface SearchResults {
+    pills: PillFormat[];
+    symptoms: string[];
+    orders: OrderFormat[];
+};
+
+export interface DataStorageFormat {
+    pillList: PillFormat[];
+    pillPortList: PillPortFormat[];
+    orderList: OrderFormat[];
+    lastChange: Date;
 }

@@ -128,9 +128,9 @@ export default function Login() {
     return (
         <SafeAreaView style={[styles.flex1]}>
             <StatusBar barStyle='dark-content' backgroundColor={clrStyle.white} />
-            <ViewColEvenlyCenter customStyle={[styles.flex1, styles.marginHorizontal8vw, styles.paddingV4vw]}>
+            <ViewColEvenlyCenter style={[styles.flex1, styles.marginHorizontal8vw, styles.paddingV4vw]}>
                 <Image source={require('../assets/image/Horizon-logo.png')} resizeMethod='resize' resizeMode='contain' style={[styles.w80, styles.alignSelfCenter, styles.h10vw] as ImageStyle} />
-                <ViewColCenter customStyle={[styles.w100, styles.gap2vw]}>
+                <ViewColCenter style={[styles.w100, styles.gap2vw]}>
                     {
                         isShowSignUp ?
                             <>
@@ -225,9 +225,9 @@ export default function Login() {
                                         inputRef={ref_input5}
                                     />
                                 </View>
-                                <ViewRowBetweenCenter customStyle={[styles.w100]}>
+                                <ViewRowBetweenCenter style={[styles.w100]}>
                                     <TouchableOpacity onPress={() => { setIsRememberLogin(!isRememberLogin) }}>
-                                        <ViewRowCenter customStyle={[styles.gap1vw]}>
+                                        <ViewRowCenter style={[styles.gap1vw]}>
                                             <SvgXml xml={isRememberLogin ? `<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="9" stroke="#7D8792" style="stroke:#7D8792;stroke:color(display-p3 0.4902 0.5294 0.5725);stroke-opacity:1;" stroke-width="2"/><path d="M5.49994 9.5L8.99994 13L14.4999 7.5" stroke="#7D8792" style="stroke:#7D8792;stroke:color(display-p3 0.4902 0.5294 0.5725);stroke-opacity:1;" stroke-width="1.5" stroke-linecap="round"/></svg>` : `<svg width="20" height="20" viewBox="0 0 20 20" fill="#7D8792" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="9" stroke="#7D8792" style="stroke:#7D8792;stroke:color(display-p3 0.4902 0.5294 0.5725);stroke-opacity:1;" stroke-width="2"/><path d="M5.49994 9.5L8.99994 13L14.4999 7.5" stroke="white" style="stroke:#7D8792;stroke:color(display-p3 0.4902 0.5294 0.5725);stroke-opacity:1;" stroke-width="1.5" stroke-linecap="round"/></svg>`} width={vw(5)} height={vw(5)} />
                                             <WorkSan14Reg style={{ color: clrStyle.grey30 }}>Ghi nhớ</WorkSan14Reg>
                                         </ViewRowCenter>
@@ -241,12 +241,12 @@ export default function Login() {
                 </ViewColCenter>
                 <RoundBtn title={isShowSignUp ? 'Đăng ký' : 'Đăng nhập'} textColor={clrStyle.white} textClass={WorkSan16Bold} onPress={() => isShowSignUp ? signUpHandle(email, password, confirmPassword, userName, avtURL) : signInHandle(email, password)} customStyle={[styles.w84vw, styles.padding5vw, styles.borderRadius20, styles.justifyContentCenter, { backgroundColor: clrStyle.blue100 }]} />
 
-                <ViewColCenter customStyle={[styles.w100, styles.gap6vw]}>
-                    <ViewColCenter customStyle={[styles.positionRelative]}>
+                <ViewColCenter style={[styles.w100, styles.gap6vw]}>
+                    <ViewColCenter style={[styles.positionRelative]}>
                         <View style={[styles.paddingH2vw, { backgroundColor: clrStyle.white }]}><WorkSan14Reg style={{ color: clrStyle.grey50 }}>Hoặc đăng nhập với </WorkSan14Reg></View>
                         <View style={[styles.w100, styles.positionAbsolute, { zIndex: -1, borderColor: clrStyle.grey50, borderBottomWidth: 1 }]}></View>
                     </ViewColCenter>
-                    <ViewRowBetweenCenter customStyle={[styles.w100, styles.gap4vw]}>
+                    <ViewRowBetweenCenter style={[styles.w100, styles.gap4vw]}>
                         <RoundBtn title='Google' icon={googleColorIcon(vw(6), vw(6))} onPress={showInDeverlopFnc} textColor='white' bgColor={clrStyle.blue100} textClass={Nu18Reg} border customStyle={[styles.flex1, styles.justifyContentCenter]} />
                         <RoundBtn title='Apple' icon={appleIcon(vw(6), vw(6))} onPress={showInDeverlopFnc} textColor='white' bgColor={clrStyle.blue100} textClass={Nu18Reg} border customStyle={[styles.flex1, styles.justifyContentCenter]} />
                     </ViewRowBetweenCenter>

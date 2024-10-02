@@ -66,6 +66,10 @@ const styles = StyleSheet.create({
         width: vw(50),
     },
 
+    w48: {
+        width: '48%',
+    },
+
     w45: {
         width: '45%',
     },
@@ -195,12 +199,20 @@ const styles = StyleSheet.create({
         height: vh(60),
     },
 
+    h60vw: {
+        height: vw(60),
+    },
+
     h50: {
         height: '50%',
     },
 
     h50vh: {
         height: vh(50),
+    },
+
+    h50vw: {
+        height: vw(50),
     },
 
     h45: {

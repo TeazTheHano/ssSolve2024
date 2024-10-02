@@ -12,8 +12,8 @@
 //     }
 // }
 
-import { PillFormat, UserFormat } from "../data";
-import { initialState, Action, CurrentCache, SET_USER, SET_CURRENT_PILL, ADD_TO_CART, REMOVE_FROM_CART, CLEAR_CART, SET_CART } from "./index";
+import { DataStorageFormat, PillFormat, UserFormat } from "../interfaceFormat";
+import { initialState, Action, CurrentCache, SET_USER, SET_CURRENT_PILL, ADD_TO_CART, REMOVE_FROM_CART, CLEAR_CART, SET_CART, SET_SEARCH_FOCUS, SET_SEARCH_CONTENT, SET_SEARCH_RESULT, CLEAR_SEARCH_RESULT, SET_DATA } from "./index";
 
 export default function setReducer(state = initialState, action: Action): CurrentCache {
     switch (action.type) {
@@ -51,6 +51,49 @@ export default function setReducer(state = initialState, action: Action): Curren
             return {
                 ...state,
                 cart: action.payload as PillFormat[]
+            };
+        }
+
+        case SET_SEARCH_FOCUS: {
+            return {
+                ...state,
+                searchFocus: action.payload as boolean
+            };
+        }
+
+        case SET_SEARCH_CONTENT: {
+            return {
+                ...state,
+                searchContent: action.payload as string
+            };
+        }
+
+        case SET_SEARCH_RESULT: {
+            return {
+                ...state,
+                searchResult: action.payload as {
+                    pills: PillFormat[];
+                    symptoms: string[];
+                    orders: any[];
+                }
+            };
+        }
+
+        case CLEAR_SEARCH_RESULT: {
+            return {
+                ...state,
+                searchResult: {
+                    pills: [],
+                    symptoms: [],
+                    orders: []
+                }
+            };
+        }
+
+        case SET_DATA: {
+            return {
+                ...state,
+                DATA: action.payload as DataStorageFormat
             };
         }
 

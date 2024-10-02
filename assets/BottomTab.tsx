@@ -62,7 +62,7 @@ class HomeIconClass extends Component<{ index: number, focus: boolean }> {
     render() {
         const { index, focus } = this.props;
         return (
-            <ViewColCenter customStyle={[{ backgroundColor: focus ? clrStyle.blue100 : clrStyle.blue30, height: BOTTOM_TAB_ICON_HEIGHT, padding: focus ? BOTTOM_TAB_ICON_PADDING * 2 : BOTTOM_TAB_ICON_PADDING, minWidth: BOTTOM_TAB_ICON_HEIGHT, borderRadius: vw(6) }]}>
+            <ViewColCenter style={[{ backgroundColor: focus ? clrStyle.blue100 : clrStyle.blue30, height: BOTTOM_TAB_ICON_HEIGHT, padding: focus ? BOTTOM_TAB_ICON_PADDING * 2 : BOTTOM_TAB_ICON_PADDING, minWidth: BOTTOM_TAB_ICON_HEIGHT, borderRadius: vw(6) }]}>
                 <SvgXml xml={!focus ? iconData[index].iconActive : iconData[index].icon} width={BOTTOM_TAB_ICON_SIZE} height={BOTTOM_TAB_ICON_SIZE} />
                 <View style={{ display: focus ? 'flex' : 'none', }}><Nu16Reg style={{ color: clrStyle.blue30, flex: 1, width: '100%' }}>{iconData[index].title}</Nu16Reg></View>
             </ViewColCenter>
@@ -79,8 +79,6 @@ const BottomTab = () => {
     useEffect(() => {
         const fetchUser = async () => {
             let user = await getUser();
-            console.log(user);
-
             if (user) {
                 dispatch(setUser(user));
             } else {
@@ -88,7 +86,6 @@ const BottomTab = () => {
             }
             if (!user) {
                 navigation.navigate('OnBoarding' as never);
-
             }
         };
         fetchUser();
@@ -171,7 +168,7 @@ export default BottomTab;
 //         render(): React.ReactNode {
 //             const { focusArr } = this.state;
 //             return (
-//                 <ViewRowEvenlyCenter customStyle={[styles.paddingH5vw, { marginBottom: insets.bottom }]}>
+//                 <ViewRowEvenlyCenter style={[styles.paddingH5vw, { marginBottom: insets.bottom }]}>
 //                     {this.props.data.map((item, index) => {
 //                         let FOCUS = focusArr[index];
 //                         return (
@@ -184,7 +181,7 @@ export default BottomTab;
 //                                 }}
 //                                 style={{ flex: 1, alignItems: 'center' }} activeOpacity={1}
 //                             >
-//                                 <ViewColCenter customStyle={[{ backgroundColor: FOCUS ? clrStyle.blue100 : clrStyle.blue30, height: BOTTOM_TAB_ICON_HEIGHT, padding: FOCUS ? BOTTOM_TAB_ICON_PADDING * 2 : BOTTOM_TAB_ICON_PADDING, minWidth: BOTTOM_TAB_ICON_HEIGHT, borderRadius: vw(6) }]}>
+//                                 <ViewColCenter style={[{ backgroundColor: FOCUS ? clrStyle.blue100 : clrStyle.blue30, height: BOTTOM_TAB_ICON_HEIGHT, padding: FOCUS ? BOTTOM_TAB_ICON_PADDING * 2 : BOTTOM_TAB_ICON_PADDING, minWidth: BOTTOM_TAB_ICON_HEIGHT, borderRadius: vw(6) }]}>
 //                                     <SvgXml xml={FOCUS ? item.iconActive : item.icon} width={BOTTOM_TAB_ICON_SIZE} height={BOTTOM_TAB_ICON_SIZE} />
 //                                     <View style={{ display: FOCUS ? 'flex' : 'none', }}><Nu16Reg style={{ color: clrStyle.blue30, flex: 1, width: '100%' }}>{item.title}</Nu16Reg></View>
 //                                 </ViewColCenter>

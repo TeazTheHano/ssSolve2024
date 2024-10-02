@@ -2,7 +2,8 @@ import Storage from 'react-native-storage';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { get } from 'react-native/Libraries/TurboModule/TurboModuleRegistry';
 import { Alert } from 'react-native';
-import { UserFormat } from './data';
+import { DataStorageFormat, OrderFormat, PillFormat, UserFormat } from './interfaceFormat';
+import { factoryData } from './factoryData';
 
 const storage = new Storage({
   // maximum capacity, default 1000 key-ids
@@ -44,6 +45,7 @@ export const saveUser = async (data: UserFormat) => {
     return true;
   } catch (error) {
     Alert.alert('Failed to save user');
+    console.log('Failed to save user:', error);
     return false;
   }
 };
@@ -60,6 +62,7 @@ export const getUser = async (): Promise<UserFormat | false> => {
     });
     return ret;
   } catch (error) {
+    console.log('Failed to get user:', error);
     return false;
   }
 };
@@ -77,9 +80,220 @@ export const removeUser = async (): Promise<boolean> => {
     });
     return true;
   } catch (error) {
+    console.log('Failed to remove user:', error);
     return false;
   }
 };
 
 // END OF DEFAULT STORAGE FUNCTIONS ______________________________________________________
 
+export const savePillList = async (dataArr: PillFormat[]) => {
+  try {
+    await Promise.all(dataArr.map(async (data) => {
+      await storage.save({
+        key: 'pill',
+        data: data,
+        id: data.pill_id,
+      });
+    }));
+    return true;
+  } catch (error) {
+    Alert.alert('Failed to save drug list');
+    console.log('Failed to save pill list:', error);
+    return false;
+  }
+}
+
+export const getPillList = async (): Promise<PillFormat[] | false> => {
+  try {
+    const ret: PillFormat[] = await storage.getAllDataForKey('pill');
+    return ret;
+  } catch (error) {
+    console.log('Failed to get pill list:', error);
+    return false;
+  }
+}
+
+export const getPillById = async (id: string): Promise<PillFormat | false> => {
+  try {
+    const ret: PillFormat = await storage.load({
+      key: 'pill',
+      id: id,
+    });
+    return ret;
+  } catch (error) {
+    console.log('Failed to get pill by id:', error);
+    return false;
+  }
+}
+
+export const removePillById = async (id: string): Promise<boolean> => {
+  try {
+    await storage.remove({
+      key: 'pill',
+      id: id,
+    });
+    return true;
+  } catch (error) {
+    console.log('Failed to remove pill:', error);
+    return false;
+  }
+}
+
+export const clearPillList = async (): Promise<boolean> => {
+  try {
+    await storage.clearMapForKey('pill');
+    return true;
+  } catch (error) {
+    console.log('Failed to clear pill list:', error);
+    return false;
+  }
+}
+
+export const editPillById = async (id: string, data: PillFormat): Promise<boolean> => {
+  try {
+    await storage.save({
+      key: 'pill',
+      data: data,
+      id: id,
+    });
+    return true;
+  } catch (error) {
+    console.log('Failed to edit pill:', error);
+    return false;
+  }
+}
+
+export const saveOrder = async (data: OrderFormat, idItem: string) => {
+  try {
+    await storage.save({
+      key: 'order',
+      data: data,
+      id: idItem,
+    });
+    return true;
+  } catch (error) {
+    Alert.alert('Failed to save order');
+    console.log('Failed to save order:', error);
+    return false;
+  }
+}
+
+export const getOrderList = async (): Promise<OrderFormat[] | false> => {
+  try {
+    const ret: OrderFormat[] = await storage.getAllDataForKey('order');
+    console.log('Order list:', ret);
+    return ret;
+  } catch (error) {
+    console.log('Failed to get order list:', error);
+    return false;
+  }
+}
+
+export const removeOrderById = async (id: string): Promise<boolean> => {
+  try {
+    await storage.remove({
+      key: 'order',
+      id: id,
+    });
+    return true;
+  } catch (error) {
+    console.log('Failed to remove order:', error);
+    return false;
+  }
+}
+
+export const clearOrderList = async (): Promise<boolean> => {
+  try {
+    await storage.clearMapForKey('order');
+    return true;
+  } catch (error) {
+    console.log('Failed to clear order list:', error);
+    return false;
+  }
+}
+
+export const editCart = async (pills: PillFormat | PillFormat[]): Promise<boolean> => {
+  const prepare = (): PillFormat[] => {
+    let data: PillFormat[] = [];
+    if (Array.isArray(pills)) {
+      data.push(...pills);
+    } else {
+      data.push(pills);
+    }
+    return data;
+  };
+
+  try {
+    await storage.save({
+      key: 'cart',
+      data: prepare(),
+    });
+    return true;
+  } catch (error) {
+    console.error('Failed to save cart:', error);
+    return false;
+  }
+}
+
+export const getCart = async (): Promise<PillFormat[] | false> => {
+  try {
+    const ret: PillFormat[] = await storage.load({ key: 'cart' })
+    return ret;
+  } catch (error) {
+    console.error('Failed to get cart:', error);
+    return false;
+  }
+}
+
+export const clearCart = async (): Promise<boolean> => {
+  try {
+    await storage.clearMapForKey('cart');
+    return true;
+  } catch (error) {
+    console.error('Failed to clear cart:', error);
+    return false;
+  }
+}
+
+export const loadDemoData = async (): Promise<boolean> => {
+  try {
+    // Save all pills and orders concurrently
+    await Promise.all([
+      savePillList(factoryData.pillList),
+      factoryData.orderList.forEach(async (order) => {
+        let res = await saveOrder(order, order.order_id);
+        console.log('Save order:', res, order.order_id);
+      }),
+    ]);
+
+    const data: DataStorageFormat = {
+      pillList: factoryData.pillList,
+      pillPortList: factoryData.pillPortList,
+      orderList: factoryData.orderList,
+      lastChange: factoryData.lastChange,
+    };
+
+    await storage.save({
+      key: 'DATADEMO',
+      data: data,
+    });
+
+    return true;
+  } catch (error) {
+    console.log('Failed to load demo data:', error);
+    return false;
+  }
+}
+
+export const clearData = async (): Promise<boolean> => {
+  try {
+    await storage.clearMapForKey('order');
+    await storage.clearMapForKey('pill');
+    await storage.clearMapForKey('cart');
+    return true;
+  } catch (error) {
+    console.log('Failed to clear data:', error);
+    return false;
+  }
+}

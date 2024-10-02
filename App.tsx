@@ -14,6 +14,7 @@ import clrStyle from './assets/componentStyleSheet';
 import Cart from './screens/Cart';
 import DrugList from './screens/DrugList';
 import Pillport from './screens/Pillport';
+import OrderDetail from './screens/OrderDetail';
 
 // ____________________END OF IMPORT_______________________
 
@@ -30,6 +31,7 @@ function App(): React.JSX.Element {
           <Stack.Screen name="Cart" component={Cart} />
           <Stack.Screen name="DrugList" component={DrugList} />
           <Stack.Screen name="Pillport" component={Pillport} />
+          <Stack.Screen name="OrderDetail" component={OrderDetail} />
         </Stack.Navigator>
       </NavigationContainer>
     </ProviderTotal>

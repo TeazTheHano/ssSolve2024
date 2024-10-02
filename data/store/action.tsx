@@ -1,6 +1,6 @@
 //FIXME: NEED CHANGE IN NEW PJ: Add action types and action creators here
 
-import { PillFormat, UserFormat } from "../data";
+import { DataStorageFormat, OrderFormat, PillFormat, UserFormat } from "../interfaceFormat";
 
 // export const EXAMPLE = `EXAMPLE`;
 // export const examplefnc = (item: any) => {
@@ -54,5 +54,44 @@ export const setCart = (cart: PillFormat[]) => {
     return {
         type: SET_CART,
         payload: cart
+    }
+}
+
+export const SET_SEARCH_FOCUS = `SET_SEARCH_FOCUS`;
+export const setSearchFocus = (focus: boolean) => {
+    return {
+        type: SET_SEARCH_FOCUS,
+        payload: focus
+    }
+}
+
+export const SET_SEARCH_CONTENT = `SET_SEARCH_CONTENT`;
+export const setSearchContent = (content: string) => {
+    return {
+        type: SET_SEARCH_CONTENT,
+        payload: content
+    }
+}
+
+export const SET_SEARCH_RESULT = `SET_SEARCH_RESULT`;
+export const setSearchResult = (result: { pills: PillFormat[], symptoms: string[], orders: OrderFormat[] }) => {
+    return {
+        type: SET_SEARCH_RESULT,
+        payload: result
+    }
+}
+
+export const CLEAR_SEARCH_RESULT = `CLEAR_SEARCH_RESULT`;
+export const clearSearchResult = () => {
+    return {
+        type: CLEAR_SEARCH_RESULT
+    }
+}
+
+export const SET_DATA = `SET_DATA`;
+export const setData = (data: DataStorageFormat) => {
+    return {
+        type: SET_DATA,
+        payload: data
     }
 }
