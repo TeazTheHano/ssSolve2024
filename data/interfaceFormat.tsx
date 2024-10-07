@@ -15,7 +15,7 @@ export interface PillFormat {
     pill_sellPrice: number;
     pill_buyPrice?: number;
     pill_packKind?: string; // e.g. (1 vỉ x 10 viên)
-    pill_imgAddress?: string[];
+    pill_imgAddress?: any[];
     pill_indication?: (string | string[])[];
     pill_contraindication?: (string | string[])[];
     pill_discription?: (string | string[])[];

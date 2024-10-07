@@ -1,4 +1,4 @@
-import { View, Text, ScrollView, FlatList, TouchableOpacity } from 'react-native'
+import { View, Text, ScrollView, FlatList, TouchableOpacity, Image, ImageStyle } from 'react-native'
 import React, { useEffect } from 'react'
 import { Nu12Reg, Nu16Bold, Nu16Reg, Nu18Black, Nu18Reg, Nu20Black, QuickBtn, RoundBtn, SSBarWithSaveArea, TopBarSS, ViewCol, ViewRow } from '../assets/Class'
 import { useNavigation } from '@react-navigation/native'
@@ -48,9 +48,16 @@ export default function DrugList() {
           {pillInCategory.map((item, index) => (
             <TouchableOpacity
               key={index}
+              onPress={() => {
+                console.log(item.data[0]?.pill_imgAddress);
+              }}
               style={[styles.padding10, styles.borderRadius16, styles.gap3vw, styles.flexColBetweenCenter, styles.h50vw, { backgroundColor: clrStyle.blue30, width: index == 0 ? '100%' : '48%' }]}
             >
-              <View style={[styles.flex1, styles.w100]}>{pillOrderIcon()}</View>
+              <View style={[styles.flex1, styles.w100]}>
+                {item.data[0]?.pill_imgAddress ?
+                  <Image source={item.data[0]?.pill_imgAddress[0]} resizeMode='contain' style={[styles.w100, styles.h100] as ImageStyle} />
+                  : pillOrderIcon()}
+              </View>
               <Nu16Bold numberOfLines={2} style={[styles.textCenter, { color: clrStyle.blue100 }]}>{item.name}</Nu16Bold>
               <Nu12Reg style={{ color: clrStyle.blue80 }}>({item.data.length} sản phẩm)</Nu12Reg>
             </TouchableOpacity>
@@ -132,8 +139,8 @@ export default function DrugList() {
             />
           </ViewRow>
           {showCategory ? <FlatCategory /> : <PopularPill />}
-          {marginBottomForScrollView()}
         </ViewCol>
+        <View style={[styles.h10vh]} />
       </ScrollView>
 
     </SSBarWithSaveArea>

@@ -23,7 +23,7 @@ export const factoryData: DataStorageFormat = {
             pill_sellPrice: 5000,
             pill_buyPrice: 0,
             pill_packKind: '1 vỉ x 10 viên',
-            pill_imgAddress: ['/assets/image/pill/Thuốc giảm đau và hạ sốt - Paracetamol.png'],
+            pill_imgAddress: [require('../assets/image/pill/Thuốc_giảm_đau_và_hạ_sốt_-_Paracetamol.png')],
             pill_indication: ['Paracetamol 500mg là thuốc được sử dụng phổ biến giúp giảm các triệu chứng đau từ nhẹ đến vừa và giảm mạnh các triệu chứng sốt nhẹ. Thuốc Paracetamol 500mg giúp hạ nhiệt, giảm đau. Không gây lệ thuộc thuốc, không gây kích ứng đường tiêu hóa.'],
             pill_use: [
                 `Sử dụng thuốc cùng với một lượng nước ấm vừa phải.`,
@@ -44,7 +44,7 @@ export const factoryData: DataStorageFormat = {
                 `Người bệnh bị suy giảm glucose-6-phosphat dehydrogenase.`,
                 `Người bệnh có tiền sử phản ứng quá mẫn (co thắt phế quản, phù mạch, hen suyễn, viêm mũi, hoặc nổi mày đay) khi sử dụng aspirin hoặc các thuốc chống viêm không steroid (NSAID).`,
                 `Bệnh nhân đã từng bị hoặc đang bị loét hay xuất huyết đường tiêu hóa.`,
-                `Người bị suy gan nặng, suy thận nặng có Clcr < 30 ml/ phút, suy tim sung huyết.​`,
+                `Người bị suy gan nặng, suy thận nặng có Clcr < 30 ml/ phút, suy tim sung huyết.`,
 
             ],
             pill_dosage: [
@@ -164,7 +164,7 @@ export const factoryData: DataStorageFormat = {
             pill_sellPrice: 5000,
             pill_buyPrice: 0,
             pill_packKind: '1 vỉ x 10 viên',
-            pill_imgAddress: ['/assets/image/pill/Cảm lạnh thông thường - TK3.png'],
+            pill_imgAddress: [require('../assets/image/pill/Cảm_lạnh_thông_thường_-_TK3.png')],
             pill_indication: ['Điều trị triệu chứng trong các trường hợp: Cảm sốt, đau đầu, đau nửa đầu, đau răng, đau họng, đau sau nhổ răng, đau bụng kinh, đau cơ xương, đau do viêm khớp, đau dây thần kinh, hạ sốt trong viêm nhiễm.'],
             pill_use: [
                 'Thuốc dùng đường uống.'
@@ -256,7 +256,7 @@ export const factoryData: DataStorageFormat = {
             pill_sellPrice: 4300,
             pill_buyPrice: 0,
             pill_packKind: '1 vỉ x 10 viên',
-            pill_imgAddress: ['/assets/image/pill/Thuốc giảm đau và hạ sốt - Ibuprofen.png'],
+            pill_imgAddress: [require('../assets/image/pill/Thuốc_giảm_đau_và_hạ_sốt_-_Ibuprofen.png')],
             pill_indication: [
                 `Thuốc Ibuprofen 200 Nadyphar 10x10 được chỉ định dùng trong các trường hợp sau:`,
                 [
@@ -326,7 +326,7 @@ export const factoryData: DataStorageFormat = {
             pill_sellPrice: 5000,
             pill_buyPrice: 0,
             pill_packKind: '1 vỉ x 10 viên',
-            pill_imgAddress: ['/assets/image/pill/Tatanol.png'],
+            pill_imgAddress: [require('../assets/image/pill/Tatanol.png')],
             pill_indication: [
                 `Thuốc Tatanol được chỉ định dùng trong các trường hợp sau:`,
                 `Thuốc có tác dụng giảm đau, hạ sốt từ nhẹ đến vừa.`,
@@ -405,7 +405,7 @@ export const factoryData: DataStorageFormat = {
             pill_sellPrice: 4000,
             pill_buyPrice: 0,
             pill_packKind: '1 vỉ x 10 viên',
-            pill_imgAddress: ['/assets/image/pill/Thuốc giảm đau và hạ sốt - Paracetamol.png'],
+            pill_imgAddress: [require('../assets/image/pill/Hapacol_Blue.png')],
             pill_indication: [
                 `Thuốc Hapacol Blue được chỉ định dùng trong các trường hợp sau:`,
                 `Điều trị các triệu chứng đau trong các trường hợp, đau đầu, đau nửa đầu, đau răng, đau nhức do cảm cúm, đau họng, đau nhức cơ xương, đau do viêm khớp, đau sau khi tiêm ngừa hay nhổ răng.`,
@@ -469,7 +469,7 @@ export const factoryData: DataStorageFormat = {
         //     pill_sellPrice: 10000,
         //     pill_buyPrice: 5000,
         //     pill_packKind: '1 vỉ x 10 viên',
-        //     pill_imgAddress: ['/assets/image/pill/Thuốc giảm đau và hạ sốt - Paracetamol.png'],
+        //     pill_imgAddress: [require('../assets/image/pill/Thuốc giảm đau và hạ sốt - Paracetamol.png')],
         //     pill_indication: [''],
         //     pill_use: [
 

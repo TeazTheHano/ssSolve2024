@@ -22,7 +22,7 @@ import clrStyle, { componentStyle } from "./componentStyleSheet";
 
 export const marginBottomForScrollView = (time?: number) => {
     return (
-        <View style={{ height: vh(time ? 5 * time : 5), opacity: 0 }}></View>
+        <View style={[styles.h10vh]} />
     )
 }
 

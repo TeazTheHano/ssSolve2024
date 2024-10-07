@@ -288,9 +288,10 @@ export const loadDemoData = async (): Promise<boolean> => {
 
 export const clearData = async (): Promise<boolean> => {
   try {
-    await storage.clearMapForKey('order');
-    await storage.clearMapForKey('pill');
-    await storage.clearMapForKey('cart');
+    await clearOrderList();
+    await clearPillList();
+    await clearCart();
+    await storage.clearMapForKey('DATADEMO');
     return true;
   } catch (error) {
     console.log('Failed to clear data:', error);

@@ -81,7 +81,7 @@ export default function Home() {
               <ActivityIndicator size="large" />
             </View>
           )}
-          <FlatList
+          {/* <FlatList
             data={CurrentCache.DATA.pillPortList}
             horizontal
             showsHorizontalScrollIndicator={false}
@@ -111,7 +111,7 @@ export default function Home() {
               </ViewCol>
             )}
             keyExtractor={item => (item.pillport_id + Math.random().toFixed(6)).toString()}
-          />
+          /> */}
 
         </ViewCol>
 
@@ -122,7 +122,7 @@ export default function Home() {
               <Nu12Reg style={{ color: clrStyle.grey30 }}>Xem thêm {sharpRightArrow(vw(3), vw(3), clrStyle.grey30)}</Nu12Reg>
             </TouchableOpacity>
           </ViewRowBetweenCenter>
-          <FlatList
+          {/* <FlatList
             data={CurrentCache.DATA.orderList}
             horizontal
             showsHorizontalScrollIndicator={false}
@@ -152,7 +152,7 @@ export default function Home() {
               </TouchableOpacity>
             )}
             keyExtractor={item => item.order_date + Math.random().toFixed(6).toString()}
-          />
+          /> */}
         </ViewCol>
       </ScrollView>
     </SSBarWithSaveArea>
