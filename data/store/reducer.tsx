@@ -12,8 +12,8 @@
 //     }
 // }
 
-import { DataStorageFormat, PillFormat, UserFormat } from "../interfaceFormat";
-import { initialState, Action, CurrentCache, SET_USER, SET_CURRENT_PILL, ADD_TO_CART, REMOVE_FROM_CART, CLEAR_CART, SET_CART, SET_SEARCH_FOCUS, SET_SEARCH_CONTENT, SET_SEARCH_RESULT, CLEAR_SEARCH_RESULT, SET_DATA } from "./index";
+import { CartFormat, DataStorageFormat, PillFormat, UserFormat } from "../interfaceFormat";
+import { initialState, Action, CurrentCache, SET_USER, SET_CURRENT_PILL, ADD_TO_CART, REMOVE_FROM_CART, CLEAR_CART, EDIT_ITEM_IN_CART, SET_SEARCH_FOCUS, SET_SEARCH_CONTENT, SET_SEARCH_RESULT, CLEAR_SEARCH_RESULT, SET_DATA } from "./index";
 
 export default function setReducer(state = initialState, action: Action): CurrentCache {
     switch (action.type) {
@@ -32,13 +32,13 @@ export default function setReducer(state = initialState, action: Action): Curren
         case ADD_TO_CART: {
             return {
                 ...state,
-                cart: [...state.cart, action.payload as PillFormat]
+                cart: [...state.cart, action.payload as CartFormat]
             };
         }
         case REMOVE_FROM_CART: {
             return {
                 ...state,
-                cart: state.cart.filter((item) => item.pill_id !== (action.payload as PillFormat).pill_id)
+                cart: state.cart.filter((item) => item.pill.pill_id !== (action.payload as PillFormat).pill_id)
             };
         }
         case CLEAR_CART: {
@@ -47,10 +47,19 @@ export default function setReducer(state = initialState, action: Action): Curren
                 cart: []
             };
         }
-        case SET_CART: {
+        case EDIT_ITEM_IN_CART: {
             return {
                 ...state,
-                cart: action.payload as PillFormat[]
+                cart: state.cart.map((item) => {
+                    const payload = action.payload as unknown as CartFormat;
+                    if (item.pill.pill_id === payload.pill.pill_id) {
+                        return {
+                            pill: item.pill,
+                            orderQuantity: payload.orderQuantity
+                        };
+                    }
+                    return item;
+                })
             };
         }
 

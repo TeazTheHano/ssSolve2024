@@ -680,7 +680,6 @@ export class SearchBox extends Component<{
                 return [];
             }
         }
-        console.log('searchFocus', this.props.currentCache?.searchFocus);
 
         const { customStyle, placeholder, placeholderTextColor, value, onChangeText, onClear, showSearchIcon, fontFam } = this.props;
         return (

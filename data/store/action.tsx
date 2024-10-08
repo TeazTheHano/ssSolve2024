@@ -1,6 +1,6 @@
 //FIXME: NEED CHANGE IN NEW PJ: Add action types and action creators here
 
-import { DataStorageFormat, OrderFormat, PillFormat, UserFormat } from "../interfaceFormat";
+import { CartFormat, DataStorageFormat, OrderFormat, PillFormat, UserFormat } from "../interfaceFormat";
 
 // export const EXAMPLE = `EXAMPLE`;
 // export const examplefnc = (item: any) => {
@@ -27,7 +27,7 @@ export const setCurrentPill = (pill: PillFormat) => {
 }
 
 export const ADD_TO_CART = `ADD_TO_CART`;
-export const addToCart = (pill: PillFormat) => {
+export const addToCart = (pill: CartFormat) => {
     return {
         type: ADD_TO_CART,
         payload: pill
@@ -49,11 +49,11 @@ export const clearCart = () => {
     }
 }
 
-export const SET_CART = `SET_CART`;
-export const setCart = (cart: PillFormat[]) => {
+export const EDIT_ITEM_IN_CART = `EDIT_ITEM_IN_CART`;
+export const editItemInCart = (item: CartFormat) => {
     return {
-        type: SET_CART,
-        payload: cart
+        type: EDIT_ITEM_IN_CART,
+        payload: item
     }
 }
 

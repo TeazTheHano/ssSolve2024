@@ -1,7 +1,7 @@
-import { View, Text, TouchableOpacity, Image, ImageStyle, ScrollView, StatusBar, Platform } from 'react-native'
+import { View, Text, TouchableOpacity, Image, ImageStyle, ScrollView, StatusBar, Platform, ActivityIndicator, Alert, TextInput } from 'react-native'
 import React, { ComponentType, useContext, useEffect } from 'react'
-import { RootContext } from '../data/store'
-import { PillFormat } from '../data/interfaceFormat'
+import { addToCart, CurrentCache, editItemInCart, RootContext } from '../data/store'
+import { CartFormat, PillFormat } from '../data/interfaceFormat'
 import { Nu16Bold, Nu16BoldLH1p5, Nu16Reg, Nu16RegLH1p5, Nu18Black, Nu18Reg, RoundBtn, SSBar, SSBarWithSaveArea, TopBarSS, TopNav2, ViewCol, ViewColBetweenCenter, ViewColCenter, ViewRow, ViewRowBetweenCenter, ViewRowCenter } from '../assets/Class'
 import { useNavigation } from '@react-navigation/native'
 import styles, { vh, vw } from '../assets/stylesheet'
@@ -14,7 +14,7 @@ export default function PillDetail({ route }: any) {
     const [CurrentCache, dispatch] = useContext(RootContext)
     const [paramPill, setParamPill] = React.useState<PillFormat>()
     const [scrolled, setScrolled] = React.useState(false)
-    const [currentNumOnCart, setCurrentNumOnCart] = React.useState(0)
+    const [currentNumOnCart, setCurrentNumOnCart] = React.useState<number>(0)
 
     const insets = useSafeAreaInsets();
     const statusBarHeight = (Platform.OS === 'ios' ? insets.top : (StatusBar.currentHeight || 0)) + vw(2)
@@ -22,11 +22,8 @@ export default function PillDetail({ route }: any) {
     useEffect(() => {
         if (route.params) {
             setParamPill(route.params.pill)
-            console.log(paramPill);
-
         }
     }, [route.params])
-
 
     const ListGen = (data: string | Array<string | string[]>, FontClass1st: ComponentType<any>, useColor: string = clrStyle.black, FontClass2nd: ComponentType<any> = FontClass1st, bullet1st: string = '1', bullet2nd: string = '-', textIndent2nd: any = 0) => {
         function bulletMark(bullet: string, index: number) {
@@ -149,6 +146,13 @@ export default function PillDetail({ route }: any) {
         }
     }
 
+    function dispatchAddToCart(item: CartFormat) {
+        dispatch(addToCart(item))
+    }
+    function dispatchEditCart(item: CartFormat) {
+        dispatch(editItemInCart(item))
+    }
+
     return (
         <SSBar barContentStyle='dark-content' trans barColor={'rgba(0,0,0,0)'} notMargin bgColor={clrStyle.blue30} >
             {
@@ -156,15 +160,16 @@ export default function PillDetail({ route }: any) {
                     <>
                         <ScrollView
                             stickyHeaderIndices={[1]}
-                            style={[styles.flex1,]}
+                            style={[styles.flex1]}
                             onScroll={(e) => {
                                 if (e.nativeEvent.contentOffset.y > vh(30)) {
                                     setScrolled(true)
-
                                 } else {
                                     setScrolled(false)
                                 }
+                                console.log(e.nativeEvent.contentOffset.y);
                             }}
+                            scrollEventThrottle={16} // Add this line to ensure smooth scrolling
                         >
                             <TopNav2
                                 backGoundImage={paramPill.pill_imgAddress ? paramPill.pill_imgAddress[0] : undefined}
@@ -241,27 +246,82 @@ export default function PillDetail({ route }: any) {
                             </ViewCol>
                         </ScrollView>
                         <ViewRowBetweenCenter style={[styles.w100, styles.paddingH6vw, styles.paddingV3vw, { backgroundColor: clrStyle.blue50, paddingBottom: insets.bottom ? insets.bottom : vw(3) }]}>
-                            <TouchableOpacity>
+                            <TouchableOpacity
+                                onPress={() => {
+                                    if (currentNumOnCart > 0) {
+                                        setCurrentNumOnCart(currentNumOnCart - 1)
+                                    }
+                                }}>
                                 {minusIcon(vw(8), vw(8))}
                             </TouchableOpacity>
                             <ViewColCenter style={[styles.borderRadius10, { backgroundColor: clrStyle.green100, minWidth: vw(12), height: vw(12) }]}>
-                                <Nu18Reg>{currentNumOnCart}</Nu18Reg>
+                                <TextInput
+                                    keyboardType='numeric'
+                                    onChangeText={(text) => {
+                                        if (text == '') {
+                                            setCurrentNumOnCart(0)
+                                        } else {
+                                            setCurrentNumOnCart(parseInt(text))
+                                        }
+                                    }}
+                                    style={[styles.h100, styles.w100, styles.textCenter]}
+                                    returnKeyLabel='done'
+                                >
+                                    <Nu18Reg style={[styles.w100]}>{currentNumOnCart}</Nu18Reg>
+                                </TextInput>
                             </ViewColCenter>
-                            <TouchableOpacity>
+                            <TouchableOpacity
+                                onPress={() => {
+                                    setCurrentNumOnCart(currentNumOnCart + 1)
+                                }}>
                                 {plusIcon(vw(8), vw(8))}
                             </TouchableOpacity>
 
-                            <TouchableOpacity style={[styles.paddingH8vw, styles.flexColCenter, styles.borderRadius10, { backgroundColor: clrStyle.blue100, height: vw(12) }]}>
+                            <TouchableOpacity
+                                onPress={() => addItemToCart(CurrentCache, paramPill, currentNumOnCart, dispatchEditCart, dispatchAddToCart)}
+                                style={[styles.paddingH8vw, styles.flexColCenter, styles.borderRadius10, { backgroundColor: clrStyle.blue100, height: vw(12) }]}>
                                 <Nu18Reg style={{ color: clrStyle.pri4 }}>Thêm vào giỏ</Nu18Reg>
                             </TouchableOpacity>
                         </ViewRowBetweenCenter>
                     </>
                     :
-                    <View style={[styles.flex1, styles.bgcolorWhite, styles.padding2vw]}>
-                        <Nu18Reg>Lỗi tải thuốc/ Không có dữ liệu</Nu18Reg>
-                    </View>
+                    <ViewColCenter style={[styles.flex1, styles.padding2vw]}>
+                        <Nu18Reg>Đang tải dữ liệu</Nu18Reg>
+                        <ActivityIndicator size='large' color={clrStyle.blue100} />
+                    </ViewColCenter>
             }
         </SSBar >
 
     )
+}
+
+export function addItemToCart(
+    CurrentCache: CurrentCache,
+    paramPill: PillFormat,
+    currentNumOnCart: number,
+    editCartFnc: (item: CartFormat) => void,
+    addToCartFnc: (item: CartFormat) => void
+) {
+    const cart = CurrentCache.cart;
+    const itemIndex = cart.findIndex((item) => item.pill.pill_id === paramPill.pill_id);
+
+    if (paramPill.pill_quantity === 0) {
+        return Alert.alert('Hết hàng', 'Xin lỗi, sản phẩm này đã hết hàng', [{ text: 'OK' }]);
+    } else if (paramPill.pill_quantity < currentNumOnCart) {
+        return Alert.alert('Số lượng không đủ', 'Xin lỗi, số lượng sản phẩm này không đủ', [{ text: 'OK' }]);
+    }
+
+    const newItem: CartFormat = { pill: paramPill, orderQuantity: currentNumOnCart };
+
+    if (itemIndex >= 0) {
+        if (cart[itemIndex].orderQuantity === currentNumOnCart) {
+            return Alert.alert('Đã có trong giỏ hàng', 'Số lượng sản phẩm này đã được thêm vào giỏ hàng', [{ text: 'OK' }]);
+        }
+        editCartFnc(newItem);
+        Alert.alert('Đã cập nhật giỏ hàng', 'Đã cập nhật số lượng sản phẩm trong giỏ hàng', [{ text: 'OK' }]);
+    } else {
+        addToCartFnc(newItem);
+        Alert.alert('Đã thêm vào giỏ hàng', 'Đã thêm sản phẩm vào giỏ hàng', [{ text: 'OK' }]);
+    }
+
 }

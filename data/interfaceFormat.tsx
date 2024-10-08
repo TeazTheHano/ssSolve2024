@@ -61,3 +61,8 @@ export interface DataStorageFormat {
     orderList: OrderFormat[];
     lastChange: Date;
 }
+
+export interface CartFormat {
+    pill: PillFormat;
+    orderQuantity: number;
+}

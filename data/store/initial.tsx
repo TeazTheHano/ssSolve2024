@@ -10,12 +10,12 @@
 //     example: 'example'
 // };
 
-import { DataStorageFormat, OrderFormat, PillFormat, PillPortFormat, SearchResults, UserFormat } from "../interfaceFormat";
+import { CartFormat, DataStorageFormat, OrderFormat, PillFormat, PillPortFormat, SearchResults, UserFormat } from "../interfaceFormat";
 
 export interface CurrentCache {
     user: UserFormat;
     currentPill: PillFormat;
-    cart: PillFormat[];
+    cart: CartFormat[];
     searchFocus: boolean;
     searchContent: string;
     searchResult: SearchResults;
@@ -24,7 +24,7 @@ export interface CurrentCache {
 
 export interface Action {
     type: string;
-    payload?: UserFormat | boolean | PillFormat | PillFormat[] | string | string[] | OrderFormat | OrderFormat[] | SearchResults | DataStorageFormat | PillPortFormat | PillPortFormat[];
+    payload?: UserFormat | boolean | PillFormat | PillFormat[] | string | string[] | OrderFormat | OrderFormat[] | SearchResults | DataStorageFormat | PillPortFormat | PillPortFormat[] | CartFormat | CartFormat[];
 }
 
 export const initialState: CurrentCache = {
