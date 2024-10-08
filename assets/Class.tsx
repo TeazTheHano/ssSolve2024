@@ -1,6 +1,6 @@
 // system import
 import React, { Component, useState } from 'react';
-import { ImageBackground, Platform, SafeAreaView, StatusBar, Text, TextInput, TouchableOpacity, View, Image, ImageStyle, StatusBarStyle, ReturnKeyType, KeyboardType } from 'react-native';
+import { ImageBackground, Platform, SafeAreaView, StatusBar, Text, TextInput, TouchableOpacity, View, Image, ImageStyle, StatusBarStyle, ReturnKeyType, KeyboardType, FlatList } from 'react-native';
 
 // style import
 import styles from './stylesheet';
@@ -10,10 +10,11 @@ import { vw, vh } from './stylesheet';
 import { imgSourceHandle, marginBottomForScrollView } from './component';
 
 // svg import
-import { cameraIcon, filterIcon, goldStar, heartIcon, imgPickerIcon, inVisibilityIcon, leftArrow, lockIcon, navBellIcon, noStar, peopleIcon, savedIcon, searchIcon, sharpLeftArrow, unSavedIcon, visibilityIcon, xIcon } from './svgXml';
+import { cameraIcon, filterIcon, goldStar, heartIcon, imgPickerIcon, inVisibilityIcon, leftArrow, lockIcon, navBellIcon, noStar, peopleIcon, pillOrderIcon, savedIcon, searchIcon, sharpLeftArrow, unSavedIcon, visibilityIcon, xIcon } from './svgXml';
 import clrStyle from './componentStyleSheet';
 import { useNavigation } from '@react-navigation/native';
 import { CurrentCache } from '../data/store';
+import { PillFormat } from '../data/interfaceFormat';
 
 // other import
 
@@ -281,6 +282,18 @@ export class Nu16Bold extends Component<{ children: React.ReactNode, style?: any
     }
 }
 
+export class Nu16BoldLH1p5 extends Component<{ children: React.ReactNode, style?: any, numberOfLines?: number }> {
+    render() {
+        const { children, style, numberOfLines } = this.props;
+
+        return (
+            <Text style={[{ color: 'black', fontFamily: 'Nunito-Bold', fontSize: vw(4), lineHeight: vw(4 * 1.5), }, style]} numberOfLines={numberOfLines}>
+                {children}
+            </Text>
+        );
+    }
+}
+
 export class Nu14Bold extends Component<{ children: React.ReactNode, style?: any, numberOfLines?: number }> {
     render() {
         const { children, style, numberOfLines } = this.props;
@@ -323,6 +336,18 @@ export class Nu16Reg extends Component<{ children: React.ReactNode, style?: any,
 
         return (
             <Text style={[{ color: 'black', fontFamily: 'Nunito-Regular', fontSize: vw(4), lineHeight: vw(5.5), }, style]} numberOfLines={numberOfLines}>
+                {children}
+            </Text>
+        );
+    }
+}
+
+export class Nu16RegLH1p5 extends Component<{ children: React.ReactNode, style?: any, numberOfLines?: number }> {
+    render() {
+        const { children, style, numberOfLines } = this.props;
+
+        return (
+            <Text style={[{ color: 'black', fontFamily: 'Nunito-Regular', fontSize: vw(4), lineHeight: vw(4 * 1.5), }, style]} numberOfLines={numberOfLines}>
                 {children}
             </Text>
         );
@@ -710,14 +735,14 @@ export class TopBarSS extends Component<{
         return (
             <ViewCol style={[styles.paddingH6vw]}>
                 <ViewRowBetweenCenter>
-                    <ViewRowCenter style={[styles.gap4vw]}>
+                    <ViewRowCenter style={[styles.gap4vw, styles.flex1]}>
                         {this.props.navigation ?
                             <TouchableOpacity
                                 onPress={() => { this.props.navigation ? this.props.navigation.goBack() : null }}
                                 style={[styles.borderRadius100, styles.flexColCenter, { width: vw(8.5), height: vw(8.5), backgroundColor: clrStyle.grey10 }]}>{sharpLeftArrow(vw(6), vw(6), clrStyle.grey100)}
                             </TouchableOpacity> : null}
-                        <View>
-                            {this.props.wellcome ? <Nu18Reg style={{ color: clrStyle.blue100 }}>Xin chào <Nu18Black>{this.props.title}</Nu18Black></Nu18Reg> : <Nu18Black style={{ color: clrStyle.blue100 }}>{this.props.title}</Nu18Black>}
+                        <View style={[styles.flex1]}>
+                            {this.props.wellcome ? <Nu18Reg style={[{ color: clrStyle.blue100 }]}>Xin chào <Nu18Black>{this.props.title}</Nu18Black></Nu18Reg> : <Nu18Black style={[{ color: clrStyle.blue100 }]}>{this.props.title}</Nu18Black>}
                             {this.props.subTitle ? <Nu12Reg style={{ color: clrStyle.grey30 }}>{this.props.subTitle}</Nu12Reg> : null}
                         </View>
                     </ViewRowCenter>
@@ -789,5 +814,65 @@ export class QuickBtn extends Component<{
                 />
             </ViewCol>
         );
+    }
+}
+
+export class PillList1Component extends React.Component<{
+    PILLLIST: PillFormat[]
+    onPress?: (pill: PillFormat) => void
+}> {
+    render(): React.ReactNode {
+        return (
+            <>
+                {
+                    this.props.PILLLIST && this.props.PILLLIST.length > 0 ?
+                        <FlatList
+                            data={this.props.PILLLIST}
+                            keyExtractor={(item) => item.pill_id}
+                            numColumns={2}
+                            scrollEnabled={false}
+                            contentContainerStyle={[styles.gap3vw, styles.w100, styles.marginVertical4vw]}
+                            columnWrapperStyle={[styles.w100, styles.justifyContentSpaceBetween]}
+                            renderItem={({ item }) => (
+                                <TouchableOpacity
+                                    onPress={() => this.props.onPress ? this.props.onPress(item) : null}
+                                    style={[styles.w48, styles.padding10, styles.borderRadius16, styles.gap3vw, styles.flexColBetweenCenter, styles.h60vw, styles.border1, { backgroundColor: clrStyle.white, borderColor: clrStyle.grey30 }]}
+                                >
+                                    <View style={[styles.flex1, styles.w100]}>
+                                        {item.pill_imgAddress ?
+                                            item.pill_imgAddress.map((img, index) => (
+                                                <Image key={index} source={img} resizeMode='contain' style={[styles.w100, styles.h100] as ImageStyle} />
+                                            ))
+                                            : pillOrderIcon()}
+                                    </View>
+                                    <View style={[styles.w100]}>
+                                        <Nu16Reg numberOfLines={2} style={[styles.w100, { color: clrStyle.blue100 }]}>{item.pill_name}</Nu16Reg>
+                                        <Nu16Bold style={[styles.w100, { color: clrStyle.red }]}>{item.pill_sellPrice}đ/vỉ</Nu16Bold>
+                                        <Nu14Reg style={[styles.w100, { color: clrStyle.grey30 }]}>{item.pill_id}</Nu14Reg>
+                                    </View>
+                                    <View style={[styles.paddingH2vw, styles.positionAbsolute, styles.borderRadius100, { backgroundColor: clrStyle.blue50, top: vw(2.5), right: vw(2.5) }]}>
+                                        <Nu12Reg style={[{ color: clrStyle.blue80, fontSize: vw(2.5) }]}>{item.pill_packKind}</Nu12Reg>
+                                    </View>
+                                </TouchableOpacity>
+                            )}
+                        />
+                        : <View style={[styles.marginVertical1vw, styles.bgcolorBlack20, styles.borderRadius16]}><Nu18Reg style={[styles.paddingH3vw, styles.gap3vw, styles.textCenter, styles.paddingV10vw, { color: clrStyle.blue80 }]}>Không có sản phẩm nào</Nu18Reg></View>
+                }
+            </>
+        )
+    }
+}
+
+export class TopNav2 extends Component<{
+    containerStyle?: any
+    backGoundImage: any
+}> {
+    render() {
+        let { containerStyle, backGoundImage } = this.props
+        return (
+            <View style={[containerStyle, styles.bgcolorWhite, { containerStyle }]}>
+                <Image source={backGoundImage} resizeMethod='resize' resizeMode='cover' style={[styles.flex1, styles.alignSelfCenter] as ImageStyle} />
+            </View>
+        )
     }
 }

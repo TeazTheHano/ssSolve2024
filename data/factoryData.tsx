@@ -25,19 +25,21 @@ export const factoryData: DataStorageFormat = {
             pill_buyPrice: 0,
             pill_packKind: '1 vỉ x 10 viên',
             pill_imgAddress: [require('../assets/image/pill/Thuốc_giảm_đau_và_hạ_sốt_-_Paracetamol.png')],
-            pill_indication: ['Paracetamol 500mg là thuốc được sử dụng phổ biến giúp giảm các triệu chứng đau từ nhẹ đến vừa và giảm mạnh các triệu chứng sốt nhẹ. Thuốc Paracetamol 500mg giúp hạ nhiệt, giảm đau. Không gây lệ thuộc thuốc, không gây kích ứng đường tiêu hóa.'],
+            pill_description: ['Paracetamol 500mg là thuốc được sử dụng phổ biến giúp giảm các triệu chứng đau từ nhẹ đến vừa và giảm mạnh các triệu chứng sốt nhẹ. Thuốc Paracetamol 500mg giúp hạ nhiệt, giảm đau. Không gây lệ thuộc thuốc, không gây kích ứng đường tiêu hóa.'],
             pill_use: [
                 `Sử dụng thuốc cùng với một lượng nước ấm vừa phải.`,
                 `Chờ ít nhất 4 tiếng trước khi sử dụng một liều khác.`,
                 `Không nên sử dụng nhiều hơn 4 liều trong 24 giờ`,
             ],
             pill_ingredient: ['Paracetamol'],
-            pill_description: [
+            pill_indication: [
                 `Với điều trị đau: Điều trị ở các chứng đau do các nguyên nhân khác nhau: Nhức đầu, đau nửa đầu, đau bụng kinh, đau dây thần kinh, đau nhức hệ xương cơ, đau răng.`,
                 `Với điều trị sốt: Sốt do bị nhiễm khuẩn, viêm họng, viêm phế quản.`,
                 `Làm giảm đau nhức và hạ sốt trong các trường hợp bị cảm lạnh, cảm cúm, sốt do virus.`,
                 `Chống chỉ định khi dùng Paracetamol`,
-                `Không sử dụng thuốc Paracetamol 500mg ở những trường hợp nào?`,
+
+            ],
+            pill_contraindication: [
                 `Bệnh nhân bị thiếu máu.`,
                 `Người mắc chứng rối loạn trong đông máu.`,
                 `Người mắc bệnh tạo keo, giảm thể tích tuần hoàn do sử dụng thuốc lợi tiểu hay suy thận, bệnh nhân hen suyễn.`,
@@ -46,7 +48,6 @@ export const factoryData: DataStorageFormat = {
                 `Người bệnh có tiền sử phản ứng quá mẫn (co thắt phế quản, phù mạch, hen suyễn, viêm mũi, hoặc nổi mày đay) khi sử dụng aspirin hoặc các thuốc chống viêm không steroid (NSAID).`,
                 `Bệnh nhân đã từng bị hoặc đang bị loét hay xuất huyết đường tiêu hóa.`,
                 `Người bị suy gan nặng, suy thận nặng có Clcr < 30 ml/ phút, suy tim sung huyết.`,
-
             ],
             pill_dosage: [
                 `Liều dùng cho người lớn:`,

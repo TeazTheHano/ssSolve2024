@@ -16,6 +16,7 @@ const clrStyle = StyleSheet.create<any>({
     grey50: `#6E6E6E`,
     grey30: `#7D8792`,
     grey10: `#F6F6F5`,
+    pri4: `#F2F1F9`
 
 });
 

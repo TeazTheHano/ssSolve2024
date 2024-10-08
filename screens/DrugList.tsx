@@ -1,6 +1,6 @@
 import { View, Text, ScrollView, FlatList, TouchableOpacity, Image, ImageStyle } from 'react-native'
 import React, { useEffect, useRef } from 'react'
-import { Nu12Reg, Nu14Reg, Nu16Bold, Nu16Reg, Nu18Black, Nu18Reg, Nu20Black, QuickBtn, RoundBtn, SSBarWithSaveArea, TopBarSS, ViewCol, ViewRow } from '../assets/Class'
+import { Nu12Reg, Nu14Reg, Nu16Bold, Nu16Reg, Nu18Black, Nu18Reg, Nu20Black, PillList1Component, QuickBtn, RoundBtn, SSBarWithSaveArea, TopBarSS, ViewCol, ViewRow } from '../assets/Class'
 import { useNavigation } from '@react-navigation/native'
 import { RootContext, setSearchFocus } from '../data/store'
 import styles, { vw } from '../assets/stylesheet'
@@ -66,7 +66,7 @@ export default function DrugList() {
     setPillInFamilyPack(filterPillsByFamilyPack());
   }, [familyPack, CurrentCache.DATA.lastChange]);
 
-  class FlatCategory extends React.Component {
+  class FlatCategoryComponent extends React.Component {
     render() {
       return (
         <View style={[styles.w100, styles.paddingH3vw, styles.gap3vw, { flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-between' }]}>
@@ -74,7 +74,7 @@ export default function DrugList() {
             <TouchableOpacity
               key={index}
               onPress={() => {
-                console.log(item.data[0]?.pill_imgAddress);
+                navigation.navigate('InCateList' as any, { cate: item.name, data: item.data } as any)
               }}
               style={[styles.padding10, styles.borderRadius16, styles.gap3vw, styles.flexColBetweenCenter, styles.h50vw, { backgroundColor: clrStyle.blue30, width: index == 0 ? '100%' : '48%' }]}
             >
@@ -92,7 +92,7 @@ export default function DrugList() {
     }
   }
 
-  class PopularPill extends React.Component {
+  class PopularComponent extends React.Component {
     render(): React.ReactNode {
       return (
         <View>
@@ -107,38 +107,7 @@ export default function DrugList() {
                 {sellectedDisease === item ? <Nu16Bold style={[{ color: clrStyle.blue100 }]}>{item}  <Nu18Black style={{ color: clrStyle.red }}>&#8226;</Nu18Black></Nu16Bold> : <Nu16Reg style={[{ color: clrStyle.blue80 }]}>{item}</Nu16Reg>}
               </TouchableOpacity>
             ))}
-          {pillInDisease.length > 0 ?
-            <FlatList
-              data={pillInDisease}
-              keyExtractor={(item) => item.pill_id}
-              numColumns={2}
-              scrollEnabled={false}
-              contentContainerStyle={[styles.gap3vw, styles.w100, styles.marginVertical4vw]}
-              columnWrapperStyle={[styles.w100, styles.justifyContentSpaceBetween]}
-              renderItem={({ item }) => (
-                <TouchableOpacity
-                  style={[styles.w48, styles.padding10, styles.borderRadius16, styles.gap3vw, styles.flexColBetweenCenter, styles.h60vw, styles.border1, { backgroundColor: clrStyle.white, borderColor: clrStyle.grey30 }]}
-                >
-                  <View style={[styles.flex1, styles.w100]}>
-                    {item.pill_imgAddress ?
-                      item.pill_imgAddress.map((img, index) => (
-                        <Image key={index} source={img} resizeMode='contain' style={[styles.w100, styles.h100] as ImageStyle} />
-                      ))
-                      : pillOrderIcon()}
-                  </View>
-                  <View style={[styles.w100]}>
-                    <Nu16Reg numberOfLines={2} style={[styles.w100, { color: clrStyle.blue100 }]}>{item.pill_name}</Nu16Reg>
-                    <Nu16Bold style={[styles.w100, { color: clrStyle.red }]}>{item.pill_sellPrice}đ/vỉ</Nu16Bold>
-                    <Nu14Reg style={[styles.w100, { color: clrStyle.grey30 }]}>{item.pill_id}</Nu14Reg>
-                  </View>
-                  <View style={[styles.paddingH2vw, styles.positionAbsolute, styles.borderRadius100, { backgroundColor: clrStyle.blue50, top: vw(2.5), right: vw(2.5) }]}>
-                    <Nu12Reg style={[{ color: clrStyle.blue80, fontSize: vw(2.5) }]}>{item.pill_packKind}</Nu12Reg>
-                  </View>
-                </TouchableOpacity>
-              )}
-            />
-            : <View style={[styles.marginVertical1vw, styles.bgcolorBlack20, styles.borderRadius16]}><Nu18Reg style={[styles.paddingH3vw, styles.gap3vw, styles.textCenter, styles.paddingV10vw, { color: clrStyle.blue80 }]}>Không có sản phẩm nào</Nu18Reg></View>
-          }
+          <PillList1Component PILLLIST={pillInDisease} />
 
           <Nu20Black style={[styles.marginVertical2vw]}>Tủ thuốc gia đình</Nu20Black>
           {familyPackList.map
@@ -151,38 +120,7 @@ export default function DrugList() {
                 {familyPack === item ? <Nu16Bold style={[{ color: clrStyle.blue100 }]}>{item}  <Nu18Black style={{ color: clrStyle.red }}>&#8226;</Nu18Black></Nu16Bold> : <Nu16Reg style={[{ color: clrStyle.blue80 }]}>{item}</Nu16Reg>}
               </TouchableOpacity>
             ))}
-          {pillInFamilyPack.length > 0 ?
-            <FlatList
-              data={pillInFamilyPack}
-              keyExtractor={(item) => item.pill_id}
-              numColumns={2}
-              scrollEnabled={false}
-              contentContainerStyle={[styles.gap3vw, styles.w100, styles.marginVertical4vw]}
-              columnWrapperStyle={[styles.w100, styles.justifyContentSpaceBetween]}
-              renderItem={({ item }) => (
-                <TouchableOpacity
-                  style={[styles.w48, styles.padding10, styles.borderRadius16, styles.gap3vw, styles.flexColBetweenCenter, styles.h60vw, styles.border1, { backgroundColor: clrStyle.white, borderColor: clrStyle.grey30 }]}
-                >
-                  <View style={[styles.flex1, styles.w100]}>
-                    {item.pill_imgAddress ?
-                      item.pill_imgAddress.map((img, index) => (
-                        <Image key={index} source={img} resizeMode='contain' style={[styles.w100, styles.h100] as ImageStyle} />
-                      ))
-                      : pillOrderIcon()}
-                  </View>
-                  <View style={[styles.w100]}>
-                    <Nu16Reg numberOfLines={2} style={[styles.w100, { color: clrStyle.blue100 }]}>{item.pill_name}</Nu16Reg>
-                    <Nu16Bold style={[styles.w100, { color: clrStyle.red }]}>{item.pill_sellPrice}đ/vỉ</Nu16Bold>
-                    <Nu14Reg style={[styles.w100, { color: clrStyle.grey30 }]}>{item.pill_id}</Nu14Reg>
-                  </View>
-                  <View style={[styles.paddingH2vw, styles.positionAbsolute, styles.borderRadius100, { backgroundColor: clrStyle.blue50, top: vw(2.5), right: vw(2.5) }]}>
-                    <Nu12Reg style={[{ color: clrStyle.blue80, fontSize: vw(2.5) }]}>{item.pill_packKind}</Nu12Reg>
-                  </View>
-                </TouchableOpacity>
-              )}
-            />
-            : <View style={[styles.marginVertical1vw, styles.bgcolorBlack20, styles.borderRadius16]}><Nu18Reg style={[styles.paddingH3vw, styles.gap3vw, styles.textCenter, styles.paddingV10vw, { color: clrStyle.blue80 }]}>Không có sản phẩm nào</Nu18Reg></View>
-          }
+          <PillList1Component PILLLIST={pillInFamilyPack} />
         </View>
       )
     }
@@ -220,7 +158,7 @@ export default function DrugList() {
               onPress={() => setShowCategory(!showCategory)}
             />
           </ViewRow>
-          {showCategory ? <FlatCategory /> : <PopularPill />}
+          {showCategory ? <FlatCategoryComponent /> : <PopularComponent />}
         </ViewCol>
         <View style={[styles.h10vh]} />
       </ScrollView>

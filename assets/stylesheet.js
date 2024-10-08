@@ -1074,6 +1074,13 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
 
+    flexColEndStart: {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'flex-end',
+        alignItems: 'flex-start',
+    },
+
     alignContentSpaceBetween: {
         alignContent: 'space-between',
     },

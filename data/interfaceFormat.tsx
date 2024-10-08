@@ -30,6 +30,7 @@ export interface PillFormat {
     pill_overdose?: (string | string[])[]; // e.g. (quá liều & quên liều)
     pill_overdose_handling?: (string | string[])[]; // e.g. (xử lý quá liều)
     pill_viewed?: number; // e.g. (10)
+    pill_favorite?: boolean;
 }
 
 export interface PillPortFormat {
