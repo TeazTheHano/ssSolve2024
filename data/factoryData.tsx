@@ -11,6 +11,7 @@ export default DATA
 
 export const categoryList: string[] = ['Tất cả thuốc', 'Giảm đau và Hạ sốt', 'Sơ cứu, chăm sóc sức khỏe', 'Thuốc trị ho cảm', 'Thuốc dị ứng', 'Thuốc tiêu hóa', 'Thuốc dạ dày', 'Thuốc trị táo bón',]
 export const diseaseList: string[] = ['Dị ứng thời tiết', 'Cảm lạnh', 'Đau mắt đỏ', 'Viêm mũi dị ứng',]
+export const familyPackList: string[] = ['Giảm đau và hạ sốt', 'Tiêu hoá', 'Hô hấp', 'Dị ứng']
 
 export const factoryData: DataStorageFormat = {
     pillList: [
@@ -31,7 +32,7 @@ export const factoryData: DataStorageFormat = {
                 `Không nên sử dụng nhiều hơn 4 liều trong 24 giờ`,
             ],
             pill_ingredient: ['Paracetamol'],
-            pill_discription: [
+            pill_description: [
                 `Với điều trị đau: Điều trị ở các chứng đau do các nguyên nhân khác nhau: Nhức đầu, đau nửa đầu, đau bụng kinh, đau dây thần kinh, đau nhức hệ xương cơ, đau răng.`,
                 `Với điều trị sốt: Sốt do bị nhiễm khuẩn, viêm họng, viêm phế quản.`,
                 `Làm giảm đau nhức và hạ sốt trong các trường hợp bị cảm lạnh, cảm cúm, sốt do virus.`,
@@ -170,7 +171,7 @@ export const factoryData: DataStorageFormat = {
                 'Thuốc dùng đường uống.'
             ],
             pill_ingredient: [''],
-            pill_discription: [
+            pill_description: [
 
             ],
             pill_dosage: [
@@ -268,7 +269,7 @@ export const factoryData: DataStorageFormat = {
                 `Thuốc dùng đường uống, uống sau bữa ăn.`
             ],
             pill_ingredient: [''],
-            pill_discription: [
+            pill_description: [
 
             ],
             pill_dosage: [
@@ -344,7 +345,7 @@ export const factoryData: DataStorageFormat = {
                 `Thuốc Tatanol 500 dùng đường uống.`
             ],
             pill_ingredient: [''],
-            pill_discription: [
+            pill_description: [
 
             ],
             pill_dosage: [
@@ -416,7 +417,7 @@ export const factoryData: DataStorageFormat = {
                 `Dùng đường uống.`
             ],
             pill_ingredient: [''],
-            pill_discription: [
+            pill_description: [
 
             ],
             pill_dosage: [
@@ -475,7 +476,7 @@ export const factoryData: DataStorageFormat = {
 
         //     ],
         //     pill_ingredient: [''],
-        //     pill_discription: [
+        //     pill_description: [
 
         //     ],
         //     pill_dosage: [

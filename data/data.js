@@ -1,5 +1,31 @@
 let pillList = [
     {
+        pill_id: ``,
+        pill_name: ``,
+        pill_brand: ``,
+        pill_tags: [``], // e.g. (thuốc giảm đau, thuốc hạ sốt)
+        pill_quantity: 10, 
+        pill_sellPrice: 0, // e.g. (10000)
+        pill_buyPrice: 2000, // e.g. (2000)
+        pill_packKind: ``, // e.g. (1 vỉ x 10 viên)
+        pill_imgAddress: [``],
+        pill_indication: [], // e.g. (chỉ định)
+        pill_contraindication: [], // e.g. (chống chỉ định)
+        pill_description: [], // e.g. (mô tả)
+        pill_ingredient: [``], // e.g. (thành phần)
+        pill_use: [], // e.g. (cách dùng)
+        pill_dosage: [], // e.g. (liều lượng/ liều dùng)
+        pill_pharmacology: [``],   // e.g. (cơ chế tác dụng/ dược lý)
+        pill_pharmacokinetics: [``],   // e.g. (dược động học/ động học)
+        pill_sideEffects: [], // e.g. (tác dụng phụ)
+        pill_interactions: [], // e.g. (tương tác)
+        pill_precautions: [], // e.g. (cảnh báo)
+        pill_overdose: [], // e.g. (quá liều & quên liều)
+        pill_overdose_handling: [], // e.g. (xử lý quá liều)
+        pill_viewed: 10
+    },
+
+    {
         pill_id: 'P1235f',
         pill_name: 'Paracetamol giảm đau từ nhẹ đến vừa và hạ sốt',
         pill_tags: ['Giảm đau và Hạ sốt'],
@@ -8,7 +34,7 @@ let pillList = [
         pill_sellPrice: 5000,
         pill_buyPrice: 0,
         pill_packKind: '1 vỉ x 10 viên',
-        pill_imgAddress: ['/assets/image/pill/1111Thuốc_giảm_đau_và_hạ_sốt_-_Paracetamol.png'],
+        pill_imgAddress: [require('../assets/image/pill/Thuốc_giảm_đau_và_hạ_sốt_-_Paracetamol.png')],
         pill_indication: ['Paracetamol 500mg là thuốc được sử dụng phổ biến giúp giảm các triệu chứng đau từ nhẹ đến vừa và giảm mạnh các triệu chứng sốt nhẹ. Thuốc Paracetamol 500mg giúp hạ nhiệt, giảm đau. Không gây lệ thuộc thuốc, không gây kích ứng đường tiêu hóa.'],
         pill_use: [
             `Sử dụng thuốc cùng với một lượng nước ấm vừa phải.`,
@@ -16,7 +42,7 @@ let pillList = [
             `Không nên sử dụng nhiều hơn 4 liều trong 24 giờ`,
         ],
         pill_ingredient: ['Paracetamol'],
-        pill_discription: [
+        pill_description: [
             `Với điều trị đau: Điều trị ở các chứng đau do các nguyên nhân khác nhau: Nhức đầu, đau nửa đầu, đau bụng kinh, đau dây thần kinh, đau nhức hệ xương cơ, đau răng.`,
             `Với điều trị sốt: Sốt do bị nhiễm khuẩn, viêm họng, viêm phế quản.`,
             `Làm giảm đau nhức và hạ sốt trong các trường hợp bị cảm lạnh, cảm cúm, sốt do virus.`,
@@ -149,13 +175,13 @@ let pillList = [
         pill_sellPrice: 5000,
         pill_buyPrice: 0,
         pill_packKind: '1 vỉ x 10 viên',
-        pill_imgAddress: ['/assets/image/pill/Cảm_lạnh_thông_thường_-_TK3.png'],
+        pill_imgAddress: [require('../assets/image/pill/Cảm_lạnh_thông_thường_-_TK3.png')],
         pill_indication: ['Điều trị triệu chứng trong các trường hợp: Cảm sốt, đau đầu, đau nửa đầu, đau răng, đau họng, đau sau nhổ răng, đau bụng kinh, đau cơ xương, đau do viêm khớp, đau dây thần kinh, hạ sốt trong viêm nhiễm.'],
         pill_use: [
             'Thuốc dùng đường uống.'
         ],
         pill_ingredient: [''],
-        pill_discription: [
+        pill_description: [
 
         ],
         pill_dosage: [
@@ -241,7 +267,7 @@ let pillList = [
         pill_sellPrice: 4300,
         pill_buyPrice: 0,
         pill_packKind: '1 vỉ x 10 viên',
-        pill_imgAddress: ['/assets/image/pill/Thuốc_giảm_đau_và_hạ_sốt_-_Ibuprofen.png'],
+        pill_imgAddress: [require('../assets/image/pill/Thuốc_giảm_đau_và_hạ_sốt_-_Ibuprofen.png')],
         pill_indication: [
             `Thuốc Ibuprofen 200 Nadyphar 10x10 được chỉ định dùng trong các trường hợp sau:`,
             [
@@ -253,7 +279,7 @@ let pillList = [
             `Thuốc dùng đường uống, uống sau bữa ăn.`
         ],
         pill_ingredient: [''],
-        pill_discription: [
+        pill_description: [
 
         ],
         pill_dosage: [
@@ -311,7 +337,7 @@ let pillList = [
         pill_sellPrice: 5000,
         pill_buyPrice: 0,
         pill_packKind: '1 vỉ x 10 viên',
-        pill_imgAddress: ['/assets/image/pill/Tatanol.png'],
+        pill_imgAddress: [require('../assets/image/pill/Tatanol.png')],
         pill_indication: [
             `Thuốc Tatanol được chỉ định dùng trong các trường hợp sau:`,
             `Thuốc có tác dụng giảm đau, hạ sốt từ nhẹ đến vừa.`,
@@ -329,7 +355,7 @@ let pillList = [
             `Thuốc Tatanol 500 dùng đường uống.`
         ],
         pill_ingredient: [''],
-        pill_discription: [
+        pill_description: [
 
         ],
         pill_dosage: [
@@ -390,7 +416,7 @@ let pillList = [
         pill_sellPrice: 4000,
         pill_buyPrice: 0,
         pill_packKind: '1 vỉ x 10 viên',
-        pill_imgAddress: ['/assets/image/pill/Hapacol_Blue.png'],
+        pill_imgAddress: [require('../assets/image/pill/Hapacol_Blue.png')],
         pill_indication: [
             `Thuốc Hapacol Blue được chỉ định dùng trong các trường hợp sau:`,
             `Điều trị các triệu chứng đau trong các trường hợp, đau đầu, đau nửa đầu, đau răng, đau nhức do cảm cúm, đau họng, đau nhức cơ xương, đau do viêm khớp, đau sau khi tiêm ngừa hay nhổ răng.`,
@@ -401,7 +427,7 @@ let pillList = [
             `Dùng đường uống.`
         ],
         pill_ingredient: [''],
-        pill_discription: [
+        pill_description: [
 
         ],
         pill_dosage: [

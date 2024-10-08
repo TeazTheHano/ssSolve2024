@@ -10,7 +10,7 @@ import { vw, vh } from './stylesheet';
 import { imgSourceHandle, marginBottomForScrollView } from './component';
 
 // svg import
-import { cameraIcon, goldStar, heartIcon, imgPickerIcon, inVisibilityIcon, leftArrow, lockIcon, navBellIcon, noStar, peopleIcon, savedIcon, searchIcon, sharpLeftArrow, unSavedIcon, visibilityIcon, xIcon } from './svgXml';
+import { cameraIcon, filterIcon, goldStar, heartIcon, imgPickerIcon, inVisibilityIcon, leftArrow, lockIcon, navBellIcon, noStar, peopleIcon, savedIcon, searchIcon, sharpLeftArrow, unSavedIcon, visibilityIcon, xIcon } from './svgXml';
 import clrStyle from './componentStyleSheet';
 import { useNavigation } from '@react-navigation/native';
 import { CurrentCache } from '../data/store';
@@ -693,6 +693,7 @@ export class TopBarSS extends Component<{
     subTitle?: string
     navigation?: any
     currentCache?: CurrentCache
+    filterFnc?: () => void
 }, SearchBoxState> {
     constructor(props: any) {
         super(props);
@@ -729,14 +730,22 @@ export class TopBarSS extends Component<{
                         </TouchableOpacity>
                     </ViewRowCenter>
                 </ViewRowBetweenCenter>
-                <SearchBox
-                    showSearchIcon
-                    placeholder='Tìm kiếm thuốc, triệu chứng, ...'
-                    customStyle={[styles.border1, styles.paddingV1vw, styles.marginVertical3vw, { borderColor: clrStyle.grey30, borderRadius: vw(4) }]}
-                    value={this.state.searchInput}
-                    onChangeText={setSearchInput}
-                    currentCache={this.props.currentCache}
-                />
+                <ViewRowBetweenCenter style={[styles.gap2vw]}>
+                    <SearchBox
+                        showSearchIcon
+                        placeholder='Tìm kiếm thuốc, triệu chứng, ...'
+                        customStyle={[styles.border1, styles.paddingV1vw, styles.marginVertical3vw, styles.flex1, { borderColor: clrStyle.grey30, borderRadius: vw(4) }]}
+                        value={this.state.searchInput}
+                        onChangeText={setSearchInput}
+                        currentCache={this.props.currentCache}
+                    />
+                    {this.props.filterFnc ?
+                        <TouchableOpacity onPress={this.props.filterFnc}>
+                            {filterIcon(vw(6), vw(6))}
+                        </TouchableOpacity>
+                        : null
+                    }
+                </ViewRowBetweenCenter>
 
             </ViewCol>
         )

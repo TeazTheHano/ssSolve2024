@@ -1420,6 +1420,22 @@ const styles = StyleSheet.create({
     bgcolorBlack50: {
         backgroundColor: 'rgba(0, 0, 0, 0.5)',
     },
+
+    bgcolorBlack40: {
+        backgroundColor: 'rgba(0, 0, 0, 0.4)',
+    },
+
+    bgcolorBlack30: {
+        backgroundColor: 'rgba(0, 0, 0, 0.3)',
+    },
+
+    bgcolorBlack20: {
+        backgroundColor: 'rgba(0, 0, 0, 0.2)',
+    },
+
+    bgcolorBlack10: {
+        backgroundColor: 'rgba(0, 0, 0, 0.1)',
+    },
 });
 
 export default styles;
