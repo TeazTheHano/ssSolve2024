@@ -25,6 +25,7 @@
     "react-native-screens": "^3.34.0",
     "react-native-storage": "^0.2.4",
     "react-native-svg": "^15.7.1",
+    "react-qr-code": "^2.0.15",
     "ts-node": "^10.9.2"
   },
   "devDependencies": {

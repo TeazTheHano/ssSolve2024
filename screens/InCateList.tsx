@@ -1,6 +1,6 @@
 import { View, Text, ScrollView } from 'react-native'
 import React, { useContext, useEffect, useRef } from 'react'
-import { PillList1Component, SSBarWithSaveArea, TopBarSS } from '../assets/Class'
+import { FilterBottom, PillList1Component, SSBarWithSaveArea, TopBarSS } from '../assets/Class'
 import { RootContext } from '../data/store'
 import BottomSheet, { BottomSheetMethods } from '@devvie/bottom-sheet';
 import styles from '../assets/stylesheet';
@@ -13,6 +13,7 @@ export default function InCateList({ route }: any) {
     const sheetRef = useRef<BottomSheetMethods>(null)
     const [routeName, setRouteName] = React.useState<string>(``)
     const [routeParams, setRouteParams] = React.useState<PillFormat[]>([])
+
     useEffect(() => {
         if (route.params) {
             setRouteName(route.params.name)
@@ -21,8 +22,6 @@ export default function InCateList({ route }: any) {
         }
     }, [route.params])
     function navFnc(item: PillFormat) {
-        console.log(item);
-
         navigation.navigate('PillDetail', { pill: item })
     }
 
@@ -37,6 +36,7 @@ export default function InCateList({ route }: any) {
             <ScrollView style={[styles.paddingH6vw]} contentContainerStyle={[styles.gap6vw]}>
                 <PillList1Component PILLLIST={routeParams} onPress={navFnc} />
             </ScrollView>
+            <FilterBottom sheetRef={sheetRef} />
         </SSBarWithSaveArea>
     )
 }

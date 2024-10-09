@@ -1,6 +1,6 @@
 import { View, Text, TouchableOpacity, Image, ImageStyle, ScrollView, StatusBar, Platform, ActivityIndicator, Alert, TextInput } from 'react-native'
 import React, { ComponentType, useContext, useEffect } from 'react'
-import { addToCart, CurrentCache, editItemInCart, RootContext } from '../data/store'
+import { addToCart, CurrentCache, currentEditItemInCart, RootContext } from '../data/store'
 import { CartFormat, PillFormat } from '../data/interfaceFormat'
 import { Nu16Bold, Nu16BoldLH1p5, Nu16Reg, Nu16RegLH1p5, Nu18Black, Nu18Reg, RoundBtn, SSBar, SSBarWithSaveArea, TopBarSS, TopNav2, ViewCol, ViewColBetweenCenter, ViewColCenter, ViewRow, ViewRowBetweenCenter, ViewRowCenter } from '../assets/Class'
 import { useNavigation } from '@react-navigation/native'
@@ -150,7 +150,7 @@ export default function PillDetail({ route }: any) {
         dispatch(addToCart(item))
     }
     function dispatchEditCart(item: CartFormat) {
-        dispatch(editItemInCart(item))
+        dispatch(currentEditItemInCart(item))
     }
 
     return (
@@ -278,7 +278,7 @@ export default function PillDetail({ route }: any) {
                             </TouchableOpacity>
 
                             <TouchableOpacity
-                                onPress={() => addItemToCart(CurrentCache, paramPill, currentNumOnCart, dispatchEditCart, dispatchAddToCart)}
+                                onPress={() => addItemToCart(CurrentCache, paramPill, currentNumOnCart, dispatchEditCart, dispatchAddToCart, () => navigation.navigate('BottomTab', { screen: 'Cart' }))}
                                 style={[styles.paddingH8vw, styles.flexColCenter, styles.borderRadius10, { backgroundColor: clrStyle.blue100, height: vw(12) }]}>
                                 <Nu18Reg style={{ color: clrStyle.pri4 }}>Thêm vào giỏ</Nu18Reg>
                             </TouchableOpacity>
@@ -300,7 +300,8 @@ export function addItemToCart(
     paramPill: PillFormat,
     currentNumOnCart: number,
     editCartFnc: (item: CartFormat) => void,
-    addToCartFnc: (item: CartFormat) => void
+    addToCartFnc: (item: CartFormat) => void,
+    navFnc: () => void
 ) {
     const cart = CurrentCache.cart;
     const itemIndex = cart.findIndex((item) => item.pill.pill_id === paramPill.pill_id);
@@ -315,13 +316,25 @@ export function addItemToCart(
 
     if (itemIndex >= 0) {
         if (cart[itemIndex].orderQuantity === currentNumOnCart) {
-            return Alert.alert('Đã có trong giỏ hàng', 'Số lượng sản phẩm này đã được thêm vào giỏ hàng', [{ text: 'OK' }]);
+            return Alert.alert('Đã có trong giỏ hàng', 'Bạn có muốn tiến tới thanh toán không?', [
+                { text: 'OK' },
+                { text: 'Xem giỏ hàng', onPress: () => navFnc() },
+            ]);
         }
         editCartFnc(newItem);
-        Alert.alert('Đã cập nhật giỏ hàng', 'Đã cập nhật số lượng sản phẩm trong giỏ hàng', [{ text: 'OK' }]);
+        Alert.alert('Đã cập nhật giỏ hàng', 'Bạn có muốn tiến tới thanh toán không?', [
+            { text: 'OK' },
+            { text: 'Xem giỏ hàng', onPress: () => navFnc() },
+        ]);
     } else {
+        if (newItem.orderQuantity == 0) {
+            return Alert.alert('Số lượng không hợp lệ', 'Xin lỗi, số lượng sản phẩm phải lớn hơn 0', [{ text: 'OK' }]);
+        }
         addToCartFnc(newItem);
-        Alert.alert('Đã thêm vào giỏ hàng', 'Đã thêm sản phẩm vào giỏ hàng', [{ text: 'OK' }]);
+        Alert.alert('Đã thêm vào giỏ hàng', 'Bạn có muốn tiến tới thanh toán không?', [
+            { text: 'OK' },
+            { text: 'Xem giỏ hàng', onPress: () => navFnc() },
+        ]);
     }
 
 }

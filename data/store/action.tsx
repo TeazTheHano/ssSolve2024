@@ -35,7 +35,7 @@ export const addToCart = (pill: CartFormat) => {
 }
 
 export const REMOVE_FROM_CART = `REMOVE_FROM_CART`;
-export const removeFromCart = (pill: PillFormat) => {
+export const currentRemoveItemInCart = (pill: PillFormat) => {
     return {
         type: REMOVE_FROM_CART,
         payload: pill
@@ -50,7 +50,7 @@ export const clearCart = () => {
 }
 
 export const EDIT_ITEM_IN_CART = `EDIT_ITEM_IN_CART`;
-export const editItemInCart = (item: CartFormat) => {
+export const currentEditItemInCart = (item: CartFormat) => {
     return {
         type: EDIT_ITEM_IN_CART,
         payload: item

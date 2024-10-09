@@ -1,6 +1,6 @@
 import { View, Text, ScrollView, FlatList, TouchableOpacity, Image, ImageStyle } from 'react-native'
 import React, { useEffect, useRef } from 'react'
-import { Nu12Reg, Nu14Reg, Nu16Bold, Nu16Reg, Nu18Black, Nu18Reg, Nu20Black, PillList1Component, QuickBtn, RoundBtn, SSBarWithSaveArea, TopBarSS, ViewCol, ViewRow } from '../assets/Class'
+import { FilterBottom, Nu12Reg, Nu14Reg, Nu16Bold, Nu16Reg, Nu18Black, Nu18Reg, Nu20Black, PillList1Component, QuickBtn, RoundBtn, SSBarWithSaveArea, TopBarSS, ViewCol, ViewRow } from '../assets/Class'
 import { useNavigation } from '@react-navigation/native'
 import { RootContext, setSearchFocus } from '../data/store'
 import styles, { vw } from '../assets/stylesheet'
@@ -48,7 +48,8 @@ export default function DrugList() {
     const filterPillsByDisease = () => {
       return CurrentCache.DATA.pillList.filter((pill) =>
         pill.pill_tags.join(' ').toLowerCase().includes(sellectedDisease.toLowerCase()) ||
-        (pill.pill_description?.join(' ').toLowerCase() ?? '').includes(sellectedDisease.toLowerCase())
+        (pill.pill_description?.join(' ').toLowerCase() ?? '').includes(sellectedDisease.toLowerCase()) ||
+        (pill.pill_indication?.join(' ').toLowerCase() ?? '').includes(sellectedDisease.toLowerCase())
       );
     };
 
@@ -92,6 +93,10 @@ export default function DrugList() {
     }
   }
 
+  function handleClickPillNav(item: PillFormat) {
+    navigation.navigate('PillDetail' as any, { pill: item } as any)
+  }
+
   class PopularComponent extends React.Component {
     render(): React.ReactNode {
       return (
@@ -107,7 +112,7 @@ export default function DrugList() {
                 {sellectedDisease === item ? <Nu16Bold style={[{ color: clrStyle.blue100 }]}>{item}  <Nu18Black style={{ color: clrStyle.red }}>&#8226;</Nu18Black></Nu16Bold> : <Nu16Reg style={[{ color: clrStyle.blue80 }]}>{item}</Nu16Reg>}
               </TouchableOpacity>
             ))}
-          <PillList1Component PILLLIST={pillInDisease} />
+          <PillList1Component PILLLIST={pillInDisease} onPress={handleClickPillNav} />
 
           <Nu20Black style={[styles.marginVertical2vw]}>Tủ thuốc gia đình</Nu20Black>
           {familyPackList.map
@@ -120,7 +125,7 @@ export default function DrugList() {
                 {familyPack === item ? <Nu16Bold style={[{ color: clrStyle.blue100 }]}>{item}  <Nu18Black style={{ color: clrStyle.red }}>&#8226;</Nu18Black></Nu16Bold> : <Nu16Reg style={[{ color: clrStyle.blue80 }]}>{item}</Nu16Reg>}
               </TouchableOpacity>
             ))}
-          <PillList1Component PILLLIST={pillInFamilyPack} />
+          <PillList1Component PILLLIST={pillInFamilyPack} onPress={handleClickPillNav} />
         </View>
       )
     }
@@ -162,11 +167,7 @@ export default function DrugList() {
         </ViewCol>
         <View style={[styles.h10vh]} />
       </ScrollView>
-      <BottomSheet ref={sheetRef}>
-        <Text>
-          The smart 😎, tiny 📦, and flexible 🎗 bottom sheet your app craves 🚀
-        </Text>
-      </BottomSheet>
+      <FilterBottom sheetRef={sheetRef} />
     </SSBarWithSaveArea>
   )
 }

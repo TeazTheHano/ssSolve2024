@@ -718,6 +718,7 @@ export class TopBarSS extends Component<{
     navigation?: any
     currentCache?: CurrentCache
     filterFnc?: () => void
+    unenableSearch?: boolean
 }, SearchBoxState> {
     constructor(props: any) {
         super(props);
@@ -754,22 +755,24 @@ export class TopBarSS extends Component<{
                         </TouchableOpacity>
                     </ViewRowCenter>
                 </ViewRowBetweenCenter>
-                <ViewRowBetweenCenter style={[styles.gap2vw]}>
-                    <SearchBox
-                        showSearchIcon
-                        placeholder='Tìm kiếm thuốc, triệu chứng, ...'
-                        customStyle={[styles.border1, styles.paddingV1vw, styles.marginVertical3vw, styles.flex1, { borderColor: clrStyle.grey30, borderRadius: vw(4) }]}
-                        value={this.state.searchInput}
-                        onChangeText={setSearchInput}
-                        currentCache={this.props.currentCache}
-                    />
-                    {this.props.filterFnc ?
-                        <TouchableOpacity onPress={this.props.filterFnc}>
-                            {filterIcon(vw(6), vw(6))}
-                        </TouchableOpacity>
-                        : null
-                    }
-                </ViewRowBetweenCenter>
+                {this.props.unenableSearch ? null :
+                    <ViewRowBetweenCenter style={[styles.gap2vw]}>
+                        <SearchBox
+                            showSearchIcon
+                            placeholder='Tìm kiếm thuốc, triệu chứng, ...'
+                            customStyle={[styles.border1, styles.paddingV1vw, styles.marginVertical3vw, styles.flex1, { borderColor: clrStyle.grey30, borderRadius: vw(4) }]}
+                            value={this.state.searchInput}
+                            onChangeText={setSearchInput}
+                            currentCache={this.props.currentCache}
+                        />
+                        {this.props.filterFnc ?
+                            <TouchableOpacity onPress={this.props.filterFnc}>
+                                {filterIcon(vw(6), vw(6))}
+                            </TouchableOpacity>
+                            : null
+                        }
+                    </ViewRowBetweenCenter>
+                }
 
             </ViewCol>
         )
@@ -872,6 +875,20 @@ export class TopNav2 extends Component<{
             <View style={[containerStyle, styles.bgcolorWhite, { containerStyle }]}>
                 <Image source={backGoundImage} resizeMethod='resize' resizeMode='cover' style={[styles.flex1, styles.alignSelfCenter] as ImageStyle} />
             </View>
+        )
+    }
+}
+
+
+import BottomSheet, { BottomSheetMethods } from '@devvie/bottom-sheet';
+export class FilterBottom extends Component<{ sheetRef: React.RefObject<BottomSheetMethods> }> {
+    render() {
+        return (
+            <BottomSheet ref={this.props.sheetRef}>
+                <Text>
+                    The smart 😎, tiny 📦, and flexible 🎗 bottom sheet your app craves 🚀
+                </Text>
+            </BottomSheet>
         )
     }
 }
