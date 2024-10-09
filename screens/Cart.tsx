@@ -1,34 +1,47 @@
 import { View, Text, Button, ScrollView, Dimensions, Image, ImageStyle, TouchableOpacity, Alert } from 'react-native'
 import React, { useEffect, useRef } from 'react'
-import { Nu14Reg, Nu16Bold, Nu16Reg, Nu18Reg, RoundBtn, SSBarWithSaveArea, TopBarSS, ViewCol, ViewColCenter, ViewRow, ViewRowBetweenCenter } from '../assets/Class'
-import BottomSheet, { BottomSheetMethods } from '@devvie/bottom-sheet';
+import { Nu14Reg, Nu16Bold, Nu16Reg, Nu18Black, Nu18Reg, RoundBtn, SSBarWithSaveArea, TopBarSS, ViewCol, ViewColCenter, ViewRow, ViewRowBetweenCenter } from '../assets/Class'
 import styles, { vh, vw } from '../assets/stylesheet';
 import clrStyle from '../assets/componentStyleSheet';
 import { currentEditItemInCart, currentRemoveItemInCart, RootContext } from '../data/store';
 
-import QRCode from "react-qr-code";
 import { CartFormat, PillFormat } from '../data/interfaceFormat';
 import { checkIcon, minusIcon, plusIcon, unCheckIcon } from '../assets/svgXml';
+import { useNavigation } from '@react-navigation/native';
 
 export default function Cart() {
-  const sheetRef = useRef<BottomSheetMethods>(null)
+  const navigation = useNavigation()
   const [CurrentCache, dispatch] = React.useContext(RootContext)
   const [showHistory, setShowHistory] = React.useState(true)
   const [orderQuantityArray, setOrderQuantityArray] = React.useState<number[]>([])
   const [selectedPill, setSelectedPill] = React.useState<boolean[]>([])
-
-  const value = 'https://www.google.com';
+  const [totalPay, setTotalPay] = React.useState<number>(0)
 
   useEffect(() => {
     let temp: number[] = []
-    let selectTemp: boolean[] = []
     CurrentCache.cart.forEach((item) => {
       temp.push(item.orderQuantity)
-      selectTemp.push(false)
     })
     setOrderQuantityArray(temp)
-    setSelectedPill(selectTemp)
   }, [CurrentCache.cart])
+
+  useEffect(() => {
+    let selectTemp: boolean[] = []
+    CurrentCache.cart.forEach((item) => {
+      selectTemp.push(false)
+    })
+    setSelectedPill(selectTemp)
+  }, [orderQuantityArray.length])
+
+  useEffect(() => {
+    let total = 0
+    CurrentCache.cart.forEach((item, index) => {
+      if (selectedPill[index]) {
+        total += item.pill.pill_sellPrice * orderQuantityArray[index]
+      }
+    })
+    setTotalPay(total)
+  }, [orderQuantityArray, selectedPill])
 
   function handleQuantityChange(index: number, plus: boolean) {
     let temp = [...orderQuantityArray];
@@ -78,6 +91,20 @@ export default function Cart() {
     dispatch(currentRemoveItemInCart(item))
   }
 
+  function handlePurchase(item: CartFormat[], total: number, selected: boolean[]) {
+    if (selected.filter((item) => item).length > 0) {
+      let orderList: CartFormat[] = []
+      item.forEach((item, index) => {
+        if (selected[index]) {
+          orderList.push(item)
+        }
+      })
+      navigation.navigate('Purchase', { cart: orderList, totalPay: total })
+    } else {
+      Alert.alert('Vui lòng chọn ít nhất 1 sản phẩm để thanh toán!', '', [{ text: 'OK' }]);
+    }
+  }
+
   return (
     <SSBarWithSaveArea>
       <TopBarSS
@@ -86,8 +113,6 @@ export default function Cart() {
         unenableSearch
       />
       <View style={[styles.flex1]}>
-        {/* <QRCode size={Math.min(height, width)} value={value} /> */}
-
         <ViewRow style={[styles.w100, styles.paddingH6vw, styles.marginVertical6vw]}>
           <RoundBtn
             title='Giỏ thuốc'
@@ -114,13 +139,25 @@ export default function Cart() {
                 <ScrollView style={[styles.paddingH6vw, styles.flex1]} contentContainerStyle={[styles.gap4vw]}>
                   <InCartItemRender data={CurrentCache.cart} editFnc={cartEditCartItem} removeFnc={cartRemoveCartItem} handleFnc={handleQuantityChange} quantityArr={orderQuantityArray} sellectArr={selectedPill} handleSellect={handleSelectChange} />
                 </ScrollView>
-                <ViewRowBetweenCenter style={[styles.w100, { backgroundColor: clrStyle.blue50 }]}>
-                  <RoundBtn
-                    title='Thanh toán'
+                <ViewRowBetweenCenter style={[styles.w100vw, styles.paddingH6vw, styles.paddingV4vw, { backgroundColor: clrStyle.blue50 }]}>
+                  <TouchableOpacity
+                    style={[styles.flexRowCenter]}
                     onPress={() => {
-                      sheetRef.current?.open()
+                      const allSelected = selectedPill.every((item) => item);
+                      const newSelectedPill = selectedPill.map(() => !allSelected);
+                      setSelectedPill(newSelectedPill);
+                    }}>
+                    {selectedPill.every((item) => item) ? checkIcon(vw(8), vw(8)) : unCheckIcon(vw(8), vw(8))}
+                    <Nu14Reg>Tất cả</Nu14Reg>
+                  </TouchableOpacity>
+                  <Nu14Reg>Tổng: <Nu18Black style={{ color: clrStyle.red }}>{totalPay}</Nu18Black></Nu14Reg>
+                  <RoundBtn
+                    title={`Thanh toán (${selectedPill.filter((item) => item).length})`}
+                    bgColor={clrStyle.red}
+                    onPress={() => {
+                      handlePurchase(CurrentCache.cart, totalPay, selectedPill);
                     }}
-                    customStyle={[styles.marginHorizontal6vw, styles.marginBottom6vw]}
+                    customStyle={[styles.flexRowCenter, { width: 'fit-content' }]}
                   />
                 </ViewRowBetweenCenter>
               </>

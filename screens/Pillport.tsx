@@ -3,6 +3,7 @@ import React from 'react'
 import { SSBarWithSaveArea, TopBarSS } from '../assets/Class'
 import { clearData } from '../data/storageFunc'
 
+
 export default function Pillport() {
   return (
     <SSBarWithSaveArea>
@@ -10,7 +11,6 @@ export default function Pillport() {
         title='pillport'
         subTitle={'Nên kiểm tra triệu chứng trước khi lên đơn!'}
       />
-
       <TouchableOpacity
         onPress={clearData}>
         <Text>clear data</Text>

@@ -719,6 +719,7 @@ export class TopBarSS extends Component<{
     currentCache?: CurrentCache
     filterFnc?: () => void
     unenableSearch?: boolean
+    unenableRightIcon?: boolean
 }, SearchBoxState> {
     constructor(props: any) {
         super(props);
@@ -746,14 +747,16 @@ export class TopBarSS extends Component<{
                             {this.props.subTitle ? <Nu12Reg style={{ color: clrStyle.grey30 }}>{this.props.subTitle}</Nu12Reg> : null}
                         </View>
                     </ViewRowCenter>
-                    <ViewRowCenter style={[styles.gap1vw]}>
-                        <TouchableOpacity style={[styles.borderRadius100, styles.flexColCenter, { width: vw(8.5), height: vw(8.5), backgroundColor: clrStyle.grey10 }]}>
-                            {heartIcon(vw(6), vw(6))}
-                        </TouchableOpacity>
-                        <TouchableOpacity style={[styles.borderRadius100, styles.flexColCenter, { width: vw(8.5), height: vw(8.5), }]}>
-                            {navBellIcon(vw(6), vw(6))}
-                        </TouchableOpacity>
-                    </ViewRowCenter>
+                    {this.props.unenableRightIcon ? null :
+                        <ViewRowCenter style={[styles.gap1vw]}>
+                            <TouchableOpacity style={[styles.borderRadius100, styles.flexColCenter, { width: vw(8.5), height: vw(8.5), backgroundColor: clrStyle.grey10 }]}>
+                                {heartIcon(vw(6), vw(6))}
+                            </TouchableOpacity>
+                            <TouchableOpacity style={[styles.borderRadius100, styles.flexColCenter, { width: vw(8.5), height: vw(8.5), }]}>
+                                {navBellIcon(vw(6), vw(6))}
+                            </TouchableOpacity>
+                        </ViewRowCenter>
+                    }
                 </ViewRowBetweenCenter>
                 {this.props.unenableSearch ? null :
                     <ViewRowBetweenCenter style={[styles.gap2vw]}>

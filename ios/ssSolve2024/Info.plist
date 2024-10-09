@@ -84,5 +84,10 @@
 		<string>WorkSans-Thin.ttf</string>
 		<string>WorkSans-ThinItalic.ttf</string>
 	</array>
+	<!-- rotate-lock -->
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
 </dict>
 </plist>

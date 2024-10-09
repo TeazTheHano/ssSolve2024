@@ -566,9 +566,31 @@ export const plusIcon = (w?: any, h?: any, color?: any) => {
 }
 
 
+export const copyIcon = (w?: any, h?: any, color?: any) => {
+    const xml = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M10.0696 7C10.3869 3.9787 11.8424 3 15.5 3C19.7059 3 21 4.29412 21 8.5C21 12.1576 20.0213 13.6131 17 13.9304M3 15.5C3 11.2941 4.29412 10 8.5 10C12.7059 10 14 11.2941 14 15.5C14 19.7059 12.7059 21 8.5 21C4.29412 21 3 19.7059 3 15.5Z" stroke="#2A2E40" style="stroke:#2A2E40;stroke:color(display-p3 0.1647 0.1804 0.2510);stroke-opacity:1;" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    `
+    return (
+        <SvgXml xml={xml} width={w} height={h} />
+    );
+}
+
+export const walletIcon = (w?: any, h?: any, color?: any) => {
+    const xml = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M21.31 9H14.0176C12.351 9 11 10.3431 11 12C11 13.6569 12.351 15 14.0176 15H21.31M14 12V12.01M3.55556 5.72222C4.08333 5.36111 7.77778 5 12 5C16.2222 5 19.9167 5.36111 20.4444 5.72222C20.7556 5.93511 21.0667 7.40107 21.2697 8.75005C21.3207 9.08894 21.3649 9.45201 21.4005 9.83339C21.4637 10.509 21.5 11.2421 21.5 12.0001C21.5 13.1859 21.4111 14.3108 21.2697 15.2501C21.0667 16.599 20.7556 18.0649 20.4444 18.2778C19.9167 18.6389 16.2222 19 12 19C7.77778 19 4.08333 18.6389 3.55556 18.2778C3.02778 17.9167 2.5 14.8889 2.5 12.0001C2.5 11.2421 2.53633 10.509 2.59946 9.83339C2.77694 7.9339 3.16625 5.98859 3.55556 5.72222Z" stroke="#EE8469" style="stroke:#EE8469;stroke:color(display-p3 0.9333 0.5176 0.4118);stroke-opacity:1;" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+`
+    return (
+        <SvgXml xml={xml} width={w} height={h} />
+    );
+}
+
+
 export const ppppppp = (w?: any, h?: any, color?: any) => {
     const xml = ``
     return (
         <SvgXml xml={xml} width={w} height={h} />
     );
 }
+

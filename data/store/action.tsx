@@ -95,3 +95,26 @@ export const setData = (data: DataStorageFormat) => {
         payload: data
     }
 }
+
+export const CURRENT_SAVE_ORDER = `CURRENT_SAVE_ORDER`;
+export const currentSaveOrder = (order: OrderFormat) => {
+    return {
+        type: CURRENT_SAVE_ORDER,
+        payload: order
+    }
+}
+
+export const CURRENT_REMOVE_ORDER = `CURRENT_REMOVE_ORDER`;
+export const currentRemoveOrder = (id: string) => {
+    return {
+        type: CURRENT_REMOVE_ORDER,
+        payload: id
+    }
+}
+
+export const CURRENT_CLEAR_ORDER = `CURRENT_CLEAR_ORDER`;
+export const currentClearOrder = () => {
+    return {
+        type: CURRENT_CLEAR_ORDER
+    }
+}

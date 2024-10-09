@@ -18,6 +18,7 @@ import Pillport from './screens/Pillport';
 import OrderDetail from './screens/OrderDetail';
 import InCateList from './screens/InCateList';
 import PillDetail from './screens/PillDetail';
+import Purchase from './screens/Purchase';
 
 // ____________________END OF IMPORT_______________________
 
@@ -38,6 +39,7 @@ function App(): React.JSX.Element {
           <Stack.Screen name="OrderDetail" component={OrderDetail} />
           <Stack.Screen name="InCateList" component={InCateList} />
           <Stack.Screen name="PillDetail" component={PillDetail} />
+          <Stack.Screen name="Purchase" component={Purchase} />
         </Stack.Navigator>
       </NavigationContainer>
     </ProviderTotal>

@@ -12,8 +12,8 @@
 //     }
 // }
 
-import { CartFormat, DataStorageFormat, PillFormat, UserFormat } from "../interfaceFormat";
-import { initialState, Action, CurrentCache, SET_USER, SET_CURRENT_PILL, ADD_TO_CART, REMOVE_FROM_CART, CLEAR_CART, EDIT_ITEM_IN_CART, SET_SEARCH_FOCUS, SET_SEARCH_CONTENT, SET_SEARCH_RESULT, CLEAR_SEARCH_RESULT, SET_DATA } from "./index";
+import { CartFormat, DataStorageFormat, OrderFormat, PillFormat, UserFormat } from "../interfaceFormat";
+import { initialState, Action, CurrentCache, SET_USER, SET_CURRENT_PILL, ADD_TO_CART, REMOVE_FROM_CART, CLEAR_CART, EDIT_ITEM_IN_CART, SET_SEARCH_FOCUS, SET_SEARCH_CONTENT, SET_SEARCH_RESULT, CLEAR_SEARCH_RESULT, SET_DATA, CURRENT_SAVE_ORDER, CURRENT_CLEAR_ORDER, CURRENT_REMOVE_ORDER } from "./index";
 
 export default function setReducer(state = initialState, action: Action): CurrentCache {
     switch (action.type) {
@@ -103,6 +103,36 @@ export default function setReducer(state = initialState, action: Action): Curren
             return {
                 ...state,
                 DATA: action.payload as DataStorageFormat
+            };
+        }
+
+        case CURRENT_SAVE_ORDER: {
+            return {
+                ...state,
+                DATA: {
+                    ...state.DATA,
+                    orderList: [...state.DATA.orderList, action.payload as OrderFormat]
+                }
+            };
+        }
+
+        case CURRENT_CLEAR_ORDER: {
+            return {
+                ...state,
+                DATA: {
+                    ...state.DATA,
+                    orderList: []
+                }
+            };
+        }
+
+        case CURRENT_REMOVE_ORDER: {
+            return {
+                ...state,
+                DATA: {
+                    ...state.DATA,
+                    orderList: state.DATA.orderList.filter((item) => item.order_id !== (action.payload as OrderFormat).order_id)
+                }
             };
         }
 
