@@ -16,7 +16,7 @@ export default function Home() {
   const [CurrentCache, dispatch] = React.useContext(RootContext)
   const [refreshing, setRefreshing] = React.useState(true)
 
-  const INDEVELOP: boolean = true
+  const INDEVELOP: boolean = 0
 
   const fetchData = useCallback(async () => {
     try {
@@ -82,7 +82,7 @@ export default function Home() {
   const renderOrderItem = useCallback(({ item, index }: { item: OrderFormat, index: number }) => {
     return (
       <TouchableOpacity
-        onPress={() => navigation.navigate('OrderDetail', { order: item })}
+        onPress={() => navigation.navigate('OrderDetail', { orderData: item })}
       >
         <ViewCol style={[styles.w50vw, styles.padding10, styles.borderRadius16, styles.gap3vw, { backgroundColor: clrStyle.green50, borderWidth: 2, borderColor: clrStyle.green100, marginLeft: index == 0 ? vw(6) : 0, marginRight: index == CurrentCache.DATA.orderList.length - 1 ? vw(6) : 0 }]}>
           <ViewRowStartCenter style={[styles.gap1vw]}>
@@ -97,7 +97,7 @@ export default function Home() {
             {clockIcon(vw(5), vw(5), clrStyle.grey30)}
             <Nu14Reg numberOfLines={2} style={[styles.flex1, { color: clrStyle.grey30 }]}>{item.order_date.toString().slice(0, 10)}</Nu14Reg>
           </ViewRowStartCenter>
-          <Nu14Reg numberOfLines={1} style={[styles.flex1, { color: clrStyle.grey50 }]}>({item.order_total}) <Nu16Bold style={[styles.flex1, { color: clrStyle.red }]}>{item.order_total}</Nu16Bold> vnđ</Nu14Reg>
+          <Nu14Reg numberOfLines={1} style={[styles.flex1, { color: clrStyle.grey50 }]}>({item.order_item_quantity.reduce((a, b) => a + b, 0)}) <Nu16Bold style={[styles.flex1, { color: clrStyle.red }]}>{item.order_total}</Nu16Bold> vnđ</Nu14Reg>
         </ViewCol>
       </TouchableOpacity>
     )
@@ -226,7 +226,7 @@ export default function Home() {
           /> */}
           {!INDEVELOP ?
             <FlatList
-              data={CurrentCache.DATA.orderList}
+              data={CurrentCache.DATA.orderList.sort((a, b) => new Date(b.order_date).getTime() - new Date(a.order_date).getTime())}
               horizontal
               showsHorizontalScrollIndicator={false}
               snapToInterval={vw(54)}

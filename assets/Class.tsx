@@ -234,6 +234,18 @@ export class Nu18Black extends Component<{ children: React.ReactNode, style?: an
     }
 }
 
+export class Nu16Black extends Component<{ children: React.ReactNode, style?: any, numberOfLines?: number }> {
+    render() {
+        const { children, style, numberOfLines } = this.props;
+
+        return (
+            <Text style={[{ color: 'black', fontFamily: 'Nunito-Black', fontSize: vw(4), lineHeight: vw(5.5), }, style]} numberOfLines={numberOfLines}>
+                {children}
+            </Text>
+        );
+    }
+}
+
 export class Nu24Bold extends Component<{ children: React.ReactNode, style?: any, numberOfLines?: number }> {
     render() {
         const { children, style, numberOfLines } = this.props;

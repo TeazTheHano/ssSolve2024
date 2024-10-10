@@ -46,7 +46,9 @@ export interface OrderFormat {
     order_status: string;
     order_total: number;
     order_item_ids: string[];
+    order_item_quantity: number[];
     order_pillPort_id: string;
+    order_paymentKind: string;
 }
 
 export interface SearchResults {
