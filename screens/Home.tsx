@@ -1,6 +1,6 @@
 import { View, Text, TouchableOpacity, SafeAreaViewBase, SafeAreaView, ScrollView, FlatList, RefreshControl, ActivityIndicator, ListRenderItem } from 'react-native'
 import React, { useCallback, useEffect } from 'react'
-import { Nu12Reg, Nu14Reg, Nu16Bold, Nu18Reg, Nu20Black, QuickBtn, RoundBtn, SSBarWithSaveArea, TopBarSS, ViewCol, ViewRow, ViewRowBetweenCenter, ViewRowStartCenter } from '../assets/Class'
+import { Nu12Reg, Nu14Reg, Nu16Bold, Nu18Reg, Nu20Black, QuickBtn, RoundBtn, SSBarWithSaveArea, TopBarSS, ViewCol, ViewColBetweenCenter, ViewRow, ViewRowBetweenCenter, ViewRowStartCenter } from '../assets/Class'
 import clrStyle from '../assets/componentStyleSheet'
 import styles, { vw } from '../assets/stylesheet'
 import { RootContext, setCurrentPill, setData, setSearchFocus } from '../data/store'
@@ -53,7 +53,7 @@ export default function Home() {
 
   const renderPillPortItem = useCallback(({ item, index }: { item: PillPortFormat, index: number }) => {
     return (
-      <ViewCol style={[styles.w60vw, styles.padding10, styles.borderRadius16, styles.gap3vw, { backgroundColor: clrStyle.blue30, marginLeft: index == 0 ? vw(6) : 0, marginRight: index == CurrentCache.DATA.pillPortList.length - 1 ? vw(6) : 0 }]}>
+      <ViewColBetweenCenter style={[styles.w60vw, styles.padding10, styles.borderRadius16, styles.gap3vw, { backgroundColor: clrStyle.blue30, marginLeft: index == 0 ? vw(6) : 0, marginRight: index == CurrentCache.DATA.pillPortList.length - 1 ? vw(6) : 0 }]}>
         <ViewRowBetweenCenter>
           {pillPortIcon(vw(19), vw(19))}
           <ViewCol style={[styles.flex1, styles.gap1vw]}>
@@ -71,7 +71,7 @@ export default function Home() {
           bgColor={clrStyle.blue50}
           customStyle={[styles.justifyContentCenter, styles.borderRadius100, { paddingVertical: vw(1.5) }]}
         />
-      </ViewCol>
+      </ViewColBetweenCenter>
     );
   }, [CurrentCache.DATA.pillPortList]);
   const PillPortItemRenderMemo = React.memo(renderPillPortItem);

@@ -72,6 +72,7 @@ def enableProguardInReleaseBuilds = false
  * this variant is about 6MiB larger per architecture than default.
  */
 def jscFlavor = 'org.webkit:android-jsc:+'
+def pass = getPassword("teaz","android_keystore")
 
 android {
     ndkVersion rootProject.ext.ndkVersion

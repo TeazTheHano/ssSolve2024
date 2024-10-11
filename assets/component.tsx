@@ -181,12 +181,6 @@ export function formatNumber(num: number, changeToChar: boolean = true) {
     }
 }
 
-// card
-
-export function imgSourceHandle(address: string) {
-    return address.startsWith('http') ? { uri: address } : require(`../assets/image/placeholder.png`)
-}
-
 // img picker and camera.
 // require >>>> react-native-image-picker <<<< package
 import { CameraOptions, launchCamera, launchImageLibrary } from 'react-native-image-picker';
