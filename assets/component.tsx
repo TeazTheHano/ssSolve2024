@@ -184,6 +184,7 @@ export function formatNumber(num: number, changeToChar: boolean = true) {
 // img picker and camera.
 // require >>>> react-native-image-picker <<<< package
 import { CameraOptions, launchCamera, launchImageLibrary } from 'react-native-image-picker';
+import { PillFormat } from "../data/interfaceFormat";
 
 const defaultCameraOptions: CameraOptions = {
     mediaType: 'photo',
@@ -249,32 +250,6 @@ export const openGallery = async (saveImgFnc: any, options = defaultCameraOption
     });
 }
 
-// export async function searchEngine(keyword: string, dataBank: SetFormat[] | Desk[] | Card[], type: 'set' | 'desk' | 'card') {
-//     keyword = keyword.trim();
-//     let result: SetFormat[] | Desk[] | Card[] = [];
-//     const regex = new RegExp(`\\b${keyword}`, 'i');
-
-//     if (type === 'set' && dataBank as SetFormat[]) {
-//         result = dataBank.filter((item): item is SetFormat =>
-//             (item as SetFormat).name !== undefined && regex.test((item as SetFormat).name)
-//         );
-//     } else if (type === 'desk' && dataBank as Desk[]) {
-//         result = dataBank.filter((item): item is Desk =>
-//             (item as Desk).title !== undefined && regex.test((item as Desk).title)
-//         );
-//     } else if (type === 'card' && dataBank as Card[]) {
-//         result = dataBank.filter((item): item is Card =>
-//             (item as Card).front !== undefined && regex.test((item as Card).front)
-//         );
-//     }
-
-//     if (keyword === '') {
-//         return [];
-//     }
-
-//     return result;
-// }
-
 export const onRefresh = React.useCallback(() => {
     // setRefreshing(true);
     // setTimeout(() => {
@@ -288,6 +263,30 @@ export const onRefresh = React.useCallback(() => {
 
 export const showInDeverlopFnc = () => {
     return Alert.alert('This function is in development')
+}
+
+export interface searchOutputInterFace { pill: PillFormat[], symstom: PillFormat[] }
+
+export async function searchEngine(keyword: string, dataBank: PillFormat[],) {
+    keyword = keyword.trim();
+    let result: searchOutputInterFace = { pill: [], symstom: [] };
+    const regex = new RegExp(`\\b${keyword}`, 'i');
+
+    if (keyword === '') {
+        return [];
+    }
+
+    result.pill = dataBank.filter((item): item is PillFormat =>
+        (item as PillFormat).pill_name !== undefined && regex.test((item as PillFormat).pill_name)
+    );
+
+    result.symstom = dataBank.filter((item): item is PillFormat =>
+        Array.isArray((item as PillFormat).pill_description) &&
+        (item as PillFormat).pill_description !== undefined &&
+        (item as PillFormat).pill_description.some(description => typeof description === 'string' && regex.test(description))
+    );
+
+    return result;
 }
 
 // END OF UNIVERSE FUNCTION________________________________________

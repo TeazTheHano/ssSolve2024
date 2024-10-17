@@ -9,6 +9,7 @@ import { CartFormat, OrderFormat, PillFormat } from '../data/interfaceFormat';
 import { checkIcon, clockIcon, locationIcon, minusIcon, pillOrderIcon, plusIcon, unCheckIcon } from '../assets/svgXml';
 import { useNavigation } from '@react-navigation/native';
 import { factoryData } from '../data/factoryData';
+import RenderOrderList from './compoScreen/RenderOrderList';
 
 export default function Cart() {
   const navigation = useNavigation()
@@ -181,35 +182,7 @@ export default function Cart() {
 
           {
             orderHistoryData.length > 0 ?
-              <>
-                <FlatList
-                  data={orderHistoryData.sort((a, b) => new Date(b.order_date).getTime() - new Date(a.order_date).getTime())}
-                  showsHorizontalScrollIndicator={false}
-                  contentContainerStyle={[styles.gap4vw, styles.marginBottom8vw]}
-                  renderItem={({ item, index }) => (
-                    <TouchableOpacity
-                      onPress={() => navigation.navigate('OrderDetail', { orderData: item })}
-                    >
-                      <ViewCol style={[styles.w100, styles.padding10, styles.borderRadius16, styles.gap3vw, { backgroundColor: clrStyle.green50, borderWidth: 2, borderColor: clrStyle.green100 }]}>
-                        <ViewRowStartCenter style={[styles.gap1vw]}>
-                          {pillOrderIcon(vw(6), vw(6))}
-                          <Nu16Bold numberOfLines={1} style={[styles.flex1]}>{item.order_id}</Nu16Bold>
-                        </ViewRowStartCenter>
-                        <ViewRow style={[styles.gap1vw]}>
-                          {locationIcon(vw(5), vw(5), clrStyle.grey30)}
-                          <Nu14Reg numberOfLines={2} style={[styles.flex1, { color: clrStyle.grey30 }]}>{factoryData.pillPortList.find(ix => ix.pillport_id === item.order_pillPort_id)?.pillport_address}</Nu14Reg>
-                        </ViewRow>
-                        <ViewRowStartCenter style={[styles.gap1vw]}>
-                          {clockIcon(vw(5), vw(5), clrStyle.grey30)}
-                          <Nu14Reg numberOfLines={2} style={[styles.flex1, { color: clrStyle.grey30 }]}>{item.order_date.toString().slice(0, 10)}</Nu14Reg>
-                        </ViewRowStartCenter>
-                        <Nu14Reg numberOfLines={1} style={[styles.flex1, { color: clrStyle.grey50 }]}>({item.order_item_quantity.reduce((a, b) => a + b, 0)}) <Nu16Bold style={[styles.flex1, { color: clrStyle.red }]}>{item.order_total}</Nu16Bold> vnđ</Nu14Reg>
-                      </ViewCol>
-                    </TouchableOpacity>
-                  )}
-                  keyExtractor={item => item.order_date + Math.random().toFixed(6).toString()}
-                />
-              </>
+              RenderOrderList(orderHistoryData, false, styles.w50vw)
               :
               <ViewColCenter style={[styles.flex1]} >
                 <Nu18Reg>Lịch sử trống</Nu18Reg>

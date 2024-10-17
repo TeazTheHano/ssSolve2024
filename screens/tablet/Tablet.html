@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pillport onsite Controller</title>
+    <link rel="stylesheet" href="table.css" />
+</head>
+
+<body style="height: 100vh" class="display-flex-column">
+    <section id="step1">
+        <div style="
+          border-radius: 0px 0px 3.125rem 3.125rem;
+          background-color: var(--blue-100);
+          padding: 2rem 0;
+        " class="text-center display-flex-column gap-1">
+            <p class="text-white text-bold" style="font-size: 2.25rem">
+                Chào mừng bạn đến với Máy bán thuốc tự động “Pillport"!
+            </p>
+            <p class="text-style-italic text-white" style="font-size: 2.25rem">
+                Welcome to the “Pillport” Vending Machine!
+            </p>
+        </div>
+
+        <div class="flex-1 display-flex-column-center gap-3">
+            <div class="display-flex-column gap-1">
+                <p class="text-center text-bold" style="font-size: 2.5rem">
+                    Vui lòng chọn ngôn ngữ
+                </p>
+                <p class="text-center text-style-italic" style="font-size: 1.5rem">
+                    Please select your language
+                </p>
+            </div>
+            <div class="display-flex-around gap-3">
+                <div class="btn btn-primary display-flex-column-center gap-1 text-thin" style="font-size: 2.25rem"
+                    onclick="changeStep('step2')">
+                    <div id="VNFLAG"></div>
+                    Tiếng Việt
+                </div>
+                <div class="btn btn-primary display-flex-column-center gap-1 text-thin" style="font-size: 2.25rem"
+                    onclick="changeLanguage('en')">
+                    <div id="ENFLAG"></div>
+                    English
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="step2" class="padding-v-2 margin-v-2">
+        <div class="margin-auto display-flex-center text-bold gap-1" style="font-size: 1.5rem">
+            <div class="logo"></div>
+            <p>Máy bán thuốc tự động<br />Chăm sóc sức khỏe mọi lúc, mọi nơi!</p>
+        </div>
+
+        <div class="flex-1 display-flex-column-center gap-3">
+            <div onclick="" class="btn btn-w80-round bg-blue-100 text-white" style="font-size: 2.25rem">
+                Nhận thuốc
+            </div>
+            <div onclick="changeStep('step3_danhMuc')" class="btn btn-w80-round bg-red-100" style="font-size: 2.25rem">
+                Mua thuốc ngay
+            </div>
+            <div style="
+            background-color: var(--blue-30);
+            border: 1px solid black;
+            border-width: 5px 0;
+          " class="width-100 display-flex-column-center padding-v-2 gap-2">
+                <p class="text-style-italic" style="font-size: 1.6rem">
+                    Nếu chưa xác định chắc chắn được loại thuốc cần dùng, để pillport
+                    giúp bạn:
+                </p>
+                <div onclick="" class="btn btn-w80-round bg-green-100" style="font-size: 2.25rem">
+                    Tư vấn mua thuốc nhanh
+                </div>
+            </div>
+        </div>
+
+        <div class="absMascot"></div>
+    </section>
+
+    <section id="step3_danhMuc" class="veLogoBg">
+        <div class="speakToText"></div>
+        <div class="topNav3Item" value="CHỌN LOẠI THUỐC BẠN CẦN"></div>
+        <div class="searchBar"></div>
+        <div id="pillCateList"
+            class="margin-auto width-80 flex-1 display-flex-center align-center gap-3 padding-2 overflow-hidden"
+            style="flex-wrap: wrap;"></div>
+    </section>
+
+    <section id="step4_CateDetail" class="veLogoBg">
+        <div class="speakToText"></div>
+        <div class="topNav3Item" value=""></div>
+        <div class="searchBar"></div>
+        <div id="pillList" class="margin-auto width-80 flex-1 display-flex-center align-center gap-3 padding-2 hide-scroll"
+            style="flex-wrap: wrap; overflow-y: scroll;"></div>
+    </section>
+</body>
+
+<script src="data.tsx"></script>
+<script src="tablet.js"></script>
+
+
+</html>

@@ -900,9 +900,13 @@ export class FilterBottom extends Component<{ sheetRef: React.RefObject<BottomSh
     render() {
         return (
             <BottomSheet ref={this.props.sheetRef}>
-                <Text>
-                    The smart 😎, tiny 📦, and flexible 🎗 bottom sheet your app craves 🚀
-                </Text>
+                <ViewColCenter>
+                    <ViewRowCenter style={[styles.paddingV4vw]}><Nu18Bold>Bộ lọc thuốc</Nu18Bold></ViewRowCenter>
+                    <Nu16Bold>Đối tượng dùng</Nu16Bold>
+                    <ViewRow>
+                        
+                    </ViewRow>
+                </ViewColCenter>
             </BottomSheet>
         )
     }
