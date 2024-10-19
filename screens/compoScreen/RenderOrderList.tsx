@@ -16,6 +16,7 @@ function RenderOrderList(renderData: OrderFormat[], horizontalOpt?: boolean, wid
     const renderOrderItem = useCallback(({ item, index }: { item: OrderFormat, index: number }) => {
         return (
             <TouchableOpacity
+                disabled={item.order_id.startsWith('PP')}
                 onPress={() => navigation.navigate('OrderDetail', { orderData: item })}
             >
                 <Class.ViewCol style={[styles.padding10, styles.borderRadius16, styles.gap3vw, { width: widthOpt, backgroundColor: clrStyle.green50, borderWidth: 2, borderColor: clrStyle.green100, marginLeft: horizontalOpt && index == 0 ? vw(6) : 0, marginRight: horizontalOpt && index == renderData.length - 1 ? vw(6) : 0 }]}>

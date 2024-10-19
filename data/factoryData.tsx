@@ -4994,7 +4994,7 @@ export const factoryData: DataStorageFormat = {
             order_id: 'PP082708248',
             order_user_id: `t1@gmail.com`,
             order_date: new Date('2021-08-27'),
-            order_status: 'Đã nhận',
+            order_status: 'Đã hủy',
             order_total: 800000,
             order_item_ids: ['1', '2', '3'],
             order_item_quantity: [1, 2, 3],
