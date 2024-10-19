@@ -1,8 +1,15 @@
+// initial variables
 var cateList = [];
-var step = 'step1';
-// var step = 'step3_danhMuc';
+var currentPill
+var cart = [];
+var checkOut = []
+
+// var step = 'step1';
+var step = 'step3_danhMuc';
 var stepHistory = [];
 var stepHistoryIndex = 0;
+
+
 function changeStep(newStep, back = false) {
     if (!back) {
         stepHistory.push(step);
@@ -20,7 +27,9 @@ function renderControl() {
     let step2 = document.getElementById('step2');
     let step3_danhMuc = document.getElementById('step3_danhMuc');
     let step4_CateDetail = document.getElementById('step4_CateDetail');
-    let step5 = document.getElementById('step5');
+    let step5_PillDetail = document.getElementById('step5_PillDetail');
+    let step6_cart = document.getElementById('step6_cart')
+    let step7_payment = document.getElementById('step7_payment')
     let allStep = document.querySelectorAll('section[id^="step"]');
     function deSelectAll() {
         allStep.forEach((stepScreen) => {
@@ -44,11 +53,45 @@ function renderControl() {
         case 'step4_CateDetail':
             selectStep(step4_CateDetail);
             break;
+        case 'step5_PillDetail':
+            selectStep(step5_PillDetail);
+            break;
+        case 'step6_cart':
+            selectStep(step6_cart)
+            renderCart()
+            break;
+        case 'step7_payment':
+            selectStep(step7_payment)
+            renderPayment()
         default:
             break;
     }
 }
 renderControl();
+
+function pillQuantityControl(pill, quantity, quantityDisplayId) {
+    console.log(quantity);
+    let cartPill = cart.find((cartPill) => cartPill.pill.pill_name === pill.pill_name);
+    let quantityDisplay = document.getElementById(quantityDisplayId);
+    let commitBtn = document.getElementById('step5_PillDetail_commit');
+    if (cartPill) {
+        cartPill.quantity += quantity;
+        if (cartPill.quantity <= 0) {
+            cart = cart.filter((cartPill) => cartPill.pill.pill_name !== pill.pill_name);
+        }
+        // Update the quantity display
+        if (quantityDisplay) {
+            quantityDisplay.textContent = cartPill.quantity;
+        }
+    } else if (quantity == 1) {
+        cart.push({ pill: pill, quantity: quantity });
+        if (quantityDisplay) {
+            quantityDisplay.textContent = quantity
+        }
+    }
+
+    console.log('cart:', cart);
+}
 
 // render component
 function renderPillCate() {
@@ -123,19 +166,23 @@ function renderPills() {
         let pillCateHtml = '';
         await Promise.all(pills.map(async (pill) => {
             pillCateHtml += `
-            <div 
-            class="btn btn-hover-tranform display-flex-column-evenly bg-blue-30 border-rad-1"
-            style="width: 16rem; height: 16rem; border: 0.25rem solid var(--blue-50)">
-                    <div style="width: 50%; height: 50%">
+            <div data-step="${pill.pill_name}"
+            class="btn display-flex-column-evenly border-rad-1 padding-1 bg-white"
+            style="width: 18rem; height: 18rem; border: 1px solid var(--gray-30); gap:0.5rem">
+                    <div style="width: 80%; height: 60%">
                         <img src="${pill.pill_imgAddress && pill.pill_imgAddress[0] ? pill.pill_imgAddress[0] : 'https://img.freepik.com/free-psd/3d-pills-drug-isolated-transparent-background_191095-16611.jpg'}" alt="" style="width: 100%; height: 100%" />
                     </div>
-                    <div class="display-flex-column-center">
-                        <h2 class="2lineClip text-center" style="font-size: 1.5rem; color: var(--blue-100)">
+                    <div class="display-flex-column-between flex-1" style="align-items:start">
+                        <h3 class="text-2lineClip" style="font-size: 1rem; color: var(--blue-100)">
                             ${pill.pill_name ? pill.pill_name : 'Chưa có tên'}
-                        </h2>
-                        <p class="text-thin text-lineHeight-1p5" style="font-size: 1.25rem; color: var(--blue-80)">
-                            ${pill.pill_price ? pill.pill_price : 'Chưa có giá'}
+                        </h3>
+                        <p class="text-bold" style="font-size: 1.25rem; color: var(--red-100)">
+                           đ ${pill.pill_sellPrice ? pill.pill_sellPrice : 'Chưa có giá'}/vỉ
                         </p>
+                        <div class="display-flex-between width-100">
+                            <p class="text-thin" style="font-size: 1rem; color: var(--gray-30)">#${pill.pill_id}</p>
+                            <div class="pill_add_to_cart"><svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.1667 21.6667H25.8334M20.0001 15.8333V27.5M15.0001 10.1554C16.5358 10.0575 18.2351 10 20.0001 10C21.7651 10 23.4644 10.0575 25.0001 10.1554M15.0001 10.1554C15.0001 10.1554 8.88897 10.6481 8.14823 11.2963C7.57252 11.8 6.99681 14.6529 6.76886 18.3333C6.70352 19.3884 6.66675 20.5114 6.66675 21.6667C6.66675 26.8519 7.40749 31.3889 8.14823 32.037C8.88897 32.6852 14.0742 33.3333 20.0001 33.3333C25.926 33.3333 31.1112 32.6852 31.8519 32.037C32.5927 31.3889 33.3334 26.8519 33.3334 21.6667C33.3334 20.5114 33.2966 19.3884 33.2313 18.3333C33.0033 14.6529 32.4276 11.8 31.8519 11.2963C31.1112 10.6481 25.0001 10.1554 25.0001 10.1554M15.0001 10.1554V8.33333C15.0001 5.37494 17.7289 5 20.0001 5C22.2712 5 25.0001 5.37494 25.0001 8.33333V10.1554" stroke="#2C2C2C" style="stroke:#2C2C2C;stroke:color(display-p3 0.1706 0.1706 0.1706);stroke-opacity:1;" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                        </div>
                     </div>
                 </div>
             `;
@@ -143,11 +190,22 @@ function renderPills() {
         pillCateList.innerHTML = pillCateHtml;
         document.querySelectorAll('[data-step]').forEach(element => {
             element.addEventListener('click', function () {
-                let cate = cateList.find((c) => c.tag === this.getAttribute('data-step'));
-                document.querySelector('#step4_CateDetail .topNav3Item').setAttribute('value', cate.tag);
+                let pill = pills.find((p) => p.pill_name === this.getAttribute('data-step'));
                 console.log('click', this.getAttribute('data-step'));
-                changeStep('step4_CateDetail');
+                currentPill = pill;
+                renderPillDetails();
+                changeStep('step5_PillDetail');
             });
+            let addToCartBtn = element.querySelector('.pill_add_to_cart');
+            if (addToCartBtn) {
+                addToCartBtn.addEventListener('click', function () {
+                    let pill = pills.find((p) => p.pill_name === element.getAttribute('data-step'));
+                    if (!cart.some(cartPill => cartPill.pill_name === pill.pill_name)) {
+                        cart.push({ pill: pill, quantity: 1 });
+                    }
+                    console.log('cart:', cart);
+                });
+            }
         });
     }
 
@@ -155,6 +213,193 @@ function renderPills() {
     renderPillList().catch(error => {
         console.error('Error rendering pill categories:', error);
     });
+}
+
+function renderPillDetails() {
+    let container = document.getElementById('step5_pill_info');
+    let pill = currentPill;
+    let destnationClasses = [
+        "pill_ingredient",
+        "pill_use",
+        "pill_description",
+        "pill_indication",
+        "pill_contraindication",
+        "pill_dosage",
+        "pill_pharmacology",
+        "pill_pharmacokinetice",
+        "pill_sideEffects",
+        "pill_interactions",
+        "pill_precautions",
+        "pill_overdose",
+        "pill_overdose_handling",
+    ]
+    destnationClasses.forEach((destnationClass) => {
+        let element = container.querySelector(`.${destnationClass} > p`);
+        if (element) {
+            element.innerHTML = '';
+            insertListGen(pill[destnationClass] && pill[destnationClass][0] ? pill[destnationClass] : 'Chưa có thông tin', element);
+        }
+    });
+    let img = document.querySelector('#step5_pill_img img');
+    if (img) {
+        img.src = pill.pill_imgAddress[0]
+    }
+    let name = document.querySelector('#step5_pill_name');
+    if (name) {
+        name.innerHTML = pill.pill_name;
+    }
+
+    let pillQuantity = cart.find((cartPill) => cartPill.pill.pill_name === pill.pill_name);
+    let quantityDisplay = document.getElementById('step5_PillDetail_quantity');
+    if (quantityDisplay) {
+        quantityDisplay.textContent = pillQuantity ? pillQuantity.quantity : 0;
+    }
+}
+
+function renderCart() {
+    let container = document.getElementById('step6_cart_pillList')
+
+    if (cart.length > 0) {
+        let pillListHtml = ``;
+        cart.map((pillInfo) => {
+            let pillItem = `
+               <div class="step6_cart_pillList_item display-flex-center" pill_id=${pillInfo.pill.pill_id} pill_name=${pillInfo.pill.pill_name} pill_sell=${pillInfo.pill_sellPrice} pill_img=${pillInfo.pill.pill_imgAddress} pill_quantity=${pillInfo.pill.pillQuantity}>
+                    <input type="checkbox" id="step6_cart_pillList_item_checkbox" onchange="handleCartCheckBox(this)">
+                    <div class="display-flex-between">
+                        <img src="${pillInfo.pill.pill_imgAddress}" alt="" srcset="">
+                        <div class="display-flex-column-between">
+                            <p class="text-1lineClip" style="font-size: 1.5rem;">${pillInfo.pill.pill_name}</p>
+                            <div class="display-flex-between">
+                                <p style="font-size: 1.5rem; color:var(--red-100); font-weight: bold;">đ ${pillInfo.pill.pill_sellPrice}/vỉ</p>
+                                <div class="display-flex-center gap-2 border-1 border-rad-2" style="font-size: 1.5rem">
+                                    <div class="btn padding-1 padding-v-2" id="step5_PillDetail_minus" onclick="pillQuantityControl(currentPill, -1, 'step6_cart_pillList_quantity'); updateCheckout(${pillInfo.pill.pill_id})">-</div>
+                                    <p id="step6_cart_pillList_quantity">${pillInfo.quantity}</p>
+                                    <div class="btn padding-1 padding-v-2" id="step5_PillDetail_plus" onclick="pillQuantityControl(currentPill, 1, 'step6_cart_pillList_quantity'); updateCheckout(${pillInfo.pill.pill_id})">+</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `
+            pillListHtml += pillItem;
+        })
+        container.innerHTML = pillListHtml;
+    } else {
+        container.innerHTML = `<p class="text-center text-bold">Chưa có sản phẩm nào trong giỏ hàng</p>`
+    }
+}
+
+function handleCartCheckBox(params) {
+    let pill_id = params.parentElement.getAttribute('pill_id');
+    let cartItem = cart.find((item) => item.pill.pill_id === pill_id);
+    let checkBoxForAll = document.getElementById('step6_cart_checkAll');
+    let step6_cart_total = document.getElementById('step6_cart_total');
+    if (params.checked) {
+        if (!checkOut.some(item => item.pill.pill_name === cartItem.pill.pill_name)) {
+            checkOut.push(cartItem);
+        }
+    } else {
+        checkOut = checkOut.filter(item => item.pill.pill_name !== cartItem.pill.pill_name);
+        checkBoxForAll.checked = false;
+    }
+
+    if (checkOut.length === cart.length) {
+        checkBoxForAll.checked = true;
+    } else {
+        checkBoxForAll.checked = false;
+    }
+
+    let total = checkOut.reduce((sum, item) => {
+        if (item.pill && item.pill.pill_sellPrice) {
+            return sum + item.pill.pill_sellPrice * item.quantity;
+        }
+        return sum;
+    }, 0);
+    step6_cart_total.innerHTML = total;
+    handleCheckoutBtn()
+}
+
+function handleCartCheckAll(params) {
+    let checkBoxes = document.querySelectorAll('#step6_cart_pillList_item_checkbox');
+    if (params.checked) {
+        checkBoxes.forEach((checkBox) => {
+            checkBox.checked = true;
+        });
+        checkOut = cart;
+    } else {
+        checkBoxes.forEach((checkBox) => {
+            checkBox.checked = false;
+        });
+        checkOut = [];
+    }
+    let step6_cart_total = document.getElementById('step6_cart_total');
+    let total = checkOut.reduce((sum, item) => {
+        if (item.pill && item.pill.pill_sellPrice) {
+            return sum + item.pill.pill_sellPrice * item.quantity;
+        }
+        return sum;
+    }, 0);
+    step6_cart_total.innerHTML = total;
+    handleCheckoutBtn()
+}
+
+function handleCheckoutBtn() {
+    let goToPaymentBtn = document.getElementById('step6_cart_goToPayment');
+    if (checkOut.length > 0) {
+        goToPaymentBtn.classList.remove('disabled');
+        goToPaymentBtn.innerHTML = `(${checkOut.length}) Thanh toán`;
+        goToPaymentBtn.addEventListener('click', function () {
+            changeStep('step7_payment');
+            console.log('checkOut:', checkOut);
+
+        });
+    } else {
+        goToPaymentBtn.classList.add('disabled');
+        goToPaymentBtn.innerHTML = `Thanh toán`;
+    }
+}
+
+function renderPayment() {
+    let container = document.getElementById('step7_checkoutList')
+    let step7_checkout_total = document.getElementById('step7_checkout_total')
+    let step7_payment_paymentMethod = document.getElementById('step7_payment_paymentMethod')
+    let step7_payment_qr_container = document.getElementById('step7_payment_qr_container')
+    let step7_payment_qr = document.getElementById('step7_payment_qr')
+    let step7_done = document.getElementById('step7_done')
+    if (checkOut.length > 0) {
+        let pillListHtml = ``;
+        checkOut.map((pillInfo) => {
+            let pillItem = `
+               <div class="step6_cart_pillList_item display-flex-center" pill_id=${pillInfo.pill.pill_id} pill_name=${pillInfo.pill.pill_name} pill_sell=${pillInfo.pill_sellPrice} pill_img=${pillInfo.pill.pill_imgAddress} pill_quantity=${pillInfo.pill.pillQuantity}>
+                    <div class="display-flex-between">
+                        <img src="${pillInfo.pill.pill_imgAddress}" alt="" srcset="">
+                        <div class="display-flex-column-between">
+                            <p class="text-1lineClip" style="font-size: 1.5rem;">${pillInfo.pill.pill_name}</p>
+                            <div class="display-flex-between">
+                                <p style="font-size: 1.5rem; color:var(--red-100); font-weight: bold;">đ ${pillInfo.pill.pill_sellPrice}/vỉ</p>
+                                <p class="" style="font-size: 1.5rem;color:var(--gray-30)">x${pillInfo.quantity}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `
+            pillListHtml += pillItem;
+        })
+        container.innerHTML = pillListHtml;
+        step7_checkout_total.innerHTML = checkOut.reduce((sum, item) => {
+            if (item.pill && item.pill.pill_sellPrice) {
+                return sum + item.pill.pill_sellPrice * item.quantity;
+            }
+            return sum;
+        }, 0);
+    }
+
+    step7_done.addEventListener('click', function () {
+        step7_payment_paymentMethod.style = 'display: none!important';
+        step7_payment_qr_container.style = 'display: flex!important';
+        cart = [];
+        checkOut = [];
+    })
 }
 
 // RULES-001: DO NOT TOUCH INSERT FNC
@@ -324,9 +569,9 @@ function insertTopNav3Item() {
     topNavs.forEach(topNav => {
         const title = topNav.getAttribute('value')
         topNav.innerHTML = `
-            <div class="width-100 display-flex-between padding-2">
+            <div class="width-100 display-flex-between padding-2 gap-2">
                 <div class="btn-round btn-hover-tranform padding-1 bg-blue-100 text-white" style="font-size: 2.25rem;"
-                    onclick="changeStep('${stepHistory[stepHistoryIndex - 1]}', ${true}); console.log('${stepHistory}') ;console.log('${stepHistoryIndex}');console.log('${stepHistory[stepHistoryIndex - 1]}') "
+                    onclick="changeStep('${stepHistory[stepHistoryIndex - 1]}', ${true}); checkOut=[]; console.log('${stepHistory}') ;console.log('${stepHistoryIndex}');console.log('${stepHistory[stepHistoryIndex - 1]}') "
                     ><svg width="44" height="45" viewBox="0 0 44 45" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path d="M27.4999 7.83301L12.8333 22.4997L27.4999 37.1663" stroke="#969696"
@@ -336,7 +581,7 @@ function insertTopNav3Item() {
                 </div>
                 <h1 style="font-size: 2.5rem;">${title}</h1>
                 <div class="btn-round btn-hover-tranform padding-1 bg-blue-50 text-white" style="font-size: 2.25rem;"
-                    onclick="changeStep('step3')"><svg width="45" height="45" viewBox="0 0 45 45" fill="none"
+                    onclick="changeStep('step6_cart')"><svg width="45" height="45" viewBox="0 0 45 45" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M16.1086 25.25H28.942M22.5253 18.8333V31.6667M28.0253 13.3333V9.66667C28.0253 7.64162 26.3837 6 24.3586 6H20.692C18.6669 6 17.0253 7.64162 17.0253 9.66667V13.3333M11.5253 13.3333H33.5253C35.5504 13.3333 37.192 14.975 37.192 17V33.5C37.192 35.525 35.5504 37.1667 33.5253 37.1667H11.5253C9.50027 37.1667 7.85864 35.525 7.85864 33.5V17C7.85864 14.975 9.50027 13.3333 11.5253 13.3333Z"
@@ -425,3 +670,33 @@ function insertSpeakToText() {
 `})
 }
 insertSpeakToText()
+
+function insertListGen(data, parent) {
+    if (typeof data === 'string') {
+        const p = document.createElement('p');
+        p.textContent = data;
+        parent.appendChild(p);
+    } else if (Array.isArray(data)) {
+        const ul = document.createElement('ul');
+        ul.style.marginLeft = '2rem'; // Add margin-right to the ul
+        data.forEach(item => {
+            if (typeof item === 'string') {
+                const li = document.createElement('li');
+                li.textContent = item;
+                ul.appendChild(li);
+            } else if (Array.isArray(item)) {
+                const nestedUl = document.createElement('ul');
+                nestedUl.style.marginLeft = '2rem'; // Add margin-right to the nested ul
+                item.forEach(nestedItem => {
+                    const nestedLi = document.createElement('li');
+                    nestedLi.textContent = nestedItem;
+                    nestedUl.appendChild(nestedLi);
+                });
+                const li = document.createElement('li');
+                li.appendChild(nestedUl);
+                ul.appendChild(li);
+            }
+        });
+        parent.appendChild(ul);
+    }
+}

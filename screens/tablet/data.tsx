@@ -461,7 +461,7 @@ let pillList = [
 
 
     {
-        pill_id: `#H6462w`,
+        pill_id: `H6462w`,
         pill_name: `Thuốc Tiffy Dey Thai Nakorn Patana điều trị nghẹt mũi, sổ mũi (25 vỉ x 4 viên)`,
         pill_brand: ``,
         pill_tags: [`Giảm đau và Hạ sốt`],
@@ -526,7 +526,7 @@ let pillList = [
 
 
     {
-        pill_id: `#G5638f`,
+        pill_id: `G5638f`,
         pill_name: `Thuốc Di-Angesic 30 Codein giảm đau cấp tính mức độ trung bình (2 vỉ x 10 viên)`,
         pill_brand: ``,
         pill_tags: [`Giảm đau và Hạ sốt`],
@@ -683,7 +683,7 @@ let pillList = [
 
 
     {
-        pill_id: `#G5538f`,
+        pill_id: `G5538f`,
         pill_name: `Viên sủi Tovalgan Ef Trường Thọ Pharma giảm đau, hạ sốt (5 vỉ x 4 viên)`,
         pill_brand: ``,
         pill_tags: [`Giảm đau và Hạ sốt`],
@@ -794,7 +794,7 @@ let pillList = [
 
 
     {
-        pill_id: `#T7653g`,
+        pill_id: `T7653g`,
         pill_name: `Thuốc Allerphast 180mg Mebiphar điều trị viêm mũi dị ứng theo mùa, mày đay mạn tính vô căn (1 vỉ x 10 viên)`,
         pill_brand: ``,
         pill_tags: [`Thuốc dị ứng`],
@@ -894,7 +894,7 @@ let pillList = [
 
 
     {
-        pill_id: `#T6789w`,
+        pill_id: `T6789w`,
         pill_name: `Viên nén Lorastad D 5mg Stella giảm viêm mũi dị ứng, mày đay (3 vỉ x 10 viên)`,
         pill_brand: ``,
         pill_tags: [`Thuốc dị ứng`],
@@ -991,7 +991,7 @@ let pillList = [
 
 
     {
-        pill_id: `#O9876r`,
+        pill_id: `O9876r`,
         pill_name: `Thuốc Cetirizin 10mg Trường Thọ trị ngứa ngoài da do dị ứng (10 vỉ x 10 viên)`,
         pill_brand: ``,
         pill_tags: [`Thuốc dị ứng`],
@@ -1071,7 +1071,7 @@ let pillList = [
 
 
     {
-        pill_id: `#Y7649r`,
+        pill_id: `Y7649r`,
         pill_name: `Thuốc Exopadin 60mg Trường Thọ điều trị viêm mũi dị ứng, mày đay (3 vỉ x 10 viên)`,
         pill_brand: ``,
         pill_tags: [`Thuốc dị ứng`],
@@ -1208,7 +1208,7 @@ let pillList = [
 
 
     {
-        pill_id: `#R6793f`,
+        pill_id: `R6793f`,
         pill_name: `Thuốc Telfast Kids 30mg Sanofi điều trị viêm mũi dị ứng, mày đay cho trẻ em (1 vỉ x 10 viên)`,
         pill_brand: ``,
         pill_tags: [`Thuốc dị ứng`],
@@ -1307,7 +1307,7 @@ let pillList = [
 
 
     {
-        pill_id: `#U8765o`,
+        pill_id: `U8765o`,
         pill_name: `Thuốc Fexophar 60mg TV. Pharm điều trị triệu chứng viêm mũi dị ứng, dị ứng da, nổi mày đay (5 vỉ x 10 viên)`,
         pill_brand: ``,
         pill_tags: [`Thuốc dị ứng`],
@@ -1406,7 +1406,7 @@ let pillList = [
 
 
     {
-        pill_id: `#U8754w`,
+        pill_id: `U8754w`,
         pill_name: `Thuốc Devomir S.P.M ohòng ngừa say sóng, say tàu xe, máy bay (3 vỉ x 10 viên)`,
         pill_brand: ``,
         pill_tags: [`Thuốc dị ứng`],
@@ -1515,7 +1515,7 @@ let pillList = [
 
 
     {
-        pill_id: `#D5790e`,
+        pill_id: `D5790e`,
         pill_name: `Thuốc Promethazin 15mg Nadyphar phòng và điều trị các tình trạng dị ứng, chống nôn (5 vỉ x 20 viên)`,
         pill_brand: ``,
         pill_tags: [`Thuốc dị ứng`],
@@ -3668,7 +3668,7 @@ g không mong muốn gặp phải khi sử dụng thuốc.`
 
 
     {
-        pill_id: `#G1929k`,
+        pill_id: `G1929k`,
         pill_name: `Băng cuộn y tế 0.1m x 2m Bảo Thạch dùng để băng vết thương (5 cuộn)`,
         pill_brand: ``,
         pill_tags: [`Sơ cứu, thuốc bổ chăm sóc sức khỏe`],
@@ -3740,7 +3740,7 @@ g không mong muốn gặp phải khi sử dụng thuốc.`
 
 
     {
-        pill_id: `#L1543e`,
+        pill_id: `L1543e`,
         pill_name: `Khẩu trang y tế Thiên Thủy 4 lớp hỗ trợ ngăn khói, bụi, kháng khuẩn (50 cái)`,
         pill_brand: ``,
         pill_tags: [`Sơ cứu, thuốc bổ chăm sóc sức khỏe`],
@@ -3828,7 +3828,7 @@ g không mong muốn gặp phải khi sử dụng thuốc.`
 
 
     {
-        pill_id: `#H2643e`,
+        pill_id: `H2643e`,
         pill_name: `Băng cá nhân độ dính cao, co giãn tốt Urgo Family size 2cm x 6cm bảo vệ các vết thương nhỏ (10 miếng)`,
         pill_brand: ``,
         pill_tags: [`Sơ cứu, thuốc bổ chăm sóc sức khỏe`],
@@ -3901,7 +3901,7 @@ g không mong muốn gặp phải khi sử dụng thuốc.`
 
 
     {
-        pill_id: `#S9890j`,
+        pill_id: `S9890j`,
         pill_name: `Dung dịch sát khuẩn Povidine 10% Pharmedic ngăn ngừa nhiễm khuẩn ở vết cắt, vết trầy (20ml)`,
         pill_brand: ``,
         pill_tags: [`Sơ cứu, thuốc bổ chăm sóc sức khỏe`],
@@ -4022,7 +4022,7 @@ g không mong muốn gặp phải khi sử dụng thuốc.`
 
 
     {
-        pill_id: `#S7890j`,
+        pill_id: `S7890j`,
         pill_name: `Thuốc Vitamin C 500mg Vidipha điều trị bệnh do thiếu Vitamin C (10 vỉ x 10 viên)`,
         pill_brand: ``,
         pill_tags: [`Sơ cứu, thuốc bổ chăm sóc sức khỏe`],
@@ -4133,7 +4133,7 @@ g không mong muốn gặp phải khi sử dụng thuốc.`
 
 
     {
-        pill_id: `#A7890j`,
+        pill_id: `A7890j`,
         pill_name: `Thuốc Vitamin E 400IU OPC hỗ trợ điều trị thiếu Vitamin E (4 vỉ x 10 viên)`,
         pill_brand: ``,
         pill_tags: [`Sơ cứu, thuốc bổ chăm sóc sức khỏe`],
