@@ -4,8 +4,7 @@ var currentPill
 var cart = [];
 var checkOut = []
 
-// var step = 'step1';
-var step = 'step3_danhMuc';
+var step = 'step1';
 var stepHistory = [];
 var stepHistoryIndex = 0;
 
