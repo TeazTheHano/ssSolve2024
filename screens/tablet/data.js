@@ -140,6 +140,288 @@ let pillList = [
         pill_viewed: 100,
     },
 
+    {
+        pill_id: 'P123af',
+        pill_name: 'Paracetamol 500mg Hạ sốt - Giảm đau',
+        pill_tags: ['Giảm đau và Hạ sốt'],
+        pill_brand: 'Mediplantex',
+        pill_quantity: 100,
+        pill_sellPrice: 5000,
+        pill_buyPrice: 0,
+        pill_packKind: '1 vỉ x 10 viên nén dài',
+        pill_imgAddress: [`./pill/medparacetamol.png`],
+        pill_description: ['Paracetamol 500mg là thuốc được sử dụng phổ biến giúp giảm các triệu chứng đau từ nhẹ đến vừa và giảm mạnh các triệu chứng sốt nhẹ. Thuốc Paracetamol 500mg giúp hạ nhiệt, giảm đau. Không gây lệ thuộc thuốc, không gây kích ứng đường tiêu hóa.'],
+        pill_use: [
+            `Sử dụng thuốc cùng với một lượng nước ấm vừa phải.`,
+            `Chờ ít nhất 4 tiếng trước khi sử dụng một liều khác.`,
+            `Không nên sử dụng nhiều hơn 4 liều trong 24 giờ`,
+        ],
+        pill_ingredient: ['Paracetamol 500mg'],
+        pill_indication: [
+            `Với điều trị đau: Điều trị ở các chứng đau do các nguyên nhân khác nhau: Nhức đầu, đau nửa đầu, đau bụng kinh, đau dây thần kinh, đau nhức hệ xương cơ, đau răng.`,
+            `Với điều trị sốt: Sốt do bị nhiễm khuẩn, viêm họng, viêm phế quản.`,
+            `Làm giảm đau nhức và hạ sốt trong các trường hợp bị cảm lạnh, cảm cúm, sốt do virus.`,
+        ],
+        pill_contraindication: [
+            `Bệnh nhân bị thiếu máu.`,
+            `Người mắc chứng rối loạn trong đông máu.`,
+            `Người mắc bệnh tạo keo, giảm thể tích tuần hoàn do sử dụng thuốc lợi tiểu hay suy thận, bệnh nhân hen suyễn.`,
+            `Người bệnh quá mẫn với paracetamol hoặc các thành phần tá dược của thuốc.`,
+            `Người bệnh bị suy giảm glucose-6-phosphat dehydrogenase.`,
+            `Người bệnh có tiền sử phản ứng quá mẫn (co thắt phế quản, phù mạch, hen suyễn, viêm mũi, hoặc nổi mày đay) khi sử dụng aspirin hoặc các thuốc chống viêm không steroid (NSAID).`,
+            `Bệnh nhân đã từng bị hoặc đang bị loét hay xuất huyết đường tiêu hóa.`,
+            `Người bị suy gan nặng, suy thận nặng có Clcr < 30 ml/ phút, suy tim sung huyết.`,
+        ],
+        pill_dosage: [
+            `Liều dùng cho người lớn:`,
+            [
+                `Liều dùng paracetamol 500mg thông thường để hạ sốt và giảm đau cho người lớn là từ 325 – 650mg trong mỗi 4 – 6 giờ hoặc 1.000mg trong 6 – 8 giờ.`,
+                `Thuốc paracetamol 500mg viên nén có thể dùng đường uống hoặc đặt trực tràng.`,
+            ],
+            `Liều dùng cho trẻ em:`,
+            [
+                `Liều dùng để giảm đau và sốt bằng đường uống hoặc đặt trực tràng cho trẻ em như sau:`,
+                `Dưới 1 tháng tuổi: Dùng 10 – 15mg/kg cho mỗi liều sau khoảng 4 – 6 giờ khi cần thiết.`,
+                `Từ 1 tháng – 12 tuổi: Dùng 10 – 15mg/kg sau mỗi 4 – 6 giờ khi cần thiết (tối đa 5 liều trong vòng 24 giờ).`,
+                `Hạ sốt cho trẻ từ 4 tháng – 9 tuổi: Nên dùng liều ban đầu là 30mg/kg.`,
+                `Từ 12 tuổi trở lên: Dùng 325 – 650mg sau mỗi 4 – 6 giờ hoặc 1000mg mỗi 6 – 8 giờ.`,
+                `Đối với trẻ béo phì: Sử dụng theo tuổi chứ không sử dụng theo kí lô cân nặng`,
+                `Lưu ý đặc biệt và thận trọng khi sử dụng thuốc Paracetamol 500mg`,
+                `Hiệu quả của thuốc hạ sốt và giảm đau Paracetamol 500mg còn tùy thuộc tình trạng và thể trạng của bệnh nhân.`,
+                `Không uống nhiều thuốc này hơn liều khuyến cáo, vì quá liều acetaminophen sẽ gây ra nhiều tác hại nghiêm trọng. Liều lượng tối đa cho người lớn là 1g (1.000mg) mỗi lần và 4g (4.000mg) mỗi ngày.`,
+            ],
+            `Hỏi ý kiến bác sĩ nếu điều trị kéo dài quá 5 ngày ở trẻ em và quá 10 ngày ở người lớn.`,
+            `Không được uống rượu trong thời gian điều trị bằng thuốc này.Vì rượu có thể làm tăng nguy cơ gây tổn thương gan.`,
+            `Hỏi ý kiến bác sĩ khi dùng thuốc này cho trẻ dưới 3 tuổi.`,
+            `Trẻ em dưới 12 tuổi liều dùng hàng ngày không vượt quá 2 gam.`,
+            `Người có tiền sử nghiện rượu và bệnh gan, nên hỏi bác sĩ trước khi sử dụng thuốc.`,
+            `Không uống thuốc khi bị dị ứng với paracetamol(acetaminophen hoặc N - acetyl - p - aminophenol).`,
+            `Ngoài ra người bệnh cần phải ngưng sử dụng ngay và gặp bác sĩ nếu như:`,
+            `Tiếp tục bị sốt sau thời gian khoảng 3 ngày sử dụng thuốc.`,
+            `Tình trạng đau vẫn không chấm dứt sau 7 ngày sử dụng(hoặc sau 5 ngày đối với trẻ em).`,
+            `Da bị nổi mẩn ngứa, đau đầu liên tục hoặc xuất hiện những đốm đỏ, sưng tấy.`,
+            `Các triệu chứng trở nên trầm trọng hơn hoặc có thêm những triệu chứng bất thường mới.`,
+            `Sử dụng cho người lái xe và vận hành máy móc`,
+            `Chưa có báo cáo về những ảnh hưởng của thuốc giảm đau và hạ sốt Paracetamol 500mg trên khả năng lái xe hoặc sử dụng máy móc.`,
+            `Tuy nhiên, qua một số theo dõi thì thuốc có thể sử dụng ở trên đối tượng này.`,
+            `Sử dụng cho phụ nữ có thai hoặc đang cho con bú`,
+            `Các nghiên cứu về việc dùng thuốc này trên phụ nữ có thai và đang cho con bú vẫn còn hạn chế.`,
+            `Thời kỳ mang thai: Chưa xác định được tính an toàn của thuốc dùng khi thai nghén liên quan đến tác dụng không mong muốn có thể có đối với phát triển thai.Do đó, chỉ nên dùng thuoc paracetamol ở người mang thai khi thật cần.`,
+            `Thời kỳ cho con bú: thuốc Paracetamol được bài tiết qua sữa mẹ nhưng không có ý nghĩa đáng kể trên lâm sàng.Dữ liệu được công bố không chống chỉ định sử dụng thuốc này cho phụ nữ cho con bú.`,
+
+        ],
+        pill_pharmacology: [
+            `Paracetamol (còn có tên gọi khác là acetaminophen hoặc N-acetyl-p-aminophenol) là một loại chất chuyển hóa mang trong mình hoạt tính của phenacetin, được biết đến như một thuốc giảm đau - hạ sốt hữu hiệu và phổ biến có thể thay thế aspirin; tuy nhiên, khác với aspirin, paracetamol không có hiệu quả trong điều trị các trường hợp bị viêm.`,
+            `Với liều dùng ngang nhau và được tính theo đơn vị gam, thì paracetamol có tác dụng giảm đau và hạ sốt tương tự như aspirin.`,
+            `Paracetamol làm giảm thân nhiệt ở người bệnh sốt, nhưng hiếm khi làm giảm thân nhiệt ở người bình thường. Thuốc acetaminophen tác động lên vùng dưới đồi gây hạ nhiệt, tỏa nhiệt tăng do giãn mạch và tăng lưu lượng máu ngoại biên.`,
+            `Với liều điều trị, acetaminophen ít tác động đến hệ tim mạch và hô hấp, không làm thay đổi cân bằng acid - base, không gây kích ứng, xước hoặc chảy máu dạ dày như khi dùng salicylat, vì paracetamol không tác dụng trên cyclooxygenase toàn thân, chỉ tác động đến cyclooxygenase/prostaglandin của hệ thần kinh trung ương. Paracetamol/acetaminophen không có tác dụng trên tiểu cầu hoặc thời gian chảy máu.`,
+            `Khi sử dụng đến trạng thái quá liều, một chất chuyển hóa của paracetamol là N-acetyl-benzoquinonimin có thể gây độc nặng cho gan. Ở liều bình thường, paracetamol dung nạp tốt, không có nhiều tác dụng phụ của aspirin. Tuy vậy, quá liều cấp tính (trên 10 g) làm thương tổn gan gây chết người, và những vụ ngộ độc và tự vẫn bằng paracetamol đã tăng lên một cách đáng lo ngại trong những năm gần đây. Ngoài ra, nhiều người trong đó có cả thầy thuốc, dường như không biết tác dụng chống viêm kém của paracetamol.`,
+        ],
+        pill_pharmacokinetics: [
+            `Hấp thu: Paracetamol được hấp thu nhanh và hầu như hoàn toàn thông qua đường tiêu hóa. Thức ăn có thể làm viên nén giải phóng kéo dài thuốc paracetamol chậm được hấp thu một phần. Thức ăn giàu carbon hydrat làm giảm tỷ lệ hấp thu của paracetamol. Nồng độ đỉnh trong huyết tương đạt trong vòng 30 đến 60 phút sau khi uống với liều điều trị.`,
+            `Phân bố: Paracetamol (acetaminophen) phân bố nhanh và đồng đều trong phần lớn các mô của cơ thể. Khoảng 25% lượng paracetamol trong máu kết hợp với protein huyết tương.`,
+            `Chuyển hóa: Paracetamol bị N-hydroxyl hóa bởi cytochrom P450 để tạo nên N-acetyl-benzoquinonimin, một chất trung gian có tính phản ứng cao. Chất chuyển hóa này bình thường phản ứng với các nhóm sulfhydryl trong glutathion và như vậy bị khử hoạt tính. Tuy nhiên, nếu uống liều cao paracetamol, chất chuyển hóa này được tạo thành với lượng đủ để làm cạn kiệt glutathion của gan; trong tình trạng đó, phản ứng của nó với nhóm sulfhydryl của protein gan tăng lên, có thể dẫn đến hoại tử gan.`,
+            `Thải trừ: Nửa đời huyết tương của paracetamol là 1,25 - 3 giờ, có thể kéo dài với liều gây độc hoặc ở người bệnh có thương tổn gan. Sau liều điều trị, có thể tìm thấy 90 đến 100% thuốc trong nước tiểu trong ngày thứ nhất, chủ yếu sau khi liên hợp trong gan với acid glucuronic (khoảng 60%), acid sulfuric (khoảng 35%) hoặc cystein (khoảng 3%); cũng phát hiện thấy một lượng nhỏ những chất chuyển hóa hydroxyl - hóa và khử acetyl. Trẻ nhỏ ít khả năng glucuro liên hợp với thuốc hơn so với người lớn.`,
+        ],
+        pill_sideEffects: [
+            `Các phản ứng phụ có thể xảy ra khi điều trị giảm đau, hạ sốt bằng thuoc Paracetamol bao gồm:`,
+            `Thường gặp:`,
+            [
+                `Mẩn ngứa, ngoại ban.`,
+                `Sốt, mỏi mệt.`,
+                `Chướng bụng, buồn nôn, nôn.`,
+                `Nhức đầu, hoa mắt, chóng mặt, bồn chồn.`,
+            ],
+            `Ít gặp:`,
+            [
+                `Phản ứng dị ứng, viêm mũi, nổi mày đay.`,
+                `Đau bụng, chảy máu dạ dày - ruột, làm loét dạ dày tiến triển.`,
+                `Lơ mơ, mất ngủ, ù tai; rối loạn thị giác, thính lực giảm.`,
+                `Thời gian chảy máu kéo dài.`,
+                `Bệnh thận, độc tính thận khi lạm dụng dài ngày.`,
+                `Giảm bạch cầu trung tính, giảm toàn thể huyết cầu, thiếu máu.`,
+            ],
+            `Hiếm gặp:`,
+            [
+                `Hội chứng Steven - Johnson, rụng tóc.`,
+                `Trầm cảm, viêm màng não vô khuẩn, nhìn mờ, rối loạn nhìn màu, giảm thị lực do ngộ độc thuốc.`,
+                `Rối loạn co bóp túi mật, nhiễm độc gan, viêm bàng quang, tiểu ra máu.​`,
+                `Danh sách trên không bao gồm tất cả các tác dụng không mong muốn có thể gặp phải.`,
+                `Hãy gọi cho các bác sĩ, dược sĩ đề được tư vấn kịp thời khi gặp phải bất kỳ tác dụng không mong muốn nào.`,
+            ],
+        ],
+        pill_interactions: [
+            `Việc sử dụng thuốc hạ sốt Paracetamol 500mg với một số thuốc khác (thuốc kê đơn hoặc không kê đơn) có thể làm thay đổi công dụng của thuốc.`,
+            `Một số thuốc có thể tương tác với thuốc hạ sốt paracetamol Mediplantex bao gồm:`,
+            [
+                `Thuốc khác cũng chứa paracetamol`,
+                `Amitriptyline, Amlodipine, Amoxicillin, Aspirin, Atorvastatin.`,
+                `Caffeine, Clopidogrel, Codeine.`,
+                `Diazepam, Diclofenac.`,
+                `Furosemide, Gabapentin, Ibuprofen.`,
+                `Lansoprazolem Levofloxacin, Levothyroxine.`,
+                `Metformin, Naproxen, Omeprazole.`,
+                `Pantoprazole, Prednisolone, Pregabalin.`,
+                `Ramipril, Ranitidine, Sertraline`,
+                `Simvastatin, Tramadol.`,
+            ],
+            `Khi sử dụng Thuốc Paracetamol 500mg tốt nhất bệnh nhân nên thông báo cho bác sĩ biết về các loại thuốc mà mình đang sử dụng để bác sĩ tư vấn tránh xảy ra các tương tác không mong muốn.​`,
+
+        ],
+        pill_precautions: [],
+        pill_overdose: [
+            `Nếu bỏ lỡ một liều thuốc Paracetamol sủi thì nên bổ sung ngay sau khi bệnh nhân nhớ ra. Nếu quên một liều thuốc quá lâu mà gần tới thời gian sử dụng liều tiếp theo thì bỏ qua liều đã quên. Không sử dụng 2 liều thuốc cùng một lúc để bù cho liều đã quên.`,
+            `Quá liều thuốc:`,
+            `Dù cơ thể không xuất hiện triệu chứng gì bất thường, vẫn gọi ngay cho nhân viên y tế để được tư vấn cũng như đưa ra các biện pháp hỗ trợ xử lý kịp thời, bởi nếu trì hoãn thời gian cấp cứu sẽ làm tăng nguy cơ tổn thương gan nghiêm trọng.`,
+            `Nếu người bệnh hoặc bất kì ai uống cùng lúc nhiều viên thuốc, hoặc nếu biết một đứa trẻ có nuốt bất kỳ viên thuốc nào trong số này, gọi ngay cho bác sĩ/ dược sĩ hoặc khoa cấp cứu bệnh viện ngay lập tức để xử lý kịp thời.`,
+            `Luôn mang theo thuốc bên mình, thậm chí cả hộp thuốc và tờ hướng dẫn sử dụng nhằm giúp việc đánh giá dễ dàng hơn.`,
+
+        ],
+        pill_overdose_handling: ['Trên thực tế dị ứng paracetamol không phổ biến. Một số triệu chứng dị ứng paracetamol như nổi mề. Cần ngưng sử dụng thuốc và đến gặp ngay bác sĩ.'],
+        pill_viewed: 100,
+    },
+
+    {
+        pill_id: 'P124af',
+        pill_name: 'Lessenol Paracetamol 500mg Hạ sốt - Giảm đau',
+        pill_tags: ['Giảm đau và Hạ sốt'],
+        pill_brand: 'Lessenol',
+        pill_quantity: 100,
+        pill_sellPrice: 5000,
+        pill_buyPrice: 0,
+        pill_packKind: '1 vỉ x 10 viên nén dài',
+        pill_imgAddress: [`./pill/lessparacetamol.png`],
+        pill_description: ['Paracetamol 500mg là thuốc được sử dụng phổ biến giúp giảm các triệu chứng đau từ nhẹ đến vừa và giảm mạnh các triệu chứng sốt nhẹ. Thuốc Paracetamol 500mg giúp hạ nhiệt, giảm đau. Không gây lệ thuộc thuốc, không gây kích ứng đường tiêu hóa.'],
+        pill_use: [
+            `Sử dụng thuốc cùng với một lượng nước ấm vừa phải.`,
+            `Chờ ít nhất 4 tiếng trước khi sử dụng một liều khác.`,
+            `Không nên sử dụng nhiều hơn 4 liều trong 24 giờ`,
+        ],
+        pill_ingredient: ['Paracetamol 500mg'],
+        pill_indication: [
+            `Với điều trị đau: Điều trị ở các chứng đau do các nguyên nhân khác nhau: Nhức đầu, đau nửa đầu, đau bụng kinh, đau dây thần kinh, đau nhức hệ xương cơ, đau răng.`,
+            `Với điều trị sốt: Sốt do bị nhiễm khuẩn, viêm họng, viêm phế quản.`,
+            `Làm giảm đau nhức và hạ sốt trong các trường hợp bị cảm lạnh, cảm cúm, sốt do virus.`,
+        ],
+        pill_contraindication: [
+            `Bệnh nhân bị thiếu máu.`,
+            `Người mắc chứng rối loạn trong đông máu.`,
+            `Người mắc bệnh tạo keo, giảm thể tích tuần hoàn do sử dụng thuốc lợi tiểu hay suy thận, bệnh nhân hen suyễn.`,
+            `Người bệnh quá mẫn với paracetamol hoặc các thành phần tá dược của thuốc.`,
+            `Người bệnh bị suy giảm glucose-6-phosphat dehydrogenase.`,
+            `Người bệnh có tiền sử phản ứng quá mẫn (co thắt phế quản, phù mạch, hen suyễn, viêm mũi, hoặc nổi mày đay) khi sử dụng aspirin hoặc các thuốc chống viêm không steroid (NSAID).`,
+            `Bệnh nhân đã từng bị hoặc đang bị loét hay xuất huyết đường tiêu hóa.`,
+            `Người bị suy gan nặng, suy thận nặng có Clcr < 30 ml/ phút, suy tim sung huyết.`,
+        ],
+        pill_dosage: [
+            `Liều dùng cho người lớn:`,
+            [
+                `Liều dùng paracetamol 500mg thông thường để hạ sốt và giảm đau cho người lớn là từ 325 – 650mg trong mỗi 4 – 6 giờ hoặc 1.000mg trong 6 – 8 giờ.`,
+                `Thuốc paracetamol 500mg viên nén có thể dùng đường uống hoặc đặt trực tràng.`,
+            ],
+            `Liều dùng cho trẻ em:`,
+            [
+                `Liều dùng để giảm đau và sốt bằng đường uống hoặc đặt trực tràng cho trẻ em như sau:`,
+                `Dưới 1 tháng tuổi: Dùng 10 – 15mg/kg cho mỗi liều sau khoảng 4 – 6 giờ khi cần thiết.`,
+                `Từ 1 tháng – 12 tuổi: Dùng 10 – 15mg/kg sau mỗi 4 – 6 giờ khi cần thiết (tối đa 5 liều trong vòng 24 giờ).`,
+                `Hạ sốt cho trẻ từ 4 tháng – 9 tuổi: Nên dùng liều ban đầu là 30mg/kg.`,
+                `Từ 12 tuổi trở lên: Dùng 325 – 650mg sau mỗi 4 – 6 giờ hoặc 1000mg mỗi 6 – 8 giờ.`,
+                `Đối với trẻ béo phì: Sử dụng theo tuổi chứ không sử dụng theo kí lô cân nặng`,
+                `Lưu ý đặc biệt và thận trọng khi sử dụng thuốc Paracetamol 500mg`,
+                `Hiệu quả của thuốc hạ sốt và giảm đau Paracetamol 500mg còn tùy thuộc tình trạng và thể trạng của bệnh nhân.`,
+                `Không uống nhiều thuốc này hơn liều khuyến cáo, vì quá liều acetaminophen sẽ gây ra nhiều tác hại nghiêm trọng. Liều lượng tối đa cho người lớn là 1g (1.000mg) mỗi lần và 4g (4.000mg) mỗi ngày.`,
+            ],
+            `Hỏi ý kiến bác sĩ nếu điều trị kéo dài quá 5 ngày ở trẻ em và quá 10 ngày ở người lớn.`,
+            `Không được uống rượu trong thời gian điều trị bằng thuốc này.Vì rượu có thể làm tăng nguy cơ gây tổn thương gan.`,
+            `Hỏi ý kiến bác sĩ khi dùng thuốc này cho trẻ dưới 3 tuổi.`,
+            `Trẻ em dưới 12 tuổi liều dùng hàng ngày không vượt quá 2 gam.`,
+            `Người có tiền sử nghiện rượu và bệnh gan, nên hỏi bác sĩ trước khi sử dụng thuốc.`,
+            `Không uống thuốc khi bị dị ứng với paracetamol(acetaminophen hoặc N - acetyl - p - aminophenol).`,
+            `Ngoài ra người bệnh cần phải ngưng sử dụng ngay và gặp bác sĩ nếu như:`,
+            `Tiếp tục bị sốt sau thời gian khoảng 3 ngày sử dụng thuốc.`,
+            `Tình trạng đau vẫn không chấm dứt sau 7 ngày sử dụng(hoặc sau 5 ngày đối với trẻ em).`,
+            `Da bị nổi mẩn ngứa, đau đầu liên tục hoặc xuất hiện những đốm đỏ, sưng tấy.`,
+            `Các triệu chứng trở nên trầm trọng hơn hoặc có thêm những triệu chứng bất thường mới.`,
+            `Sử dụng cho người lái xe và vận hành máy móc`,
+            `Chưa có báo cáo về những ảnh hưởng của thuốc giảm đau và hạ sốt Paracetamol 500mg trên khả năng lái xe hoặc sử dụng máy móc.`,
+            `Tuy nhiên, qua một số theo dõi thì thuốc có thể sử dụng ở trên đối tượng này.`,
+            `Sử dụng cho phụ nữ có thai hoặc đang cho con bú`,
+            `Các nghiên cứu về việc dùng thuốc này trên phụ nữ có thai và đang cho con bú vẫn còn hạn chế.`,
+            `Thời kỳ mang thai: Chưa xác định được tính an toàn của thuốc dùng khi thai nghén liên quan đến tác dụng không mong muốn có thể có đối với phát triển thai.Do đó, chỉ nên dùng thuoc paracetamol ở người mang thai khi thật cần.`,
+            `Thời kỳ cho con bú: thuốc Paracetamol được bài tiết qua sữa mẹ nhưng không có ý nghĩa đáng kể trên lâm sàng.Dữ liệu được công bố không chống chỉ định sử dụng thuốc này cho phụ nữ cho con bú.`,
+
+        ],
+        pill_pharmacology: [
+            `Paracetamol (còn có tên gọi khác là acetaminophen hoặc N-acetyl-p-aminophenol) là một loại chất chuyển hóa mang trong mình hoạt tính của phenacetin, được biết đến như một thuốc giảm đau - hạ sốt hữu hiệu và phổ biến có thể thay thế aspirin; tuy nhiên, khác với aspirin, paracetamol không có hiệu quả trong điều trị các trường hợp bị viêm.`,
+            `Với liều dùng ngang nhau và được tính theo đơn vị gam, thì paracetamol có tác dụng giảm đau và hạ sốt tương tự như aspirin.`,
+            `Paracetamol làm giảm thân nhiệt ở người bệnh sốt, nhưng hiếm khi làm giảm thân nhiệt ở người bình thường. Thuốc acetaminophen tác động lên vùng dưới đồi gây hạ nhiệt, tỏa nhiệt tăng do giãn mạch và tăng lưu lượng máu ngoại biên.`,
+            `Với liều điều trị, acetaminophen ít tác động đến hệ tim mạch và hô hấp, không làm thay đổi cân bằng acid - base, không gây kích ứng, xước hoặc chảy máu dạ dày như khi dùng salicylat, vì paracetamol không tác dụng trên cyclooxygenase toàn thân, chỉ tác động đến cyclooxygenase/prostaglandin của hệ thần kinh trung ương. Paracetamol/acetaminophen không có tác dụng trên tiểu cầu hoặc thời gian chảy máu.`,
+            `Khi sử dụng đến trạng thái quá liều, một chất chuyển hóa của paracetamol là N-acetyl-benzoquinonimin có thể gây độc nặng cho gan. Ở liều bình thường, paracetamol dung nạp tốt, không có nhiều tác dụng phụ của aspirin. Tuy vậy, quá liều cấp tính (trên 10 g) làm thương tổn gan gây chết người, và những vụ ngộ độc và tự vẫn bằng paracetamol đã tăng lên một cách đáng lo ngại trong những năm gần đây. Ngoài ra, nhiều người trong đó có cả thầy thuốc, dường như không biết tác dụng chống viêm kém của paracetamol.`,
+        ],
+        pill_pharmacokinetics: [
+            `Hấp thu: Paracetamol được hấp thu nhanh và hầu như hoàn toàn thông qua đường tiêu hóa. Thức ăn có thể làm viên nén giải phóng kéo dài thuốc paracetamol chậm được hấp thu một phần. Thức ăn giàu carbon hydrat làm giảm tỷ lệ hấp thu của paracetamol. Nồng độ đỉnh trong huyết tương đạt trong vòng 30 đến 60 phút sau khi uống với liều điều trị.`,
+            `Phân bố: Paracetamol (acetaminophen) phân bố nhanh và đồng đều trong phần lớn các mô của cơ thể. Khoảng 25% lượng paracetamol trong máu kết hợp với protein huyết tương.`,
+            `Chuyển hóa: Paracetamol bị N-hydroxyl hóa bởi cytochrom P450 để tạo nên N-acetyl-benzoquinonimin, một chất trung gian có tính phản ứng cao. Chất chuyển hóa này bình thường phản ứng với các nhóm sulfhydryl trong glutathion và như vậy bị khử hoạt tính. Tuy nhiên, nếu uống liều cao paracetamol, chất chuyển hóa này được tạo thành với lượng đủ để làm cạn kiệt glutathion của gan; trong tình trạng đó, phản ứng của nó với nhóm sulfhydryl của protein gan tăng lên, có thể dẫn đến hoại tử gan.`,
+            `Thải trừ: Nửa đời huyết tương của paracetamol là 1,25 - 3 giờ, có thể kéo dài với liều gây độc hoặc ở người bệnh có thương tổn gan. Sau liều điều trị, có thể tìm thấy 90 đến 100% thuốc trong nước tiểu trong ngày thứ nhất, chủ yếu sau khi liên hợp trong gan với acid glucuronic (khoảng 60%), acid sulfuric (khoảng 35%) hoặc cystein (khoảng 3%); cũng phát hiện thấy một lượng nhỏ những chất chuyển hóa hydroxyl - hóa và khử acetyl. Trẻ nhỏ ít khả năng glucuro liên hợp với thuốc hơn so với người lớn.`,
+        ],
+        pill_sideEffects: [
+            `Các phản ứng phụ có thể xảy ra khi điều trị giảm đau, hạ sốt bằng thuoc Paracetamol bao gồm:`,
+            `Thường gặp:`,
+            [
+                `Mẩn ngứa, ngoại ban.`,
+                `Sốt, mỏi mệt.`,
+                `Chướng bụng, buồn nôn, nôn.`,
+                `Nhức đầu, hoa mắt, chóng mặt, bồn chồn.`,
+            ],
+            `Ít gặp:`,
+            [
+                `Phản ứng dị ứng, viêm mũi, nổi mày đay.`,
+                `Đau bụng, chảy máu dạ dày - ruột, làm loét dạ dày tiến triển.`,
+                `Lơ mơ, mất ngủ, ù tai; rối loạn thị giác, thính lực giảm.`,
+                `Thời gian chảy máu kéo dài.`,
+                `Bệnh thận, độc tính thận khi lạm dụng dài ngày.`,
+                `Giảm bạch cầu trung tính, giảm toàn thể huyết cầu, thiếu máu.`,
+            ],
+            `Hiếm gặp:`,
+            [
+                `Hội chứng Steven - Johnson, rụng tóc.`,
+                `Trầm cảm, viêm màng não vô khuẩn, nhìn mờ, rối loạn nhìn màu, giảm thị lực do ngộ độc thuốc.`,
+                `Rối loạn co bóp túi mật, nhiễm độc gan, viêm bàng quang, tiểu ra máu.​`,
+                `Danh sách trên không bao gồm tất cả các tác dụng không mong muốn có thể gặp phải.`,
+                `Hãy gọi cho các bác sĩ, dược sĩ đề được tư vấn kịp thời khi gặp phải bất kỳ tác dụng không mong muốn nào.`,
+            ],
+        ],
+        pill_interactions: [
+            `Việc sử dụng thuốc hạ sốt Paracetamol 500mg với một số thuốc khác (thuốc kê đơn hoặc không kê đơn) có thể làm thay đổi công dụng của thuốc.`,
+            `Một số thuốc có thể tương tác với thuốc hạ sốt paracetamol Mediplantex bao gồm:`,
+            [
+                `Thuốc khác cũng chứa paracetamol`,
+                `Amitriptyline, Amlodipine, Amoxicillin, Aspirin, Atorvastatin.`,
+                `Caffeine, Clopidogrel, Codeine.`,
+                `Diazepam, Diclofenac.`,
+                `Furosemide, Gabapentin, Ibuprofen.`,
+                `Lansoprazolem Levofloxacin, Levothyroxine.`,
+                `Metformin, Naproxen, Omeprazole.`,
+                `Pantoprazole, Prednisolone, Pregabalin.`,
+                `Ramipril, Ranitidine, Sertraline`,
+                `Simvastatin, Tramadol.`,
+            ],
+            `Khi sử dụng Thuốc Paracetamol 500mg tốt nhất bệnh nhân nên thông báo cho bác sĩ biết về các loại thuốc mà mình đang sử dụng để bác sĩ tư vấn tránh xảy ra các tương tác không mong muốn.​`,
+
+        ],
+        pill_precautions: [],
+        pill_overdose: [
+            `Nếu bỏ lỡ một liều thuốc Paracetamol sủi thì nên bổ sung ngay sau khi bệnh nhân nhớ ra. Nếu quên một liều thuốc quá lâu mà gần tới thời gian sử dụng liều tiếp theo thì bỏ qua liều đã quên. Không sử dụng 2 liều thuốc cùng một lúc để bù cho liều đã quên.`,
+            `Quá liều thuốc:`,
+            `Dù cơ thể không xuất hiện triệu chứng gì bất thường, vẫn gọi ngay cho nhân viên y tế để được tư vấn cũng như đưa ra các biện pháp hỗ trợ xử lý kịp thời, bởi nếu trì hoãn thời gian cấp cứu sẽ làm tăng nguy cơ tổn thương gan nghiêm trọng.`,
+            `Nếu người bệnh hoặc bất kì ai uống cùng lúc nhiều viên thuốc, hoặc nếu biết một đứa trẻ có nuốt bất kỳ viên thuốc nào trong số này, gọi ngay cho bác sĩ/ dược sĩ hoặc khoa cấp cứu bệnh viện ngay lập tức để xử lý kịp thời.`,
+            `Luôn mang theo thuốc bên mình, thậm chí cả hộp thuốc và tờ hướng dẫn sử dụng nhằm giúp việc đánh giá dễ dàng hơn.`,
+
+        ],
+        pill_overdose_handling: ['Trên thực tế dị ứng paracetamol không phổ biến. Một số triệu chứng dị ứng paracetamol như nổi mề. Cần ngưng sử dụng thuốc và đến gặp ngay bác sĩ.'],
+        pill_viewed: 100,
+    },
+
 
     {
         pill_id: 'P1345n',
@@ -490,8 +772,8 @@ let pillList = [
             `Trẻ em từ 6 – 12 tuổi: uống mỗi lần 1 viên, 4 – 6 giờ mỗi lần.`,
             `Lưu ý: Liều dùng trên chỉ mang tính chất tham khảo. Liều dùng cụ thể tùy thuộc vào thể trạng và mức độ diễn tiến của bệnh. Để có liều dùng phù hợp, bạn cần tham khảo ý kiến bác sĩ hoặc chuyên viên y tế.`,
         ],
-        pill_pharmacology: [`Chưa có báo cáo.`],  
-        pill_pharmacokinetics: [`Chưa có báo cáo.`],  
+        pill_pharmacology: [`Chưa có báo cáo.`],
+        pill_pharmacokinetics: [`Chưa có báo cáo.`],
         pill_sideEffects: [
             `Da: phản ứng quá mẫn, mề đay, vàng da;`,
             `Thần kinh: bồn chồn, lo lắng, hốt hoảng, chóng mặt, mất khả năng phối hợp;`,
@@ -574,7 +856,7 @@ let pillList = [
             `Codein và muối của nó có tác dụng giảm đau trong trường hợp đau nhẹ và vừa tác dụng giảm đau của codein có thể là do sự biến đổi khoảng 10% liều sử dụng thành morphin. Khi dùng với mục đích giảm đau thì codein nên cho với liều thấp nhất có tác dụng để giảm sự lệ thuộc vào thuốc và thường kết hợp với các thuốc giảm đau không steroid như aspirin, ibuprofen, paracetamol để tăng hiệu quả giảm đau do tác dụng cộng hợp (cơ chế tác dụng giảm đau của các thuốc khác nhau).`,
             `Codein và muối của nó có tác dụng giảm ho do tác dụng trực tiếp lên trung tâm gây ho ở hành não, codein làm khô dịch tiết đường hô hấp và làm tăng độ quánh của dịch phế quản. Codein không đủ hiệu lực để giảm ho nặng. Codein là thuốc giảm ho trong trường hợp ho khan làm mất ngủ.`,
             `Codein gây giảm như động ruột, vì vậy là một thuốc rất tốt trong điều trị tiêu chảy do bệnh thần kinh, do đái tháo đường. Không được dùng chỉ định khi bị tiêu chẩy cấp và tiêu chảy do nhiễm khuẩn.`,
-        ],  
+        ],
         pill_pharmacokinetics: [
             `Paracetamol`,
             [
@@ -589,7 +871,7 @@ let pillList = [
                 `Codein bị chuyển hóa ở gan bởi khử methyl (tại vị trí O - và N - methyl trong phân tử) tạo thành morphin, norcodein và những chất chuyển hóa khác như normorphin và hydrocodon. Sự chuyển hóa thành morphin gián tiếp chịu tác dụng của cytochrom P450 isoenzym CYP2D6 và tác dụng này rất khác nhau do ảnh hưởng của cấu trúc gen.`,
                 `Codein và sản phẩm chuyển hóa của nó được thải trừ chủ yếu qua thận và vào nước tiểu dưới dạng liên hợp với acid glucuronic. Nửa đời thải trừ là 3 - 4 giờ sau khi uống. Codein qua được nhau thai và phân bố vào sữa mẹ.`,
             ],
-        ],  
+        ],
         pill_sideEffects: [
             `Khi sử dụng thuốc Di - angesic 30, bạn có thể gặp các tác dụng không mong muốn (ADR).`,
             `Paracetamol:`,
@@ -598,41 +880,41 @@ let pillList = [
                 `Ban da và những phản ứng dị ứng khác thỉnh thoảng xảy ra. Thường là ban đỏ hoặc mày đay nhưng đôi khi nặng hơn và có thể kèm theo sốt do thuốc và thương tổn niêm mạc. Nếu thấy sốt bóng nước quanh các hốc tự nhiên, nên nghĩ đến hội chứng Stevens - Johnson, phải ngừng thuốc ngay.`,
                 'Người bệnh mẫn cảm với salicylat hiếm mẫn cảm với paracetamol và những thuốc có liên quan. Trong một số ít trường hợp riêng lẻ, paracetamol đã gây giảm bạch cầu trung tính, giảm tiểu cầu giảm toàn thể huyết cầu.',
                 `Ít gặp, 1/1000 < ADR < 1/100:`,
-                [
-                    `Da: Ban.`,
-                    `Dạ dày - ruột: Buồn nôn, nôn.`,
-                    `Huyết học: Loạn tạo máu (giảm bạch cầu trung tính, giảm toàn thể huyết cầu, giảm bạch cầu), thiếu máu.`,
-                    `Thận: Bệnh thận, độc tính thận khi lạm dụng dài ngày.`,
-                ],
+
+                `Da: Ban.`,
+                `Dạ dày - ruột: Buồn nôn, nôn.`,
+                `Huyết học: Loạn tạo máu (giảm bạch cầu trung tính, giảm toàn thể huyết cầu, giảm bạch cầu), thiếu máu.`,
+                `Thận: Bệnh thận, độc tính thận khi lạm dụng dài ngày.`,
+
                 `Hiếm gặp, ADR < 1/1000:`,
-                [
-                    `Da: Hội chứng Stevens - Johnson, hoại tử biểu bì nhiễm độc, hội chứng Lyell, mụn mủ ngoại ban toàn thân cấp tính.`,
-                    `Khác: Phản ứng quá mẫn.`
-                ],
+
+                `Da: Hội chứng Stevens - Johnson, hoại tử biểu bì nhiễm độc, hội chứng Lyell, mụn mủ ngoại ban toàn thân cấp tính.`,
+                `Khác: Phản ứng quá mẫn.`
+
             ],
             'Codein:',
             [
                 `Thường gặp, ADR > 1/100`,
-                [
-                    `Thần kinh: Đau đầu, chóng mặt, khát và có cảm giác khác lạ.`,
-                    `Tiêu hóa: Buồn nôn, nôn, táo bón.`,
-                    `Tiết niệu: Bí tiểu, tiểu ít.`,
-                    `Tim mạch: Mạch nhanh, mạch chậm, hồi hộp, yếu mệt, hạ huyết áp thế đứng.`,
-                ],
+
+                `Thần kinh: Đau đầu, chóng mặt, khát và có cảm giác khác lạ.`,
+                `Tiêu hóa: Buồn nôn, nôn, táo bón.`,
+                `Tiết niệu: Bí tiểu, tiểu ít.`,
+                `Tim mạch: Mạch nhanh, mạch chậm, hồi hộp, yếu mệt, hạ huyết áp thế đứng.`,
+
                 `Ít gặp, 1/1000 < ADR < 1/100:`,
-                [
-                    `Phản ứng dị ứng: Ngứa, mày đay.`,
-                    `Thần kinh: Suy hô hấp, an dịu, sảng khoái, bồn chồn.`,
-                    `Tiêu hóa: Đau dạ dày, co thắt ống mật.`,
-                ],
+
+                `Phản ứng dị ứng: Ngứa, mày đay.`,
+                `Thần kinh: Suy hô hấp, an dịu, sảng khoái, bồn chồn.`,
+                `Tiêu hóa: Đau dạ dày, co thắt ống mật.`,
+
                 `Hiếm gặp, ADR < 1/1000:`,
-                [
-                    `Dị ứng: Phản ứng phản vệ.`,
-                    `Thần kinh: Ảo giác, mất phương hướng, rối loạn thị giác, co giật.`,
-                    `Tim mạch: Suy tuần hoàn.`,
-                    'Loại khác: Đỏ mặt, toát mồ hôi, mệt mỏi.',
-                    `Nghiện thuốc: Dùng codein trong thời gian dài với liều cao (từ 240 - 540 mg/ngày) có thể gây nghiện thuốc. Các biểu hiện thường gặp khi thiếu thuốc là bồn chồn, run, co giật cơ, toát mồ hôi, chảy nước mũi. Có thể gây lệ thuộc thuốc về tâm lý, về thân thể và gây quen thuốc.`,
-                ],
+
+                `Dị ứng: Phản ứng phản vệ.`,
+                `Thần kinh: Ảo giác, mất phương hướng, rối loạn thị giác, co giật.`,
+                `Tim mạch: Suy tuần hoàn.`,
+                'Loại khác: Đỏ mặt, toát mồ hôi, mệt mỏi.',
+                `Nghiện thuốc: Dùng codein trong thời gian dài với liều cao (từ 240 - 540 mg/ngày) có thể gây nghiện thuốc. Các biểu hiện thường gặp khi thiếu thuốc là bồn chồn, run, co giật cơ, toát mồ hôi, chảy nước mũi. Có thể gây lệ thuộc thuốc về tâm lý, về thân thể và gây quen thuốc.`,
+
             ],
         ],
         pill_interactions: [
@@ -644,24 +926,23 @@ let pillList = [
             `Thông báo cho bác sĩ những tác dụng không mong muốn gặp phải khi sử dụng thuốc.`,
         ],
         pill_overdose: [
-            `Triệu chứng quá liều:`,
+
+            `Paracetamol:`,
             [
-                `Paracetamol:`,
-                [
-                    `Nhiễm độc paracetamol có thể do dùng một liều độc duy nhất, hoặc do uống lặp lại liều lớn paracetamol (ví dụ, 7,5 - 10 g mỗi ngày, trong 1 - 2 ngày), hoặc do uống thuốc dài ngày. Hoại tử phụ thuộc liều là tác dụng độc cấp tính nghiêm trọng nhất do quá liều và có thể gây tử vong.`,
-                    `Buồn nôn, nôn, và đau bụng thường xảy ra trong vòng 2 - 3 giờ sau khi uống liều độc của thuốc.`,
-                    `Methemoglobin - máu, dẫn đến chứng xanh tím da, niêm mạc và móng tay là một dấu hiệu đặc độc cấp tính dẫn chất p - aminophenol; một lượng nhỏ sulfhemoglobin cũng có thể được sản sinh. Trẻ em có khuynh hướng tạo methemoglobin dễ hơn người lớn sau khi uống paracetamol.`,
-                    `Khi bị ngộ độc nặng, ban đầu có thể có kích thích hệ thần kinh trung ương, kích động, và mê sảng. Tiếp theo có thể là ức chế hệ thần kinh trung ương; sững sờ, hạ thân nhiệt; mệt lả, thở nhanh, nông; mạch nhanh, yếu, không đều, huyết áp thấp, và suy tuần hoàn.`,
-                    `Trụy mạch do giảm oxy huyết tương đối và do tác dụng ức chế trung tâm, tác dụng này chỉ xảy ra với liều rất lớn. Sốc có thể xảy ra nếu giãn mạch nhiều. Cơn co giật nghẹt thở gây tử vong có thể xảy ra. Thường hôn mê xảy ra trước khi chết đột ngột hoặc sau vài ngày hôn mê.`,
-                    `Dấu hiệu lâm sàng thương tổn gan trở nên rõ rệt trong vòng 2 đến 4 ngày sau khi uống liều độc. Aminotransferase huyết tương tăng (đôi khi tăng rất cao) và nồng độ bilirubin trong huyết tương cũng có thể tăng; thêm nữa, khi thương tổn gan lan rộng, thời gian prothrombin sẽ kéo dài. Có thể 10% người bệnh bị ngộ độc không được điều trị đặc hiệu đã có thương tổn gan nghiêm trọng; trong số đó 10% đến 20% cuối cùng chết vì suy gan.`,
-                    `Suy thận cấp cũng xảy ra ở một số người bệnh. Sinh thiết gan phát hiện hoại tử trung tâm tiểu thùy trừ vùng quanh tĩnh mạch cửa. Ở những trường hợp không tử vong, thương tổn gan phục hồi sau nhiều tuần hoặc nhiều tháng.`,
-                ],
-                `Codein:`,
-                [
-                    `Suy hô hấp (giảm nhịp thở, hô hấp Cheyne - Stokes, xanh tím). Lơ mơ dẫn đến tình trạng đờ đẫn hoặc hôn mê, mềm cơ, da lạnh và ẩm, đôi khi mạch chậm và hạ huyết áp.`,
-                    `Trong trường hợp nặng: Ngừng thở, trụy mạch, ngừng tim, và có thể tử vong.`,
-                ],
+                `Nhiễm độc paracetamol có thể do dùng một liều độc duy nhất, hoặc do uống lặp lại liều lớn paracetamol (ví dụ, 7,5 - 10 g mỗi ngày, trong 1 - 2 ngày), hoặc do uống thuốc dài ngày. Hoại tử phụ thuộc liều là tác dụng độc cấp tính nghiêm trọng nhất do quá liều và có thể gây tử vong.`,
+                `Buồn nôn, nôn, và đau bụng thường xảy ra trong vòng 2 - 3 giờ sau khi uống liều độc của thuốc.`,
+                `Methemoglobin - máu, dẫn đến chứng xanh tím da, niêm mạc và móng tay là một dấu hiệu đặc độc cấp tính dẫn chất p - aminophenol; một lượng nhỏ sulfhemoglobin cũng có thể được sản sinh. Trẻ em có khuynh hướng tạo methemoglobin dễ hơn người lớn sau khi uống paracetamol.`,
+                `Khi bị ngộ độc nặng, ban đầu có thể có kích thích hệ thần kinh trung ương, kích động, và mê sảng. Tiếp theo có thể là ức chế hệ thần kinh trung ương; sững sờ, hạ thân nhiệt; mệt lả, thở nhanh, nông; mạch nhanh, yếu, không đều, huyết áp thấp, và suy tuần hoàn.`,
+                `Trụy mạch do giảm oxy huyết tương đối và do tác dụng ức chế trung tâm, tác dụng này chỉ xảy ra với liều rất lớn. Sốc có thể xảy ra nếu giãn mạch nhiều. Cơn co giật nghẹt thở gây tử vong có thể xảy ra. Thường hôn mê xảy ra trước khi chết đột ngột hoặc sau vài ngày hôn mê.`,
+                `Dấu hiệu lâm sàng thương tổn gan trở nên rõ rệt trong vòng 2 đến 4 ngày sau khi uống liều độc. Aminotransferase huyết tương tăng (đôi khi tăng rất cao) và nồng độ bilirubin trong huyết tương cũng có thể tăng; thêm nữa, khi thương tổn gan lan rộng, thời gian prothrombin sẽ kéo dài. Có thể 10% người bệnh bị ngộ độc không được điều trị đặc hiệu đã có thương tổn gan nghiêm trọng; trong số đó 10% đến 20% cuối cùng chết vì suy gan.`,
+                `Suy thận cấp cũng xảy ra ở một số người bệnh. Sinh thiết gan phát hiện hoại tử trung tâm tiểu thùy trừ vùng quanh tĩnh mạch cửa. Ở những trường hợp không tử vong, thương tổn gan phục hồi sau nhiều tuần hoặc nhiều tháng.`,
             ],
+            `Codein:`,
+            [
+                `Suy hô hấp (giảm nhịp thở, hô hấp Cheyne - Stokes, xanh tím). Lơ mơ dẫn đến tình trạng đờ đẫn hoặc hôn mê, mềm cơ, da lạnh và ẩm, đôi khi mạch chậm và hạ huyết áp.`,
+                `Trong trường hợp nặng: Ngừng thở, trụy mạch, ngừng tim, và có thể tử vong.`,
+            ],
+
             `Nếu bạn quên một liều thuốc, hãy dùng càng sớm càng tốt. Tuy nhiên, nếu gần với liều kế tiếp, hãy bỏ qua liều đã quên và dùng liều kế tiếp vào thời điểm như kế hoạch. Lưu ý rằng không nên dùng gấp đôi liều đã quy định.`,
         ],
         pill_overdose_handling: [
@@ -726,14 +1007,14 @@ let pillList = [
             `Paracetamol làm giảm thân nhiệt ở người bệnh sốt, nhưng hiếm khi làm giảm thân nhiệt ở người bình thường. Thuốc tác động lên vùng dưới đồi gây hạ nhiệt, tỏa nhiệt tăng do giãn mạch và tăng lưu lượng máu ngoại biên.`,
             `Paracetamol, với liều điều trị, ít tác động đến hệ tim mạch và hô hấp, không làm thay đổi cân bằng acid - base, không gây kích ứng, loét hoặc chảy máu dạ dày như khi dùng salicylat, vì paracetamol không tác dụng trên cyclooxygenase toàn thân, chỉ tác động đến cyclooxygenase/prostaglandin của hệ thần kinh trung ương. Paracetamol không có tác dụng trên tiểu cầu hoặc thời gian chảy máu.`,
             `Khi dùng quá liều paracetamol một chất chuyển hóa là N - acetyl – benzoquinonimin gây độc nặng cho gan. Liều bình thường, paracetamol dung nạp tốt, không có nhiều tác dụng phụ của aspirin.`,
-        ],  
+        ],
         pill_pharmacokinetics: [
             `Hấp thu: Paracetamol được hấp thu nhanh chóng và hầu như hoàn toàn qua đường tiêu hóa. Nồng độ đỉnh trong huyết tương đạt trong vòng 30 đến 60 phút sau khi uống với liều điều trị.`,
             `Phân bố: Paracetamol phân bố nhanh và đồng đều trong phần lớn các mô của cơ thể. Khoảng 25% paracetamol trong máu kết hợp với protein huyết tương.`,
             'Thải trừ:: Nửa đời huyết tương của Paracetamol là 1,25 - 3 giờ, có thể kéo dài với liều gây độc hoặc ở người bệnh có thương tổn gan. Sau liều điều trị, có thể tìm thấy 90 đến 100% thuốc trong nước tiểu trong ngày thứ nhất, chủ yếu sau khi liên hợp trong gan với acid glucuronic (khoảng 60%), acid sulfuric (khoảng 35%) hoặc cystein (khoảng 3%); cũng phát hiện thấy một lượng nhỏ những chất chuyển hóa hydroxyl - hoá và khử acetyl.',
             `Trẻ nhỏ ít khả năng glucuro liên hợp với thuốc hơn so với người lớn. Paracetamol bị N - hydroxyl hóa bởi cytochrom P450 để tạo nên N - acetyl - benzoquinonimin, một chất trung gian có tính phản ứng cao. Chất chuyển hóa này bình thường phản ứng với các nhóm sulfhydryl trong glutathion và như vậy bị khử hoạt tính.`,
             `Tuy nhiên, nếu uống liều cao paracetamol, chất chuyển hóa này được tạo thành với lượng đủ để làm cạn kiệt glutathion của gan; trong tình trạng đó, phản ứng của nó với nhóm sulfhydryl của protein gan tăng lên, có thể dẫn đến hoại tử gan.`,
-        ],  
+        ],
         pill_sideEffects: [
             `Khi sử dụng thuốc Tolvagan EF, bạn có thể gặp các tác dụng không mong muốn (ADR).`,
             `Thường gặp, ADR > 1/100:`,
@@ -843,13 +1124,13 @@ let pillList = [
             `Thuốc là một chất chuyển hóa có hoạt tính của terfenadin, cũng cạnh tranh với histamin tại các thụ thể H1 ở đường tiêu hóa, mạch máu và đường hô hấp, nhưng không còn độc tính đối với tim do không ức chế kênh kali liên quan đến sự tái cực tế bào cơ tim.`,
             `Fexofenadin không có tác dụng đáng kể đối kháng acetylcholin, đối kháng dopamine và không có tác dụng ức chế thụ thể alpha1 hoặc beta - adrenergic.`,
             `Ở liều điều trị, thuốc không gây ngủ hay ảnh hưởng đến thần kinh trung ương. Thuốc có tác dụng nhanh và kéo dài do thuốc gắn chậm vào thụ thể H1, tạo thành phức hợp bền vững và tách ra chậm.`,
-        ],  
+        ],
         pill_pharmacokinetics: [
             `Hấp thu: Thuốc hấp thu tốt khi dùng đường uống và bắt đầu phát huy tác dụng sau khi uống 60 phút. Nồng độ đỉnh trong máu đạt được sau 2 - 3 giờ. Thức ăn giàu chất béo làm giảm nồng độ đỉnh trong huyết tương khoảng 17% và kéo dài thời gian đạt nồng độ đỉnh của thuốc (đến khoảng 4h). Tác dụng kháng histamin kéo dài hơn 12 giờ.`,
             `Phân bố: Tỉ lệ liên kết với protein huyết tương của thuốc là 60 - 70%, chủ yếu với albumin và alpha1 - acid glycoprotein. Không rõ thuốc có qua nhau thai hoặc bài tiết vào sữa mẹ hay không. Fexofenadin không qua hàng rào máu - não.`,
             `Chuyển hóa: Fexofenadin rất ít bị chuyển hóa.`,
             `Thải trừ: Thời gian bán thải của fexofenadin khoảng 14,4 giờ, kéo dài hơn (31 - 72%) ở người suy thận. Thuốc thải trừ chủ yếu qua phân (xấp xỉ 80%) và nước tiểu (11 - 12%) dưới dạng không đổi.`,
-        ],  
+        ],
         pill_sideEffects: [
             `Khi sử dụng Allerphast 180 mg thường gặp các tác dụng không mong muốn (ADR).`,
             `Thường gặp, ADR > 1/100:`,
@@ -920,7 +1201,7 @@ let pillList = [
         pill_pharmacology: [
             `Desloratadine là chất kháng histamin tác dụng kéo dài, không an thần, có hoạt tính đối kháng chọn lọc thụ thể H1 ngoại biên. Sau khi dùng liều uống, desloratadine ngăn chặn thụ thể histamin H1 ngoại biên một cách chọn lọc vì desloratadine không thấm vào hệ thần kinh trung ương.`,
             `Tác dụng chống dị ứng của desloratadine bao gồm khả năng ngăn chặn sự phóng thích của cytokin gây viêm như IL-4, IL-6, IL-8, và IL-13 trong tế bào mast hoặc bạch cầu ưa kiềm trong cơ thể người, đồng thời ngăn chặn sự gắn kết phân tử P-selectin lên tế bào nội mô.`,
-        ],  
+        ],
         pill_pharmacokinetics: [
             `Hấp thu:`,
             [
@@ -938,7 +1219,7 @@ let pillList = [
                 `Thời gian bán thải trung bình của desloratadine là khoảng 27 giờ. Giá trị Cmax và AUC tăng theo tỉ lệ liều uống duy nhất trong khoảng 5 - 20 mg. Mức độ tích lũy sau 14 ngày dùng thuốc vẫn giữ ổn định về thời gian bán thải và tần suất liều dùng.`,
                 `Một nghiên cứu về độ cân bằng khối lượng ở người cho thấy khả năng phục hồi của liều 14C-desloratadine khoảng 87%, tương đương với việc phân bố vào nước tiểu và phân như một sản phẩm chuyển hóa. Phân tích 3-hydroxydesloratadine huyết tương cho giá trị Tmax và thời gian bán thải tương tự so với desloratadine.`,
             ],
-        ],  
+        ],
         pill_sideEffects: [
             `Thường gặp, ADR >1/100:`,
             [
@@ -1017,10 +1298,10 @@ let pillList = [
         ],
         pill_pharmacology: [
             `Cetirizin là thuốc kháng histamin mạnh có tác dụng chống dị ứng, nhưng không gây buồn ngủ ở liều dược lý. Cetirizin có tác dụng đối kháng chọn lọc ở thụ thể H1, nhưng hầu như không có tác dụng đến các thụ thể khác, do vậy hầu như không có tác dụng đối kháng acetylcholin và không có tác dụng đối kháng serotonin. Cetirizin ức chế giai đoạn sớm của phản ứng dị ứng qua trung gian histamin và cũng làm giảm sự di dời của các tế bào viêm và giảm giải phóng các chất trung gian ở giai đoạn muộn của phản ứng dị ứng.`,
-        ],  
+        ],
         pill_pharmacokinetics: [
             `Nồng độ đỉnh trong máu ở mức 0,3 microgam/ml sau 30 đến 60 phút khi uống 1 liều 10 mg. Nửa đời huyết tương xấp xỉ 11 giờ. Hấp thu thuốc không thay đổi giữa các cá thể.`,
-        ],  
+        ],
         pill_sideEffects: [
             `Khi sử dụng thuốc Cetirizin 10mg Trường Thọ, bạn có thể gặp các tác dụng không mong muốn (ADR).`,
             `Thường gặp, ADR > 1/100:`,
@@ -1099,7 +1380,7 @@ let pillList = [
             `Nhóm trị liệu: Kháng histamin hệ thống`,
             `Mã ATC: R06A X26`,
             `Fexofenadin là thuốc kháng histamin thế hệ hai, có tác dụng đối kháng đặc hiệu và chọn lọc trên thụ thể histamin H1 ngoại biên. Fexofenadin là chất chuyển hóa có hoạt tính của terfena dine nhưng không còn độc tính đối với tim do không ức chế kênh kali liên quan đến sự tái cực tế bào cơ tim. Fexofenadin không có tác dụng đáng kể kháng cholinergic hoặc dopami - nergic và không có tác dụng ức chế thụ thể alpha - 1 hoặc beta adrenergic. Ở liều điều trị, fexofenadin không gây buồn ngủ hay ảnh hưởng đến hệ thần kinh trung ương. Thuốc có tác dụng nhanh và kéo dài.`,
-        ],  
+        ],
         pill_pharmacokinetics: [
             `Hấp thu: Fexofenadin được hấp thu tốt khi dùng đường uống và bắt đầu phát huy tác dụng sau khi uống 60 phút. Nồng độ đỉnh trong huyết tương đạt được sau 2 - 3 giờ. Việc sử dụng đồng thời fexofenadin với chế độ ăn nhiều chất béo làm giảm AUC và Cmax của fexofenadin lần lượt là 21% và 20%.`,
             `Phân bố: Khoảng 60 - 70% fexofenadin gắn kết với protein huyết tương chủ yếu với albumin và alpha-1 acid glycoprotein. Không rõ thuốc có qua nhau thai hoặc bài tiết vào sữa mẹ hay không. Fexofenadin không qua hàng rào máu não.`,
@@ -1118,7 +1399,7 @@ let pillList = [
                 `Viêm mũi dị ứng theo mùa: Trong nghiên cứu lâm sàng ngẫu nhiên, mù đôi, đa trung tâm, kéo dài 2 tuần trên bệnh nhân từ 12 đến 65 tuổi bị viêm mũi dị ứng theo mùa (n = 863), dùng fexofenadin hydroclorid 180mg 1 lần mỗi ngày làm giảm đáng kể tổng điểm số triệu chứng (cộng các điểm số của từng triệu chứng hắt hơi, sổ mũi, ngứa mũi - hầu - họng, mắt đỏ - ngứa - chảy nước mắt) so với giả dược. Mặc dù số bệnh nhân còn ít trong một vài phân nhóm bệnh nhân được phân chia theo giới tính, độ tuổi và chủng tộc.`,
                 `Mày đay vô căn mạn tính: Trong nghiên cứu đối chứng giả dược, ngẫu nhiên, mù đôi, đa trung tâm, kéo dài 4 tuần trên bệnh nhân từ 12 tuổi trở lên bị mày đay vô căn mạn tính (n=259), dùng fexofenadin hydroclorid 180 mg 1 lần mỗi ngày làm giảm đáng kể số lượng trung bình của dát mày đay (MNW), điểm số trung bình triệu chứng ngứa (MPS), và trung bình tổng điểm số triệu chứng (tổng của MNW và MPS). Đối với MNW và MPS được ghi nhận giảm đều nhau vào cuối thời điểm của khoảng liều dùng 24 giờ. Giảm triệu chứng nhiều hơn trong nhóm dùng fexofenadin hydroclorid 180mg so với nhóm dùng giả dược. Cải thiện triệu chứng được chứng minh trong 1 ngày điều trị bằng fexofenadin hydroclorid 180mg và được duy trì suốt 4 tuần điều trị. Không có sự khác biệt đáng kể về hiệu quả của fexofenadin giữa các phân nhóm bệnh nhân được phân chia theo giới tính, độ tuổi và chủng tộc.`,
             ],
-        ],  
+        ],
         pill_sideEffects: [
             `Các nghiên cứu lâm sàng có đối chứng với giả dược cho thấy tỷ lệ tác dụng không mong muốn ở nhóm người bệnh dùng fexofenadin tương tự như ở nhóm dùng giả dược. Các tác dụng không mong muốn của thuốc không bị ảnh hưởng bởi liều dùng, tuổi, giới tính và chủng tộc của bệnh nhân.`,
             `Thường gặp: (>1/100, <1/10):`,
@@ -1156,37 +1437,37 @@ let pillList = [
         pill_precautions: [
             `Trước khi sử dụng thuốc bạn cần đọc kỹ hướng dẫn sử dụng và tham khảo thông tin bên dưới.`,
             `Thận trọng khi sử dụng:`,
+
+            `Thuốc có chứa lactose cần thận trọng khi kê thuốc này cho những bệnh nhân với các bệnh lý di truyền hiếm gặp về dung nạp galactose, thiếu enzym Lapp lactase hoặc rối loạn hấp thu glucose-galactose.`,
+            `Cần thận trọng và điều chỉnh liều thích hợp khi dùng thuốc cho người có chức năng thận suy giảm vì nồng độ thuốc trong huyết tương tăng do thời gian bán thải kéo dài.`,
+            `Cần thận trọng khi dùng thuốc cho người cao tuổi (trên 65 tuổi) thường có suy giảm sinh lý chức năng thận.`,
+            `Độ an toàn và tính hiệu quả của thuốc chưa được đánh giá trên trẻ em dưới 12 tuổi.`,
+            `Không tự ý dùng thêm thuốc kháng histamin H1 khác khi đang sử dụng Exopadin.`,
+            `Cần ngưng Exopadin ít nhất 24 - 48 giờ trước khi tiến hành các thử nghiệm kháng nguyên tiêm trong da.`,
+            `Dùng Exopadin làm bệnh vảy nến tăng lên.`,
+            `Sử dụng thuốc cho phụ nữ trong thời kỳ mang thai và cho con bú:`,
+
+            `Phụ nữ có thai`,
             [
-                `Thuốc có chứa lactose cần thận trọng khi kê thuốc này cho những bệnh nhân với các bệnh lý di truyền hiếm gặp về dung nạp galactose, thiếu enzym Lapp lactase hoặc rối loạn hấp thu glucose-galactose.`,
-                `Cần thận trọng và điều chỉnh liều thích hợp khi dùng thuốc cho người có chức năng thận suy giảm vì nồng độ thuốc trong huyết tương tăng do thời gian bán thải kéo dài.`,
-                `Cần thận trọng khi dùng thuốc cho người cao tuổi (trên 65 tuổi) thường có suy giảm sinh lý chức năng thận.`,
-                `Độ an toàn và tính hiệu quả của thuốc chưa được đánh giá trên trẻ em dưới 12 tuổi.`,
-                `Không tự ý dùng thêm thuốc kháng histamin H1 khác khi đang sử dụng Exopadin.`,
-                `Cần ngưng Exopadin ít nhất 24 - 48 giờ trước khi tiến hành các thử nghiệm kháng nguyên tiêm trong da.`,
-                `Dùng Exopadin làm bệnh vảy nến tăng lên.`,
-                `Sử dụng thuốc cho phụ nữ trong thời kỳ mang thai và cho con bú:`,
-                [
-                    `Phụ nữ có thai`,
-                    [
-                        `Tác động gây quái thai: Loại C. Không có bằng chứng về khả năng gây quái thai ở chuột hoặc thỏ với liều terfenadine đường uống lên tới 300 mg/kg (dẫn đến phơi nhiễm fexofenadin gấp khoảng 3 và 30 lần, tương ứng với mức độ phơi nhiễm từ liều tối đa được khuyến cáo hàng ngày ở người là 180mg fexofenadin hydroclorid dựa trên so sánh AUC)`,
-                        `Ở chuột, không thấy tác dụng phụ và tác dụng gây quái thai khi mang thai sử dụng với liều lên tới 3730 mg/kg (gấp khoảng 15 lần liều fexofenadin hydroclorid tối đa được khuyến cáo ở người hàng ngày là 180 mg fexofenadin hydroclorid dựa trên so sánh AUC).`,
-                        `Không có dữ liệu đầy đủ về sử dụng fexofenadin hydroclorid ở phụ nữ có thai. Không nên dùng fexofenadin hydroclorid trong thời kỳ mang thai, chỉ dùng thuốc nếu lợi ích vượt trội so với nguy cơ tiềm ẩn đối với thai nhi,`,
-                        `Tác động không gây quái thai: Giảm liều liên quan đến tăng cân và tỷ lệ sống sót được quan sát thấy ở những con chuột tiếp xúc với liều 150 mg/kg terfenadine đường uống (gấp khoảng 3 lần liều fexofenadin hydroclorid tối đa được khuyến cáo hàng ngày ở người là 180 mg fexofenadin hydroclorid dựa trên so sánh AUC).`,
-                    ],
-                    `Phụ nữ cho con bú:`,
-                    [
-                        `Không có dữ liệu về thành phần của sữa mẹ sau khi dùng fexofenadin hydroclorid. Tuy nhiên, khi dùng terfenadine trong thời kỳ cho con bú thì fexofenadin hydroclorid được thấy có trong sữa mẹ. Cho nên fexofenadin hydroclorid được khuyến cáo không nên dùng trong thời kỳ cho con bú.`,
-                    ],
-                    `Khả năng sinh sản:`,
-                    [
-                        'Không có dữ liệu của con người về tác dụng của fexofenadin hydroclorid đối với khả năng sinh sản. Ở chuột, không có ảnh hưởng đến khả năng sinh sản với điều trị bằng fexofenadin hydroclorid.',
-                    ],
-                ],
-                `Ảnh hưởng của thuốc lên khả năng lái xe và vận hành máy móc:`,
-                [
-                    `Căn cứ vào đặc tính dược lực học và các báo cáo về tác dụng không mong muốn, fexofenadin hydroclorid ít có khả năng ảnh hưởng đến khả năng lái xe hoặc vận hành máy móc. Trong các thử nghiệm khách quan, fexofenadin hydroclorid đã được chứng minh là không có tác dụng đáng kể đối với chức năng hệ thần kinh trung ương. Điều này có nghĩa là bệnh nhân có thể lái xe hoặc thực hiện các nhiệm vụ đòi hỏi sự tập trung. Tuy nhiên, để xác định những người nhạy cảm có phản ứng bất thường với thuốc, nên kiểm tra phản ứng cá nhân trước khi lái xe hoặc thực hiện các nhiệm vụ phức tạp.`,
-                ],
+                `Tác động gây quái thai: Loại C. Không có bằng chứng về khả năng gây quái thai ở chuột hoặc thỏ với liều terfenadine đường uống lên tới 300 mg/kg (dẫn đến phơi nhiễm fexofenadin gấp khoảng 3 và 30 lần, tương ứng với mức độ phơi nhiễm từ liều tối đa được khuyến cáo hàng ngày ở người là 180mg fexofenadin hydroclorid dựa trên so sánh AUC)`,
+                `Ở chuột, không thấy tác dụng phụ và tác dụng gây quái thai khi mang thai sử dụng với liều lên tới 3730 mg/kg (gấp khoảng 15 lần liều fexofenadin hydroclorid tối đa được khuyến cáo ở người hàng ngày là 180 mg fexofenadin hydroclorid dựa trên so sánh AUC).`,
+                `Không có dữ liệu đầy đủ về sử dụng fexofenadin hydroclorid ở phụ nữ có thai. Không nên dùng fexofenadin hydroclorid trong thời kỳ mang thai, chỉ dùng thuốc nếu lợi ích vượt trội so với nguy cơ tiềm ẩn đối với thai nhi,`,
+                `Tác động không gây quái thai: Giảm liều liên quan đến tăng cân và tỷ lệ sống sót được quan sát thấy ở những con chuột tiếp xúc với liều 150 mg/kg terfenadine đường uống (gấp khoảng 3 lần liều fexofenadin hydroclorid tối đa được khuyến cáo hàng ngày ở người là 180 mg fexofenadin hydroclorid dựa trên so sánh AUC).`,
             ],
+            `Phụ nữ cho con bú:`,
+            [
+                `Không có dữ liệu về thành phần của sữa mẹ sau khi dùng fexofenadin hydroclorid. Tuy nhiên, khi dùng terfenadine trong thời kỳ cho con bú thì fexofenadin hydroclorid được thấy có trong sữa mẹ. Cho nên fexofenadin hydroclorid được khuyến cáo không nên dùng trong thời kỳ cho con bú.`,
+            ],
+            `Khả năng sinh sản:`,
+            [
+                'Không có dữ liệu của con người về tác dụng của fexofenadin hydroclorid đối với khả năng sinh sản. Ở chuột, không có ảnh hưởng đến khả năng sinh sản với điều trị bằng fexofenadin hydroclorid.',
+            ],
+
+            `Ảnh hưởng của thuốc lên khả năng lái xe và vận hành máy móc:`,
+            [
+                `Căn cứ vào đặc tính dược lực học và các báo cáo về tác dụng không mong muốn, fexofenadin hydroclorid ít có khả năng ảnh hưởng đến khả năng lái xe hoặc vận hành máy móc. Trong các thử nghiệm khách quan, fexofenadin hydroclorid đã được chứng minh là không có tác dụng đáng kể đối với chức năng hệ thần kinh trung ương. Điều này có nghĩa là bệnh nhân có thể lái xe hoặc thực hiện các nhiệm vụ đòi hỏi sự tập trung. Tuy nhiên, để xác định những người nhạy cảm có phản ứng bất thường với thuốc, nên kiểm tra phản ứng cá nhân trước khi lái xe hoặc thực hiện các nhiệm vụ phức tạp.`,
+            ],
+
         ],
         pill_overdose: [
             `Làm gì khi dùng quá liều?`,
@@ -1241,13 +1522,13 @@ let pillList = [
             `Thuốc Telfast Kids có chứa hoạt chất fexofenadin - thuốc kháng histamin thế hệ hai, có tác dụng đối kháng đặc hiệu và chọn lọc trên thụ thể histamin H1 ngoại biên.`,
             `Fexofenadin là chất chuyển hóa có hoạt tính của terfenadin nhưng không còn độc tính đối với tim do không ức chế kênh kali liên quan đến sự tái cực tế bào cơ tim.`,
             `Fexofenadin không có tác dụng đáng kể kháng cholinergic hoặc dopaminergic và không có tác dụng ức chế thụ thể alpha-1 hoặc beta adrenergic. Ở liều điều trị, fexofenadin không gây buồn ngủ hay ảnh hưởng đến hệ thần kinh trung ương. Thuốc có tác dụng nhanh và kéo dài.`,
-        ],  
+        ],
         pill_pharmacokinetics: [
             `Hấp thu: Fexofenadin được hấp thu tốt khi dùng đường uống và bắt đầu phát huy tác dụng sau khi uống 60 phút. Nồng độ đỉnh trong huyết tương đạt được sau 2-3 giờ. Việc sử dụng đồng thời fexofenadin với chế độ ăn nhiều chất béo làm giảm AUC và Cmax của fexofenadin lần lượt là 21% và 20%.`,
             `Phân bố: Khoảng 60-70% fexofenadin gắn kết với protein huyết tương, chủ yếu với albumin và alpha-1 acid glycoprotein. Thuốc không qua hàng rào máu não. Không rõ thuốc có qua nhau thai hoặc bài tiết vào sữa mẹ hay không.`,
             `Chuyển hóa: Fexofenadin rất ít bị chuyển hóa (khoảng 5%, chủ yếu ở niêm mạc ruột. Chỉ khoảng 0,5-1,5% liều dùng được chuyển hóa ở gan nhờ hệ enzym cytochrom P450 thành chất không có hoạt tính).`,
             `Thải trừ: Thuốc được thải trừ dưới dạng không đổi chủ yếu qua phân khoảng 80%, và 11% qua nước tiểu. Thời gian bán thải trung bình của fexofenadin khoảng 14,4 giờ, kéo dài hơn (31-72%) ở người suy thận.`,
-        ],  
+        ],
         pill_sideEffects: [
             `Khi sử dụng thuốc nhỏ mắt Telfast Kids , bạn có thể gặp các tác dụng không mong muốn (ADR).`,
             `Thường gặp, ADR >1/100:`,
@@ -1274,18 +1555,18 @@ let pillList = [
         pill_precautions: [
             `Trước khi sử dụng thuốc bạn cần đọc kỹ hướng dẫn sử dụng và tham khảo thông tin bên dưới.`,
             'Thận trọng khi sử dụng:',
-            [
-                `Cần thận trọng và điều chỉnh liều thích hợp khi dùng thuốc cho người có chức năng thận suy giảm vì nồng độ thuốc trong huyết tương tăng do thời gian bán thải kéo dài.`,
-                `Cần thận trọng khi dùng cho người bị bệnh tim, vì thuốc này có thể dẫn đến nhịp tim nhanh hoặc bất thường.`,
-                `Không tự ý dùng thêm thuốc kháng histamin H1 khác khi đang sử dụng fexofenadine do độ an toàn và tính hiệu quả của fexofenadin chưa được đánh giá trên trẻ em dưới 6 tuổi.`,
-                `Cần ngưng fexofenadin ít nhất 24-48 giờ trước khi tiến hành các thử nghiệm kháng nguyên tiêm trong da. Dùng fexofenadin làm bệnh vẩy nến tăng lên.`,
-                `Khả năng lái xe và vận hành máy móc:`,
-                [`Không có.`],
-                `Thời kỳ mang thai và cho con bú:`,
-                [`Không có.`],
-                `Thời kỳ cho con bú:`,
-                [`Không có.`],
-            ],
+
+            `Cần thận trọng và điều chỉnh liều thích hợp khi dùng thuốc cho người có chức năng thận suy giảm vì nồng độ thuốc trong huyết tương tăng do thời gian bán thải kéo dài.`,
+            `Cần thận trọng khi dùng cho người bị bệnh tim, vì thuốc này có thể dẫn đến nhịp tim nhanh hoặc bất thường.`,
+            `Không tự ý dùng thêm thuốc kháng histamin H1 khác khi đang sử dụng fexofenadine do độ an toàn và tính hiệu quả của fexofenadin chưa được đánh giá trên trẻ em dưới 6 tuổi.`,
+            `Cần ngưng fexofenadin ít nhất 24-48 giờ trước khi tiến hành các thử nghiệm kháng nguyên tiêm trong da. Dùng fexofenadin làm bệnh vẩy nến tăng lên.`,
+            `Khả năng lái xe và vận hành máy móc:`,
+            [`Không có.`],
+            `Thời kỳ mang thai và cho con bú:`,
+            [`Không có.`],
+            `Thời kỳ cho con bú:`,
+            [`Không có.`],
+
         ],
         pill_overdose: [
             `Làm gì khi dùng quá liều?`,
@@ -1344,13 +1625,13 @@ let pillList = [
         pill_pharmacology: [
             `Nhóm dược lý: Kháng histamin thế hệ 2, đối kháng thụ thể H1.`,
             `Fexofenadine có tác dụng kháng histamin chọn lọc trên thụ thể H1. Không có tác dụng kháng cholinergic hay adrenergic.`,
-        ],  
+        ],
         pill_pharmacokinetics: [
             `Hấp thu: Thuốc hấp thu nhanh sau khi uống, đạt nồng độ tối đa trong máu sau 2 - 3 giờ.`,
             `Phân bố: Thuốc liên kết với protein huyết tương khoảng 60 - 70%.`,
             `Chuyển hóa: Khoảng 5% Fexofenadine bị chuyển hóa trong cơ thể.`,
             `Thải trừ: Thời gian bán thải trừ của thuốc là 14,4 giờ, thuốc chủ yếu đào thải qua phân 80%, qua nước tiểu 11%.`,
-        ],  
+        ],
         pill_sideEffects: [
             `Khi sử dụng thuốc thường gặp các tác dụng không mong muốn (ADR) như:`,
             [
@@ -1380,20 +1661,20 @@ let pillList = [
                 `Thận trọng khi dùng cho trẻ em dưới 6 tuổi vì độ an toàn và tính hiệu quả chưa được xác định.`,
                 `Cần ngừng dùng fexofenadin ít nhất 24 – 48 giờ trước khi tiến hành các thử nghiệm kháng nguyên tiêm trong da.`,
                 `Sử dụng thuốc cho phụ nữ trong thời kỳ mang thai và cho con bú:`,
-                [`Chỉ dùng cho phụ nữ có thai, và phụ nữ cho con bú khi thật cần thiết.`],
+                `Chỉ dùng cho phụ nữ có thai, và phụ nữ cho con bú khi thật cần thiết.`,
                 `Ảnh hưởng của thuốc lên khả năng lái xe và vận hành máy móc:`,
-                [`Thận trọng khi dùng cho người lái xe, vận hành máy móc vì có khả năng gây buồn ngủ.`],
+                `Thận trọng khi dùng cho người lái xe, vận hành máy móc vì có khả năng gây buồn ngủ.`,
             ],
         ],
         pill_overdose: [
             `Làm gì khi dùng quá liều?`,
             [
                 `Triệu chứng:`,
-                [
-                    `Thông tin còn hạn chế nhưng đã có báo cáo: Buồn ngủ, chóng mặt, khô miệng.`,
-                    `Không có thuốc giải độc đặc hiệu, cần điều trị triệu chứng và hỗ trợ.`,
-                    `Trong trường hợp khẩn cấp, hãy gọi ngay cho Trung tâm cấp cứu 115 hoặc đến trạm Y tế địa phương gần nhất.`,
-                ],
+
+                `Thông tin còn hạn chế nhưng đã có báo cáo: Buồn ngủ, chóng mặt, khô miệng.`,
+                `Không có thuốc giải độc đặc hiệu, cần điều trị triệu chứng và hỗ trợ.`,
+                `Trong trường hợp khẩn cấp, hãy gọi ngay cho Trung tâm cấp cứu 115 hoặc đến trạm Y tế địa phương gần nhất.`,
+
             ],
             `Làm gì khi quên 1 liều?`,
             [
@@ -1452,11 +1733,11 @@ let pillList = [
             `Cinnarizin còn là chất đối kháng calci. Thuốc ức chế sự co tế bào cơ trơn mạch máu bằng cách chẹn các kênh calci.`,
             `Ở một số nước, cinnarizin được kê đơn rộng rãi làm thuốc giãn mạch não để điều trị bệnh mạch não mạn tính với chỉ định chính là xơ cứng động mạch não; nhưng những thử nghiệm lâm sàng ngẫu nhiên về cinnarizin đều không đi đến kết luận rõ ràng.`,
             `Cinnarizin đã được dùng trong điều trị hội chứng Raynaud, nhưng không xác định được là có hiệu lực. Cinnarizin cũng được dùng trong các rối loạn tiền đình.`,
-        ],  
+        ],
         pill_pharmacokinetics: [
             `Hấp thu – Phân bố: Sau khi uống, cinarizin đạt được nồng độ đỉnh huyết tương từ 2 – 4 giờ.`,
             `Chuyển hóa – Thải trừ: Sau 72 giờ, thuốc vẫn còn thải trừ ra nước tiểu. Nửa đời huyết tương của thuốc ở người tình nguyện trẻ tuổi khoảng 3 giờ.`,
-        ],  
+        ],
         pill_sideEffects: [
             `Khi sử dụng thuốc Devomir 25 mg, bạn có thể gặp các tác dụng không mong muốn (ADR).`,
             `Thường gặp, ADR >1/100:`,
@@ -1475,10 +1756,10 @@ let pillList = [
                 `Thần kinh trung ương: Triệu chứng ngoại tháp ở người cao tuổi hoặc khi điều trị dài ngày.`,
                 `Tim mạch: Giảm huyết áp (liều cao).`,
                 `Hướng dẫn cách xử trí ADR:`,
-                [
-                    `Có thể phòng tình trạng ngủ gà và rối loạn tiêu hóa, thường có tính chất tạm thời, bằng tăng dần liều tới mức tối ưu. Phải ngừng thuốc khi bệnh nặng hơn hoặc xuất hiện những triệu chứng ngoại tháp khi điều trị dài ngày cho người cao tuổi. `,
-                    `Thông báo cho bác sĩ hoặc dược sĩ những tác dụng không mong muốn gặp phải khi sử dụng thuốc.`,
-                ],
+
+                `Có thể phòng tình trạng ngủ gà và rối loạn tiêu hóa, thường có tính chất tạm thời, bằng tăng dần liều tới mức tối ưu. Phải ngừng thuốc khi bệnh nặng hơn hoặc xuất hiện những triệu chứng ngoại tháp khi điều trị dài ngày cho người cao tuổi. `,
+                `Thông báo cho bác sĩ hoặc dược sĩ những tác dụng không mong muốn gặp phải khi sử dụng thuốc.`,
+
             ],
         ],
         pill_interactions: [
@@ -1546,27 +1827,25 @@ let pillList = [
         pill_dosage: [
             `Theo sự hướng dẫn của thầy thuốc, trung bình:`,
             `Phòng và điều trị các tình trạng dị ứng (mày đay, phù mạch, viêm mũi, viêm kết mạc, ngứa) - an thần:`,
+            `Người lớn:`,
             [
-                `Người lớn:`,
-                [
-                    `1 viên/ lần x3 lần/ ngày, uống trước bữa ăn và khi đi ngủ hoặc 2 viên khi đi ngủ.`,
-                ],
-                `Trẻ em trên 2 tuổi:`,
-                [
-                    `0,1mg/ kg thể trọng, cách 6 giờ/ lần; hoặc 0,5mg/kg thể trọng khi đi ngủ.`,
-                ],
+                `1 viên/ lần x3 lần/ ngày, uống trước bữa ăn và khi đi ngủ hoặc 2 viên khi đi ngủ.`,
+            ],
+            `Trẻ em trên 2 tuổi:`,
+            [
+                `0,1mg/ kg thể trọng, cách 6 giờ/ lần; hoặc 0,5mg/kg thể trọng khi đi ngủ.`,
             ],
             `Phòng và điều trị say sóng, say tàu xe:`,
+
+            `Người lớn:`,
             [
-                `Người lớn:`,
-                [
-                    `Uống 2 viên trước khi khởi hành 30 - 60 phút. Có thể nhắc lại liều sau 8 - 12 giờ, nếu cần.`,
-                ],
-                `Trẻ em trên 2 tuổi:`,
-                [
-                    `0,5mg/kg thể trọng, cách 8 giờ/lần`,
-                ],
+                `Uống 2 viên trước khi khởi hành 30 - 60 phút. Có thể nhắc lại liều sau 8 - 12 giờ, nếu cần.`,
             ],
+            `Trẻ em trên 2 tuổi:`,
+            [
+                `0,5mg/kg thể trọng, cách 8 giờ/lần`,
+            ],
+
             `Lưu ý: Liều dùng trên chỉ mang tính chất tham khảo. Liều dùng cụ thể tùy thuộc vào thể trạng và mức độ diễn tiến của bệnh. Để có liều dùng phù hợp, bạn cần tham khảo ý kiến bác sĩ hoặc chuyên viên y tế.`,
         ],
         pill_pharmacology: [
@@ -1577,12 +1856,12 @@ let pillList = [
             `Promethazin và phần lớn các thuốc kháng histamin đi qua hàng rào máu - não, gây tác dụng an thần do ức chế histamin N-methyltransferase và chẹn các thụ thể histamin trung ương. Đây là một nguy cơ đặc biệt cho các trẻ nhỏ, vì các thuốc kháng histamin đã được chứng minh gây tử vong do ngừng thở khi ngủ.`,
             `Sự đối kháng ở các vị trí thụ thể khác của hệ thần kinh trung ương, thí dụ như của serotonin, acetylcholin cũng có thể xảy ra. Người ta cho rằng các phenothiazin gián tiếp làm giảm kích thích tới hệ thống lưới của thân não.`,
             `Promethazin có tính kháng cholinergic, ngăn chặn đáp ứng với acetylcholin thông qua thụ thể muscarinic. Tác dụng chống nôn, chống say tàu xe và chống chóng mặt của promethazin là do tác dụng kháng cholinergic trung ương trên tiền đình, trên trung tâm nôn tích hợp và trên vùng phát động nhận cảm hóa chất của não giữa. Tác động chống ho nhẹ có thể do tính chất kháng cholinergic và ức chế thần kinh trung ương của thuốc. Promethazin và các phenothiazin khác có tác dụng chẹn alpha-adrenergic, gây nguy cơ hạ huyết áp thế đứng.`,
-        ],  
+        ],
         pill_pharmacokinetics: [
             `Hấp thu: Promethazin được hấp thu tốt qua đường tiêu hóa và ở vị trí tiêm. Nồng độ thuốc trong huyết tương cần để có tác dụng kháng histamin và tác dụng an thần còn chưa được biết rõ. Dùng theo đường uống, trực tràng hoặc tiêm bắp, thuốc đều bắt đầu có tác dụng kháng histamin và an thần trong vòng 20 phút, còn theo đường tiêm tĩnh mạch chỉ trong 3 đến 5 phút. Tác dụng kháng histamin có thể kéo dài tới 12 giờ hoặc lâu hơn, còn tác dụng an thần có thể duy trì từ 2 đến 8 giờ tùy theo liều và đường dùng.`,
             `Phân bố: Tỷ lệ liên kết với protein huyết tương từ 76 đến 93%. Thuốc được phân bố rộng rãi tới các mô của cơ thể. Mặc dù nồng độ trong não có thấp hơn so với các bộ phận khác, nhưng vẫn cao hơn nồng độ trong huyết tương. Thuốc dễ dàng qua nhau thai. Chưa rõ thuốc có phân bố trong sữa mẹ không.`,
             `Chuyển hoá và thải trừ: Promethazin chuyển hóa mạnh ở gan cho sản phẩm chủ yếu là promethazin sulphoxid và cả N-demethyl-promethazin. Thuốc thải trừ qua nước tiểu và phân, phần lớn ở dạng promethazin sulphoxid va dang glucuronid.`,
-        ],  
+        ],
         pill_sideEffects: [
             `Khi sử dụng thuốc Promethazin, bạn có thể gặp các tác dụng không mong muốn (ADR).`,
             `Thường gặp, ADR >1/100:`,
@@ -1628,20 +1907,20 @@ let pillList = [
         pill_precautions: [
             `Trước khi sử dụng thuốc bạn cần đọc kỹ hướng dẫn sử dụng và tham khảo thông tin bên dưới.`,
             `Thận trọng khi sử dụng:`,
+
+            `Thuốc gây buồn ngủ, thận trọng khi dùng cho người lái xe hay vận hành máy móc.`,
+            `Phụ nữ có thai và cho con bú.`,
+            `Dùng thận trọng trong các bệnh: Hen, tăng nhãn áp góc đóng, bí tiểu tiện, phì đại tuyến tiền liệt, tắc môn vị - tá tràng, động kinh, bệnh tim mạch nặng, suy gan, suy tủy.`,
+            `Thận trọng khi sử dụng promethazin đồng thời với các thuốc ức chế thần kinh trung ương để tránh quá liều. Khi dùng đồng thời với promethazin, liều của barbiturat phải giảm ít nhất một nửa và liều của các thuốc giảm đau (morphin, pethidin) phải giảm từ 1⁄4 đến 1⁄2.`,
+            `Khả năng lái xe và vận hành máy móc:`,
+            [`Thuốc gây buồn ngủ nên ảnh hưởng cho người lái xe và vận hành máy móc.`],
+            `Thời kỳ mang thai và thời kỳ cho con bú:`,
             [
-                `Thuốc gây buồn ngủ, thận trọng khi dùng cho người lái xe hay vận hành máy móc.`,
-                `Phụ nữ có thai và cho con bú.`,
-                `Dùng thận trọng trong các bệnh: Hen, tăng nhãn áp góc đóng, bí tiểu tiện, phì đại tuyến tiền liệt, tắc môn vị - tá tràng, động kinh, bệnh tim mạch nặng, suy gan, suy tủy.`,
-                `Thận trọng khi sử dụng promethazin đồng thời với các thuốc ức chế thần kinh trung ương để tránh quá liều. Khi dùng đồng thời với promethazin, liều của barbiturat phải giảm ít nhất một nửa và liều của các thuốc giảm đau (morphin, pethidin) phải giảm từ 1⁄4 đến 1⁄2.`,
-                `Khả năng lái xe và vận hành máy móc:`,
-                [`Thuốc gây buồn ngủ nên ảnh hưởng cho người lái xe và vận hành máy móc.`],
-                `Thời kỳ mang thai và thời kỳ cho con bú:`,
-                [
-                    `Chưa xác định được tính an toàn khi sử dụng promethazin trong thời kỳ mang thai (trừ lúc đau đẻ) đối với phát triển thai nhi về mặt tác dụng phụ có thể xảy ra. Khi thai đủ tháng, thuốc qua nhau thai nhanh chóng.`,
-                    `Nồng độ thuốc trong máu thai và mẹ cân bằng trong 15 phút và nồng độ thuốc ở trẻ nhỏ kéo dài ít nhất 4 giờ. Tuy vậy, không có chứng cứ lâm sàng trẻ bị ức chế hô hấp do promethazin. Chỉ nên dùng promethazin cho người có thai khi mà lợi ích điều trị xác đáng hơn nguy cơ có thể xảy ra cho thai nhi.`,
-                    `Do không biết rõ thuốc có phân bố vào sữa mẹ hay không, nên cần thận trọng khi dùng cho người đang cho con bú vì nguy cơ tác dụng không mong muốn (như kích động hoặc kích thích khác thường) có thể xây ra ở đứa trẻ. Các thuốc kháng histamin có thể ức chế tiết sữa do tác dụng kháng cholinergic.`,
-                ],
+                `Chưa xác định được tính an toàn khi sử dụng promethazin trong thời kỳ mang thai (trừ lúc đau đẻ) đối với phát triển thai nhi về mặt tác dụng phụ có thể xảy ra. Khi thai đủ tháng, thuốc qua nhau thai nhanh chóng.`,
+                `Nồng độ thuốc trong máu thai và mẹ cân bằng trong 15 phút và nồng độ thuốc ở trẻ nhỏ kéo dài ít nhất 4 giờ. Tuy vậy, không có chứng cứ lâm sàng trẻ bị ức chế hô hấp do promethazin. Chỉ nên dùng promethazin cho người có thai khi mà lợi ích điều trị xác đáng hơn nguy cơ có thể xảy ra cho thai nhi.`,
+                `Do không biết rõ thuốc có phân bố vào sữa mẹ hay không, nên cần thận trọng khi dùng cho người đang cho con bú vì nguy cơ tác dụng không mong muốn (như kích động hoặc kích thích khác thường) có thể xây ra ở đứa trẻ. Các thuốc kháng histamin có thể ức chế tiết sữa do tác dụng kháng cholinergic.`,
             ],
+
         ],
         pill_overdose: [
             `Làm gì khi dùng quá liều và xử trí?`,
@@ -1652,15 +1931,13 @@ let pillList = [
             [`Nếu bạn quên một liều thuốc, hãy dùng càng sớm càng tốt. Tuy nhiên, nếu gần với liều kế tiếp, hãy bỏ qua liều đã quên và dùng liều kế tiếp vào thời điểm như kế hoạch. Lưu ý rằng không nên dùng gấp đôi liều đã quy định.`],
         ],
         pill_overdose_handling: [
-            `Điều trị quá liều:`,
-            [
-                `Động kinh:`,
-                ['Dùng diazepam, physostigmin tiêm tĩnh mạch.'],
-                `Hạ huyết áp nặng:`,
-                [`Dùng noradrenalin tiêm truyền tĩnh mạch chậm.`],
-                `Triệu chứng ngoài tháp:`,
-                [`Điều trị với biperiden tiêm bắp, tiêm tĩnh mạch. Cần duy trì bài niệu tốt, thông khí hỗ trợ cho người bệnh nếu cần.`],
-            ],
+
+            `Động kinh:`,
+            ['Dùng diazepam, physostigmin tiêm tĩnh mạch.'],
+            `Hạ huyết áp nặng:`,
+            [`Dùng noradrenalin tiêm truyền tĩnh mạch chậm.`],
+            `Triệu chứng ngoài tháp:`,
+            [`Điều trị với biperiden tiêm bắp, tiêm tĩnh mạch. Cần duy trì bài niệu tốt, thông khí hỗ trợ cho người bệnh nếu cần.`],
         ],
         pill_viewed: 10
     },
@@ -2565,7 +2842,7 @@ let pillList = [
         pill_sellPrice: 12750,
         pill_buyPrice: 2000,
         pill_packKind: `20 gói`,
-        pill_imgAddress: [`./pill/Giảm_đau_và_hạ_sốt.png`],
+        pill_imgAddress: [`./pill/Peginpol.png`],
         pill_indication: [
             `Chỉ dùng bột nhuận tràng PEGinpol Macrogol cho các đối tượng trẻ nhỏ và người lớn có tình trạng táo bón trong các trường hợp cụ thể sau:
             Trẻ nhỏ và người lớn bị táo bón chức năng cấp và mãn tính hoặc thỉnh thoảng nhu động ruột bất thường.
@@ -2608,7 +2885,7 @@ let pillList = [
         pill_sellPrice: 5000,
         pill_buyPrice: 2000,
         pill_packKind: `30 gói`,
-        pill_imgAddress: [`./pill/Giảm_đau_và_hạ_sốt.png`],
+        pill_imgAddress: [`./pill/Cốm_vi_sinh.png`],
         pill_indication: [
             `Bio-acimin Fiber dùng cho người lớn và trẻ nhỏ trong các trường hợp sau:
                 Trẻ em và người lớn bị táo bón hoặc có nguy cơ bị táo bón như: Phụ nữ có thai, phụ nữ sau khi sinh.
@@ -2652,7 +2929,7 @@ let pillList = [
 
 
 
-   
+
 
 
     {
@@ -2664,7 +2941,7 @@ let pillList = [
         pill_sellPrice: 9000,
         pill_buyPrice: 2000,
         pill_packKind: `1 Vỉ x 10 Viên`,
-        pill_imgAddress: [`./pill/Giảm_đau_và_hạ_sốt.png`],
+        pill_imgAddress: [`./pill/air_-_X.png`],
         pill_indication: [
             `Thuốc AIR-X Hương vị cam được chỉ định dùng trong các trường hợp sau:
             Ðiều trị đầy hơi ở đường tiêu hóa, cảm giác bị đè ép và căng ở vùng thượng vị, chướng bụng thoáng qua thường có sau bữa ăn thịnh soạn hoặc ăn nhiều chất ngọt, chướng bụng sau phẫu thuật; chuẩn bị chụp X-quang (dạ dày, ruột, túi mật, thận) và trước khi nội soi dạ dày.`
@@ -2709,7 +2986,7 @@ let pillList = [
         pill_sellPrice: 5300,
         pill_buyPrice: 2000,
         pill_packKind: `1 Vỉ x 10 Viên`,
-        pill_imgAddress: [`./pill/Giảm_đau_và_hạ_sốt.png`],
+        pill_imgAddress: [`./pill/Thuốc_tiêu_hóa_-_Glomoti-M.png`],
         pill_indication: [
             `Thuốc Glomoti-M 10mg chỉ định dùng trong các trường hợp sau:
             Điều trị triệu chứng buồn nôn, nôn, chướng bụng, ợ hơi, khó tiêu sau bữa ăn.
@@ -2779,7 +3056,7 @@ g không mong muốn gặp phải khi sử dụng thuốc.`
         pill_sellPrice: 62000,
         pill_buyPrice: 2000,
         pill_packKind: `1 Vỉ x 10 Viên`,
-        pill_imgAddress: [`./pill/Giảm_đau_và_hạ_sốt.png`],
+        pill_imgAddress: [`./pill/Đại_tràng_Nhất_Nhất.png`],
         pill_indication: [
             `Thuốc Đại Tràng Nhất Nhất được chỉ định dùng trong các trường hợp sau:
             Ðiều trị viêm đại tràng, tiêu chảy, rối loạn tiêu hóa với các triệu chứng đau bụng, sôi bụng, chướng bụng, ăn không tiêu, phân sống...`
@@ -2819,7 +3096,7 @@ g không mong muốn gặp phải khi sử dụng thuốc.`
         pill_sellPrice: 70000,
         pill_buyPrice: 2000,
         pill_packKind: `1 Vỉ x 10 Viên`,
-        pill_imgAddress: [`./pill/Giảm_đau_và_hạ_sốt.png`],
+        pill_imgAddress: [`./pill/Normagut.png`],
         pill_indication: [
             `Thuốc Normagut được chỉ định dùng trong các trường hợp sau:
                 Thiết lập và duy trì hoạt động hiệu quả của đường ruột, cân bằng hệ vi sinh vật đường ruột. 
@@ -2882,7 +3159,7 @@ g không mong muốn gặp phải khi sử dụng thuốc.`
         pill_sellPrice: 63000,
         pill_buyPrice: 2000,
         pill_packKind: `1 Vỉ x 10 Viên`,
-        pill_imgAddress: [`./pill/Giảm_đau_và_hạ_sốt.png`],
+        pill_imgAddress: [`./pill/Duspatalin.png`],
         pill_indication: [
             `Thuốc Duspatalin được chỉ định dùng trong các trường hợp sau:
             Điều trị chứng đau bụng và co cứng cơ, rối loạn đại tràng và khó chịu ở ruột non do hội chứng ruột kích thích.
@@ -2967,7 +3244,7 @@ g không mong muốn gặp phải khi sử dụng thuốc.`
         pill_sellPrice: 32167,
         pill_buyPrice: 2000,
         pill_packKind: `1 Vỉ x 10 Viên`,
-        pill_imgAddress: [`./pill/Giảm_đau_và_hạ_sốt.png`],
+        pill_imgAddress: [`./pill/Baci-subti.png`],
         pill_indication: [
             `Men vi sinh Baci-subti hỗ trợ điều trị trong các trường hợp sau:
                 Rối loạn tiêu hóa do loạn khuẩn đường ruột hoặc dùng thuốc kháng tinh kéo dài như phân sống, đầy bụng, khó tiêu...
@@ -3014,7 +3291,7 @@ g không mong muốn gặp phải khi sử dụng thuốc.`
         pill_sellPrice: 150000,
         pill_buyPrice: 2000,
         pill_packKind: `1 Vỉ x 10 Viên`,
-        pill_imgAddress: [`./pill/Giảm_đau_và_hạ_sốt.png`],
+        pill_imgAddress: [`./pill/Creon.png`],
         pill_indication: [
             `Thuốc Creon 25000 được chỉ định dùng trong các trường hợp sau:
                 Ðiều trị thiểu năng tụy ngoại tiết ở trẻ em và người lớn do tuyến tụy không cung cấp đủ men để tiêu hóa thức ăn.
@@ -3077,7 +3354,7 @@ g không mong muốn gặp phải khi sử dụng thuốc.`
         pill_sellPrice: 5000,
         pill_buyPrice: 2000,
         pill_packKind: `1 Vỉ x 10 Viên`,
-        pill_imgAddress: [`./pill/Giảm_đau_và_hạ_sốt.png`],
+        pill_imgAddress: [`./pill/Modom_s.png`],
         pill_indication: [`Thuốc Modom'S được chỉ định dùng điều trị triệu chứng nôn và buồn nôn.`],
         pill_contraindication: [
             `Thuốc Modom'S chống chỉ định trong các trường hợp sau:
@@ -3195,7 +3472,7 @@ g không mong muốn gặp phải khi sử dụng thuốc.`
         pill_sellPrice: 26000,
         pill_buyPrice: 2000,
         pill_packKind: `1 Vỉ x 10 Viên`,
-        pill_imgAddress: [`./pill/Giảm_đau_và_hạ_sốt.png`],
+        pill_imgAddress: [`./pill/Acemuc.png`],
         pill_indication: [
             `Thuốc Acemuc 200mg viên được chỉ định dùng trong các trường hợp sau:
                 Dùng điều trị trong trường hợp tiết chất nhầy trong bệnh hô hấp có đàm nhầy quánh như trong viêm phế quản cấp và mạn tính.`
@@ -3262,7 +3539,7 @@ g không mong muốn gặp phải khi sử dụng thuốc.`
         pill_sellPrice: 8000,
         pill_buyPrice: 2000,
         pill_packKind: `1 Vỉ x 10 Viên`,
-        pill_imgAddress: [`./pill/Giảm_đau_và_hạ_sốt.png`],
+        pill_imgAddress: [`./pill/Euxamus.png`],
         pill_indication: [
             `Thuốc Euxamus 200 được chỉ định dùng trong các trường hợp sau:
                 Dùng làm thuốc tiêu chất nhầy trong bệnh nhầy nhớt như xơ nang tuyến tụy, bệnh hô hấp có đờm nhầy quanh như viêm phế quản cấp và mạn, làm sạch thường quy trong mở khí quản.
@@ -3327,7 +3604,7 @@ g không mong muốn gặp phải khi sử dụng thuốc.`
         pill_sellPrice: 17000,
         pill_buyPrice: 2000,
         pill_packKind: `1 Vỉ x 12 Viên`,
-        pill_imgAddress: [`./pill/Giảm_đau_và_hạ_sốt.png`],
+        pill_imgAddress: [`./pill/Strepsils.png`],
         pill_indication: [
             `Thuốc Strepsils Soothing mật ong và chanh được chỉ định dùng trong các trường hợp sau:
             Strepsils Soothing Honey & Lemon là viên ngậm chứa hai hoạt chất 2,4-dichlorobenzyl alcohol (dybenal) và amylmetacresol có tính kháng khuẩn sử dụng trong điều trị viêm họng. Viên ngậm Strepsils là viên ngậm kháng khuẩn để làm giảm đau họng dùng cho trẻ em và người lớn.`
@@ -3377,7 +3654,7 @@ g không mong muốn gặp phải khi sử dụng thuốc.`
         pill_sellPrice: 9000,
         pill_buyPrice: 2000,
         pill_packKind: `1 Vỉ x 10 Viên`,
-        pill_imgAddress: [`./pill/Giảm_đau_và_hạ_sốt.png`],
+        pill_imgAddress: [`./pill/Eugica.png`],
         pill_indication: [
             `Thuốc Eugica® Fort được chỉ định dùng trong các trường hợp sau:
             Dùng điều trị các chứng ho, đau họng, sổ mũi, cảm cúm.
@@ -3434,7 +3711,7 @@ g không mong muốn gặp phải khi sử dụng thuốc.`
         pill_sellPrice: 7000,
         pill_buyPrice: 2000,
         pill_packKind: `1 Vỉ x 10 Viên`,
-        pill_imgAddress: [`./pill/Giảm_đau_và_hạ_sốt.png`],
+        pill_imgAddress: [`./pill/Tocemux.png`],
         pill_indication: [
             `Thuốc Tocemux được chỉ định dùng trong các trường hợp sau:
             Dùng làm thuốc tiêu chất nhầy trong bệnh nhầy nhớt (mucoviscidosis) (xơ nang tuyến tụy), bệnh lý hô hấp có đờm nhầy quánh như trong viêm phế quản cấp và mạn, và làm sạch thường quy trong mở khí quản.`
@@ -3506,7 +3783,7 @@ g không mong muốn gặp phải khi sử dụng thuốc.`
         pill_sellPrice: 7800,
         pill_buyPrice: 2000,
         pill_packKind: `1 Vỉ x 10 Viên`,
-        pill_imgAddress: [`./pill/Giảm_đau_và_hạ_sốt.png`],
+        pill_imgAddress: [`./pill/OPC.png`],
         pill_indication: [
             `Viên Trị Ho Tussiday chỉ định dùng trong các trường hợp sau:
                 Điều trị các chứng ho, đau họng, sổ mũi, cảm cúm.
@@ -3544,6 +3821,197 @@ g không mong muốn gặp phải khi sử dụng thuốc.`
         pill_overdose_handling: [`Trong trường hợp khẩn cấp, hãy gọi ngay cho Trung tâm cấp cứu 115 hoặc đến trạm Y tế địa phương gần nhất.`],
         pill_viewed: 10
     },
+
+    {
+        pill_id: `H765ae`,
+        pill_name: `Thuốc Lorucet-10 điều trị viêm mũi dị ứng, viêm kết mạc dị ứng, mày đay`,
+        pill_brand: `Micro`,
+        pill_tags: [`Thuốc dị ứng`],
+        pill_quantity: 10,
+        pill_sellPrice: 7800,
+        pill_buyPrice: 2000,
+        pill_packKind: `1 Vỉ x 10 Viên`,
+        pill_imgAddress: [`./pill/Lorucet.png`],
+        pill_indication: [
+            `Viêm mũi dị ứng: Hắt hơi, chảy nước mũi, ngứa mũi.`,
+            `Viêm kết mạc dị ứng: Ngứa và xót mắt, nóng mắt.`,
+            `Ngứa và mày đay liên quan đến histamin.`,
+        ],
+        pill_contraindication: [
+            `Bệnh nhân quá mẫn cảm với loratadine hoặc với bất kỳ thành phần nào của thuốc này. Kết hợp với pseudoephedrin cùng với IMAO.`
+        ],
+        pill_description: [`Thuốc Lorucet-10 được sản xuất bởi Micro Labs Limited, có thành phần chính là loratadine. Thuốc giúp điều trị các triệu chứng của viêm mũi dị ứng, viêm kết mạc dị ứng và rối loạn dị ứng da. `],
+        pill_ingredient: [``],
+        pill_use: [
+            `Thuốc dạng viên dùng đường uống. Uống trọn viên thuốc với một ly nước.`
+        ],
+        pill_dosage: [
+            `Người lớn và trẻ em trên 12 tuổi: Mỗi ngày uống 1 viên 10mg khi đói. Với bệnh nhân suy gan, liều khởi đầu nên là 10mg trong mỗi ngày.`
+        ],
+        pill_pharmacology: [
+            `Loratadine là thuốc kháng histamin nhóm 3 vòng, tác dụng bền, có tác dụng đối kháng đặc hiệu ở thụ thể H1 - histamin ngoại biên.`
+        ],
+        pill_pharmacokinetics: [
+            `Trên người, sau khi uống 10mg một lần và nhắc lại nhiều lần viên nén loratadine, thấy thuốc có tác dụng kháng histamin, bắt đầu từ 1 - 3 giờ sau khi uống, đạt tác dụng tối đa sau 8 - 12 giờ và hết sau 24 giờ. Viên nén loratadine hấp thu nhanh và chuyển hoá mạnh để cho chất chuyển hóa còn hoạt tính. Khoảng 80% tổng liều có thể tìm thấy ngang nhau trong nước tiểu và phân, dưới dạng các sản phẩm chuyển hoá sau 10 ngày. Thời gian bán thải trung bình nghiên cứu ở người tình nguyện khỏe mạnh (n=54) là 8,4 giờ (3 - 20 giờ) cho chất mẹ loratadine và là 28 giờ cho chất chuyển hoá chính còn hoạt tính. Thời gian bán thải trung bình ở người cao tuổi là 18,2 giờ với loratadine và 17,5 với chất chuyển hoá còn hoạt tính.`
+        ],
+        pill_sideEffects: [
+            `Loạn nhịp thất nặng đã xảy ra khi điều trị với một số thuốc kháng thụ thể histamin H1 thế hệ 2. Điều đó không xuất hiện khi điều trị bằng loratadin.`,
+            `Khi sử dụng loratadin với liều lớn hơn 10 mg hằng ngày, những tác dụng phụ sau đây có thể xảy ra:`,
+            `Thường gặp, ADR > 1/100`,
+            [`Thần kinh: Đau đầu.`,
+                `Tiêu hóa: Khô miệng.`,],
+            `Ít gặp, 1/1000 < ADR < 1/100`,
+            [`Thần kinh: Chóng mặt.`,
+                `Hô hấp: Khô mũi và hắt hơi.`,
+                `Khác: Viêm kết mạc.`,],
+            `Hiếm gặp, ADR < 1/1000`,
+            [`Thần kinh: Trầm cảm.`,
+                `Tim mạch: Tim đập nhanh, loạn nhịp nhanh trên thất, đánh trống ngực.`,
+                `Tiêu hóa: Buồn nôn.`,
+                `Chuyển hóa: Chức năng gan bất thường, kinh nguyệt không đều.`,
+                `Khác: Ngoại ban, nổi mề đay và choáng phản vệ.`,],
+            `Thông báo cho bác sĩ nếu có bất kỳ tác dụng phụ nào liên quan đến việc dùng thuốc.`,
+        ],
+        pill_interactions: [
+            `Loratadin được chuyển hóa bởi cytochrom P450 isoenzym CYP3A4 và CYP2D6, vì vậy sử dụng đồng thời với những thuốc ức chế hoặc bị chuyển hóa bằng những enzym có thể tạo ra thay đổi về nồng độ thuốc trong huyết tương và có thể có tác dụng không mong muốn. Các thuốc đã biết có ức chế enzym trên bao gồm: Cimetidin, erythromycin, ketoconazol, quinidin, fluconazol và fluoxetin.`,
+            `Điều trị đồng thời loratadin và cimetidin ức chế chuyển hóa của loratadin. Điều này không có biểu hiện lâm sàng.`,
+            `Điều trị đồng thời loratadin và ketoconazol dẫn tới tăng nồng độ loratadin trong huyết tương gấp 3 lần, do ức chế CYP3A4. Điều đó không có biểu hiện lâm sàng vì loratadin có chỉ số điều trị rộng. Điều trị đồng thời loratadin và erythromycin dẫn đến tăng nồng độ loratadin trong huyết tương. AUC (diện tích dưới đường cong của nồng độ theo thời gian) của loratadin, tăng trung bình 40% và AUC của desloratadin tăng trung bình 46% so với điều trị loratadin đơn độc. Trên điện tâm đồ không có thay đổi về khoảng QTc. Về mặt lâm sàng, không có biểu hiện sự thay đổi tính an toàn của loratadin và không có thông báo về tác dụng an thần hoặc hiện tượng ngất khi điều trị đồng thời 2 thuốc này.`,
+        ],
+        pill_precautions: [
+            `Thận trọng chung: Bệnh nhân có suy gan cần dùng liều khởi đầu thấp, vì có giảm thanh thải loratadine.`,
+            `Thuốc này có chứa lactose. Không nên dùng thuốc này cho người bị di truyền hiếm gặp không dung nạp galactose, thiểu năng Lapp lactase hoặc ít hấp thu glucose-galactose.`,
+            `Ảnh hưởng của thuốc lên khả năng lái xe và vận hành máy móc`,
+            [`Vì thuốc có thể gây nhức đầu, chóng mặt, buồn ngủ,... nên cần thận trọng khi lái xe hoặc vận hành máy móc trong khi đang dùng thuốc.`,],
+            `Sử dụng thuốc cho phụ nữ trong thời kỳ mang thai và cho con bú`,
+            `Phụ nữ có thai`,
+            `Nghiên cứu trên chuột cống cái, thỏ cái, không thấy chứng tỏ có tác dụng sinh quái thai. Tuy nhiên, chưa có nghiên cứu thích hợp và có kiểm soát đầy đủ ở người mang thai. Vì rằng nghiên cứu về sự sinh sản ở động vật không phải bao giờ cũng báo trước cho đáp ứng trên người, nên chỉ dùng viên nén loratadine ở người mang thai khi thật sự cần thiết.`,
+            `Phụ nữ cho con bú`,
+            `Loratadine và chất chuyển hoá descarboethoxyloratadine sẽ bài tiết qua sữa mẹ và đạt nồng độ trong sữa ngang nồng độ trong huyết tương với tỷ lệ AUC sữa/AUC huyết tương là 1,17 cho loratadine và 0,85 cho chất chuyển hoá còn hoạt tính. Sau khi uống liều duy nhất 40mg, thấy một lượng nhỏ loratadine và chất chuyển hoá trong sữa mẹ. Cần quyết định, hoặc ngừng cho con bú, hoặc ngừng thuốc, tuỳ thuộc tầm quan trọng điều trị của thuốc đối với người mẹ. Cần thận trọng khi dùng viên nén loratadine ở người mẹ thời kỳ cho con bú.`,
+            `Với trẻ em`,
+            `Chưa xác định được hiệu lực và độ an toàn của loratadine ở trẻ em dưới 12 năm tuổi.`,
+        ],
+        pill_overdose: [
+            `Buồn ngủ, nhịp tim nhanh, nhức đầu có thể xảy ra khi dùng liều quá 10mg. Khi dùng quá liều, cần có biện pháp điều trị hỗ trợ và điều trị triệu chứng, điều trị ngay và kéo dài khi cần.`,
+            `Điều trị quá liều có thể gây nôn, trừ với bệnh nhân suy giảm ý thức, sau đó uống than hoạt để hấp phụ lượng thuốc còn dư. Nếu gây nôn không có kết quả, hoặc chống chỉ định, cần rửa dạ dày với nước muối đẳng trương. Thuốc tẩy muối cũng có ích để làm loãng nhanh chất chứa trong ruột. Loratadine không loại trừ được qua thẩm tách lọc máu, chưa rõ có loại trừ được loratadine qua thẩm tách màng bụng hay không?`,
+            `Liều LD50 uống trên chuột cống và chuột nhắt là 5000mg/kg loratadine. Liễu cao gấp 10 lần liều dùng trong lâm sàng không có tác dụng trên chuột cống, chuột nhắt và khỉ.`,
+            `Làm gì khi quên 1 liều?`,
+            `Bổ sung liều ngay khi nhớ ra. Tuy nhiên, nếu thời gian giãn cách với liều tiếp theo quá ngắn thì bỏ qua liều đã quên và tiếp tục lịch dùng thuốc. Không dùng liều gấp đôi để bù cho liều đã bị bỏ lỡ.`,
+        ],
+        pill_overdose_handling: [`Trong trường hợp khẩn cấp, hãy gọi ngay cho Trung tâm cấp cứu 115 hoặc đến trạm Y tế địa phương gần nhất.`],
+        pill_viewed: 10
+    },
+
+    {
+        pill_id: `H764ae`,
+        pill_name: `Thuốc Clorpheniramin Vidipha điều trị viêm mũi dị ứng theo mùa, quanh năm và mày đay`,
+        pill_brand: `VIDIPHA`,
+        pill_tags: [`Thuốc dị ứng`],
+        pill_quantity: 10,
+        pill_sellPrice: 7800,
+        pill_buyPrice: 2000,
+        pill_packKind: `1 Vỉ x 20 Viên`,
+        pill_imgAddress: [`./pill/Clorpheniramin.png`],
+        pill_indication: [
+            `Ðiều trị viêm mũi dị ứng mùa và quanh năm.`,
+            `Các dị ứng khác.`,
+            `Mày đay, viêm mũi vận mạch do histamin, viêm kết mạc dị ứng, viêm da tiếp xúc, dị ứng thức ăn, phản ứng huyết thanh, côn trùng đốt, ngứa ở người bệnh bị sởi hoặc thủy đậu.`,
+            `Phối hợp với các thuốc khác để trị triệu chứng ho và cảm lạnh.`,
+        ],
+        pill_description: [
+            `Clorpheniramin 4mg Vidipha của công ty Cổ phần Dược phẩm Trung ương Vidipha Bình Dương, thành phần chính clorpheniramin maleat. Đây là thuốc dùng để điều trị triệu chứng các bệnh dị ứng như mày đay, phù mạch, viêm mũi dị ứng, viêm màng tiếp hợp dị ứng, ngứa, phối hợp với các thuốc khác để điều trị triệu chứng ho, cảm lạnh.`,
+            `Clorpheniramin 4mg dạng viên nén dài màu vàng, một mặt trơn, một mặt có gạch ngang ở giữa, cạnh và thành viên lành lặn.`
+        ],
+        pill_ingredient: [`Clorpheniramin maleat 4mg`],
+        pill_contraindication: [
+            `Quá mẫn với clorpheniramin hoặc bất cứ thành phần nào của thuốc.`,
+            `Người bệnh đang cơn hen cấp.`,
+            `Triệu chứng phì đại tuyến tiền liệt.`,
+            `Glôcôm góc hẹp.`,
+            `Tắc cổ bàng quang.`,
+            `Loét dạ dày chít, tắc môn vị - tá tràng.`,
+            `Người cho con bú, trẻ sơ sinh và trẻ thiếu tháng.`,
+            `Người bệnh dùng thuốc ức chế monoamin oxidase (MAO) trong vòng 14 ngày, tính đến thời điểm điều trị bằng clorpheniramin.`,
+        ],
+        pill_use: [
+            `Clorpheniramin 4mg dùng theo đường uống.`
+        ],
+        pill_dosage: [
+            `Người lớn và trẻ em trên 12 tuổi: 1 viên mỗi 4 - 6 giờ. Liều tối đa hàng ngày: 6 viên (24mg) trong 24 giờ.`,
+            `Người già, người già dễ xảy ra tác dụng kháng cholin trên hệ thần kinh. Cần xem xét việc sử dụng liều hàng ngày thấp hơn (ví dụ như tối đa là 12mg trong 24 giờ).`,
+            `Trẻ em từ 6 - 12 tuổi: 1/2 viên mỗi 4 - 6 giờ. Liều tối đa hàng ngày: 3 viên (12mg) trong 24 giờ.`,
+            `Không nên dùng cho trẻ em dưới 6 tuổi.`,
+            `Lưu ý: Liều dùng trên chỉ mang tính chất tham khảo. Liều dùng cụ thể tùy thuộc vào thể trạng và mức độ diễn tiến của bệnh. Để có liều dùng phù hợp, bạn cần tham khảo ý kiến bác sĩ hoặc chuyên viên y tế.`,
+        ],
+        pill_pharmacology: [
+            `Clorpheniramin là một hỗn hợp đồng phân đối quang có tác dụng kháng histamin, an thần trung bình nhưng cũng có thể kích thích nghịch thường, đặc biệt ở trẻ nhỏ và kháng muscarin, Clorpheniramin maleat dẫn xuất từ alkylamin là kháng histamin an thần thuộc thế hệ thứ nhất. Một đồng phân đextro của thuốc là dexclorpheniramin có tác dụng mạnh gấp hai lần, như hầu hết các kháng histamin khác, clorpheniramin làm giảm hoặc làm mất các tác dụng chính của histamin trong cơ thể bằng cách cạnh tranh phong bế có đảo ngược histamin ở các thụ thể H, ở các mô trên đường tiêu hóa, thành mạch và đường hô hấp, thuốc không làm mất hoạt tính của histamin hoặc ngăn cản tổng hợp hoặc giải phóng histamin.`,
+            `Clorpheniramin maleat và dexclorpheniramin maleat được dùng để điều trị triệu chứng các bệnh dị ứng như mày đay, phù mạch, viêm mũi dị ứng, viêm màng tiếp hợp dị ứng, ngứa. Thuốc là thành phần phổ biến để điều trị ho, cảm lạnh. Tuy vậy các chế phẩm này phải dùng thận trọng cho trẻ em và thường phải tránh dùng cho trẻ nhỏ dưới hai tuổi, vì nguy cơ gây tử vong.`
+        ],
+        pill_pharmacokinetics: [
+            `Hấp thu`,
+            `Clorpheniramin maleat hấp thu tốt nhưng tương đối chậm vì thuốc chuyển hóa nhiều ở niêm mạc đường tiêu hóa và chuyển hóa bước đầu ở gan khi uống và xuất hiện trong huyết tương trong vòng 30 - 60 phút. Nồng độ đỉnh huyết tường đạt được trong khoảng 2,5 đến 6 giờ sau khi uống. Khoảng 5 - 45% liều đơn vào được tuần hoàn toàn thân dưới dạng thuốc không chuyển hóa. Sinh khả dụng thấp, đạt 25 - 50%.`,
+            `Phân bố`,
+            `Khoảng 70% thuốc trong tuần hoàn liên kết với protein. Thể tích phân bố khoảng 2,5 đến 3,2 lít/kg (người lớn) và 3,8 lít/kg (trẻ em).`,
+            `Chuyển hóa`,
+            `Clorpheniramin maleat chuyển hóa nhanh và nhiều. Các chất chuyển hóa gồm có desmethyl-didesmethyl-corpheniramin và một số chất chưa được xác định, một hoặc nhiều chất trong số đó có hoạt tính. Nồng độ clorpheniramin trong huyết thanh không tương quan đúng với tác dụng kháng histamin vì còn một chất chuyển hóa chưa xác định cũng có tác dụng.`,
+            `Thải trừ`,
+            `Thuốc được bài tiết chủ yếu qua nước tiểu dưới dạng không đổi hoặc chuyển hóa, sự bài tiết phụ thuộc vào pH và lưu lượng nước tiểu. Giảm bài tiết nhiều khi pH nước tiêu tăng và lưu lượng nước tiểu giảm. Chỉ một lượng nhỏ được thấy trong phân. Người lớn có chức năng gan, thận bình thường, thời gian bán thải của clorpheniramin dao động từ 12 - 43 giờ và đối với trẻ em từ 5,2 - 23,1 giờ.Ở người bệnh suy thận mạn, thời gian bán thải kéo dài tới 280 - 330 giờ.`,
+        ],
+        pill_sideEffects: [
+            `Khi sử dụng thuốc Clorpheniramin 4mg Vidipha bạn có thể gặp các tác dụng không mong muốn (ADR).`,
+            `Rất thường gặp, ADR >1/10`,
+            [`Rối loạn hệ thần kinh: An thần, buồn ngủ.`,],
+            `Thường gặp, <1/100 ADR <1/10`,
+            [`Rối loạn hệ thần kinh: Rối loạn sự chú ý, phối hợp bất thường, đau đầu chóng mặt.`,
+                `Rối loạn ở mắt: Nhìn mờ.`,
+                `Rối loạn hệ tiêu hóa: Buồn nôn, khô miệng.`,
+                `Rối loạn chung: Mệt mỏi.`,],
+            `Không rõ tần suất:`,
+            [`Rối loạn máu và hệ bạch huyết: Thiếu máu tán huyết, loạn tạo máu.`,
+                `Rối loạn hệ miễn dịch: Phản ứng dị ứng, phù mạch, phản ứng phản vệ.`,
+                `Rối loạn chuyển hóa và dinh dưỡng: Chán ăn.`,
+                `Rối loạn tâm thần: Lú lẫn, kích thích, khó chịu, ác mộng, trầm cảm.`,
+                `Rối loạn tại và mê đạo: Ù tai.`,
+                `Rối loạn tim: Đánh trống ngực, nhịp tim nhanh, loạn nhịp.`,
+                `Rối loạn mạch máu: Hạ huyết áp.`,
+                `Rối loạn hô hấp, lồng ngực và trung thất: Tăng dịch tiết phế quản.`,
+                `Rối loạn hệ tiêu hóa: Nôn mửa, đau bụng, tiêu chảy, khó tiêu.`,
+                `Rối loạn gan mật: Viêm gan, vàng da.`,
+                `Rối loạn da và các tổ chức dưới da: Viêm da tróc vảy, nổi mẩn, mề đay, nhạy cảm ánh sáng.`,
+                `Rối loạn cơ xương khớp và mô liên kết: Co giật cơ, yếu cơ.`,
+                `Rối loạn thần và tiết niệu: Bí tiểu.`,
+                `Rối loạn chung: Tức ngực.`,],
+            `Hướng dẫn cách xử trí ADR`,
+            `Khi gặp tác dụng phụ của thuốc, cần ngưng sử dụng và thông báo cho bác sĩ hoặc đến cơ sở y tế gần nhất để được xử trí kịp thời.`,
+        ],
+        pill_interactions: [
+            `Các thuốc ức chế monoamin oxydase làm kéo dài và tăng tác dụng chống tiết acetylcholin của thuốc kháng histamin.`,
+            `Ethanol hoặc các thuốc an thần gây ngủ có thể tăng tác dụng ức chế hệ thần kinh trung ương của clorpheniramin.`,
+            `Clorpheniramin ức chế chuyển hóa phenytoin và có thể dẫn đến ngộ độc phenytoin.`
+        ],
+        pill_precautions: [
+            `Thuốc làm tăng nguy cơ bị tiểu ở người phì đại tuyến tiền liệt, tắc đường niệu, tắc môn vị tá tràng và người bị nhược cơ.`,
+            `Tác dụng an thần của clorpheniramin tăng lên khi uống rượu hoặc uống đồng thời với thuốc an thần khác.`,
+            `Có nguy cơ biến chứng đường hô hấp, suy giảm hô hấp và ngừng thở ở người bị tắc nghẽn phổi hay trẻ em nhỏ. Thận trọng khi có bệnh phổi mạn tính, thở ngắn hoặc khó thở.`,
+            `Có nguy cơ bị sâu răng ở người điều trị thời gian dài.`,
+            `Tránh dùng cho người bệnh bị tăng nhãn áp như bị glôcôm.`,
+            `Có thể gây ngủ gà, chóng mặt, hoa mắt, nhìn mờ và suy giảm tâm thần vận động ở một số người bệnh.`,
+            `Người cao tuổi.`,
+            `Không nên sử dụng cho bệnh nhân không dung nạp galactose, thiếu hụt Lapp lactase, rối loạn hấp thu glucose-galactose.`,
+            `Cần theo dõi bệnh nhân khi sử dụng thuốc vì thuốc có chứa tá dược màu vàng tartrazin có thể gây các phản ứng dị ứng.`,
+            `Khả năng lái xe và vận hành máy móc`,
+            `Không dùng thuốc khi lái xe hoặc vận hành máy móc do thuốc có thể gây tác dụng không mong muốn ngủ gà, chóng mặt, hoa mắt.`,
+            `Thời kỳ mang thai`,
+            `Chỉ dùng khi thật cần thiết. Dùng thuốc trong 3 tháng cuối thai kỳ Có thể dẫn đến những phản ứng nghiêm trọng (như cơn động kinh) ở trẻ sơ sinh.`,
+            `Thời kỳ cho con bú`,
+            `Clorpheniramin có thể được tiết qua sữa mẹ và ức chế tiết sữa. Nên cân nhắc hoặc không cho con bú hoặc không dùng thuốc, tùy thuộc mức độ cần thiết của thuốc đối với người mẹ.`,
+        ],
+        pill_overdose: [
+            `Những triệu chứng và dấu hiệu quả liều bao gồm an thần, kích thích nghịch thường hệ TKTƯ, loạn tâm thần, cơn động kinh, ngừng thở, co giật, tác dụng chống tiết acetylcholin, phản ứng loạn trương lực và trụy tim mạch, loạn nhịp.`,
+            `Điều trị triệu chứng và hỗ trợ chức năng sống cần chú ý đến chức năng gan, thận, hô hấp, tim và cân bằng nước, điện giải. Rửa dạ dày hoặc gây nên bằng siro ipecacuanha. Sau đó, dùng than hoạt và thuốc tây để hạn chế hấp thu. Khi gặp hạ huyết áp và loạn nhịp cần được điều trị tích cực. Có thể điều trị co giật bằng cách tiêm tĩnh mạch diazepam hoặc phenytoin, có thể phải truyền máu trong những ca nặng.`],
+        pill_overdose_handling: [`Nếu quên một liều, nên uống thuốc càng sớm càng tốt. Nhưng nếu đã gần đến lúc uống liều tiếp theo, chỉ dùng liều sau mà thôi. Không nên dùng liều đối hay thêm liều để bù vào liền quên uống.`],
+        pill_viewed: 10
+    },
+
     {
         pill_id: `E6745n`,
         pill_name: `Thuốc Bisolvon 8mg Boehringer làm loãng đờm, tiêu chất nhầy (3 vỉ x 10 viên)`,
@@ -3553,7 +4021,7 @@ g không mong muốn gặp phải khi sử dụng thuốc.`
         pill_sellPrice: 20000,
         pill_buyPrice: 2000,
         pill_packKind: `1 Vỉ x 10 Viên`,
-        pill_imgAddress: [`./pill/Giảm_đau_và_hạ_sốt.png`],
+        pill_imgAddress: [`./pill/Bisolvon.png`],
         pill_indication: [`Thuốc Bisolvon 8mg được chỉ định làm loãng đờm trong các bệnh phế quản phổi cấp và mạn tính có kèm theo sự tiết chất nhầy bất thường và giảm sự vận chuyển chất nhầy.`],
         pill_contraindication: [
             `Bisolvon 8mg không nên dùng cho những bệnh nhân đã biết quá mẫn với bromhexine hoặc các thành phần khác của thuốc.
@@ -3625,7 +4093,7 @@ g không mong muốn gặp phải khi sử dụng thuốc.`
         pill_sellPrice: 7900,
         pill_buyPrice: 2000,
         pill_packKind: `1 Vỉ x 10 Viên`,
-        pill_imgAddress: [`./pill/Giảm_đau_và_hạ_sốt.png`],
+        pill_imgAddress: [`./pill/CXH.png`],
         pill_indication: [`Cảm Xuyên Hương được chỉ định điều trị các trường hợp cảm cúm, cảm lạnh, nhức đầu, hắt hơi, sổ mũi do cảm lạnh.`],
         pill_contraindication: [
             `Thuốc Cảm Xuyên Hương chống chỉ định trong các trường hợp sau:
@@ -3662,6 +4130,67 @@ g không mong muốn gặp phải khi sử dụng thuốc.`
         ],
         pill_viewed: 10
     },
+    {
+        pill_id: `S789aj`,
+        pill_name: `Cadimusol 200mg`,
+        pill_brand: `Pharma USA`,
+        pill_tags: [`Thuốc trị ho cảm`],
+        pill_quantity: 10,
+        pill_sellPrice: 7900,
+        pill_buyPrice: 2000,
+        pill_packKind: `1 Vỉ x 10 Viên`,
+        pill_imgAddress: [`./pill/cadimusol.png`],
+        pill_indication: [
+            `Tiêu nhầy trong các bệnh lý nhầy nhớt như xơ nang tuyến tuy;`,
+            `Giải độc quá liều Paracetamol;`,
+            `Điều trị các bệnh lý có đờm nhầy như viêm phế quản cấp tính, viêm phế quản mạn tính;`,
+            `Làm sạch thường quy trong mở phế quản.`,],
+        pill_contraindication: [
+            `Người bệnh quá mẫn với Acetylcystein hoặc bất kỳ thành phần nào của thuốc Cadimusol 200mg;`,
+            `Người có tiền sử mắc hen phế quản hoặc co thắt phế quản;`,
+            `Trẻ em dưới 2 tuổi.`,
+        ],
+        pill_description: [`Thuốc Cadimusol 200mg bào chế dưới dạng viên nang chứa hoạt chất Acetylcystein. Acetylcystein có công dụng làm giảm độ quánh của đờm thông qua cơ chế tách các cầu nối Disulfua có trong Mucoprotein, từ đó giúp tạo điều kiện để tống đờm ra ngoài bằng phản ứng ho, biện pháp cơ học hoặc dẫn lưu tư thế. Ngoài ra, Acetylcystein còn được sử dụng trong giải độc do quá liều thuốc Paracetamol theo cơ chế khôi phục hoặc duy trì nồng độ Glutathion tại gan.`],
+        pill_ingredient: [``],
+        pill_use: [],
+        pill_dosage: [
+            `Thuốc Cadimusol 200mg được dùng bằng đường uống, có thể uống thuốc trước hoặc sau bữa ăn đều được do sinh khả dụng không bị ảnh hưởng bởi thức ăn. Người bệnh cần sử dụng thuốc theo đúng chỉ định của bác sĩ, không dùng quá liều thuốc hoặc kéo dài thời gian điều trị. Một số khuyến cáo về liều dùng Cadimusol 200mg như sau:`,
+            [
+                `Liều thuốc tiêu nhầy trong một số bệnh lý: Người trưởng thành uống 1 viên/lần x 3 lần/ngày. Trẻ em từ 2 – 6 tuổi uống 1 viên/lần x 2 lần/ngày;`,
+                `Liều thuốc giải độc khi quá liều thuốc Paracetamol: Liều thuốc Cadimusol 200mg khởi đầu là 140mg/kg, lặp lại liều dùng sau 4 giờ. Liều dùng sau đó nâng lên 70mg/kg cân nặng, lặp lại 17 lần. Người bệnh bị ngộ độc Paracetamol nên được dùng Acetylcystein càng sớm càng tốt, tốt nhất là nên uống trong vòng 8 giờ sau khi dùng quá liều Paracetamol.`,
+            ],
+            `Sử dụng quá liều thuốc Cadimusol 200mg có thể xuất hiện các triệu chứng tương tự như phản vệ và có xu hướng nghiêm trọng hơn nhiều (đặc biệt là triệu chứng hạ huyết áp). Các dấu hiệu quá liều bao gồm suy hô hấp, tan máu, suy thận, đông máu rải rác nội mạch. Đã có báo cáo về tử vong khi điều trị nhiễm độc Paracetamol. Vì vậy trong trường hợp dùng quá liều thuốc và xuất hiện các tác dụng phụ nghiêm trọng, người bệnh cần ngưng sử dụng thuốc và thông báo cho bác sĩ điều trị.`,
+        ],
+        pill_pharmacology: [`Chưa có dữ liệu`],
+        pill_pharmacokinetics: [`Chưa có dữ liệu`],
+        pill_sideEffects: [
+            `Thường gặp: Nhức đầu, ù tai, buồn ngủ, viêm miệng, mày đay, chảy nước mũi nhiều;`,
+            `Hiếm gặp: Sốt, co thắt phế quản, phản ứng phản vệ, rét run.`,
+            `Trong trường hợp gặp phải tác dụng phụ, người bệnh cần ngưng sử dụng thuốc Cadimusol 200mg và thông báo cho bác sĩ điều trị để được xử trí kịp thời.`
+        ],
+        pill_interactions: [
+            `Acetylcystein là chất khử nên có thể tương tác với các thuốc tính oxy hóa.`,
+            `Thuốc Cadimusol 200mg tương tác với thuốc ho, chế phẩm làm giảm bài tiết phế quản.`,
+            `Tránh sử dụng đồng thời Cadimusol 200mg với các thuốc chứa ion kim loại như Niken, sắt, đồng, cao su...`,
+            `Cadimusol tương tự về mặt vật lý và hóa học với các thuốc sau: Tetracyclin, Penicillin, Oxacillin, Natri Penicillin, Amphotericin B, Oleandomycin.`,
+            `Tryosin, Iod và Hydrogen peroxid tương tác làm giảm tác dụng của Acetylcystein.`,
+            `Tương tác thuốc xảy ra làm giảm tác dụng điều trị của thuốc Cadimusol 200mg, tăng nguy cơ gặp phải các tác dụng không mong muốn. Vì vậy người bệnh cần thông báo với bác sĩ điều trị các thuốc đang điều trị (thuốc không kê đơn, thuốc kê đơn) và thực phẩm chức năng trước khi điều trị bằng thuốc Cadimusol 200mg để đảm bảo an toàn, hiệu quả khi điều trị.`,
+        ],
+        pill_precautions: [
+            `Người bệnh có nguy cơ cao xảy ra cơn hen cần được giám sát chặt chẽ trong thời gian điều trị bằng thuốc Cadimusol 200mg. Trường hợp xuất hiện cơn co thắt phế quản cần sử dụng thuốc dạng phun mù giúp giãn phế quản như Salbutamol, Ipratropium và cần ngưng điều trị bằng Acetylcystein.`,
+            `Điều trị bằng Acetylcystein sẽ xuất hiệu đờm loãng tại phế quản, trường hợp người bệnh bị giảm khả năng ho cần lấy hết đờm ra ngoài bằng phương pháp khác.`,
+            `Đối với phụ nữ đang mang thai: Thuốc Cadimusol sử dụng ở phụ nữ đang mang thai với mục đích điều trị quá liều Paracetamol đem lại hiệu quả an toàn, ngăn chặn độc tính ở gan cho thai nhi của người mẹ.`,
+            `Đối với phụ nữ đang cho con bú: Thuốc Cadimusol 200mg an toàn khi sử dụng ở đối tượng này.`,
+            `Người lái xe, vận hành máy móc: Thuốc Cadimusol 200mg không ảnh hưởng đến khả năng lái xe, vận hành máy móc của người bệnh.`,
+            `Bảo quản thuốc Cadimusol 200mg ở nhiệt độ phòng, tránh ánh nắng và độ ẩm cao.`,
+        ],
+        pill_overdose: [`Quá liều: Không có dữ liệu về sử dụng thuốc quá liều, không dùng quá liều chỉ định của thuốc.`],
+        pill_overdose_handling: [
+            `Cách xử trí khi dùng thuốc quá liều: tích cực theo dõi để có biện pháp xử trí kịp thời.
+            Trong trường hợp khẩn cấp hoặc quá liều, gọi ngay cho trung tâm cấp cứu 115 hoặc đến trạm y tế địa phương gần nhất.`
+        ],
+        pill_viewed: 10
+    },
 
 
     //Duy
@@ -3676,7 +4205,7 @@ g không mong muốn gặp phải khi sử dụng thuốc.`
         pill_sellPrice: 3400,
         pill_buyPrice: 2000,
         pill_packKind: `5 cuộn`,
-        pill_imgAddress: [`./pill/Giảm_đau_và_hạ_sốt.png`],
+        pill_imgAddress: [`./pill/băng_y_tế.png`],
         pill_indication: [`Băng cuộn y tế Bảo Thạch dùng để băng bó vết thương ở đầu, tay, chân...`],
         pill_contraindication: [],
         pill_description: [
@@ -3686,16 +4215,16 @@ g không mong muốn gặp phải khi sử dụng thuốc.`
                 `Điều rất quan trọng khi có vết thương hở là giữ sạch sẽ để đảm bảo vết thương nhanh lành. Băng bó là cách để bảo vệ vết thương hở khỏi những tác động từ bên ngoài. Tuy nhiên, không có câu trả lời tuyệt đối cho câu hỏi khi nào nên băng bó vết thương hở. Vì điều đó phụ thuộc vào tình trạng vết thương. Trong nhiều trường hợp, bạn phải sử dụng các sản phẩm chăm sóc vết thương và băng cuộn y tế để tăng tốc độ chữa lành vết thương.`,
             ],
             `Thành phần của băng cuộn y tế Bảo Thạch dùng:`,
+
+            `Băng cuộn y tế Bảo Thạch được làm 100% cotton, sợi bông tự nhiên đảm bảo an toàn cho da, có những đặc tính sau:`,
             [
-                `Băng cuộn y tế Bảo Thạch được làm 100% cotton, sợi bông tự nhiên đảm bảo an toàn cho da, có những đặc tính sau:`,
-                [
-                    `Sợi bông tự nhiên mềm mại và thoáng khí.`,
-                    `Không gây dị ứng, không chứa hoá chất.`,
-                    `Sợi bông không thể tích điện, loại bỏ tĩnh điện.`,
-                    `Sợi chắc chắn, không dính xơ vào vết thương.`,
-                    `Khả năng thấm hút cao.`,
-                ],
+                `Sợi bông tự nhiên mềm mại và thoáng khí.`,
+                `Không gây dị ứng, không chứa hoá chất.`,
+                `Sợi bông không thể tích điện, loại bỏ tĩnh điện.`,
+                `Sợi chắc chắn, không dính xơ vào vết thương.`,
+                `Khả năng thấm hút cao.`,
             ],
+
             `Ưu điểm của băng cuộn y tế Bảo Thạch dùng:`,
             [
                 `Băng cuộn y tế thành phần 100% cotton của Bảo Thạch được sản xuất dưới dạng lưới mịn, thoáng khí giúp băng vết thương nhưng không gây bí, gây khó chịu, rát ngứa hoặc có thể hoại tử vết thương.`,
@@ -3724,8 +4253,8 @@ g không mong muốn gặp phải khi sử dụng thuốc.`
             `Đối tượng sử dụng:`,
             [`Băng cuộn được sử dụng ở hầu hết các bệnh viện, phòng khám, trung tâm y tế.`,],
         ],
-        pill_pharmacology: [``],  
-        pill_pharmacokinetics: [``],  
+        pill_pharmacology: [``],
+        pill_pharmacokinetics: [``],
         pill_sideEffects: [`Chưa có thông tin về tác dụng phụ của sản phẩm.`],
         pill_interactions: [],
         pill_precautions: [
@@ -3748,7 +4277,7 @@ g không mong muốn gặp phải khi sử dụng thuốc.`
         pill_sellPrice: 39000,
         pill_buyPrice: 2000,
         pill_packKind: `50 cái`,
-        pill_imgAddress: [`./pill/Giảm_đau_và_hạ_sốt.png`],
+        pill_imgAddress: [`./pill/khẩu_trang.png`],
         pill_indication: [],
         pill_contraindication: [],
         pill_description: [
@@ -3766,27 +4295,23 @@ g không mong muốn gặp phải khi sử dụng thuốc.`
             ],
             `Tính năng nổi bật:`,
             [
-                `Khẩu trang Thiên Thuỷ 4 lớp cũng không khác khẩu trang 3 lớp nhưng nâng cao hơn khả năng lọc bụi, vi khuẩn và có một số ưu điểm khác như sau:`,
-                [
-                    `Khẩu trang kháng khuẩn ngăn cản sự tiếp xúc của các tác nhân gây hại đường hô hấp như vi khuẩn, virus, hóa chất, khói bụi cao hơn 90%. Từ đó ngăn ngừa được các bệnh liên quan đến đường hô hấp.`,
-                    `Khẩu trang nhẹ, mềm mại, thông khí, có nẹp mũi bằng nhựa dễ dàng ôm sát mặt tạo sự cố định và đảo bảo che kín cho người sử dụng.`,
-                    `Tăng khả năng chống nắng và tia UV, tăng cường bảo vệ da.`,
-                    `Không gây kích ứng da và phù hợp với mọi loại da.`,
-                ],
+                `Khẩu trang kháng khuẩn ngăn cản sự tiếp xúc của các tác nhân gây hại đường hô hấp như vi khuẩn, virus, hóa chất, khói bụi cao hơn 90%. Từ đó ngăn ngừa được các bệnh liên quan đến đường hô hấp.`,
+                `Khẩu trang nhẹ, mềm mại, thông khí, có nẹp mũi bằng nhựa dễ dàng ôm sát mặt tạo sự cố định và đảo bảo che kín cho người sử dụng.`,
+                `Tăng khả năng chống nắng và tia UV, tăng cường bảo vệ da.`,
+                `Không gây kích ứng da và phù hợp với mọi loại da.`,
             ],
             `Chất liệu đảm bảo tiêu chuẩn y tế:`,
+            `Vải không dệt được làm từ chất liệu nhựa Polypropylene (PP), tuy nhiên để làm vải không dệt PP thường sử dụng phương pháp nối các sợi Polypropylene (PP) có đường kính nhỏ bằng phương pháp ép nóng hoặc chất kết dính đặc biệt. Điều này giúp tiết kiệm thời gian cũng như chi phí so với phương pháp dệt truyền thống. Vì vải không dệt PP không trải qua quá trình dệt mà tạo thành bằng kết dính nhiệt hoặc hóa chất nên có những đặc tính như:`,
             [
-                `Vải không dệt được làm từ chất liệu nhựa Polypropylene (PP), tuy nhiên để làm vải không dệt PP thường sử dụng phương pháp nối các sợi Polypropylene (PP) có đường kính nhỏ bằng phương pháp ép nóng hoặc chất kết dính đặc biệt. Điều này giúp tiết kiệm thời gian cũng như chi phí so với phương pháp dệt truyền thống. Vì vải không dệt PP không trải qua quá trình dệt mà tạo thành bằng kết dính nhiệt hoặc hóa chất nên có những đặc tính như:`,
-                [
-                    `Độ bền cao, khả năng chịu lực khá tốt.`,
-                    `Trọng lượng nhẹ, mỏng.`,
-                    `Có khả năng thấm hút tốt.`,
-                    `Không gây ô nhiễm môi trường.`,
-                    `Có đặc tính chống vi khuẩn.`,
-                    `Lớp vi lọc thấu khí Polypropylene - Ngăn cản vi khuẩn siêu nhỏ.`,
-                    `Phần quan trọng nhất của khẩu trang y tế là lớp vi lọc. Điều đặc biệt là thấu khí nhưng không thấm nước. Lớp màng này có chức năng lọc bụi bẩn và vi khuẩn mà những loại khẩu trang thông thường không làm được. Lớp vi lọc kháng khuẩn được làm từ các sợi Polypropylene có khả năng ngăn chặn virus và bụi bẩn có kích thước nhỏ hơn 10 micromet.`,
-                ],
+                `Độ bền cao, khả năng chịu lực khá tốt.`,
+                `Trọng lượng nhẹ, mỏng.`,
+                `Có khả năng thấm hút tốt.`,
+                `Không gây ô nhiễm môi trường.`,
+                `Có đặc tính chống vi khuẩn.`,
+                `Lớp vi lọc thấu khí Polypropylene - Ngăn cản vi khuẩn siêu nhỏ.`,
+                `Phần quan trọng nhất của khẩu trang y tế là lớp vi lọc. Điều đặc biệt là thấu khí nhưng không thấm nước. Lớp màng này có chức năng lọc bụi bẩn và vi khuẩn mà những loại khẩu trang thông thường không làm được. Lớp vi lọc kháng khuẩn được làm từ các sợi Polypropylene có khả năng ngăn chặn virus và bụi bẩn có kích thước nhỏ hơn 10 micromet.`,
             ],
+
             `Các chứng nhận:`,
             [
                 `Khẩu trang y tế Thiên Thuỷ đạt một số chứng nhận:`,
@@ -3806,8 +4331,8 @@ g không mong muốn gặp phải khi sử dụng thuốc.`
             `Kéo mép dưới khẩu trang qua cằm.`,
         ],
         pill_dosage: [],
-        pill_pharmacology: [``],  
-        pill_pharmacokinetics: [``],  
+        pill_pharmacology: [``],
+        pill_pharmacokinetics: [``],
         pill_sideEffects: [`Chưa có thông tin về tác dụng phụ của sản phẩm.`,],
         pill_interactions: [],
         pill_precautions: [
@@ -3836,7 +4361,7 @@ g không mong muốn gặp phải khi sử dụng thuốc.`
         pill_sellPrice: 15000,
         pill_buyPrice: 2000,
         pill_packKind: `50 cái`,
-        pill_imgAddress: [`./pill/Giảm_đau_và_hạ_sốt.png`],
+        pill_imgAddress: [`./pill/băng_cá_nhân.png`],
         pill_indication: [
             `Urgo Family được chỉ định dùng bảo vệ các vết thương nhỏ, vết trầy xước, rách da, vết kim đâm.`,
             `Đối tượng sử dụng: Thích hợp dùng cho mọi người có vết thương nhỏ, vết cắt, vết trầy xước…`,
@@ -3847,11 +4372,11 @@ g không mong muốn gặp phải khi sử dụng thuốc.`
             `Urgo Family gồm có 5 miếng băng dán cá nhân độ dính cao, co dãn tốt và 5 miếng băng dán cá nhân ít thấm nước.`,
             [
                 `Băng cá nhân độ dính cao, co giãn tốt 5 miếng, 2.0 cm x 6.0 cm:`,
-                [`Băng cá nhân bằng vải co giãn tốt, thông thoáng. Được thiết kế với lớp gạc màu trắng phủ bởi lớp lưới polyethylene không gây dính, giúp thay băng dễ dàng, không đau.`,],
+                `Băng cá nhân bằng vải co giãn tốt, thông thoáng. Được thiết kế với lớp gạc màu trắng phủ bởi lớp lưới polyethylene không gây dính, giúp thay băng dễ dàng, không đau.`,
             ],
             [
                 `Băng cá nhân ít thấm nước 5 miếng 2 x 7.2 cm:`,
-                [`Băng cá nhân bằng polyethylene hợp màu da, ít thấm nước, lỗ thông lớn, độ dính cao. Thiết kế bao gồm lớp gạc màu trắng phủ bởi lớp lưới polyethylene không gây dính giúp thay băng không đau.`,],
+                `Băng cá nhân bằng polyethylene hợp màu da, ít thấm nước, lỗ thông lớn, độ dính cao. Thiết kế bao gồm lớp gạc màu trắng phủ bởi lớp lưới polyethylene không gây dính giúp thay băng không đau.`,
             ],
             `Ưu điểm nổi bật của sản phẩm:`,
             [
@@ -3869,21 +4394,18 @@ g không mong muốn gặp phải khi sử dụng thuốc.`
             `Thay băng hàng ngày.`,
         ],
         pill_dosage: [
-            `Lưu ý khi sử dụng băng cá nhân:`,
+            `Việc đơn giản và hiệu quả để xử lý mà mọi người thường làm là sử dụng dán băng cá nhân khi có vết thương nhỏ, vết cắt. Tuy nhiên một số người vẫn chưa biết đến cách dán băng cá nhân đúng khiến cho vết thương lâu lành hơn. Cùng lưu ý một số vấn đề sau khi sử dụng băng dán cá nhân:`,
             [
-                `Việc đơn giản và hiệu quả để xử lý mà mọi người thường làm là sử dụng dán băng cá nhân khi có vết thương nhỏ, vết cắt. Tuy nhiên một số người vẫn chưa biết đến cách dán băng cá nhân đúng khiến cho vết thương lâu lành hơn. Cùng lưu ý một số vấn đề sau khi sử dụng băng dán cá nhân:`,
-                [
-                    `Làm sạch và khô vết thương trước khi băng.`,
-                    `Không nên siết băng quá chặt, tránh làm máu không lưu thông được xuống phần bị thương. Cũng không nên dán băng quá lỏng khiến băng dễ bị bung và tăng nguy cơ nhiễm trùng vết thương.`,
-                    `Chỉ nên sử dụng băng dán cá nhân cho những vết thương nhỏ ngoài da. Không sử dụng băng dán cá nhân khi vết thương quá sâu, rộng và chảy nhiều máu. Cần thực hiện các biện pháp cầm máu khác.`,
-                    `Không nên sử dụng băng cá nhân trên các vết thương bị nhiễm trùng, như vết côn trùng cắn, mụn nhọt,... `,
-                    `Thay băng mỗi ngày ít nhất 2 lần nếu băng bị bẩn hoặc ướt để giữ cho vết thương sạch và khô, tránh nhiễm trùng vết thương.`,
-                    `Không nên quá lạm dụng việc dùng băng keo cá nhân nhiều khi bị thương. Đối với các vết thương nhẹ hơn, thì bạn dán để cầm máu và sau đó nên tháo ra và để cho miệng vết thương tự khô. `,
-                ],
+                `Làm sạch và khô vết thương trước khi băng.`,
+                `Không nên siết băng quá chặt, tránh làm máu không lưu thông được xuống phần bị thương. Cũng không nên dán băng quá lỏng khiến băng dễ bị bung và tăng nguy cơ nhiễm trùng vết thương.`,
+                `Chỉ nên sử dụng băng dán cá nhân cho những vết thương nhỏ ngoài da. Không sử dụng băng dán cá nhân khi vết thương quá sâu, rộng và chảy nhiều máu. Cần thực hiện các biện pháp cầm máu khác.`,
+                `Không nên sử dụng băng cá nhân trên các vết thương bị nhiễm trùng, như vết côn trùng cắn, mụn nhọt,... `,
+                `Thay băng mỗi ngày ít nhất 2 lần nếu băng bị bẩn hoặc ướt để giữ cho vết thương sạch và khô, tránh nhiễm trùng vết thương.`,
+                `Không nên quá lạm dụng việc dùng băng keo cá nhân nhiều khi bị thương. Đối với các vết thương nhẹ hơn, thì bạn dán để cầm máu và sau đó nên tháo ra và để cho miệng vết thương tự khô. `,
             ],
         ],
-        pill_pharmacology: [``],  
-        pill_pharmacokinetics: [``],  
+        pill_pharmacology: [``],
+        pill_pharmacokinetics: [``],
         pill_sideEffects: [`Chưa có báo cáo về tác dụng phụ sản phẩm.`],
         pill_interactions: [],
         pill_precautions: [
@@ -3909,7 +4431,7 @@ g không mong muốn gặp phải khi sử dụng thuốc.`
         pill_sellPrice: 7000,
         pill_buyPrice: 2000,
         pill_packKind: `10 miếng`,
-        pill_imgAddress: [`./pill/Giảm_đau_và_hạ_sốt.png`],
+        pill_imgAddress: [`./pill/sát_khuẩn.png`],
         pill_indication: [
             `Thuốc Povidine 20ml được chỉ định dùng trong các trường hợp sau:`,
             [
@@ -3942,12 +4464,12 @@ g không mong muốn gặp phải khi sử dụng thuốc.`
         ],
         pill_pharmacology: [
             `Povidon iod là phức hợp của iod với povidon. Povidon được dùng làm chất mang iod. Dung dịch povidon - iod được giải phóng iod dần dần, do đó kéo dài tác dụng sát khuẩn diệt khuẩn, nấm, virus, động vật đơn bào, kén và bào tử.`,
-        ],  
+        ],
         pill_pharmacokinetics: [
             `Hấp thu: lod thấm được qua da và thải qua nước tiểu. Hấp thu toàn thân phụ thuộc vào vùng và tình trạng sử dụng thuốc (diện rộng, da, niêm mạc, vết thương, các khoang trong cơ thể). Khi dùng làm dung dịch rửa các khoang trong cơ thể, toàn bộ phức hợp cao phân tử povidon iod cũng có thể được cơ thể hấp thu.`,
             `Phân bố: Thuốc được hệ liên võng nội mô lọc giữ.`,
             `Chuyển hóa và thải trừ: Phức hợp này không chuyển hóa hoặc đào thải qua thận.`,
-        ],  
+        ],
         pill_sideEffects: [
             `Khi sử dụng thuốc Povidine 20ml, bạn có thể gặp các tác dụng không mong muốn (ADR).`,
             `Chế phẩm có thể gây kích ứng tại chỗ, mặc dù thuốc ít kích ứng hơn iod tự do. Dùng lặp lại với vết thương rộng hoặc vết bỏng nặng, có thể gây phản ứng toàn thân.`,
@@ -4030,7 +4552,7 @@ g không mong muốn gặp phải khi sử dụng thuốc.`
         pill_sellPrice: 3000,
         pill_buyPrice: 2000,
         pill_packKind: `10 vỉ x 10 viên`,
-        pill_imgAddress: [`./pill/Giảm_đau_và_hạ_sốt.png`],
+        pill_imgAddress: [`./pill/Vitamin_c.png`],
         pill_indication: [
             `Thuốc Vitamin C 500mg Vidipha được chỉ định dùng trong các trường hợp sau:`,
             [
@@ -4039,14 +4561,11 @@ g không mong muốn gặp phải khi sử dụng thuốc.`
             ],
         ],
         pill_contraindication: [
-            `Thuốc Vitamin C 500mg Vidipha chống chỉ định trong các trường hợp sau:`,
+            `Tránh dùng vitamin C liều cao cho những bệnh nhân:`,
             [
-                `Tránh dùng vitamin C liều cao cho những bệnh nhân:`,
-                [
-                    `Thiếu hụt glucose - 6 - phosphat dehydrogenase nguy cơ (G6PD) (thiếu máu huyết tán).`,
-                    `Có tiền sử sỏi thận, tăng oxalat niệu và loạn chuyển hóa oxalat (tăng nguy cơ sỏi thận).`,
-                    `Bệnh thalassemia (tăng nguy cơ hấp thu sắt).`,
-                ],
+                `Thiếu hụt glucose - 6 - phosphat dehydrogenase nguy cơ (G6PD) (thiếu máu huyết tán).`,
+                `Có tiền sử sỏi thận, tăng oxalat niệu và loạn chuyển hóa oxalat (tăng nguy cơ sỏi thận).`,
+                `Bệnh thalassemia (tăng nguy cơ hấp thu sắt).`,
             ],
         ],
         pill_description: [],
@@ -4064,13 +4583,13 @@ g không mong muốn gặp phải khi sử dụng thuốc.`
             `Vitamin C cần cho sự tạo thành colagen, tu sửa mô trong cơ thể và tham gia trong một số phản ứng oxy hóa - khử. Vitamin C tham gia trong chuyển hóa phenylalanin, tyrosin, acid folic, norepinephrin, histamin, sắt và một số hệ thống enzym chuyển hóa thuốc, trong sử dụng carbonhydrat, trong tổng hợp lipid và protein, trong chức năng miễn dịch, trong đề kháng với nhiễm khuẩn, trong giữ gìn sự toàn vẹn của mạch máu và trong hô hấp tế bào.`,
             `Thiếu hụt vitamin C dẫn đến bệnh scorbut, trong đó có sự sai sót tổng hợp colagen với biểu hiện là không lành vết thương, khiếm khuyết về cấu tạo răng, vỡ mao mạch gây nhiều đốm xuất huyết, đám bầm máu, chảy máu dưới da và niêm mạc (thường là chảy máu lợi).`,
             `Dùng vitamin C làm mất hoàn toàn các triệu chứng thiếu hụt vitamin C.`,
-        ],  
+        ],
         pill_pharmacokinetics: [
             `Hấp thu: Nồng độ vitamin C trong huyết tương ở khoảng 10 - 20 mcg/ml. Dự trữ toàn bộ vitamin C trong cơ thể ước tính khoảng 1,5g với khoảng 30 – 45 mg được luân chuyển hàng ngày. Dấu hiệu lâm sàng của bệnh scorbut thường trở nên rõ ràng sau 3 - 5 tháng thiếu hụt vitamin C.`,
             `Phân bố: Vitamin C phân bố rộng rãi trong các mô cơ thể. Khoảng 25% vitamin C trong huyết tương kết hợp với protein.`,
             `Chuyển hóa: Vitamin C oxy - hóa thuận nghịch thành acid dehydroascorbic. Một ít vitamin C chuyển hóa thành những hợp chất không có hoạt tính gồm ascorbic acid – 2 sulfat và acid oxalic được bài tiết trong nước tiểu.`,
             `Thải trừ: Lượng vitamin C vượt quá nhu cầu của cơ thể cũng được nhanh chóng đào thải ra nước tiểu dưới dạng không biến đổi. Điều này thường xảy ra khi lượng vitamin C nhập hàng ngày vượt quá 200 mg.`,
-        ],  
+        ],
         pill_sideEffects: [
             `Khi sử dụng thuốc Vitamin C 500mg, bạn có thể gặp các tác dụng không mong muốn (ADR): Tăng oxalat - niệu, buồn nôn, nôn, ợ nóng, co cứng cơ bụng, mệt mỏi, đỏ bừng, nhức đầu, mất ngủ, và tình trạng buồn ngủ đã xảy ra. Sau khi uống 1 liều 1g hàng ngày hoặc lớn hơn, có thể xảy ra tiêu chảy.`,
             `Thường gặp, ADR >1/100:`,
@@ -4131,6 +4650,95 @@ g không mong muốn gặp phải khi sử dụng thuốc.`
         pill_viewed: 10
     },
 
+    {
+        pill_id: `S789aj`,
+        pill_name: `Thuốc Allvitamine bổ sung Vitamin`,
+        pill_brand: `USA - NIC PHARMA`,
+        pill_tags: [`Sơ cứu, thuốc bổ chăm sóc sức khỏe`],
+        pill_quantity: 10,
+        pill_sellPrice: 3000,
+        pill_buyPrice: 2000,
+        pill_packKind: `10 vỉ x 10 viên`,
+        pill_imgAddress: [`./pill/Allvitamine.png`],
+        pill_indication: [
+            `Thuốc Allvitamine được chỉ định dùng để bổ sung vitamin.`
+        ],
+        pill_contraindication: [
+            `Mẫn cảm với một trong các thành phần của thuốc.`,
+            `Bệnh gan nặng, loét dạ dày tiến triển, xuất huyết động mạch, hạ huyết áp nặng.`,
+        ],
+        pill_description: [`Allvitamine của công ty TNHH Dược phẩm USA-NIC (USA-NIC Pharma), có thành phần Vitamin A (Retinol acetat) 1500 IU, Vitamin B1 (Thiamin hydroclorid) 2,5 mg, Vitamin B2 (Riboflavin) 2,5 mg, Vitamin B6 (Pyridoxin hydroclorid) 0,75 mg, Vitamin B5 (Calci pantothenat) 2,5 mg, Vitamin PP (Nicotinamid) 5 mg, Vitamin E (Alpha tocopherol acetat) 5 mg.`],
+        pill_ingredient: [
+            `Vitamin A - 1500UI`,
+            `Vitamin B1 - 2.5mg`,
+            `Vitamin B2 - 2.5mg`,
+            `Vitamin B5 - 2.5mg`,
+            `Vitamin B6 - 0.75mg`,
+            `Vitamin PP - 12.5mg`,
+            `Vitamin E - 5mg`,
+        ],
+        pill_use: [`Dùng đường uống.`],
+        pill_dosage: [
+            `Người lớn: Uống mỗi lần 2 - 3 viên, ngày 2 - 3 lần.`,
+            `Trẻ em: Uống mỗi lần 1 viên, ngày 2 - 3 lần.`,
+        ],
+        pill_pharmacology: [],
+        pill_pharmacokinetics: [],
+        pill_sideEffects: [
+            `Khi sử dụng thuốc Allvitamin, bạn có thể gặp các tác dụng không mong muốn (ADR).`,
+            `Vitamin A`,
+            [`Mệt mỏi, dễ bị kích thích, chán ăn, sút cân khi dùng vitamin A liều cao dài ngày.`,],
+            `Vitamin B1`,
+            [`Rất hiếm khi xảy ra, thường theo kiểu dị ứng.`,],
+            `Vitamin B6`,
+            [`Dùng liều 200 mg/ ngày và dài ngày (trên 2 tháng) có thể gây bệnh thần kinh ngoại vi nặng, tiến triển từ dáng đi không vững và tê cóng bàn chân đến tê cóng và vụng về bàn tay. Tình trạng này có thể hồi phục khi ngưng thuốc, nhưng để lại ít nhiều di chứng.`,],
+            `Vitamin PP`,
+            [`Khi dùng liều cao (300 - 500 mg/ ngày) có thể gây một số tác dụng không mong muốn sau, nhưng sẽ hết khi ngưng sử dụng thuốc.`,
+                `Thường gặp: Buồn nôn, đỏ bừng mặt và cổ, ngứa, cảm giác rát bỏng.`,
+                `Ít gặp: Loét dạ dày tiến triển, nôn, chán ăn, tiêu chảy, tăng tuyến bã nhờn.`,],
+            `Hướng dẫn cách xử trí ADR`,
+            `Khi gặp tác dụng phụ của thuốc, cần ngưng sử dụng và thông báo cho bác sĩ hoặc đến cơ sở y tế gần nhất để được xử trí kịp thời.`,
+        ],
+        pill_interactions: [
+            `Vitamin A: Neomycin, cholestyramin, paraffin lỏng làm giảm hấp thu vitamin A. Các thuốc tránh thai có thể làm tăng nồng độ vitamin A trong huyết tương và các tác dụng không thuận lợi trong việc thụ thai.`,
+            `Vitamin B2: Rượu gây cản trở hấp thu vitamin B2 ở ruột. Probenecid sử dụng cùng vitamin B2 gây giảm hấp thu vitamin B2 ở dạ dày và ruột.`,
+            `Vitamin B5: Một số chất đối kháng tác dụng của vitamin B5.`,
+            `Vitamin B6: Làm giảm tác dụng của levodopa trong điều trị bệnh Parkinson; điều này không xảy ra đối với chế phẩm là hỗn hợp levodopa - carbidopa hoặc levodopa - benserazid. Vitamin B6 có thể làm giảm bớt trầm cảm ở phụ nữ uống thuốc tránh thai.`,
+            `Vitamin PP: Sử dụng đồng thời với các chất ức chế men khử HGM - CoA có thể làm tăng nguy cơ gây tiêu cơ vân. Sử dụng đồng thời với các thuốc có độc tính với gan có thể làm tăng tác hại độc cho gan.`,
+        ],
+        pill_precautions: [
+            `Trước khi sử dụng thuốc bạn cần đọc kỹ hướng dẫn sử dụng và tham khảo thông tin bên dưới.`,
+            `Thận trọng khi sử dụng:`,
+            [
+                `Dùng vitamin C liều cao kéo dài có thể dẫn đến hiện tượng lớn thuốc, do đó khi giảm liều sẽ dẫn đến thiếu hụt vitamin C. Uống liều lớn vitamin C trong khi mang thai sẽ dẫn đến bệnh scorbut ở trẻ sơ sinh.`,
+                `Tăng oxalat niệu có thể xảy ra sau khi dùng liều cao vitamin C, Vitamin C có thể gây acid hóa nước tiểu, đôi khi dẫn đến kết tủa urat hoặc cystin, hoặc sỏi oxalat, hoặc thuốc trong đường tiết niệu.`,
+            ],
+            `Khả năng lái xe và vận hành máy móc:`,
+            [
+                `Chưa có tài liệu.`
+            ],
+            `Thời kỳ mang thai:`,
+            [
+                `Vitamin C đi qua nhau thai. Chưa có các nghiên cứu cả trên súc vật và người mang thai, và nếu dùng vitamin C theo nhu cầu bình thường hàng ngày thì chưa thấy xảy ra vấn đề gì trên người. Tuy nhiên, uống những lượng lớn vitamin C trong khi mang thai có thể làm tăng nhu cầu về vitamin C và dẫn đến bệnh scorbut ở trẻ sơ sinh.`,
+            ],
+            `Thời kỳ cho con bú:`,
+            [
+                `Vitamin C phân bố trong sữa mẹ. Người cho con bú dùng vitamin C theo nhu cầu bình thường, chưa thấy có vấn đề gì xảy ra đối với trẻ sơ sinh.`,
+            ],
+        ],
+        pill_overdose: [
+            `Làm gì khi dùng quá liều?`,
+            [
+                `Triệu chứng: Những triệu chứng quá liều gồm sỏi thận, buồn nôn, viêm dạ dày và tiêu chảy.`,
+            ],
+            `Làm gì khi quên 1 liều?`,
+            [
+                `Nếu bạn quên một liều thuốc, hãy dùng càng sớm càng tốt. Tuy nhiên, nếu gần với liều kế tiếp, hãy bỏ qua liều đã quên và dùng liều kế tiếp vào thời điểm như kế hoạch. Lưu ý rằng không nên dùng gấp đôi liều đã quy định.`,
+            ],
+        ],
+        pill_overdose_handling: [`Điều trị: Gây lợi tiểu bằng truyền dịch có thể có tác dụng sau khi uống liều lớn.`],
+        pill_viewed: 10
+    },
 
     {
         pill_id: `A7890j`,
@@ -4141,17 +4749,14 @@ g không mong muốn gặp phải khi sử dụng thuốc.`
         pill_sellPrice: 10000,
         pill_buyPrice: 2000,
         pill_packKind: `4 vỉ x 10 viên`,
-        pill_imgAddress: [`./pill/Giảm_đau_và_hạ_sốt.png`],
+        pill_imgAddress: [`./pill/Vitamin_e.png`],
         pill_indication: [
-            `Thuốc Vitamin E 400IU OPC được chỉ định dùng trong các trường hợp sau:`,
+            `Điều trị thiếu vitamin E trong các trường hợp:`,
             [
-                `Điều trị thiếu vitamin E trong các trường hợp:`,
-                [
-                    `Chế độ ăn thiếu vitamin E, trẻ em bị xơ nang tuyến tụy hoặc kém hấp thu mỡ do teo đường dẫn mật hoặc thiếu betalipoprotein huyết, trẻ sơ sinh thiếu tháng rất nhẹ cân khi đẻ; các bệnh cơ và thần kinh như giảm phản xạ, dáng đi bất thường, giảm nhạy cảm với rung động và cảm thụ bản thân, liệt cơ mắt, bệnh võng mạc nhiễm sắc tố, thoái hóa sợi trục thần kinh.`,
-                    `Chống oxy hóa kết hợp với vitamin C, vitamin A và selenium.`,
-                    `Phụ trị gan nhiễm mỡ, tăng cholesterol máu, vô sinh, giảm sản xuất tinh trùng ở nam giới.`,
-                    `Phòng ngừa sự thiếu hụt vitamin E.`,
-                ],
+                `Chế độ ăn thiếu vitamin E, trẻ em bị xơ nang tuyến tụy hoặc kém hấp thu mỡ do teo đường dẫn mật hoặc thiếu betalipoprotein huyết, trẻ sơ sinh thiếu tháng rất nhẹ cân khi đẻ; các bệnh cơ và thần kinh như giảm phản xạ, dáng đi bất thường, giảm nhạy cảm với rung động và cảm thụ bản thân, liệt cơ mắt, bệnh võng mạc nhiễm sắc tố, thoái hóa sợi trục thần kinh.`,
+                `Chống oxy hóa kết hợp với vitamin C, vitamin A và selenium.`,
+                `Phụ trị gan nhiễm mỡ, tăng cholesterol máu, vô sinh, giảm sản xuất tinh trùng ở nam giới.`,
+                `Phòng ngừa sự thiếu hụt vitamin E.`,
             ],
         ],
         pill_contraindication: [
@@ -4170,11 +4775,11 @@ g không mong muốn gặp phải khi sử dụng thuốc.`
         pill_pharmacology: [
             `Vitamin E làm mất các triệu chứng thiếu vitamin E và được sử dụng làm chất chống oxy hóa thông qua các cơ chế: Ngăn cản oxy hóa các thành phần thiết yếu trong tế bào; ngăn cản tạo thành các sản phẩm oxy hóa độc hại như các sản phẩm peroxy hóa do chuyển hóa các acid béo chưa bão hòa; phản ứng với các gốc tự do (nguyên nhân gây tổn hại màng tế bào do oxy hóa), mà không tạo ra các gốc tự do khác trong quá trình đó.`,
             `Vitamin E giúp tăng hấp thu vitamin A qua ruột, bảo vệ vitamin A khỏi bị thoái hóa do oxy hóa làm cho nồng độ vitamin A trong tế bào tăng lên, đồng thời bảo vệ chống lại tác dụng của chứng thừa vitamin A.`,
-        ],  
+        ],
         pill_pharmacokinetics: [
             `Để vitamin E hấp thu qua đường tiêu hóa, mật và tuyến tụy phải hoạt động bình thường. Lượng vitamin E hấp thu giảm khi liều dùng tăng lên. Thuốc vào máu qua vi thể dưỡng chấp trong bạch huyết, rồi được phân bố rộng rãi vào tất cả các mô và tích lại ở mô mỡ.`,
             `Một ít vitamin E chuyển hóa ở gan thành các glucuronid của acid tocopheronic và gamma - lacton của acid này, rồi thải qua nước tiểu, còn hầu hết liều dùng thải trừ chậm vào mật. Vitamin E vào sữa, nhưng rất ít qua nhau thai.`,
-        ],  
+        ],
         pill_sideEffects: [
             `Khi sử dụng thuốc Vitamin E 400IU OPC, bạn có thể gặp các tác dụng không mong muốn (ADR).`,
             `Thường gặp, ADR >1/100:`,
@@ -4222,4 +4827,6 @@ g không mong muốn gặp phải khi sử dụng thuốc.`
         pill_overdose_handling: [],
         pill_viewed: 10
     },
+
+
 ]

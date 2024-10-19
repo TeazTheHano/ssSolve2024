@@ -394,6 +394,13 @@ function renderPayment() {
         }, 0);
     }
 
+    function qrContentGen() {
+        let qrContent = '`0987654321,1:1,2:1,3:1,4:0,5:0,6:0`';
+        return qrContent;
+    }
+
+    new QRCode(document.getElementById('step7_payment_qr'), qrContentGen());
+
     step7_done.addEventListener('click', function () {
         step7_payment_paymentMethod.style = 'display: none!important';
         step7_payment_qr_container.style = 'display: flex!important';
