@@ -73,20 +73,28 @@ function pillQuantityControl(pill, quantity, quantityDisplayId) {
     console.log(quantity);
     let cartPill = cart.find((cartPill) => cartPill.pill.pill_name === pill.pill_name);
     let quantityDisplay = document.getElementById(quantityDisplayId);
-    let commitBtn = document.getElementById('step5_PillDetail_commit');
+
     if (cartPill) {
-        cartPill.quantity += quantity;
-        if (cartPill.quantity <= 0) {
-            cart = cart.filter((cartPill) => cartPill.pill.pill_name !== pill.pill_name);
-        }
-        // Update the quantity display
-        if (quantityDisplay) {
-            quantityDisplay.textContent = cartPill.quantity;
+        if (cartPill.quantity + quantity > pill.pill_quantity) {
+            alert('Out of stock');
+        } else {
+            cartPill.quantity += quantity;
+            if (cartPill.quantity <= 0) {
+                cart = cart.filter((cartPill) => cartPill.pill.pill_name !== pill.pill_name);
+            }
+            // Update the quantity display
+            if (quantityDisplay) {
+                quantityDisplay.textContent = cartPill.quantity;
+            }
         }
     } else if (quantity == 1) {
-        cart.push({ pill: pill, quantity: quantity });
-        if (quantityDisplay) {
-            quantityDisplay.textContent = quantity
+        if (quantity > pill.pill_quantity) {
+            alert('Out of stock');
+        } else {
+            cart.push({ pill: pill, quantity: quantity });
+            if (quantityDisplay) {
+                quantityDisplay.textContent = quantity;
+            }
         }
     }
 
@@ -199,10 +207,7 @@ function renderPills() {
             let addToCartBtn = element.querySelector('.pill_add_to_cart');
             if (addToCartBtn) {
                 addToCartBtn.addEventListener('click', function () {
-                    let pill = pills.find((p) => p.pill_name === element.getAttribute('data-step'));
-                    if (!cart.some(cartPill => cartPill.pill_name === pill.pill_name)) {
-                        cart.push({ pill: pill, quantity: 1 });
-                    }
+                    pillQuantityControl(pills.find((p) => p.pill_name === element.getAttribute('data-step')), 1, 'step5_PillDetail_quantity');
                     console.log('cart:', cart);
                 });
             }
@@ -267,7 +272,7 @@ function renderCart() {
                     <input type="checkbox" id="step6_cart_pillList_item_checkbox" onchange="handleCartCheckBox(this)">
                     <div class="display-flex-between">
                         <img src="${pillInfo.pill.pill_imgAddress}" alt="" srcset="">
-                        <div class="display-flex-column-between">
+                        <div class="display-flex-column-between " style="align-items:start">
                             <p class="text-1lineClip" style="font-size: 1.5rem;">${pillInfo.pill.pill_name}</p>
                             <div class="display-flex-between">
                                 <p style="font-size: 1.5rem; color:var(--red-100); font-weight: bold;">đ ${pillInfo.pill.pill_sellPrice}/vỉ</p>
@@ -373,7 +378,7 @@ function renderPayment() {
                <div class="step6_cart_pillList_item display-flex-center" pill_id=${pillInfo.pill.pill_id} pill_name=${pillInfo.pill.pill_name} pill_sell=${pillInfo.pill_sellPrice} pill_img=${pillInfo.pill.pill_imgAddress} pill_quantity=${pillInfo.pill.pillQuantity}>
                     <div class="display-flex-between">
                         <img src="${pillInfo.pill.pill_imgAddress}" alt="" srcset="">
-                        <div class="display-flex-column-between">
+                        <div class="display-flex-column-between " style="align-items:start">
                             <p class="text-1lineClip" style="font-size: 1.5rem;">${pillInfo.pill.pill_name}</p>
                             <div class="display-flex-between">
                                 <p style="font-size: 1.5rem; color:var(--red-100); font-weight: bold;">đ ${pillInfo.pill.pill_sellPrice}/vỉ</p>
@@ -395,7 +400,19 @@ function renderPayment() {
     }
 
     function qrContentGen() {
-        let qrContent = '`0987654321,1:1,2:1,3:1,4:0,5:0,6:0`';
+        let item1ID = 'P123af';
+        let item1Quantity = checkOut.find((item) => item.pill.pill_id === item1ID)?.quantity || 0;
+        let item2ID = 'S789aj';
+        let item2Quantity = checkOut.find((item) => item.pill.pill_id === item2ID)?.quantity || 0;
+        let item3ID = 'H764ae';
+        let item3Quantity = checkOut.find((item) => item.pill.pill_id === item3ID)?.quantity || 0;
+        let item4ID = 'S789aj';
+        let item4Quantity = checkOut.find((item) => item.pill.pill_id === item4ID)?.quantity || 0;
+        let item5ID = 'P124af';
+        let item5Quantity = checkOut.find((item) => item.pill.pill_id === item5ID)?.quantity || 0;
+        let item6ID = 'H765ae';
+        let item6Quantity = checkOut.find((item) => item.pill.pill_id === item6ID)?.quantity || 0;
+        let qrContent = `0000000000,1:${item1Quantity},2:${item2Quantity},3:${item3Quantity},4:${item4Quantity},5:${item5Quantity},6:${item6Quantity}`;
         return qrContent;
     }
 
