@@ -84,10 +84,8 @@ const BottomTab = () => {
             } else {
                 navigation.navigate('OnBoarding' as never);
             }
-            if (!user) {
-                navigation.navigate('OnBoarding' as never);
-            }
         };
+
         fetchUser();
     }, []);
 
@@ -109,30 +107,18 @@ const BottomTab = () => {
                 }
             }}
         >
-            <Tab.Screen name="Home" component={Home}
-                options={{
-                    tabBarIcon: ({ focused }) => (
-                        <HomeIconClass index={0} focus={focused} />
-                    )
-                }} />
-            <Tab.Screen name="DrugList" component={DrugList}
-                options={{
-                    tabBarIcon: ({ focused }) => (
-                        <HomeIconClass index={1} focus={focused} />
-                    )
-                }} />
-            <Tab.Screen name="Cart" component={Cart}
-                options={{
-                    tabBarIcon: ({ focused }) => (
-                        <HomeIconClass index={2} focus={focused} />
-                    )
-                }} />
-            <Tab.Screen name="Pillport" component={Pillport}
-                options={{
-                    tabBarIcon: ({ focused }) => (
-                        <HomeIconClass index={3} focus={focused} />
-                    )
-                }} />
+            {iconData.map((item, index) => (
+                <Tab.Screen
+                    key={index}
+                    name={item.title}
+                    component={item.page.type}
+                    options={{
+                        tabBarIcon: ({ focused }) => (
+                            <HomeIconClass index={index} focus={focused} />
+                        )
+                    }}
+                />
+            ))}
         </Tab.Navigator>
     );
 };

@@ -63,8 +63,22 @@ export default function Purchase({ route }: any) {
         setOrderItem(outPut)
         saveOrder(outPut, outPut.order_id)
         dispatch(currentSaveOrder(outPut))
-        let QRtemp: string = `0987654321,1:1,2:1,3:1,4:0,5:0,6:0`
-        setQRvalue(QRtemp)
+        let QRtemp: string = ``
+        let item1ID = 'P123af';
+        let item2ID = 'S789aj';
+        let item3ID = 'H764ae';
+        let item4ID = 'S789aj';
+        let item5ID = 'P124af';
+        let item6ID = 'H765ae';
+        let item1Quantity = outPut.order_item_ids.includes(item1ID) ? outPut.order_item_quantity[outPut.order_item_ids.indexOf(item1ID)] : 0;
+        let item2Quantity = outPut.order_item_ids.includes(item2ID) ? outPut.order_item_quantity[outPut.order_item_ids.indexOf(item2ID)] : 0;
+        let item3Quantity = outPut.order_item_ids.includes(item3ID) ? outPut.order_item_quantity[outPut.order_item_ids.indexOf(item3ID)] : 0;
+        let item4Quantity = outPut.order_item_ids.includes(item4ID) ? outPut.order_item_quantity[outPut.order_item_ids.indexOf(item4ID)] : 0;
+        let item5Quantity = outPut.order_item_ids.includes(item5ID) ? outPut.order_item_quantity[outPut.order_item_ids.indexOf(item5ID)] : 0;
+        let item6Quantity = outPut.order_item_ids.includes(item6ID) ? outPut.order_item_quantity[outPut.order_item_ids.indexOf(item6ID)] : 0;
+        // setQRvalue(orderData.order_id);
+        setQRvalue(`0000000000,1:${item1Quantity},2:${item2Quantity},3:${item3Quantity},4:${item4Quantity},5:${item5Quantity},6:${item6Quantity}`)
+        console.log(`0000000000,1:${item1Quantity},2:${item2Quantity},3:${item3Quantity},4:${item4Quantity},5:${item5Quantity},6:${item6Quantity}`);
 
         dispatch(clearCart())
     }

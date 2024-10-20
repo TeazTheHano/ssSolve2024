@@ -7,7 +7,7 @@ import styles from './stylesheet';
 import { vw, vh } from './stylesheet';
 
 // component import
-import { imgSourceHandle, marginBottomForScrollView } from './component';
+import { marginBottomForScrollView } from './component';
 
 // svg import
 import { cameraIcon, filterIcon, goldStar, heartIcon, imgPickerIcon, inVisibilityIcon, leftArrow, lockIcon, navBellIcon, noStar, peopleIcon, pillOrderIcon, savedIcon, searchIcon, sharpLeftArrow, unSavedIcon, visibilityIcon, xIcon } from './svgXml';
@@ -682,17 +682,6 @@ export class SearchBox extends Component<{
     currentCache?: CurrentCache
 }> {
     render() {
-        async function searchEngine(keyword: string, dataBank: any, type: 'set' | 'desk' | 'card') {
-            keyword = value.trim();
-            // keyword = keyword.trim();
-            let result: any = [];
-            const regex = new RegExp(`\\b${keyword}`, 'i');
-
-            if (keyword === '') {
-                return [];
-            }
-        }
-
         const { customStyle, placeholder, placeholderTextColor, value, onChangeText, onClear, showSearchIcon, fontFam } = this.props;
         return (
             <ViewRowBetweenCenter
@@ -703,8 +692,8 @@ export class SearchBox extends Component<{
                     value={value}
                     onChangeText={onChangeText}
                     placeholder={placeholder ? placeholder : 'Search'}
-                    autoFocus={this.props.currentCache?.searchFocus}
                     placeholderTextColor={placeholderTextColor ? placeholderTextColor : ''}
+                    editable={false}
                 />
                 <TouchableOpacity
                     onPress={onClear}
@@ -720,7 +709,6 @@ export class SearchBox extends Component<{
 interface SearchBoxState {
     showSearch: boolean;
     searchInput: string;
-
 }
 
 export class TopBarSS extends Component<{
@@ -904,7 +892,7 @@ export class FilterBottom extends Component<{ sheetRef: React.RefObject<BottomSh
                     <ViewRowCenter style={[styles.paddingV4vw]}><Nu18Bold>Bộ lọc thuốc</Nu18Bold></ViewRowCenter>
                     <Nu16Bold>Đối tượng dùng</Nu16Bold>
                     <ViewRow>
-                        
+
                     </ViewRow>
                 </ViewColCenter>
             </BottomSheet>

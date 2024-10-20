@@ -261,32 +261,34 @@ export const onRefresh = React.useCallback(() => {
     // }, 1000);
 }, []);
 
-export const showInDeverlopFnc = () => {
-    return Alert.alert('This function is in development')
-}
+// export const showInDeverlopFnc = () => {
+//     return Alert.alert('This function is in development')
+// }
 
-export interface searchOutputInterFace { pill: PillFormat[], symstom: PillFormat[] }
+// export interface searchOutputInterFace { pills: PillFormat[], symstom: PillFormat[] }
 
-export async function searchEngine(keyword: string, dataBank: PillFormat[],) {
-    keyword = keyword.trim();
-    let result: searchOutputInterFace = { pill: [], symstom: [] };
-    const regex = new RegExp(`\\b${keyword}`, 'i');
+// export async function searchEngine(keyword: string, dataBank: PillFormat[]) {
+//     keyword = keyword.trim();
+//     let result: searchOutputInterFace = { pills: [], symstom: [] };
+//     const regex = new RegExp(`\\b${keyword}`, 'i');
 
-    if (keyword === '') {
-        return [];
-    }
+//     if (keyword === '') {
+//         return result;
+//     }
 
-    result.pill = dataBank.filter((item): item is PillFormat =>
-        (item as PillFormat).pill_name !== undefined && regex.test((item as PillFormat).pill_name)
-    );
+//     result.pills = dataBank.filter((item): item is PillFormat =>
+//         (item as PillFormat).pill_name !== undefined && regex.test((item as PillFormat).pill_name)
+//     );
 
-    result.symstom = dataBank.filter((item): item is PillFormat =>
-        Array.isArray((item as PillFormat).pill_description) &&
-        (item as PillFormat).pill_description !== undefined &&
-        (item as PillFormat).pill_description.some(description => typeof description === 'string' && regex.test(description))
-    );
+//     result.symstom = dataBank.filter((item): item is PillFormat =>
+//         ((item as PillFormat).pill_indication as string[]).some((indication) => regex.test(indication))
+//         ||
+//         ((item as PillFormat).pill_description as string[]).some((description) => regex.test(description))
+//         ||
+//         ((item as PillFormat).pill_tags as string[]).some((tag) => regex.test(tag))
+//     );
 
-    return result;
-}
+//     return result;
+// }
 
 // END OF UNIVERSE FUNCTION________________________________________

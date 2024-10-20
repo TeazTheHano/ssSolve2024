@@ -20,7 +20,7 @@ export default function OrderDetail({ route }: any) {
     if (route.params) {
       setOrderData(route.params.orderData)
       console.log(route.params.orderData);
-      
+
     }
   }, [route.params])
 
@@ -30,8 +30,13 @@ export default function OrderDetail({ route }: any) {
   const [firmedCart, setFirmedCart] = React.useState<CartFormat[]>([]);
   const [paymentKind, setPaymentKind] = React.useState<string[]>(['']);
   const [selectedPayment, setSelectedPayment] = React.useState<number>(0);
-  const [QRvalue, setQRvalue] = React.useState<string>(`0987654321,1:1,2:1,3:1,4:0,5:0,6:0`);
-
+  const [QRvalue, setQRvalue] = React.useState<string>(``);
+  let item1ID = 'P123af';
+  let item2ID = 'S789aj';
+  let item3ID = 'H764ae';
+  let item4ID = 'S789aj';
+  let item5ID = 'P124af';
+  let item6ID = 'H765ae';
   useEffect(() => {
     if (orderData) {
       let firmCartTemp: CartFormat[] = [];
@@ -41,8 +46,17 @@ export default function OrderDetail({ route }: any) {
           orderQuantity: orderData.order_item_quantity[index],
         });
       });
+      let item1Quantity = orderData.order_item_ids.includes(item1ID) ? orderData.order_item_quantity[orderData.order_item_ids.indexOf(item1ID)] : 0;
+      let item2Quantity = orderData.order_item_ids.includes(item2ID) ? orderData.order_item_quantity[orderData.order_item_ids.indexOf(item2ID)] : 0;
+      let item3Quantity = orderData.order_item_ids.includes(item3ID) ? orderData.order_item_quantity[orderData.order_item_ids.indexOf(item3ID)] : 0;
+      let item4Quantity = orderData.order_item_ids.includes(item4ID) ? orderData.order_item_quantity[orderData.order_item_ids.indexOf(item4ID)] : 0;
+      let item5Quantity = orderData.order_item_ids.includes(item5ID) ? orderData.order_item_quantity[orderData.order_item_ids.indexOf(item5ID)] : 0;
+      let item6Quantity = orderData.order_item_ids.includes(item6ID) ? orderData.order_item_quantity[orderData.order_item_ids.indexOf(item6ID)] : 0;
       setOrderItem(orderData);
-      setQRvalue(orderData.order_id);
+      // setQRvalue(orderData.order_id);
+      setQRvalue(`0000000000,1:${item1Quantity},2:${item2Quantity},3:${item3Quantity},4:${item4Quantity},5:${item5Quantity},6:${item6Quantity}`)
+      console.log(`0000000000,1:${item1Quantity},2:${item2Quantity},3:${item3Quantity},4:${item4Quantity},5:${item5Quantity},6:${item6Quantity}`);
+      
       setTotalQuantity(orderData.order_item_quantity.reduce((a, b) => a + b, 0));
       setTotalPay(orderData.order_total);
       setFirmedCart(firmCartTemp);

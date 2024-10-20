@@ -1,11 +1,11 @@
 import { View, Text, TouchableOpacity, SafeAreaViewBase, SafeAreaView, ScrollView, FlatList, RefreshControl, ActivityIndicator, ListRenderItem } from 'react-native'
 import React, { useCallback, useEffect } from 'react'
-import { Nu12Reg, Nu14Reg, Nu16Bold, Nu18Reg, Nu20Black, QuickBtn, RoundBtn, SSBarWithSaveArea, TopBarSS, ViewCol, ViewColBetweenCenter, ViewRow, ViewRowBetweenCenter, ViewRowStartCenter } from '../assets/Class'
+import { Nu12Reg, Nu14Reg, Nu16Bold, Nu18Reg, Nu20Black, QuickBtn, RoundBtn, SearchResultShow, SSBarWithSaveArea, TopBarSS, ViewCol, ViewColBetweenCenter, ViewRow, ViewRowBetweenCenter, ViewRowStartCenter } from '../assets/Class'
 import clrStyle from '../assets/componentStyleSheet'
 import styles, { vw } from '../assets/stylesheet'
 import { RootContext, setCurrentPill, setData, setSearchFocus } from '../data/store'
 import { clockIcon, locationIcon, pillOrderIcon, pillPortIcon, sharpRightArrow } from '../assets/svgXml'
-import { marginBottomForScrollView } from '../assets/component'
+import { marginBottomForScrollView, searchEngine, searchOutputInterFace } from '../assets/component'
 import { useNavigation, NavigationProp } from '@react-navigation/native'
 import { DataStorageFormat, OrderFormat, PillFormat, PillPortFormat } from '../data/interfaceFormat'
 import { getOrderList, getPillList, loadDemoData } from '../data/storageFunc'
@@ -68,7 +68,7 @@ export default function Home() {
         />
         <QuickBtn
           title='Pillport có thể giúp gì bạn?'
-          fnc1={() => dispatch(setSearchFocus(true))}
+          fnc1={() => { navigation.navigate('SearchScreen' as never) }}
           fnc2={() => { navigation.navigate('BottomTab', { screen: 'Pillport' }) }}
           fnc3={() => { navigation.navigate('BottomTab', { screen: 'DrugList' }) }}
         />
