@@ -38,6 +38,7 @@ export default function SearchScreen() {
                 unenableSearch
                 unenableRightIcon
                 navigation={navigation}
+                showBack
             />
             <CLASS.ViewRowBetweenCenter
                 style={[styles.gap3vw, styles.borderRadius10, styles.paddingH4vw, styles.border1, styles.paddingV1vw, styles.marginVertical3vw, styles.marginHorizontal6vw, { borderColor: clrStyle.grey30, borderRadius: vw(4), backgroundColor: clrStyle.white, }]}>
@@ -56,7 +57,7 @@ export default function SearchScreen() {
                 </TouchableOpacity>
             </CLASS.ViewRowBetweenCenter>
             <ScrollView style={[styles.flex1, styles.marginHorizontal6vw]}>
-                <CLASS.Nu20Bold style={[styles.marginVertical2vw]}>Danh sách thuốc</CLASS.Nu20Bold>
+                <CLASS.Nu20Bold style={[styles.marginVertical2vw, { color: clrStyle.blue80 }]}>Danh sách thuốc</CLASS.Nu20Bold>
                 {
                     searchResult !== undefined ?
                         searchResult.pills.length !== 0 ?
@@ -71,7 +72,7 @@ export default function SearchScreen() {
                         :
                         null
                 }
-                <CLASS.Nu20Bold style={[styles.marginVertical2vw]}>Danh sách thuốc có nội dung mô tả liên quan tới thông tin tìm kiếm</CLASS.Nu20Bold>
+                <CLASS.Nu20Bold style={[styles.marginVertical2vw, { color: clrStyle.blue80 }]}>Danh sách thuốc có nội dung mô tả liên quan tới thông tin tìm kiếm</CLASS.Nu20Bold>
                 {
                     searchResult !== undefined ?
                         searchResult.symstom.length !== 0 ?

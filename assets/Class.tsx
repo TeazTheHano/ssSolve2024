@@ -716,6 +716,7 @@ export class TopBarSS extends Component<{
     wellcome?: boolean
     subTitle?: string
     navigation?: any
+    showBack?: boolean
     currentCache?: CurrentCache
     filterFnc?: () => void
     unenableSearch?: boolean
@@ -737,7 +738,7 @@ export class TopBarSS extends Component<{
             <ViewCol style={[styles.paddingH6vw]}>
                 <ViewRowBetweenCenter>
                     <ViewRowCenter style={[styles.gap4vw, styles.flex1]}>
-                        {this.props.navigation ?
+                        {this.props.showBack ?
                             <TouchableOpacity
                                 onPress={() => { this.props.navigation ? this.props.navigation.goBack() : null }}
                                 style={[styles.borderRadius100, styles.flexColCenter, { width: vw(8.5), height: vw(8.5), backgroundColor: clrStyle.grey10 }]}>{sharpLeftArrow(vw(6), vw(6), clrStyle.grey100)}
@@ -759,22 +760,24 @@ export class TopBarSS extends Component<{
                     }
                 </ViewRowBetweenCenter>
                 {this.props.unenableSearch ? null :
-                    <ViewRowBetweenCenter style={[styles.gap2vw]}>
-                        <SearchBox
-                            showSearchIcon
-                            placeholder='Tìm kiếm thuốc, triệu chứng, ...'
-                            customStyle={[styles.border1, styles.paddingV1vw, styles.marginVertical3vw, styles.flex1, { borderColor: clrStyle.grey30, borderRadius: vw(4) }]}
-                            value={this.state.searchInput}
-                            onChangeText={setSearchInput}
-                            currentCache={this.props.currentCache}
-                        />
-                        {this.props.filterFnc ?
-                            <TouchableOpacity onPress={this.props.filterFnc}>
-                                {filterIcon(vw(6), vw(6))}
-                            </TouchableOpacity>
-                            : null
-                        }
-                    </ViewRowBetweenCenter>
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate('SearchScreen' as never)}>
+                        <ViewRowBetweenCenter style={[styles.gap2vw]}>
+                            <SearchBox
+                                showSearchIcon
+                                placeholder='Tìm kiếm thuốc, triệu chứng, ...'
+                                customStyle={[styles.border1, styles.paddingV1vw, styles.marginVertical3vw, styles.flex1, { borderColor: clrStyle.grey30, borderRadius: vw(4) }]}
+                                value={this.state.searchInput}
+                                onChangeText={setSearchInput}
+                                currentCache={this.props.currentCache}
+                            />
+                            {this.props.filterFnc ?
+                                <TouchableOpacity onPress={this.props.filterFnc}>
+                                    {filterIcon(vw(6), vw(6))}
+                                </TouchableOpacity>
+                                : null
+                            }
+                        </ViewRowBetweenCenter>
+                    </TouchableOpacity>
                 }
 
             </ViewCol>

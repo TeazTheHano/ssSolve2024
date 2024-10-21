@@ -7,7 +7,11 @@ var checkOut = []
 var step = 'step1';
 var stepHistory = [];
 var stepHistoryIndex = 0;
-
+let step7_checkout_total = document.getElementById('step7_checkout_total')
+let step7_payment_paymentMethod = document.getElementById('step7_payment_paymentMethod')
+let step7_payment_qr_container = document.getElementById('step7_payment_qr_container')
+let step7_payment_qr = document.getElementById('step7_payment_qr')
+let step7_done = document.getElementById('step7_done')
 
 function changeStep(newStep, back = false) {
     if (!back) {
@@ -35,6 +39,16 @@ function renderControl() {
             stepScreen.classList.add('deSelected', "flex-1", "display-flex-column");
         });
     }
+
+    if (step != 'step7_payment') {
+        step7_payment_paymentMethod.style = 'display: flex!important';
+        step7_payment_qr_container.style = 'display: none!important';
+        step7_done.innerHTML = "Thanh toán";
+        step7_done.removeEventListener('click', function () {
+            changeStep('step1');
+        })
+    }
+
     function selectStep(stepScreen) {
         deSelectAll();
         stepScreen.classList.remove('deSelected');
@@ -262,6 +276,12 @@ function renderPillDetails() {
 
 function renderCart() {
     let container = document.getElementById('step6_cart_pillList')
+    let step6_cart_total = document.getElementById('step6_cart_total');
+    if (checkOut.length === 0) {
+        step6_cart_total.innerHTML = 0;
+    } else {
+        step6_cart_total.innerHTML = total;
+    }
 
     if (cart.length > 0) {
         let pillListHtml = ``;
@@ -365,11 +385,7 @@ function handleCheckoutBtn() {
 
 function renderPayment() {
     let container = document.getElementById('step7_checkoutList')
-    let step7_checkout_total = document.getElementById('step7_checkout_total')
-    let step7_payment_paymentMethod = document.getElementById('step7_payment_paymentMethod')
-    let step7_payment_qr_container = document.getElementById('step7_payment_qr_container')
-    let step7_payment_qr = document.getElementById('step7_payment_qr')
-    let step7_done = document.getElementById('step7_done')
+
     if (checkOut.length > 0) {
         let pillListHtml = ``;
         checkOut.map((pillInfo) => {
@@ -390,6 +406,7 @@ function renderPayment() {
             pillListHtml += pillItem;
         })
         container.innerHTML = pillListHtml;
+
         step7_checkout_total.innerHTML = checkOut.reduce((sum, item) => {
             if (item.pill && item.pill.pill_sellPrice) {
                 return sum + item.pill.pill_sellPrice * item.quantity;
@@ -414,7 +431,7 @@ function renderPayment() {
         let qrContent = `0000000000,1:${item1Quantity},2:${item2Quantity},3:${item3Quantity},4:${item4Quantity},5:${item5Quantity},6:${item6Quantity}`;
         return qrContent;
     }
-
+    step7_payment_qr.innerHTML = '';
     new QRCode(document.getElementById('step7_payment_qr'), qrContentGen());
 
     step7_done.addEventListener('click', function () {
@@ -422,7 +439,22 @@ function renderPayment() {
         step7_payment_qr_container.style = 'display: flex!important';
         cart = [];
         checkOut = [];
+        let countdown = 10;
+        setInterval(() => {
+            countdown--;
+            step7_done.innerHTML = `Hoàn tất (${countdown})`;
+        }, 1000);
+        setTimeout(() => {
+            window.location.reload();
+        }, 10000);
     })
+
+
+
+    let checkOutInputs = document.querySelectorAll('#step6_cart input[type="checkbox"]');
+    checkOutInputs.forEach(input => {
+        input.checked = false;
+    });
 }
 
 // RULES-001: DO NOT TOUCH INSERT FNC

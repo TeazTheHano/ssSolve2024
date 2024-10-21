@@ -138,6 +138,7 @@ export default function DrugList() {
         subTitle={'Nên kiểm tra triệu chứng trước khi lên đơn!'}
         currentCache={CurrentCache}
         filterFnc={() => sheetRef.current?.open()}
+        navigation={navigation}
       />
       <ScrollView contentContainerStyle={[styles.gap6vw]}>
         <QuickBtn

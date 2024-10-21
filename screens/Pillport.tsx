@@ -6,8 +6,10 @@ import styles from '../assets/stylesheet'
 import clrStyle from '../assets/componentStyleSheet'
 import RenderPillPortList from './compoScreen/RenderPillPortList'
 import { RootContext } from '../data/store'
+import { useNavigation } from '@react-navigation/native'
 
 export default function Pillport() {
+  const navigation = useNavigation()
   const [isNearCate, setIsNearCate] = useState<boolean>(true)
   const [CurrentCache, dispatch] = useContext(RootContext)
 
@@ -15,6 +17,7 @@ export default function Pillport() {
     <Class.SSBarWithSaveArea>
       <Class.TopBarSS
         title='Pillport'
+        navigation={navigation}
       />
       <View style={[styles.flex1, styles.paddingH6vw]}>
         <Class.ViewRow style={[styles.w100, styles.paddingH6vw, styles.marginVertical6vw]}>
