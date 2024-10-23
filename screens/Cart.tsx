@@ -24,6 +24,29 @@ export default function Cart() {
   const [orderHistoryData, setOrderHistoryData] = React.useState<OrderFormat[][]>([])
 
   useEffect(() => {
+    const unsubscribe = navigation.addListener('focus', () => {
+      let orderHistoryDataTemp: OrderFormat[][] = []
+      OrderHistoryCategory.forEach((cate) => {
+        let temp: OrderFormat[] = []
+        CurrentCache.DATA.orderList.forEach((item) => {
+          if (item.order_status === cate) {
+            temp.push(item)
+          }
+        })
+        orderHistoryDataTemp.push(temp)
+      })
+      setOrderHistoryData(orderHistoryDataTemp)
+      console.log(orderHistoryDataTemp);
+      console.log('Cart Screen');
+      
+    });
+
+    return () => {
+      unsubscribe();
+    };
+  }, [navigation, CurrentCache.DATA.orderList]);
+
+  useEffect(() => {
     let temp: number[] = []
     CurrentCache.cart.forEach((item) => {
       temp.push(item.orderQuantity)
@@ -177,28 +200,6 @@ export default function Cart() {
   function renderMemOrder(item: OrderFormat, index: number) {
     return <OrderItemRenderMemo item={item} index={index} />
   }
-
-
-  useEffect(() => {
-    const unsubscribe = navigation.addListener('focus', () => {
-      let orderHistoryDataTemp: OrderFormat[][] = []
-      OrderHistoryCategory.forEach((cate) => {
-        let temp: OrderFormat[] = []
-        CurrentCache.DATA.orderList.forEach((item) => {
-          if (item.order_status === cate) {
-            temp.push(item)
-          }
-        })
-        orderHistoryDataTemp.push(temp)
-      })
-      setOrderHistoryData(orderHistoryDataTemp)
-      console.log(orderHistoryDataTemp);
-    });
-
-    return () => {
-      unsubscribe();
-    };
-  }, [navigation])
 
   class OrderHistory extends React.Component {
     render(): React.ReactNode {

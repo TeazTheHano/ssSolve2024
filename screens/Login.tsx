@@ -9,7 +9,7 @@ import { useNavigation } from '@react-navigation/native'
 
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile, User } from "firebase/auth";
 import { appleIcon, googleColorIcon } from '../assets/svgXml'
-import { showInDeverlopFnc } from '../assets/component'
+
 import { RootContext, setUser } from '../data/store'
 
 export default function Login() {
@@ -247,8 +247,8 @@ export default function Login() {
                         <View style={[styles.w100, styles.positionAbsolute, { zIndex: -1, borderColor: clrStyle.grey50, borderBottomWidth: 1 }]}></View>
                     </ViewColCenter>
                     <ViewRowBetweenCenter style={[styles.w100, styles.gap4vw]}>
-                        <RoundBtn title='Google' icon={googleColorIcon(vw(6), vw(6))} onPress={showInDeverlopFnc} textColor='white' bgColor={clrStyle.blue100} textClass={Nu18Reg} border customStyle={[styles.flex1, styles.justifyContentCenter]} />
-                        <RoundBtn title='Apple' icon={appleIcon(vw(6), vw(6))} onPress={showInDeverlopFnc} textColor='white' bgColor={clrStyle.blue100} textClass={Nu18Reg} border customStyle={[styles.flex1, styles.justifyContentCenter]} />
+                        <RoundBtn title='Google' icon={googleColorIcon(vw(6), vw(6))} onPress={()=>{}} textColor='white' bgColor={clrStyle.blue100} textClass={Nu18Reg} border customStyle={[styles.flex1, styles.justifyContentCenter]} />
+                        <RoundBtn title='Apple' icon={appleIcon(vw(6), vw(6))} onPress={()=>{}} textColor='white' bgColor={clrStyle.blue100} textClass={Nu18Reg} border customStyle={[styles.flex1, styles.justifyContentCenter]} />
                     </ViewRowBetweenCenter>
                     <TouchableOpacity onPress={() => setIsShowSignUp(!isShowSignUp)}>
                         <WorkSan12Reg>{isShowSignUp ? `Đã có tài khoản?` : `Chưa có tài khoản?`} <WorkSan12Bold>{isShowSignUp ? `Đăng nhập` : `Đăng ký`}</WorkSan12Bold></WorkSan12Reg>

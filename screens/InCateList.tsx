@@ -32,6 +32,7 @@ export default function InCateList({ route }: any) {
                 currentCache={CurrentCache}
                 filterFnc={() => sheetRef.current?.open()}
                 navigation={navigation}
+                showBack={true}
             />
             <ScrollView style={[styles.paddingH6vw]} contentContainerStyle={[styles.gap6vw]}>
                 <PillList1Component PILLLIST={routeParams} onPress={navFnc} />

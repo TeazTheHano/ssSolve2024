@@ -93,6 +93,7 @@ export default function Purchase({ route }: any) {
                         unenableSearch
                         unenableRightIcon
                         navigation={navigation}
+                        showBack
                     />
                     <ScrollView style={[styles.flex1, styles.paddingH6vw, styles.paddingV8vw,]}>
                         {

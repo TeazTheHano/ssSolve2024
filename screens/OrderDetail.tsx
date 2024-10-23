@@ -89,6 +89,7 @@ export class Bill extends React.Component<{ orderItem: OrderFormat, QRvalue: str
           unenableSearch
           unenableRightIcon
           navigation={navi}
+          showBack
         />
         <ScrollView style={[styles.flex1, styles.paddingH6vw, styles.paddingTop4vw]} contentContainerStyle={[styles.gap4vw]}>
           <ViewRowBetweenCenter>
@@ -98,7 +99,7 @@ export class Bill extends React.Component<{ orderItem: OrderFormat, QRvalue: str
               <TouchableOpacity
                 onPress={() => {
 
-                }}>
+              }}>
                 {copyIcon(vw(6), vw(6))}
               </TouchableOpacity>
             </ViewRowStartCenter>

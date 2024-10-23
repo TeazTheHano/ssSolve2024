@@ -278,7 +278,7 @@ export default function PillDetail({ route }: any) {
                             </TouchableOpacity>
 
                             <TouchableOpacity
-                                onPress={() => addItemToCart(CurrentCache, paramPill, currentNumOnCart, dispatchEditCart, dispatchAddToCart, () => navigation.navigate('BottomTab', { screen: 'Cart' }))}
+                                onPress={() => addItemToCart(CurrentCache, paramPill, currentNumOnCart, dispatchEditCart, dispatchAddToCart)}
                                 style={[styles.paddingH8vw, styles.flexColCenter, styles.borderRadius10, { backgroundColor: clrStyle.blue100, height: vw(12) }]}>
                                 <Nu18Reg style={{ color: clrStyle.pri4 }}>Thêm vào giỏ</Nu18Reg>
                             </TouchableOpacity>
@@ -301,7 +301,6 @@ export function addItemToCart(
     currentNumOnCart: number,
     editCartFnc: (item: CartFormat) => void,
     addToCartFnc: (item: CartFormat) => void,
-    navFnc: () => void
 ) {
     const cart = CurrentCache.cart;
     const itemIndex = cart.findIndex((item) => item.pill.pill_id === paramPill.pill_id);
@@ -316,25 +315,16 @@ export function addItemToCart(
 
     if (itemIndex >= 0) {
         if (cart[itemIndex].orderQuantity === currentNumOnCart) {
-            return Alert.alert('Đã có trong giỏ hàng', 'Bạn có muốn tiến tới thanh toán không?', [
-                { text: 'OK' },
-                { text: 'Xem giỏ hàng', onPress: () => navFnc() },
-            ]);
+            return Alert.alert('Đã có trong giỏ hàng', 'Số lượng sản phẩm này đã được thêm vào giỏ hàng', [{ text: 'OK' }]);
         }
         editCartFnc(newItem);
-        Alert.alert('Đã cập nhật giỏ hàng', 'Bạn có muốn tiến tới thanh toán không?', [
-            { text: 'OK' },
-            { text: 'Xem giỏ hàng', onPress: () => navFnc() },
-        ]);
+        Alert.alert('Đã cập nhật giỏ hàng');
     } else {
         if (newItem.orderQuantity == 0) {
             return Alert.alert('Số lượng không hợp lệ', 'Xin lỗi, số lượng sản phẩm phải lớn hơn 0', [{ text: 'OK' }]);
         }
         addToCartFnc(newItem);
-        Alert.alert('Đã thêm vào giỏ hàng', 'Bạn có muốn tiến tới thanh toán không?', [
-            { text: 'OK' },
-            { text: 'Xem giỏ hàng', onPress: () => navFnc() },
-        ]);
+        Alert.alert('Đã thêm vào giỏ hàng');
     }
 
 }
