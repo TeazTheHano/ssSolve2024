@@ -24,7 +24,7 @@ export const factoryData: DataStorageFormat = {
             pill_sellPrice: 5000,
             pill_buyPrice: 0,
             pill_packKind: '1 vỉ x 10 viên',
-            pill_imgAddress: [require(`../assets/image/pill/Thuốc_giảm_đau_và_hạ_sốt_-_Paracetamol.png`)],
+            pill_imgAddress: [require(`../assets/image/pill/Paracetamol.jpg`)],
             pill_description: ['Paracetamol 500mg là thuốc được sử dụng phổ biến giúp giảm các triệu chứng đau từ nhẹ đến vừa và giảm mạnh các triệu chứng sốt nhẹ. Thuốc Paracetamol 500mg giúp hạ nhiệt, giảm đau. Không gây lệ thuộc thuốc, không gây kích ứng đường tiêu hóa.'],
             pill_use: [
                 `Sử dụng thuốc cùng với một lượng nước ấm vừa phải.`,
@@ -165,7 +165,7 @@ export const factoryData: DataStorageFormat = {
             pill_sellPrice: 5000,
             pill_buyPrice: 0,
             pill_packKind: '1 vỉ x 10 viên nén dài',
-            pill_imgAddress: [require(`../assets/image/pill/medparacetamol.png`)],
+            pill_imgAddress: [require(`../assets/image/pill/medparacetamol.jpg`)],
             pill_description: ['Paracetamol 500mg là thuốc được sử dụng phổ biến giúp giảm các triệu chứng đau từ nhẹ đến vừa và giảm mạnh các triệu chứng sốt nhẹ. Thuốc Paracetamol 500mg giúp hạ nhiệt, giảm đau. Không gây lệ thuộc thuốc, không gây kích ứng đường tiêu hóa.'],
             pill_use: [
                 `Sử dụng thuốc cùng với một lượng nước ấm vừa phải.`,
@@ -306,7 +306,7 @@ export const factoryData: DataStorageFormat = {
             pill_sellPrice: 5000,
             pill_buyPrice: 0,
             pill_packKind: '1 vỉ x 10 viên nén dài',
-            pill_imgAddress: [require(`../assets/image/pill/lessparacetamol.png`)],
+            pill_imgAddress: [require(`../assets/image/pill/lessparacetamol.jpg`)],
             pill_description: ['Paracetamol 500mg là thuốc được sử dụng phổ biến giúp giảm các triệu chứng đau từ nhẹ đến vừa và giảm mạnh các triệu chứng sốt nhẹ. Thuốc Paracetamol 500mg giúp hạ nhiệt, giảm đau. Không gây lệ thuộc thuốc, không gây kích ứng đường tiêu hóa.'],
             pill_use: [
                 `Sử dụng thuốc cùng với một lượng nước ấm vừa phải.`,
@@ -448,7 +448,7 @@ export const factoryData: DataStorageFormat = {
             pill_sellPrice: 5000,
             pill_buyPrice: 0,
             pill_packKind: '1 vỉ x 10 viên',
-            pill_imgAddress: [require('../assets/image/pill/TK3.png')],
+            pill_imgAddress: [require('../assets/image/pill/TK3.jpg')],
             pill_indication: ['Điều trị triệu chứng trong các trường hợp: Cảm sốt, đau đầu, đau nửa đầu, đau răng, đau họng, đau sau nhổ răng, đau bụng kinh, đau cơ xương, đau do viêm khớp, đau dây thần kinh, hạ sốt trong viêm nhiễm.'],
             pill_use: [
                 'Thuốc dùng đường uống.'
@@ -542,7 +542,7 @@ export const factoryData: DataStorageFormat = {
             pill_sellPrice: 4300,
             pill_buyPrice: 0,
             pill_packKind: '1 vỉ x 10 viên',
-            pill_imgAddress: [require(`../assets/image/pill/Ibuprofen.png`)],
+            pill_imgAddress: [require(`../assets/image/pill/Ibuprofen.jpg`)],
             pill_indication: [
                 `Thuốc Ibuprofen 200 Nadyphar 10x10 được chỉ định dùng trong các trường hợp sau:`,
                 [
@@ -614,7 +614,7 @@ export const factoryData: DataStorageFormat = {
             pill_sellPrice: 5000,
             pill_buyPrice: 0,
             pill_packKind: '1 vỉ x 10 viên',
-            pill_imgAddress: [require(`../assets/image/pill/Tatanol.png`)],
+            pill_imgAddress: [require(`../assets/image/pill/Tatanol.jpg`)],
             pill_indication: [
                 `Thuốc Tatanol được chỉ định dùng trong các trường hợp sau:`,
                 `Thuốc có tác dụng giảm đau, hạ sốt từ nhẹ đến vừa.`,
@@ -695,7 +695,7 @@ export const factoryData: DataStorageFormat = {
             pill_sellPrice: 4000,
             pill_buyPrice: 0,
             pill_packKind: '1 vỉ x 10 viên',
-            pill_imgAddress: [require(`../assets/image/pill/Hapacol_Blue.png`)],
+            pill_imgAddress: [require(`../assets/image/pill/Hapacol_Blue.jpg`)],
             pill_indication: [
                 `Thuốc Hapacol Blue được chỉ định dùng trong các trường hợp sau:`,
                 `Điều trị các triệu chứng đau trong các trường hợp, đau đầu, đau nửa đầu, đau răng, đau nhức do cảm cúm, đau họng, đau nhức cơ xương, đau do viêm khớp, đau sau khi tiêm ngừa hay nhổ răng.`,
@@ -767,7 +767,7 @@ export const factoryData: DataStorageFormat = {
             pill_sellPrice: 4500,
             pill_buyPrice: 2000,
             pill_packKind: `1 vỉ x 4 viên`,
-            pill_imgAddress: [require(`../assets/image/pill/tiffy.png`)],
+            pill_imgAddress: [require(`../assets/image/pill/tiffy.jpg`)],
             pill_indication: [`Tiffy Dey làm giảm các triệu chứng cảm thông thường như: nghẹt mũi, sổ mũi, hắt hơi, nhức đầu và sốt.`],
             pill_contraindication: [
                 `Tiffy Dey không dùng cho trẻ em dưới 6 tuổi.`,
@@ -832,7 +832,7 @@ export const factoryData: DataStorageFormat = {
             pill_sellPrice: 30000,
             pill_buyPrice: 2000,
             pill_packKind: `1 Vỉ x 10 Viên`,
-            pill_imgAddress: [require(`../assets/image/pill/DI.png`)],
+            pill_imgAddress: [require(`../assets/image/pill/DI.jpg`)],
             pill_indication: [
                 `Thuốc Di - angesic 30 được chỉ định dùng trong các trường hợp sau:`,
                 `Giảm đau cấp tính mức độ trung bình cho người lớn và trẻ em trên 12 tuổi trong các trường hợp nhức đầu, đau răng, đau khớp, đau cơ, đau do chấn thương hoặc sau khi mổ, đau bụng kinh.`,
@@ -988,7 +988,7 @@ export const factoryData: DataStorageFormat = {
             pill_sellPrice: 8000,
             pill_buyPrice: 2000,
             pill_packKind: `1 Vỉ x 10 Viên`,
-            pill_imgAddress: [require(`../assets/image/pill/Tovalgan.png`)],
+            pill_imgAddress: [require(`../assets/image/pill/Tovalgan.jpg`)],
             pill_indication: [
                 `Viên nén sủi bọt Tovalgan Ef chứa Paracetamol là một chất giảm đau và hạ sốt được dùng trong các trường hợp:`,
                 [
@@ -1099,7 +1099,7 @@ export const factoryData: DataStorageFormat = {
             pill_sellPrice: 25000,
             pill_buyPrice: 2000,
             pill_packKind: `1 Vỉ x 10 Viên`,
-            pill_imgAddress: [require(`../assets/image/pill/Allerphast.png`)],
+            pill_imgAddress: [require(`../assets/image/pill/Allerphast.jpg`)],
             pill_indication: [
                 `Allerphast được chỉ định sử dụng trong trường hợp:`,
                 `Ðiều trị triệu chứng trong viêm mũi dị ứng theo mùa, mày đay mạn tính vô căn ở người lớn và trẻ em trên 6 tuổi.`,
@@ -1199,7 +1199,7 @@ export const factoryData: DataStorageFormat = {
             pill_sellPrice: 12000,
             pill_buyPrice: 2000,
             pill_packKind: `1 Vỉ x 10 Viên`,
-            pill_imgAddress: [require(`../assets/image/pill/Lorastad.png`)],
+            pill_imgAddress: [require(`../assets/image/pill/Lorastad.jpg`)],
             pill_indication: [`Thuốc Lorastad D điều trị làm giảm triệu chứng của: Chứng viêm mũi dị ứng và Chứng nổi mày đay.`],
             pill_contraindication: [
                 `Thuốc Lorastad D chống chỉ định trong trường hợp sau:`,
@@ -1296,7 +1296,7 @@ export const factoryData: DataStorageFormat = {
             pill_sellPrice: 4000,
             pill_buyPrice: 2000,
             pill_packKind: `1 Vỉ x 10 Viên`,
-            pill_imgAddress: [require(`../assets/image/pill/Cetirizin.png`)],
+            pill_imgAddress: [require(`../assets/image/pill/Cetirizin.jpg`)],
             pill_indication: [
                 `Thuốc Cetirizin 10mg Trường Thọ được chỉ định điều trị triệu chứng viêm mũi dị theo mùa hoặc không theo mùa, các bệnh ngứa ngoài da do dị ứng, nổi mề đay mãn tính, bệnh viêm kết mạc dị ứng.`,
             ],
@@ -1376,7 +1376,7 @@ export const factoryData: DataStorageFormat = {
             pill_sellPrice: 20000,
             pill_buyPrice: 2000,
             pill_packKind: `1 Vỉ x 10 Viên`,
-            pill_imgAddress: [require(`../assets/image/pill/Exopadin.png`)],
+            pill_imgAddress: [require(`../assets/image/pill/Exopadin.jpg`)],
             pill_indication: [`Thuốc Exopadin chỉ định điều trị trong các trường hợp sau:`,],
             pill_contraindication: [
                 `Thuốc Exopadin chống chỉ định trong các trường hợp sau:`,
@@ -1513,7 +1513,7 @@ export const factoryData: DataStorageFormat = {
             pill_sellPrice: 28000,
             pill_buyPrice: 2000,
             pill_packKind: `1 Vỉ x 10 Viên`,
-            pill_imgAddress: [require(`../assets/image/pill/Telfast_Kids.png`)],
+            pill_imgAddress: [require(`../assets/image/pill/Telfast_Kids.jpg`)],
             pill_indication: [
                 `Thuốc Telfast Kids dùng riêng cho trẻ em từ 6 đến 11 tuổi được chỉ định trong các trường hợp sau:`,
                 [
@@ -1612,7 +1612,7 @@ export const factoryData: DataStorageFormat = {
             pill_sellPrice: 14000,
             pill_buyPrice: 2000,
             pill_packKind: `1 Vỉ x 10 Viên`,
-            pill_imgAddress: [require(`../assets/image/pill/Fexophar.png`)],
+            pill_imgAddress: [require(`../assets/image/pill/Fexophar.jpg`)],
             pill_indication: [
                 `Thuốc Fexophar chỉ định điều trị trong các trường hợp sau:`,
                 [
@@ -1711,7 +1711,7 @@ export const factoryData: DataStorageFormat = {
             pill_sellPrice: 4000,
             pill_buyPrice: 2000,
             pill_packKind: `1 Vỉ x 10 Viên`,
-            pill_imgAddress: [require(`../assets/image/pill/Devomir.png`)],
+            pill_imgAddress: [require(`../assets/image/pill/Devomir.jpg`)],
             pill_indication: [
                 `Thuốc Devomir 25 mg được chỉ định dùng trong các trường hợp sau:`,
                 [
@@ -1820,7 +1820,7 @@ export const factoryData: DataStorageFormat = {
             pill_sellPrice: 5900,
             pill_buyPrice: 2000,
             pill_packKind: `1 Vỉ x 20 viên`,
-            pill_imgAddress: [require(`../assets/image/pill/Promethazin.png`)],
+            pill_imgAddress: [require(`../assets/image/pill/Promethazin.jpg`)],
             pill_indication: [
                 `Thuốc Promethazin được chỉ định dùng trong các trường hợp sau:`,
                 [
@@ -1969,7 +1969,7 @@ export const factoryData: DataStorageFormat = {
             pill_sellPrice: 11000,
             pill_buyPrice: 2000,
             pill_packKind: `1 Vỉ x 10 Viên`,
-            pill_imgAddress: [require(`../assets/image/pill/Kremil_S.png`)],
+            pill_imgAddress: [require(`../assets/image/pill/Kremil_S.jpg`)],
             pill_indication: [
                 `Làm giảm các triệu chứng như khó tiêu, ợ nóng, đầy hơi.`
             ],
@@ -2029,7 +2029,7 @@ export const factoryData: DataStorageFormat = {
             pill_sellPrice: 2000,
             pill_buyPrice: 2000,
             pill_packKind: `1 Vỉ x 10 Viên`,
-            pill_imgAddress: [require(`../assets/image/pill/Sucralfate.png`)],
+            pill_imgAddress: [require(`../assets/image/pill/Sucralfate.jpg`)],
             pill_indication: [
                 `Thuốc SUCRALFATE được chỉ định dùng trong các trường hợp sau:`,
                 `Thuốc dùng để điều trị loét tá tràng, loét dạ dày lành tính, viêm dạ dày mạn tính.`,
@@ -2103,7 +2103,7 @@ export const factoryData: DataStorageFormat = {
             pill_sellPrice: 62500,
             pill_buyPrice: 2000,
             pill_packKind: `1 Vỉ x 10 Viên`,
-            pill_imgAddress: [require(`../assets/image/pill/Dạ_dày_Nhất_Nhất.png`)],
+            pill_imgAddress: [require(`../assets/image/pill/DDNN.jpg`)],
             pill_indication: [
                 `Thuốc Dạ Dày Nhất Nhất được chỉ định dùng trong các trường hợp sau:`,
                 `Điều trị viêm loét dạ dày, hành tá tràng cấp và mãn tính, đau rát vùng thượng vị, ăn không tiêu, đầy hơi, ợ chua, cảm giác khó chịu dạ dày.`,
@@ -2150,7 +2150,7 @@ export const factoryData: DataStorageFormat = {
             pill_sellPrice: 42000,
             pill_buyPrice: 2000,
             pill_packKind: `1 Vỉ x 6 Viên`,
-            pill_imgAddress: [require(`../assets/image/pill/Moxydar.png`)],
+            pill_imgAddress: [require(`../assets/image/pill/Moxydar.jpg`)],
             pill_indication: [
                 `Thuốc Moxydar được chỉ định dùng trong các trường hợp sau:
                 Điều trị triệu chứng đau do bệnh ở thực quản, dạ dày, tá tràng.
@@ -2248,7 +2248,7 @@ export const factoryData: DataStorageFormat = {
             pill_sellPrice: 8000,
             pill_buyPrice: 2000,
             pill_packKind: `1 Vỉ x 10 Viên`,
-            pill_imgAddress: [require(`../assets/image/pill/Cholapan.png`)],
+            pill_imgAddress: [require(`../assets/image/pill/Cholapan.jpg`)],
             pill_indication: [
                 `Thuốc Cholapan được chỉ định dùng trong các trường hợp sau:
                 Ðiều trị các chứng gan đau, mật kém, đau dạ dày.
@@ -2293,7 +2293,7 @@ export const factoryData: DataStorageFormat = {
             pill_sellPrice: 78000,
             pill_buyPrice: 2000,
             pill_packKind: `1 Vỉ x 10 Viên`,
-            pill_imgAddress: [require(`../assets/image/pill/Amalgel.png`)],
+            pill_imgAddress: [require(`../assets/image/pill/Amalgel.jpg`)],
             pill_indication: [`Thuốc Amalgel dùng điều trị các trường hợp loét dạ dày - tá tràng, tăng acid dạ dày, viêm thực quản trào ngược`
             ],
             pill_contraindication: [
@@ -2330,7 +2330,7 @@ export const factoryData: DataStorageFormat = {
             pill_sellPrice: 15000,
             pill_buyPrice: 2000,
             pill_packKind: `1 Vỉ x 10 Viên`,
-            pill_imgAddress: [require(`../assets/image/pill/Ampelop.png`)],
+            pill_imgAddress: [require(`../assets/image/pill/Ampelop.jpg`)],
             pill_indication: [
                 `Thuốc Ampelop được chỉ định dùng trong các trường hợp sau:
                 Điều trị viêm loét dạ dày - hành tá tràng do tăng tiết acid dịch vị.
@@ -2389,7 +2389,7 @@ export const factoryData: DataStorageFormat = {
             pill_sellPrice: 50000,
             pill_buyPrice: 2000,
             pill_packKind: `1 Vỉ x 10 Viên`,
-            pill_imgAddress: [require(`../assets/image/pill/Ulcersep.png`)],
+            pill_imgAddress: [require(`../assets/image/pill/Ulcersep.jpg`)],
             pill_indication: [
                 `Thuốc Ulcersep được chỉ định dùng trong các trường hợp sau: Làm giảm các triệu chứng khó chịu ở dạ dày, ăn không tiêu, ợ nóng và buồn nôn. Làm giảm tiêu chảy.`
             ],
@@ -2463,7 +2463,7 @@ export const factoryData: DataStorageFormat = {
             pill_sellPrice: 4800,
             pill_buyPrice: 2000,
             pill_packKind: `1 Vỉ x 10 Viên`,
-            pill_imgAddress: [require(`../assets/image/pill/Bisalaxyl.png`)],
+            pill_imgAddress: [require(`../assets/image/pill/Bisalaxyl.jpg`)],
             pill_indication: [
                 `Thuốc Bisalaxyl 5mg được chỉ định dùng trong các trường hợp sau:
                 Điều trị táo bón.
@@ -2539,7 +2539,7 @@ export const factoryData: DataStorageFormat = {
             pill_sellPrice: 8000,
             pill_buyPrice: 2000,
             pill_packKind: `1 Vỉ x 10 Viên`,
-            pill_imgAddress: [require(`../assets/image/pill/Ovalax.png`)],
+            pill_imgAddress: [require(`../assets/image/pill/Ovalax.jpg`)],
             pill_indication: [
                 `Thuốc Ovalax® được chỉ định dùng trong các trường hợp sau:
                 Điều trị táo bón.
@@ -2625,7 +2625,7 @@ export const factoryData: DataStorageFormat = {
             pill_sellPrice: 7000,
             pill_buyPrice: 2000,
             pill_packKind: `1 Vỉ x 25 Viên`,
-            pill_imgAddress: [require(`../assets/image/pill/Bisacodyl.png`)],
+            pill_imgAddress: [require(`../assets/image/pill/Bisacodyl.jpg`)],
             pill_indication: [
                 `Thuốc BisacodyIDHG được chỉ định dùng trong các trường hợp sau:
                 Điều trị táo bón. 
@@ -2687,7 +2687,7 @@ export const factoryData: DataStorageFormat = {
             pill_sellPrice: 7000,
             pill_buyPrice: 2000,
             pill_packKind: `1 Vỉ x 10 Viên`,
-            pill_imgAddress: [require(`../assets/image/pill/Phytilax.png`)],
+            pill_imgAddress: [require(`../assets/image/pill/Phytilax.jpg`)],
             pill_indication: [
                 `Thuốc Phytilax được chỉ định dùng trong các trường hợp sau:
                 Thông mật, nhuận trường, trị táo bón nói chung và đặc biệt cho người già thiểu năng gan mật.`
@@ -2731,7 +2731,7 @@ export const factoryData: DataStorageFormat = {
             pill_sellPrice: 5000,
             pill_buyPrice: 2000,
             pill_packKind: `20 gói`,
-            pill_imgAddress: [require(`../assets/image/pill/Forlax.png`)],
+            pill_imgAddress: [require(`../assets/image/pill/Forlax.jpg`)],
             pill_indication: [
                 `Thuốc Forlax được chỉ định dùng trong trường hợp:
                     Ðiều trị táo bón triệu chứng ở người lớn và trẻ em trên 8 tuổi.
@@ -2807,7 +2807,7 @@ export const factoryData: DataStorageFormat = {
             pill_sellPrice: 19800,
             pill_buyPrice: 2000,
             pill_packKind: `20 gói`,
-            pill_imgAddress: [require(`../assets/image/pill/Constipass.png`)],
+            pill_imgAddress: [require(`../assets/image/pill/Constipass.jpg`)],
             pill_indication: [
                 `Constipass được chỉ định đặc biệt trong trường hợp sau:
                 Bổ trợ nhuận tràng, thông qua hành động thẩm thấu, điều hòa ruột một cách tự nhiên.
@@ -2858,7 +2858,7 @@ export const factoryData: DataStorageFormat = {
             pill_sellPrice: 12750,
             pill_buyPrice: 2000,
             pill_packKind: `20 gói`,
-            pill_imgAddress: [require(`../assets/image/pill/Peginpol.png`)],
+            pill_imgAddress: [require(`../assets/image/pill/Peginpol.jpg`)],
             pill_indication: [
                 `Chỉ dùng bột nhuận tràng PEGinpol Macrogol cho các đối tượng trẻ nhỏ và người lớn có tình trạng táo bón trong các trường hợp cụ thể sau:
                 Trẻ nhỏ và người lớn bị táo bón chức năng cấp và mãn tính hoặc thỉnh thoảng nhu động ruột bất thường.
@@ -2901,7 +2901,7 @@ export const factoryData: DataStorageFormat = {
             pill_sellPrice: 5000,
             pill_buyPrice: 2000,
             pill_packKind: `30 gói`,
-            pill_imgAddress: [require(`../assets/image/pill/Cốm_vi_sinh.png`)],
+            pill_imgAddress: [require(`../assets/image/pill/comViSinh.jpg`)],
             pill_indication: [
                 `Bio-acimin Fiber dùng cho người lớn và trẻ nhỏ trong các trường hợp sau:
                     Trẻ em và người lớn bị táo bón hoặc có nguy cơ bị táo bón như: Phụ nữ có thai, phụ nữ sau khi sinh.
@@ -2957,7 +2957,7 @@ export const factoryData: DataStorageFormat = {
             pill_sellPrice: 9000,
             pill_buyPrice: 2000,
             pill_packKind: `1 Vỉ x 10 Viên`,
-            pill_imgAddress: [require(`../assets/image/pill/air_-_X.png`)],
+            pill_imgAddress: [require(`../assets/image/pill/air_-_X.jpg`)],
             pill_indication: [
                 `Thuốc AIR-X Hương vị cam được chỉ định dùng trong các trường hợp sau:
                 Ðiều trị đầy hơi ở đường tiêu hóa, cảm giác bị đè ép và căng ở vùng thượng vị, chướng bụng thoáng qua thường có sau bữa ăn thịnh soạn hoặc ăn nhiều chất ngọt, chướng bụng sau phẫu thuật; chuẩn bị chụp X-quang (dạ dày, ruột, túi mật, thận) và trước khi nội soi dạ dày.`
@@ -3002,7 +3002,7 @@ export const factoryData: DataStorageFormat = {
             pill_sellPrice: 5300,
             pill_buyPrice: 2000,
             pill_packKind: `1 Vỉ x 10 Viên`,
-            pill_imgAddress: [require(`../assets/image/pill/Thuốc_tiêu_hóa_-_Glomoti-M.png`)],
+            pill_imgAddress: [require(`../assets/image/pill/Glomoti-M.jpg`)],
             pill_indication: [
                 `Thuốc Glomoti-M 10mg chỉ định dùng trong các trường hợp sau:
                 Điều trị triệu chứng buồn nôn, nôn, chướng bụng, ợ hơi, khó tiêu sau bữa ăn.
@@ -3072,7 +3072,7 @@ export const factoryData: DataStorageFormat = {
             pill_sellPrice: 62000,
             pill_buyPrice: 2000,
             pill_packKind: `1 Vỉ x 10 Viên`,
-            pill_imgAddress: [require(`../assets/image/pill/Đại_tràng_Nhất_Nhất.png`)],
+            pill_imgAddress: [require(`../assets/image/pill/DTNN.jpg`)],
             pill_indication: [
                 `Thuốc Đại Tràng Nhất Nhất được chỉ định dùng trong các trường hợp sau:
                 Ðiều trị viêm đại tràng, tiêu chảy, rối loạn tiêu hóa với các triệu chứng đau bụng, sôi bụng, chướng bụng, ăn không tiêu, phân sống...`
@@ -3112,7 +3112,7 @@ export const factoryData: DataStorageFormat = {
             pill_sellPrice: 70000,
             pill_buyPrice: 2000,
             pill_packKind: `1 Vỉ x 10 Viên`,
-            pill_imgAddress: [require(`../assets/image/pill/Normagut.png`)],
+            pill_imgAddress: [require(`../assets/image/pill/Normagut.jpg`)],
             pill_indication: [
                 `Thuốc Normagut được chỉ định dùng trong các trường hợp sau:
                     Thiết lập và duy trì hoạt động hiệu quả của đường ruột, cân bằng hệ vi sinh vật đường ruột. 
@@ -3175,7 +3175,7 @@ export const factoryData: DataStorageFormat = {
             pill_sellPrice: 63000,
             pill_buyPrice: 2000,
             pill_packKind: `1 Vỉ x 10 Viên`,
-            pill_imgAddress: [require(`../assets/image/pill/Duspatalin.png`)],
+            pill_imgAddress: [require(`../assets/image/pill/Duspatalin.jpg`)],
             pill_indication: [
                 `Thuốc Duspatalin được chỉ định dùng trong các trường hợp sau:
                 Điều trị chứng đau bụng và co cứng cơ, rối loạn đại tràng và khó chịu ở ruột non do hội chứng ruột kích thích.
@@ -3260,7 +3260,7 @@ export const factoryData: DataStorageFormat = {
             pill_sellPrice: 32167,
             pill_buyPrice: 2000,
             pill_packKind: `1 Vỉ x 10 Viên`,
-            pill_imgAddress: [require(`../assets/image/pill/Baci-subti.png`)],
+            pill_imgAddress: [require(`../assets/image/pill/Baci-subti.jpg`)],
             pill_indication: [
                 `Men vi sinh Baci-subti hỗ trợ điều trị trong các trường hợp sau:
                     Rối loạn tiêu hóa do loạn khuẩn đường ruột hoặc dùng thuốc kháng tinh kéo dài như phân sống, đầy bụng, khó tiêu...
@@ -3307,7 +3307,7 @@ export const factoryData: DataStorageFormat = {
             pill_sellPrice: 150000,
             pill_buyPrice: 2000,
             pill_packKind: `1 Vỉ x 10 Viên`,
-            pill_imgAddress: [require(`../assets/image/pill/Creon.png`)],
+            pill_imgAddress: [require(`../assets/image/pill/Creon.jpg`)],
             pill_indication: [
                 `Thuốc Creon 25000 được chỉ định dùng trong các trường hợp sau:
                     Ðiều trị thiểu năng tụy ngoại tiết ở trẻ em và người lớn do tuyến tụy không cung cấp đủ men để tiêu hóa thức ăn.
@@ -3370,7 +3370,7 @@ export const factoryData: DataStorageFormat = {
             pill_sellPrice: 5000,
             pill_buyPrice: 2000,
             pill_packKind: `1 Vỉ x 10 Viên`,
-            pill_imgAddress: [require(`../assets/image/pill/Modom_s.png`)],
+            pill_imgAddress: [require(`../assets/image/pill/Modom_s.jpg`)],
             pill_indication: [`Thuốc Modom'S được chỉ định dùng điều trị triệu chứng nôn và buồn nôn.`],
             pill_contraindication: [
                 `Thuốc Modom'S chống chỉ định trong các trường hợp sau:
@@ -3488,7 +3488,7 @@ export const factoryData: DataStorageFormat = {
             pill_sellPrice: 26000,
             pill_buyPrice: 2000,
             pill_packKind: `1 Vỉ x 10 Viên`,
-            pill_imgAddress: [require(`../assets/image/pill/Acemuc.png`)],
+            pill_imgAddress: [require(`../assets/image/pill/Acemuc.jpg`)],
             pill_indication: [
                 `Thuốc Acemuc 200mg viên được chỉ định dùng trong các trường hợp sau:
                     Dùng điều trị trong trường hợp tiết chất nhầy trong bệnh hô hấp có đàm nhầy quánh như trong viêm phế quản cấp và mạn tính.`
@@ -3555,7 +3555,7 @@ export const factoryData: DataStorageFormat = {
             pill_sellPrice: 8000,
             pill_buyPrice: 2000,
             pill_packKind: `1 Vỉ x 10 Viên`,
-            pill_imgAddress: [require(`../assets/image/pill/Euxamus.png`)],
+            pill_imgAddress: [require(`../assets/image/pill/Euxamus.jpg`)],
             pill_indication: [
                 `Thuốc Euxamus 200 được chỉ định dùng trong các trường hợp sau:
                     Dùng làm thuốc tiêu chất nhầy trong bệnh nhầy nhớt như xơ nang tuyến tụy, bệnh hô hấp có đờm nhầy quanh như viêm phế quản cấp và mạn, làm sạch thường quy trong mở khí quản.
@@ -3620,7 +3620,7 @@ export const factoryData: DataStorageFormat = {
             pill_sellPrice: 17000,
             pill_buyPrice: 2000,
             pill_packKind: `1 Vỉ x 12 Viên`,
-            pill_imgAddress: [require(`../assets/image/pill/Strepsils.png`)],
+            pill_imgAddress: [require(`../assets/image/pill/Strepsils.jpg`)],
             pill_indication: [
                 `Thuốc Strepsils Soothing mật ong và chanh được chỉ định dùng trong các trường hợp sau:
                 Strepsils Soothing Honey & Lemon là viên ngậm chứa hai hoạt chất 2,4-dichlorobenzyl alcohol (dybenal) và amylmetacresol có tính kháng khuẩn sử dụng trong điều trị viêm họng. Viên ngậm Strepsils là viên ngậm kháng khuẩn để làm giảm đau họng dùng cho trẻ em và người lớn.`
@@ -3670,7 +3670,7 @@ export const factoryData: DataStorageFormat = {
             pill_sellPrice: 9000,
             pill_buyPrice: 2000,
             pill_packKind: `1 Vỉ x 10 Viên`,
-            pill_imgAddress: [require(`../assets/image/pill/Eugica.png`)],
+            pill_imgAddress: [require(`../assets/image/pill/Eugica.jpg`)],
             pill_indication: [
                 `Thuốc Eugica® Fort được chỉ định dùng trong các trường hợp sau:
                 Dùng điều trị các chứng ho, đau họng, sổ mũi, cảm cúm.
@@ -3727,7 +3727,7 @@ export const factoryData: DataStorageFormat = {
             pill_sellPrice: 7000,
             pill_buyPrice: 2000,
             pill_packKind: `1 Vỉ x 10 Viên`,
-            pill_imgAddress: [require(`../assets/image/pill/Tocemux.png`)],
+            pill_imgAddress: [require(`../assets/image/pill/Tocemux.jpg`)],
             pill_indication: [
                 `Thuốc Tocemux được chỉ định dùng trong các trường hợp sau:
                 Dùng làm thuốc tiêu chất nhầy trong bệnh nhầy nhớt (mucoviscidosis) (xơ nang tuyến tụy), bệnh lý hô hấp có đờm nhầy quánh như trong viêm phế quản cấp và mạn, và làm sạch thường quy trong mở khí quản.`
@@ -3799,7 +3799,7 @@ export const factoryData: DataStorageFormat = {
             pill_sellPrice: 7800,
             pill_buyPrice: 2000,
             pill_packKind: `1 Vỉ x 10 Viên`,
-            pill_imgAddress: [require(`../assets/image/pill/OPC.png`)],
+            pill_imgAddress: [require(`../assets/image/pill/OPC.jpg`)],
             pill_indication: [
                 `Viên Trị Ho Tussiday chỉ định dùng trong các trường hợp sau:
                     Điều trị các chứng ho, đau họng, sổ mũi, cảm cúm.
@@ -3847,7 +3847,7 @@ export const factoryData: DataStorageFormat = {
             pill_sellPrice: 7800,
             pill_buyPrice: 2000,
             pill_packKind: `1 Vỉ x 10 Viên`,
-            pill_imgAddress: [require(`../assets/image/pill/Lorucet.png`)],
+            pill_imgAddress: [require(`../assets/image/pill/Lorucet.jpg`)],
             pill_indication: [
                 `Viêm mũi dị ứng: Hắt hơi, chảy nước mũi, ngứa mũi.`,
                 `Viêm kết mạc dị ứng: Ngứa và xót mắt, nóng mắt.`,
@@ -3926,7 +3926,7 @@ export const factoryData: DataStorageFormat = {
             pill_sellPrice: 7800,
             pill_buyPrice: 2000,
             pill_packKind: `1 Vỉ x 20 Viên`,
-            pill_imgAddress: [require(`../assets/image/pill/Clorpheniramin.png`)],
+            pill_imgAddress: [require(`../assets/image/pill/Clorpheniramin.jpg`)],
             pill_indication: [
                 `Ðiều trị viêm mũi dị ứng mùa và quanh năm.`,
                 `Các dị ứng khác.`,
@@ -4037,7 +4037,7 @@ export const factoryData: DataStorageFormat = {
             pill_sellPrice: 20000,
             pill_buyPrice: 2000,
             pill_packKind: `1 Vỉ x 10 Viên`,
-            pill_imgAddress: [require(`../assets/image/pill/Bisolvon.png`)],
+            pill_imgAddress: [require(`../assets/image/pill/Bisolvon.jpg`)],
             pill_indication: [`Thuốc Bisolvon 8mg được chỉ định làm loãng đờm trong các bệnh phế quản phổi cấp và mạn tính có kèm theo sự tiết chất nhầy bất thường và giảm sự vận chuyển chất nhầy.`],
             pill_contraindication: [
                 `Bisolvon 8mg không nên dùng cho những bệnh nhân đã biết quá mẫn với bromhexine hoặc các thành phần khác của thuốc.
@@ -4109,7 +4109,7 @@ export const factoryData: DataStorageFormat = {
             pill_sellPrice: 7900,
             pill_buyPrice: 2000,
             pill_packKind: `1 Vỉ x 10 Viên`,
-            pill_imgAddress: [require(`../assets/image/pill/CXH.png`)],
+            pill_imgAddress: [require(`../assets/image/pill/CXH.jpg`)],
             pill_indication: [`Cảm Xuyên Hương được chỉ định điều trị các trường hợp cảm cúm, cảm lạnh, nhức đầu, hắt hơi, sổ mũi do cảm lạnh.`],
             pill_contraindication: [
                 `Thuốc Cảm Xuyên Hương chống chỉ định trong các trường hợp sau:
@@ -4155,7 +4155,7 @@ export const factoryData: DataStorageFormat = {
             pill_sellPrice: 7900,
             pill_buyPrice: 2000,
             pill_packKind: `1 Vỉ x 10 Viên`,
-            pill_imgAddress: [require(`../assets/image/pill/cadimusol.png`)],
+            pill_imgAddress: [require(`../assets/image/pill/cadimusol.jpg`)],
             pill_indication: [
                 `Tiêu nhầy trong các bệnh lý nhầy nhớt như xơ nang tuyến tuy;`,
                 `Giải độc quá liều Paracetamol;`,
@@ -4221,7 +4221,7 @@ export const factoryData: DataStorageFormat = {
             pill_sellPrice: 3400,
             pill_buyPrice: 2000,
             pill_packKind: `5 cuộn`,
-            pill_imgAddress: [require(`../assets/image/pill/băng_y_tế.png`)],
+            pill_imgAddress: [require(`../assets/image/pill/bangYte.jpg`)],
             pill_indication: [`Băng cuộn y tế Bảo Thạch dùng để băng bó vết thương ở đầu, tay, chân...`],
             pill_contraindication: [],
             pill_description: [
@@ -4293,7 +4293,7 @@ export const factoryData: DataStorageFormat = {
             pill_sellPrice: 39000,
             pill_buyPrice: 2000,
             pill_packKind: `50 cái`,
-            pill_imgAddress: [require(`../assets/image/pill/khẩu_trang.png`)],
+            pill_imgAddress: [require(`../assets/image/pill/KT.jpg`)],
             pill_indication: [],
             pill_contraindication: [],
             pill_description: [
@@ -4377,7 +4377,7 @@ export const factoryData: DataStorageFormat = {
             pill_sellPrice: 15000,
             pill_buyPrice: 2000,
             pill_packKind: `50 cái`,
-            pill_imgAddress: [require(`../assets/image/pill/băng_cá_nhân.png`)],
+            pill_imgAddress: [require(`../assets/image/pill/bangCaNhan.jpg`)],
             pill_indication: [
                 `Urgo Family được chỉ định dùng bảo vệ các vết thương nhỏ, vết trầy xước, rách da, vết kim đâm.`,
                 `Đối tượng sử dụng: Thích hợp dùng cho mọi người có vết thương nhỏ, vết cắt, vết trầy xước…`,
@@ -4447,7 +4447,7 @@ export const factoryData: DataStorageFormat = {
             pill_sellPrice: 7000,
             pill_buyPrice: 2000,
             pill_packKind: `10 miếng`,
-            pill_imgAddress: [require(`../assets/image/pill/sát_khuẩn.png`)],
+            pill_imgAddress: [require(`../assets/image/pill/conDo.jpg`)],
             pill_indication: [
                 `Thuốc Povidine 20ml được chỉ định dùng trong các trường hợp sau:`,
                 [
@@ -4568,7 +4568,7 @@ export const factoryData: DataStorageFormat = {
             pill_sellPrice: 3000,
             pill_buyPrice: 2000,
             pill_packKind: `10 vỉ x 10 viên`,
-            pill_imgAddress: [require(`../assets/image/pill/Vitamin_c.png`)],
+            pill_imgAddress: [require(`../assets/image/pill/Vitamin_c.jpg`)],
             pill_indication: [
                 `Thuốc Vitamin C 500mg Vidipha được chỉ định dùng trong các trường hợp sau:`,
                 [
@@ -4675,7 +4675,7 @@ export const factoryData: DataStorageFormat = {
             pill_sellPrice: 3000,
             pill_buyPrice: 2000,
             pill_packKind: `10 vỉ x 10 viên`,
-            pill_imgAddress: [require(`../assets/image/pill/Allvitamine.png`)],
+            pill_imgAddress: [require(`../assets/image/pill/Allvitamine.jpg`)],
             pill_indication: [
                 `Thuốc Allvitamine được chỉ định dùng để bổ sung vitamin.`
             ],
@@ -4765,7 +4765,7 @@ export const factoryData: DataStorageFormat = {
             pill_sellPrice: 10000,
             pill_buyPrice: 2000,
             pill_packKind: `4 vỉ x 10 viên`,
-            pill_imgAddress: [require(`../assets/image/pill/Vitamin_e.png`)],
+            pill_imgAddress: [require(`../assets/image/pill/Vitamin_e.jpg`)],
             pill_indication: [
                 `Điều trị thiếu vitamin E trong các trường hợp:`,
                 [
